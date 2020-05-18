@@ -4,12 +4,16 @@
     src:url('fonts/SerifBookItalic.otf') format('opentype');
 }
 @font-face{
-    font-family: 'SansRegular', Arial;
+    font-family: 'Sans Regular', Arial;
     src: url('fonts/SansRegular.otf') format('opentype');
   }
 @font-face{
     font-family: 'Reconna';
     src: url('fonts/ReconnaSerif.otf') format('opentype');
+  }
+@font-face{
+    font-family: 'TSerif Light';
+    src: url('fonts/Tserif Light.otf') format('opentype');
   }
 
 body{

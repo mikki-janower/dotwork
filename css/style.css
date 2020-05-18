@@ -1,19 +1,23 @@
 
 @font-face{
-  font-family: 'NeueMontreal-Med';
-  src: url("fonts/NeueMontreal-Medium.otf");
+  font-family: 'Sans Medium';
+  src: url("fonts/SansMedium.otf");
 }
 @font-face{
   font-family:  'Serif Light Italic';
-  src: url('fonts/SerifLightItalic.otf') format('opentype');
+  src: url('fonts/SerifLightItalic.otf');
 }
 @font-face{
   font-family:  'Serif Light';
-  src: url('fonts/SerifLight.otf') format('opentype');
+  src: url('fonts/SerifLight.otf');
 }
 @font-face{
   font-family:  'Sans Medium Italic';
-  src: url('fonts/SansMediumItalic.otf') format('opentype');
+  src: url('fonts/SansMediumItalic.otf');
+}
+@font-face{
+  font-family: 'TSerif Light';
+  src: url('fonts/Tserif Light.otf') format('opentype');
 }
 
 ::selection{
@@ -22,7 +26,7 @@
 body {
   max-width: 100vw;
   max-height: 100vh;
-	font-family: 'NeueMontreal-Med';
+	font-family: 'Sans Medium';
 	font-size: 16px;
 	line-height: 1;
 	background-color: rgba();
@@ -173,6 +177,9 @@ a{
 }
 .labelita{
   font-family: "Serif Light Italic";
+}
+.labelreg{
+  font-family: "TSerif Light";
 }
 .pic{
   position:relative;

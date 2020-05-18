@@ -96,20 +96,4 @@ $('.projectTitle').mouseout(function(){
 });
 
 //------------------------------------------------------------------changes to specific pages
-/*$('.top .grid-column-2').mouseover(function(){
-    $('.projectTitle').html("Back");
-    $('.projectTitle').css({
-        'transform': 'rotateY(180deg)',
-        'transition': '.2s'
-    });
-});
-$('.projectTitle').mouseout(function(){
-$('.projectTitle').html(title);
-$('.projectTitle').css("transform", "rotateY(0deg)");
-});*/
-
-$("#reconnatest textarea").hover(function () {
-    scrollTop: $("#Reconnatest textarea").offset().top;
-});
-
 //-----------------------------document closing bracket; don't touch
