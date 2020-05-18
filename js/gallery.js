@@ -92,7 +92,7 @@ $(document).ready(function () {
         let w = window.innerWidth;
         if (w < 700) {
           //  if($(window).scrollTop() + $(window).height() == $(document).height()) {
-            if($(window).scrollTop() + $(window).height() >= $(document).height() - 100) {
+            if($(window).scrollTop() + $(window).height() >= $(document).height() - 160) {
                 $(".bottom").fadeIn(200); 
             } else {
                 $(".bottom").fadeOut(200);  
