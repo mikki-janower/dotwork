@@ -53,7 +53,7 @@ $('.projectTitle').mouseout(function(){
             imagePath.replace("small", "large") +
             '" /></div></div>'
         );
-        $(".modal-overlay, .modal-img").fadeIn("100");
+        $(".modal-overlay, .modal-img").fadeIn("50");
         //------------------------style the page so menus show despite the overlay---------//
         $("body").css("overflow-y", "hidden");
         $(".top").css({
@@ -63,13 +63,15 @@ $('.projectTitle').mouseout(function(){
             "box-shadow": "none"
         });
         $(".top p, a").css({
-            transition: ".2s",
+            transition: ".1s",
             color: "rgba(255,255,255,.4)"
         });
+        $(".index").css("display", "none");
+        $(".projectTitle").css("display", "none");
     }
 
     $("body").on("click", ".modal-overlay", function () {
-        $(".modal-overlay, .modal-img").fadeOut("100");
+        $(".modal-overlay, .modal-img").fadeOut("50");
         //------------------------fade out the changes to the menus---------//
         $(".top")
             .delay(300)
@@ -82,10 +84,12 @@ $('.projectTitle').mouseout(function(){
                     "-moz-box-shadow": "0px -1px 11px 12px rgba(255,255,255,1)",
                     "box-shadow": "0px -1px 11px 12px rgba(255,255,255,1)"
                 });
+                $(".index").css("display", "flex");
+                $(".projectTitle").css("display", "flex");
                 next();
             });
         $(".top p, a").css({
-            transition: ".2s",
+            transition: ".1s",
             color: "black"
         });
     });
