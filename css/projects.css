@@ -1,15 +1,15 @@
 /*-----------------------#project denotes standards consistent between pages-----------------*/ 
 @font-face{
     font-family:FreightDisp BookIta;
-    src:url('/fonts/FreightDisp Pro Book Italic.otf');
+    src:url(fonts/FreightDisp Pro Book Italic.otf);
 }
 @font-face{
     font-family: 'Neue Montreal Reg';
-    src: url(/fonts/neuemontreal-regular.otf);
+    src: url(fonts/neuemontreal-regular.otf);
   }
 @font-face{
     font-family: 'Reconna';
-    src: url(/fonts/ReconnaSerif.otf);
+    src: url(fonts/ReconnaSerif.otf);
   }
 
 body{
