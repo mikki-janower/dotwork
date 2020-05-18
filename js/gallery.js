@@ -76,7 +76,7 @@ $(document).ready(function () {
 
 //----------------------------make top and bottom sections sticky
 //----------------------------make bottom visible only at the bottom of the page on mobile
-          $(window).scroll(function () {
+   $(window).scroll(function () {
             let sticky = $(".sticky");
             scroll = $(window).scrollTop();
             
@@ -85,29 +85,32 @@ $(document).ready(function () {
             }else {
                 sticky.removeClass("position","fixed");
             } 
-        });
+     });
 
-
-       /* const bottomVisibility = function () {
-            let w = window.innerWidth;
-
-    
-            if (w < 700) {
-                $('.bottom').css("display", "none");
+     const bottomScrolled = $(window).scroll(function() {
+        let w = window.innerWidth;
+        if (w < 700) {
+            if($(window).scrollTop() + $(window).height() == $(document).height()) {
+                $(".bottom").fadeIn(200); 
             } else {
-                $('.bottom').css("display", "inline-flex");
-            }
-            
+                $(".bottom").fadeOut(200);  
+            } 
         }
+     });
 
-        $(window).scroll(function () {
-            bottomVisibility();
-        });
-        $(window).resize(function () {
-            bottomVisibility();
-        });
-
-        bottomVisibility(); */
+     const bottomVisibility = function () {
+         let w = window.innerWidth;
+         if (w < 700){
+            $(".bottom").css("display", "none");
+            bottomScrolled();
+         } else {
+            $(".bottom").css("display", "flex"); 
+         }
+     }
+     
+     $(window).resize(function () {
+        bottomVisibility();
+     });
 
     //------------------------------------------------------------------to fix media queries
     $(window).resize(function () {
