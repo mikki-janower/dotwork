@@ -314,6 +314,9 @@ input:focus::-webkit-slider-runnable-track {
         #project #label{
             font-size:18px;
         }
+        #project{
+            top:100px;
+        }
     }
 @media (max-width: 750px) {
     .top{   

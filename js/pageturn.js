@@ -28,6 +28,7 @@ $(document).ready(function () {
                 .delay("200")
                 .slideToggle("200");
             $(".about").html("Back");
+            $('body').css("overflow-y", "hidden");
             about = true;
         } else {
             $("#about").slideToggle("200");
@@ -37,6 +38,7 @@ $(document).ready(function () {
             } else {
                 $(".pic").css("transform", "rotateY(0deg)");
                 $(".pic").fadeIn("200");
+                $('body').css("overflow-y", "scroll");
             }
             $(".about").html("About");
             about = false;
@@ -104,7 +106,7 @@ $(document).ready(function () {
     $(".name").click(function () {
         if (name == false) {
             let w = window.innerWidth; 
-            
+
             $(".projectTitle").css("transform", "rotateY(90deg)");
             //---------------hide index
             if (index == true) {

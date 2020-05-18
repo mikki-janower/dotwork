@@ -60,6 +60,7 @@ $(document).ready(function () {
     }
 
     $("body").on("click", ".modal-overlay", function () {
+        let w = window.innerWidth;
         $(".modal-overlay, .modal-img").fadeOut("100");
         //------------------------fade out the changes to the menus---------//
         $(".top")
@@ -73,8 +74,11 @@ $(document).ready(function () {
                     "-moz-box-shadow": "0px -1px 11px 12px rgba(255,255,255,1)",
                     "box-shadow": "0px -1px 11px 12px rgba(255,255,255,1)"
                 });
-                $(".index").css("display", "flex");
                 $(".projectTitle").css("display", "flex");
+                    if (w > 750){
+                        $(".index").css("display", "flex");
+                    };
+
                 next();
             });
         $(".top p, a").css({
