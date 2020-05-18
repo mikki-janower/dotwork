@@ -78,6 +78,7 @@ $(document).ready(function () {
 //----------------------------make bottom visible only at the bottom of the page on mobile
    $(window).scroll(function () {
             let sticky = $(".sticky");
+            let w = window.innerWidth;
             scroll = $(window).scrollTop();
             
             if (scroll >= 0){
@@ -90,7 +91,8 @@ $(document).ready(function () {
      const bottomScrolled = $(window).scroll(function() {
         let w = window.innerWidth;
         if (w < 700) {
-            if($(window).scrollTop() + $(window).height() == $(document).height()) {
+          //  if($(window).scrollTop() + $(window).height() == $(document).height()) {
+            if($(window).scrollTop() + $(window).height() >= $(document).height() - 100) {
                 $(".bottom").fadeIn(200); 
             } else {
                 $(".bottom").fadeOut(200);  
@@ -107,7 +109,7 @@ $(document).ready(function () {
             $(".bottom").css("display", "flex"); 
          }
      }
-     
+
      $(window).resize(function () {
         bottomVisibility();
      });
