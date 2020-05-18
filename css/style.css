@@ -16,8 +16,8 @@
   src: url('fonts/SansMediumItalic.otf');
 }
 @font-face{
-  font-family: 'TSerif Light';
-  src: url('fonts/TserifLight.otf');
+  font-family: 'Serif Light';
+  src: url('fonts/SerifLight.otf');
 }
 
 ::selection{
