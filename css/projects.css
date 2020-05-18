@@ -360,7 +360,6 @@ input:focus::-webkit-slider-runnable-track {
         #project img{
             cursor:default;
         }
-
         #description, #description a{
             font-size:16px;
         }
@@ -372,6 +371,9 @@ input:focus::-webkit-slider-runnable-track {
         }
         #project #label{
             font-size:22px;
+        }
+        .polyptych{
+            grid-template-columns: auto auto auto;
         }
     }
  }
