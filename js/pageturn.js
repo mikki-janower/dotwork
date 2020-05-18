@@ -3,6 +3,18 @@ $(document).ready(function () {
     let name = true;
     let project = false;
 
+    const homepageAppear = function () {
+        let w = window.innerWidth;
+        if (w > 700){
+            $(".pic").css("transform", "rotateY(90deg)");
+            $(".pic").fadeIn("200");
+        } else {
+            $(".pic").css("transform", "rotateY(0deg)");
+            $(".pic").fadeIn("200");
+        }
+        $("#homepage").fadeIn("300");
+    }
+
     //----------------------------------------------------------#about page turn
     let about = false;
     $(".about").click(function () {
@@ -33,14 +45,15 @@ $(document).ready(function () {
             about = true;
         } else {
             $("#about").slideToggle("200");
-            if (w > 700){
+            /*if (w > 700){
                 $(".pic").css("transform", "rotateY(90deg)");
                 $(".pic").fadeIn("200");
             } else {
                 $(".pic").css("transform", "rotateY(0deg)");
                 $(".pic").fadeIn("200");
             }
-            $("#homepage").fadeIn("300");
+            $("#homepage").fadeIn("300");*/
+            homepageAppear();
             $(".about").html("About");
             about = false;
             name = true;
@@ -79,14 +92,15 @@ $(document).ready(function () {
             index = true;
         } else {
             $("#index").slideToggle("200");
-            if (w > 500){
+           /* if (w > 500){
                 $(".pic").css("transform", "rotateY(90deg)");
                 $(".pic").fadeIn("200");
             } else {
                 $(".pic").css("transform", "rotateY(0deg)");
                 $(".pic").fadeIn("200");
             }
-            $("#homepage").fadeIn("300");
+            $("#homepage").fadeIn("300");*/
+            homepageAppear();
             $(".index").html("Index");
             index = false;
             name = true;
@@ -118,14 +132,15 @@ $(document).ready(function () {
                 about = false;
             }
             //---------------bring back homepage
-            if (w > 500){
+           /* if (w > 500){
                 $(".pic").css("transform", "rotateY(90deg)");
                 $(".pic").fadeIn("200");
             } else {
                 $(".pic").css("transform", "rotateY(0deg)");
                 $(".pic").fadeIn("200");
             }
-            $("#homepage").fadeIn("300");
+            $("#homepage").fadeIn("300");*/
+            homepageAppear();
             $(".index").html("Index");
             name = true;
 

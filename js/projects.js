@@ -2,21 +2,31 @@ $(document).ready(function () {
     $("#project").fadeIn("100");
 
     //------------------------------------redirect to homepage when .name or .projectTitle are clicked
-$(".name").click(function () {
-    let w = window.innerWidth;
-       $(".projectTitle").css("transform", "rotateY(90deg)");
-        $("#project").slideToggle(200);
-        if (w < 700){
+
+    const homepageAppear = function () {
+        let w = window.innerWidth;
+        if (w > 700){
+            $(".pic").css("transform", "rotateY(90deg)");
+            $(".pic").fadeIn("200");
+        } else {
             $(".pic").css("transform", "rotateY(0deg)");
             $(".pic").fadeIn("200");
         }
         $("#homepage").fadeIn("300");
+    }
+
+    $(".name").click(function () {
+    let w = window.innerWidth;
+       $(".projectTitle").css("transform", "rotateY(90deg)");
+        $("#project").slideToggle(200);
         $(document)
             .delay(300)
             .queue(function (next) {
                 window.location.href = "index.html";
                 next();
             });
+            homepageAppear();
+        
         return false;
     });
     //-------------------------------------------------------------enlarge image on click
