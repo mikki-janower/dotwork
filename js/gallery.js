@@ -13,7 +13,7 @@ $(document).ready(function () {
     }
 
     //---------------------------------do the same thing on window resize
-    $(window).resize(function () {
+    const dot = (function () {
         const w = window.innerWidth;
         if (w >= 1000) {
             $(".name").html(
@@ -28,6 +28,8 @@ $(document).ready(function () {
             $(".dot").html("");
         }
     });
+    dot();
+    
 
     //-----------------------track mouse position on the page
     document.addEventListener("mousemove", function (event) {

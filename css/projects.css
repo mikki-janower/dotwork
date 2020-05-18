@@ -344,6 +344,12 @@ input:focus::-webkit-slider-runnable-track {
         }
     }
     @media (max-width: 550px) {
+          .top{
+    grid-template-columns: 35vw 65vw;}
+        .index{
+            display:none;
+            transition:.2s;
+        }
 
         #description, #description a{
             font-size:16px;
