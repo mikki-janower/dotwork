@@ -53,7 +53,7 @@ $('.projectTitle').mouseout(function(){
             imagePath.replace("small", "large") +
             '" /></div></div>'
         );
-        $(".modal-overlay, .modal-img").fadeIn("50");
+        $(".modal-overlay, .modal-img").fadeIn("100");
         //------------------------style the page so menus show despite the overlay---------//
         $("body").css("overflow-y", "hidden");
         $(".top").css({
@@ -71,10 +71,10 @@ $('.projectTitle').mouseout(function(){
     }
 
     $("body").on("click", ".modal-overlay", function () {
-        $(".modal-overlay, .modal-img").fadeOut("50");
+        $(".modal-overlay, .modal-img").fadeOut("100");
         //------------------------fade out the changes to the menus---------//
         $(".top")
-            .delay(300)
+            .delay(200)
             .queue(function (next) {
                 $("body").css("overflow-y", "scroll");
                 $(".top").css({
