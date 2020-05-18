@@ -1,0 +1,352 @@
+/*-----------------------#project denotes standards consistent between pages-----------------*/ 
+@font-face{
+    font-family:FreightDisp BookIta;
+    src:url('/fonts/FreightDisp Pro Book Italic.otf');
+}
+@font-face{
+    font-family: 'Neue Montreal Reg';
+    src: url(/fonts/neuemontreal-regular.otf);
+  }
+@font-face{
+    font-family: 'Reconna';
+    src: url(/fonts/ReconnaSerif.otf);
+  }
+
+body{
+    overflow-y:scroll;
+}
+
+#projfooter{
+        display:flex;
+        justify-content:space-between;
+        padding-top:40px;
+        margin-bottom:10px;
+        grid-column:3/span 2;
+        grid-row:4;
+ }
+
+/*----------------------------------scrollbarrrrrr--------------------------------*/
+::-webkit-scrollbar {
+    border-radius:40px;
+    background-color:transparent;
+    width:6px;
+    height:20px;
+    margin-right:3px;
+    border:1.4px solid black;
+  }
+  ::-webkit-scrollbar-thumb {
+    height:10px;
+    width:6px;
+    opacity:1;
+    background-color:black;
+    border-radius:40px;
+    margin-right:3px;
+  }
+  ::-webkit-scrollbar-track {
+  width:8px;
+  border-radius:40px;
+  margin-right:3px;
+  }
+
+.projectTitle{
+        justify-self:flex-start;
+        cursor: default;
+        transition:.2s;
+}
+#project{
+    position: relative;
+    font-size:16px;
+    line-height:1.3;
+    margin-left:2px;
+    font-family: Neue Montreal Med;
+    top: 140px;
+    padding-top:10px;
+    max-width: 100vw;
+    max-height: 100%;
+    display: grid;
+    grid-template-columns:32vw 3vw 63vw 2vw;
+    grid-template-rows:auto auto auto auto;
+    justify-content:space-between;
+    align-items:start;
+}
+#hero{
+    grid-column:3;
+}
+#project #label{
+    font-size:22px;
+    margin-bottom:16px;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    width:100%;
+    position:relative;
+}
+#project img{
+    position:relative;
+    max-width:100%;
+    cursor:zoom-in;
+}
+#description{
+    align-self:start;
+    vertical-align:top;
+    margin:0;
+    margin-top:-20px;
+    padding-top:0;
+    top:0;
+    transition:.2s;
+}
+#description a{
+    font-size:16px;
+    font-family: Neue Montreal MedIta;
+}
+.detail{
+    font-size:14px;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    border-top:1.3px black solid;
+    padding-top:0px;
+    padding-bottom:0px;
+}
+.detail p{
+    width:48%;
+}
+.detail a{
+    font-size:14px; 
+    padding:0;
+    margin:0;
+}
+#gallery{
+grid-column:3;
+grid-row:3;
+}
+
+/*-----------------------various polyptych setups for multiple images in one row----------------*/
+/*---!!!!!-------!!!!-----On mobile, make sure these classes are removed-  !!!!!!     !!!!!------*/
+.diptych{
+    display:inline-flex;
+    flex-direction:row;
+    max-width:100%;
+    justify-content:space-between;
+    overflow-x:hidden;
+}
+.diptych img{
+    position:relative;
+    padding-right:6px;
+    width:50%;
+    align-self:flex-start;
+}
+.triptych{
+    display:inline-grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap:6px;
+    max-width:100%;
+    justify-content:space-between;
+    overflow-x:hidden;
+    margin-bottom:6px;
+}
+.triptych img{
+    position:relative;
+    padding-right:6px;
+    width:100%;
+    align-self:flex-start;
+}
+.polyptych{
+    display:inline-grid;
+    grid-template-columns: auto auto auto auto;
+    grid-column-gap:6px;
+    grid-row-gap:6px;
+    max-width:100%;
+    justify-content:space-between;
+    overflow-x:hidden;
+    margin-bottom:6px;
+}
+.polyptych img{
+    position:relative;
+    padding-right:6px;
+    width:100%;
+    align-self:flex-start;
+}
+/*-----------------------zoom-in overlay----------------*/
+.modal-overlay{
+    position:fixed;
+    width:100%;
+    max-height:100%;
+    background-color:black;
+    transition:.2s;
+    cursor:zoom-out;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:0;
+}
+.modal-overlay img{
+    position:absolute;
+    max-height:85%;
+    max-width:90%;
+    margin-left:50vw;
+    margin-top:50vh;
+    transform:translate(-50%, -50%);
+}
+
+/*-----------------------non-universal changes for specific projects----------------*/
+/*---------------------------------reconna-------------------------*/
+#reconnatest{
+    display:inline-flex;
+    flex-direction:column;
+    width:100%;
+    margin-bottom:20px;
+}
+textarea {
+    color:#111111;
+    overflow:hidden;
+    font-family: Reconna;
+    font-size: 30px;
+    height:150px;
+    width: auto;
+    padding: 1.2rem;
+    border-radius:5px;
+    border: 1px solid black;
+    resize: none;
+    outline:none;
+    transition: all 0.2s;
+}
+textarea:hover{
+    /*box-shadow: 0px 0px 40px 15px yellow;*/
+    transition: 0.2s;
+    height:300px;
+    overflow-y:scroll;
+}
+.reconnapage .sliderlabel{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    width:98%;
+    margin-left:1%;
+    font-size:14px;
+    margin-bottom:20px;
+}
+/*-------style slider*/
+.reconnapage input{
+    margin-top:40px;
+    cursor:pointer;
+    margin-bottom:6px;
+    background-color:transparent;
+    border:1px solid black;
+    border-radius: 5px;
+    height:5px;
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+}
+input:hover, input:active, input:focus, td:hover, td:focus, table:focus{
+    outline:none;
+    border:1px solid black;
+    box-shadow:none;
+    box-shadow: 0px 0px 0px transparent;
+    text-decoration:none;
+    background:transparent;
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+}
+input:focus::-webkit-slider-runnable-track {
+    background: transparent;
+    box-shadow:none;
+    -webkit-appearance:none;
+    outline:none;
+  }
+  input:focus::-ms-fill-upper {
+    box-shadow:none;
+    -webkit-appearance:none;
+    outline:none;
+  }
+.reconnapage input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width:30px;
+    height:5px;
+    background-color:black;
+    border-radius:5px;
+  }
+  input::-ms-track {
+    width: 100%;
+    cursor: pointer;
+    background-color:black;
+  }
+.reconnapage iframe{
+    display:inline-block;
+    border:0px solid white;
+    width:100%;
+    height:100%;
+}
+.reconnapage iframe:hover{
+    border:0px solid white;
+    background:white;
+}
+
+/*-----------------------medddddddia queriesssssss------------------------------------*/
+
+@media (max-width: 1500px) {
+    #project{
+        grid-template-columns:30vw 5vw 63vw 2vw; 
+    }
+ }
+
+@media (max-width: 1100px) {
+    #project{
+        grid-template-columns:32vw 3vw 63vw 2vw; 
+    }
+@media (max-width: 1000px) {
+        #description, #description a, .detail{
+            font-size:14px;
+        }
+        #project #label{
+            font-size:20px;
+        }
+        #projfooter{
+            font-size: 1em;
+        }
+    }
+@media (max-width: 900px) {
+        #description, #description a, .detail{
+            font-size:12px;
+        }
+        #project #label{
+            font-size:18px;
+        }
+    }
+@media (max-width: 750px) {
+        #project{
+            display:flex;
+            flex-direction:column;
+        }
+        #description, #description a{
+            font-size:20px;
+        }
+        .detail{
+            font-size:13px;
+            margin-bottom:20px;
+        }
+        #project #label{
+            font-size:22px;
+        }
+        #description{
+            width:92vw;
+        }
+        #projfooter{
+            margin-top:80px;
+            margin-bottom:4px;
+            align-self:flex-end;
+            width:65%;
+        }
+    }
+    @media (max-width: 550px) {
+
+        #description, #description a{
+            font-size:16px;
+        }
+        .detail{
+            font-size:12px;
+        }
+        #project #label{
+            font-size:22px;
+        }
+    }
+ }
