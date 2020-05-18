@@ -1,19 +1,19 @@
 /*-----------------------#project denotes standards consistent between pages-----------------*/ 
 @font-face{
     font-family: 'Serif Book Italic';
-    src:url('fonts/SerifBookItalic.otf') format('opentype');
+    src:url('fonts/SerifBookItalic.otf');
 }
 @font-face{
-    font-family: 'Sans Regular', Arial;
-    src: url('fonts/SansRegular.otf') format('opentype');
+    font-family: 'Sans Regular';
+    src: url('fonts/SansRegular.otf');
   }
 @font-face{
     font-family: 'Reconna';
-    src: url('fonts/ReconnaSerif.otf') format('opentype');
+    src: url('fonts/ReconnaSerif.otf');
   }
 @font-face{
     font-family: 'TSerif Light';
-    src: url('fonts/Tserif Light.otf') format('opentype');
+    src: url('fonts/Tserif Light.otf');
   }
 
 body{
