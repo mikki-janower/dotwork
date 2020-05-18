@@ -10,6 +10,7 @@ $(document).ready(function () {
             //---------------hide homepage
             $(".pic").css("transform", "rotateY(90deg)");
             $(".pic").fadeOut("200");
+            $("#homepage").fadeOut("300");
             name = false;
 
             //---------------hide projects
@@ -28,18 +29,17 @@ $(document).ready(function () {
                 .delay("200")
                 .slideToggle("200");
             $(".about").html("Back");
-            $('body').css("overflow-y", "hidden");
             about = true;
         } else {
             $("#about").slideToggle("200");
-            if (w > 500){
+            if (w > 700){
                 $(".pic").css("transform", "rotateY(90deg)");
                 $(".pic").fadeIn("200");
             } else {
                 $(".pic").css("transform", "rotateY(0deg)");
                 $(".pic").fadeIn("200");
-                $('body').css("overflow-y", "scroll");
             }
+            $("#homepage").fadeIn("300");
             $(".about").html("About");
             about = false;
             name = true;
@@ -62,6 +62,7 @@ $(document).ready(function () {
             //---------------hide homepage
             $(".pic").css("transform", "rotateY(90deg)");
             $(".pic").fadeOut("200");
+            $("#homepage").fadeOut("300");
             name = false;
 
             //---------------hide about
@@ -90,6 +91,7 @@ $(document).ready(function () {
                 $(".pic").css("transform", "rotateY(0deg)");
                 $(".pic").fadeIn("200");
             }
+            $("#homepage").fadeIn("300");
             $(".index").html("Index");
             index = false;
             name = true;
