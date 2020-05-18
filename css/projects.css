@@ -4,7 +4,7 @@
     src:url('fonts/SerifBookItalic.otf') format('opentype');
 }
 @font-face{
-    font-family: 'SansRegular';
+    font-family: 'SansRegular', Arial;
     src: url('fonts/SansRegular.otf') format('opentype');
   }
 @font-face{
