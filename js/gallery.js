@@ -78,7 +78,6 @@ $(document).ready(function () {
 //----------------------------make bottom visible only at the bottom of the page on mobile
    $(window).scroll(function () {
             let sticky = $(".sticky");
-            let w = window.innerWidth;
             scroll = $(window).scrollTop();
             
             if (scroll >= 0){
@@ -88,7 +87,7 @@ $(document).ready(function () {
             } 
      });
 
-     const bottomScrolled = $(window).scroll(function() {
+var bottomScrolled = $(window).scroll(function() {
         let w = window.innerWidth;
         if (w < 700) {
           //  if($(window).scrollTop() + $(window).height() == $(document).height()) {
