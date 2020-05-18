@@ -322,6 +322,9 @@ input:focus::-webkit-slider-runnable-track {
     .top{   
         grid-template-columns: 35vw 65vw;
     }
+    .projectTitle{
+        text-align:center;
+    }
     .top .index{
                 display:none;
                 transition:.2s;
