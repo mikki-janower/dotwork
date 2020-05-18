@@ -557,7 +557,7 @@ display:none;
     margin-top:3vh;
     display:flex;
     flex-direction:column;
-    overflow-y:scroll;
+   /* overflow-y:scroll;*/
   }
   .pic #label{
     font-size:22px;
@@ -572,7 +572,7 @@ display:none;
     margin-top:20px;
   }
   .discoveryourair{
-    margin-bottom:160px;
+    padding-bottom:160px;
   }
 }
 
