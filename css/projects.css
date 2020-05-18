@@ -336,6 +336,9 @@ input:focus::-webkit-slider-runnable-track {
             align-self:flex-end;
             width:65%;
         }
+        .modal-overlay img{
+            max-width:96%;
+        }
     }
     @media (max-width: 550px) {
 
