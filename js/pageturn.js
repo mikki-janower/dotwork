@@ -1,6 +1,7 @@
 $(document).ready(function () {
     $("#homepage").fadeIn("100");
     let name = true;
+    let project = false;
 
     //----------------------------------------------------------#about page turn
     let about = false;
@@ -43,12 +44,6 @@ $(document).ready(function () {
             $(".about").html("About");
             about = false;
             name = true;
-
-            //---------------bring back project, if applicable
-            $("#project").css("transform", "rotateY(90deg)");
-            $("#project")
-                .delay("300")
-                .fadeIn("200");
         }
     });
 
@@ -130,6 +125,9 @@ $(document).ready(function () {
                 $(".pic").css("transform", "rotateY(0deg)");
                 $(".pic").fadeIn("200");
             }
+            $("#homepage").fadeIn("300");
+            $(".index").html("Index");
+            name = true;
 
         }
     });
@@ -148,6 +146,7 @@ $(document).ready(function () {
                 next();
             });
         return false;
+   
     });
 
     $(".postcursor").click(function () {
@@ -162,6 +161,7 @@ $(document).ready(function () {
                 next();
             });
         return false;
+  
     });
     $(".majorarcana").click(function () {
         //---------------hide homepage
@@ -175,6 +175,7 @@ $(document).ready(function () {
                 next();
             });
         return false;
+
     });
     $(".reflections").click(function () {
         //---------------hide homepage
@@ -188,6 +189,7 @@ $(document).ready(function () {
                 next();
             });
         return false;
+ 
     });
     $(".spiritmolecule").click(function () {
         //---------------hide homepage
@@ -201,6 +203,7 @@ $(document).ready(function () {
                 next();
             });
         return false;
+
     });
     $(".soundscapes").click(function () {
         //---------------hide homepage
@@ -214,6 +217,7 @@ $(document).ready(function () {
                 next();
             });
         return false;
+
     });
     $(".discoveryourair").click(function () {
         //---------------hide homepage
@@ -227,6 +231,7 @@ $(document).ready(function () {
                 next();
             });
         return false;
+
     });
     $(".reconna").click(function () {
         //---------------hide homepage
@@ -240,7 +245,8 @@ $(document).ready(function () {
                 next();
             });
         return false;
-    });
+
+    }); 
 
     //--------------document closing bracket—don't touch
 });

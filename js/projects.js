@@ -2,9 +2,15 @@ $(document).ready(function () {
     $("#project").fadeIn("100");
 
     //------------------------------------redirect to homepage when .name or .projectTitle are clicked
-    $(".name").click(function () {
-        $(".projectTitle").css("transform", "rotateY(90deg)");
+$(".name").click(function () {
+    let w = window.innerWidth;
+       $(".projectTitle").css("transform", "rotateY(90deg)");
         $("#project").slideToggle(200);
+        if (w < 700){
+            $(".pic").css("transform", "rotateY(0deg)");
+            $(".pic").fadeIn("200");
+        }
+        $("#homepage").fadeIn("300");
         $(document)
             .delay(300)
             .queue(function (next) {
