@@ -112,6 +112,9 @@ var bottomScrolled = $(window).scroll(function() {
      $(window).resize(function () {
         bottomVisibility();
      });
+     $(window).load(function () {
+        bottomVisibility();
+     });
 
     //------------------------------------------------------------------to fix media queries
     $(window).resize(function () {
