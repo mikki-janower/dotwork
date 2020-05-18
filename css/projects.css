@@ -316,6 +316,13 @@ input:focus::-webkit-slider-runnable-track {
         }
     }
 @media (max-width: 750px) {
+    .top{   
+        grid-template-columns: 35vw 65vw;
+    }
+    .top .index{
+                display:none;
+                transition:.2s;
+         }
         #project{
             display:flex;
             flex-direction:column;
@@ -344,11 +351,8 @@ input:focus::-webkit-slider-runnable-track {
         }
     }
     @media (max-width: 550px) {
-          .top{
-    grid-template-columns: 35vw 65vw;}
-        .index{
-            display:none;
-            transition:.2s;
+        #project img{
+            cursor:default;
         }
 
         #description, #description a{

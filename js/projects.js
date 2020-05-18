@@ -3,6 +3,7 @@ $(document).ready(function () {
 
     //------------------------------------redirect to homepage when .name or .projectTitle are clicked
     $(".name").click(function () {
+        $(".projectTitle").css("transform", "rotateY(90deg)");
         $("#project").slideToggle(200);
         $(document)
             .delay(300)
@@ -12,18 +13,6 @@ $(document).ready(function () {
             });
         return false;
     });
-
-    /* $('.projectTitle').click(function(){
-    window.location.href = 'index.html';
-      return false;
-});
-//-------------------------------------------------------------say "back" on hover
-$('.projectTitle').mouseover(function(){
-        $('.projectTitle').html("Back");
-});
-$('.projectTitle').mouseout(function(){
-    $('.projectTitle').html(title);
-}); */
     //-------------------------------------------------------------enlarge image on click
 
     $("#project img").each(function (index) {

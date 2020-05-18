@@ -1,16 +1,4 @@
 $(document).ready(function () {
-    //---------------------------------shorten name on smaller window sizes
-
-    const w = window.innerWidth;
-    if (w >= 1000) {
-        $(".name").html(
-            "Mikki Janower<span class='dot'>&nbsp dot &nbsp</span>Work"
-        );
-    } else if (w < 1000) {
-        $(".name").html("Mikki<span class='dot'>&nbsp dot &nbsp</span>Work");
-    } else if (w < 700) {
-        $(".name").html("Mikki");
-    }
 
     //---------------------------------do the same thing on window resize
     const dot = (function () {
@@ -24,12 +12,15 @@ $(document).ready(function () {
                 "Mikki<span class='dot'>&nbsp dot &nbsp</span>Work"
             );
         } else {
-            $(".name").html("Mikki");
-            $(".dot").html("");
+            $(".name").html(
+                "Mikki"
+            ); 
         }
     });
     dot();
-    
+    $(window).resize(function() {
+        dot();
+    });
 
     //-----------------------track mouse position on the page
     document.addEventListener("mousemove", function (event) {
@@ -64,25 +55,6 @@ $(document).ready(function () {
         });
         //---------------------------------end of mousemove function
     });
-
-    //---------------------------------get rid of 'Janower'
-    $(window).resize(function () {
-        const w = window.innerWidth;
-        if (w >= 1000) {
-            $(".name").html(
-                "Mikki Janower<span class='dot'>&nbsp dot &nbsp</span>Work"
-            );
-        } else if (w < 1000) {
-            if (w > 700) {
-                $(".name").html(
-                    "Mikki<span class='dot'>&nbsp dot &nbsp</span>Work"
-                );
-            } else if (w < 700) {
-                $(".name").html("Mikki");
-            }
-        }
-    });
-
     //------------------------------------------------------------------no scrollbar unless necessary
 
     //------------------------------------------------------------------to fix media queries

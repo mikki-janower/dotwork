@@ -1,7 +1,5 @@
 $(document).ready(function () {
     $("#homepage").fadeIn("100");
-
-    let w = window.innerWidth;
     let name = true;
 
     //----------------------------make top and bottom sections sticky
@@ -57,7 +55,7 @@ $(document).ready(function () {
             name = true;
 
             //---------------bring back project, if applicable
-            $("#project").css("transform", "rotateY(0deg)");
+            $("#project").css("transform", "rotateY(90deg)");
             $("#project")
                 .delay("300")
                 .fadeIn("200");
