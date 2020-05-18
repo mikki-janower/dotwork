@@ -71,25 +71,11 @@ box-shadow: 0px -1px 11px 12px rgba(255,255,255,1);
 .index{
   justify-self:flex-end;
 }
-.top, .bottom{
-  z-index:10;
-}
-
 .bottom{
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
-  padding:0;
-  margin-bottom:10px;
-	bottom: 0;
-  left: 10px;
-  position: fixed;
-  /*background-color:rgba(255, 255, 255, .8);
-  -webkit-box-shadow: 0px -1px 11px 12px rgba(255,255,255,.8);
-  -moz-box-shadow: 0px -1px 11px 12px rgba(255,255,255,.8);
-  box-shadow: 0px -1px 11px 12px rgba(255,255,255,.8);*/
-}
-.bottom a{
-  margin:0px;
+  position:fixed;
+  bottom:10px;
 }
 a{
   text-decoration: none;
@@ -98,7 +84,6 @@ a{
 .flip{
   transition: .2s;
   text-align:left;
-  padding-right:10px;
   justify-content:flex-start;
 }
 .top .flip:hover, .flip:hover, .top .flip:active{
@@ -110,7 +95,7 @@ a{
  font-size: 1.9em;;
  line-height:1.1;
  font-family: 'Times New Roman';
- top: 4vh;
+ margin-top: 80px;
  left: 0;
  width: 100vw;
  max-height: 100%;
@@ -124,12 +109,15 @@ a{
   mix-blend-mode:multiply;
   grid-column:2;
   max-width:60vw;
+  align-self:flex-start;
+  justify-self:flex-start;
+  padding:0;
+  margin:0;
 }
 #about img{
   grid-column:1;
   grid-row:1;
   max-width:75%;
-  margin-top:5vh;
 }
 
 #index{
@@ -533,22 +521,6 @@ display:none;
     width: 90vw;
     font-size:.75em;
   }
-  /*}
-  .spiritmolecule{
-    margin-top:-200px;
-  }
-  .majorarcana{
-    margin-top:-180px;
-  }
-  .discoveryourair{
-    margin-top:-220px;
-  }
-  .soundscapes{
-    margin-top:-40px;
-  }
-  .reconna{
-    margin-top: 70px;
-  }*/
 }
 
 @media (max-width: 775px) { 
@@ -566,8 +538,14 @@ display:none;
 @media (max-width: 700px) { 
   #about{
     position:relative;
-    top:5vh;
     margin-left:-10px;
+    grid-template-columns: 30vw 55vw 5vw;
+  }
+  #about p{
+    grid-column:2;
+    max-width:100%;
+    margin:0;
+    left:0;
   }
 
   #homepage{
@@ -637,6 +615,9 @@ display:none;
 }
 
 @media (max-width: 475px) { 
+  #about p{
+    font-size:16px;
+  }
 
 }
 

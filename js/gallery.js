@@ -55,7 +55,59 @@ $(document).ready(function () {
         });
         //---------------------------------end of mousemove function
     });
-    //------------------------------------------------------------------no scrollbar unless necessary
+    
+       //----------------------------make top and bottom sections sticky
+     /*  $(window).scroll(function () {
+        var sticky = $(".sticky"),
+            scroll = $(window).scrollTop();
+
+        if (scroll >= 0) sticky.addClass("fixed");
+        else sticky.removeClass("fixed");
+    });
+
+    $(window).resize(function () {
+        let w = window.innerWidth;
+        if (w < 700) {
+            $(".bottom").removeClass("sticky");
+            $(".bottom").removeClass("fixed");
+            $(".bottom").css({});
+        }
+    }); */
+
+//----------------------------make top and bottom sections sticky
+//----------------------------make bottom visible only at the bottom of the page on mobile
+          $(window).scroll(function () {
+            let sticky = $(".sticky");
+            scroll = $(window).scrollTop();
+            
+            if (scroll >= 0){
+                sticky.css("position", "fixed");
+            }else {
+                sticky.removeClass("position","fixed");
+            } 
+        });
+
+
+       /* const bottomVisibility = function () {
+            let w = window.innerWidth;
+
+    
+            if (w < 700) {
+                $('.bottom').css("display", "none");
+            } else {
+                $('.bottom').css("display", "inline-flex");
+            }
+            
+        }
+
+        $(window).scroll(function () {
+            bottomVisibility();
+        });
+        $(window).resize(function () {
+            bottomVisibility();
+        });
+
+        bottomVisibility(); */
 
     //------------------------------------------------------------------to fix media queries
     $(window).resize(function () {
@@ -76,5 +128,6 @@ $(document).ready(function () {
             );
         }
     });
+
     //--------------------document closing bracket, don't touch
 });

@@ -2,24 +2,6 @@ $(document).ready(function () {
     $("#homepage").fadeIn("100");
     let name = true;
 
-    //----------------------------make top and bottom sections sticky
-    $(window).scroll(function () {
-        var sticky = $(".sticky"),
-            scroll = $(window).scrollTop();
-
-        if (scroll >= 0) sticky.addClass("fixed");
-        else sticky.removeClass("fixed");
-    });
-
-    $(window).resize(function () {
-        let w = window.innerWidth;
-        if (w < 700) {
-            $(".bottom").removeClass("sticky");
-            $(".bottom").removeClass("fixed");
-            $(".bottom").css({});
-        }
-    });
-
     //----------------------------------------------------------#about page turn
     let about = false;
     $(".about").click(function () {
@@ -121,6 +103,8 @@ $(document).ready(function () {
     //---------------------------------.name homepage turn
     $(".name").click(function () {
         if (name == false) {
+            let w = window.innerWidth; 
+            
             $(".projectTitle").css("transform", "rotateY(90deg)");
             //---------------hide index
             if (index == true) {
@@ -135,8 +119,14 @@ $(document).ready(function () {
                 about = false;
             }
             //---------------bring back homepage
-            $(".pic").css("transform", "rotateY(90deg)");
-            $(".pic").fadeIn("200");
+            if (w > 500){
+                $(".pic").css("transform", "rotateY(90deg)");
+                $(".pic").fadeIn("200");
+            } else {
+                $(".pic").css("transform", "rotateY(0deg)");
+                $(".pic").fadeIn("200");
+            }
+
         }
     });
 
