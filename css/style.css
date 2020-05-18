@@ -621,11 +621,10 @@ display:none;
     display:flex;
     flex-direction:column;
     align-items:flex-start;
+    margin-top:250px;
     margin-bottom:160px;
   }
   #about p{
-    top:0;
-    margin-top:200px;
     margin-bottom:15px;
   }
   #about img{
