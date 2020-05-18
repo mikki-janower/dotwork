@@ -23,6 +23,7 @@ $(document).ready(function () {
     //----------------------------------------------------------#about page turn
     let about = false;
     $(".about").click(function () {
+        let w = window.innerWidth; 
         if (about == false) {
             //---------------hide homepage
             $(".pic").css("transform", "rotateY(90deg)");
@@ -48,8 +49,13 @@ $(document).ready(function () {
             about = true;
         } else {
             $("#about").slideToggle("200");
-            $(".pic").css("transform", "rotateY(90deg)");
-            $(".pic").fadeIn("200");
+            if (w > 500){
+                $(".pic").css("transform", "rotateY(90deg)");
+                $(".pic").fadeIn("200");
+            } else {
+                $(".pic").css("transform", "rotateY(0deg)");
+                $(".pic").fadeIn("200");
+            }
             $(".about").html("About");
             about = false;
             name = true;
@@ -65,6 +71,9 @@ $(document).ready(function () {
     //----------------------------------------------#index page turn
     let index = false;
     $(".index").click(function () {
+
+    let w = window.innerWidth; 
+
         if (index == false) {
             //---------------hide homepage
             $(".pic").css("transform", "rotateY(90deg)");
@@ -90,14 +99,19 @@ $(document).ready(function () {
             index = true;
         } else {
             $("#index").slideToggle("200");
-            $(".pic").css("transform", "rotateY(90deg)");
-            $(".pic").fadeIn("200");
+            if (w > 500){
+                $(".pic").css("transform", "rotateY(90deg)");
+                $(".pic").fadeIn("200");
+            } else {
+                $(".pic").css("transform", "rotateY(0deg)");
+                $(".pic").fadeIn("200");
+            }
             $(".index").html("Index");
             index = false;
             name = true;
 
             //---------------bring back project, if applicable
-            $("#project").css("transform", "rotateY(0deg)");
+            $("#project").css("transform", "rotateY(90deg)");
             $("#project")
                 .delay("300")
                 .fadeIn("200");
@@ -107,6 +121,7 @@ $(document).ready(function () {
     //---------------------------------.name homepage turn
     $(".name").click(function () {
         if (name == false) {
+            $(".projectTitle").css("transform", "rotateY(90deg)");
             //---------------hide index
             if (index == true) {
                 $("#index").slideToggle("200");

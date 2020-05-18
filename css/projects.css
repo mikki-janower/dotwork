@@ -297,7 +297,7 @@ input:focus::-webkit-slider-runnable-track {
         grid-template-columns:32vw 3vw 63vw 2vw; 
     }
 @media (max-width: 1000px) {
-        #description, #description a, .detail{
+        #description, #description a, .detail, .detail a{
             font-size:14px;
         }
         #project #label{
@@ -334,6 +334,9 @@ input:focus::-webkit-slider-runnable-track {
             font-size:13px;
             margin-bottom:20px;
         }
+        .detail a{
+            font-size:13px;
+        }
         #project #label{
             font-size:22px;
         }
@@ -359,6 +362,9 @@ input:focus::-webkit-slider-runnable-track {
             font-size:16px;
         }
         .detail{
+            font-size:12px;
+        }
+        .detail a{
             font-size:12px;
         }
         #project #label{
