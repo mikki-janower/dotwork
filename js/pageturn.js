@@ -12,21 +12,24 @@ $(document).ready(function () {
             $(".pic").css("transform", "rotateY(0deg)");
             $(".pic").fadeIn("200");
         }
+
+            //---------------background color change{
         $('.top').css({
-            "transition" : ".2s",
             "background-color": "white",
-            "-webkit-box-shadow": "0px -1px 11px 12px white",
-            "-moz-box-shadow": "0px -1px 11px 12px white",
-            "box-shadow": "0px -1px 11px 12px white"
+            "box-shadow": "0px -1px 11px 12px white",
+            "-webkit-transition": "1s ease-in 0s",
+            "-moz-transition": "1s ease-in 0s",
+            "-o-transition": "1s ease-in 0s",
+            "transition": "1s ease-in 0s"
         }); 
         $('body').css({
-            "transition" : ".2s",
             "background-color": "white",
+            "-webkit-transition": "1s ease-in 0s",
+            "-moz-transition": "1s ease-in 0s",
+            "-o-transition": "1s ease-in 0s",
+            "transition": "1s ease-in 0s"
         });
         $("#homepage").fadeIn("300");
-
-    //--------background change back
-    //---------------background color change{
 
     }
 
@@ -39,6 +42,7 @@ $(document).ready(function () {
             $(".pic").css("transform", "rotateY(90deg)");
             $(".pic").fadeOut("200");
             $("#homepage").fadeOut("300");
+            $(".dragTitle").fadeOut("300");
             name = false;
 
             //---------------hide projects
@@ -59,7 +63,23 @@ $(document).ready(function () {
             $(".about").html("Back");
             about = true;
             //---------------background color change{
-            
+
+             /*   $('.top').css({
+                    "background-color": "#c2e5b8",
+                    "box-shadow": "0px -1px 11px 12px #c2e5b8",
+                    "-webkit-transition": "1s linear 0s",
+                    "-moz-transition": "1s linear 0s",
+                    "-o-transition": "1s linear 0s",
+                    "transition": "1s linear 0s"
+                }); 
+                $('body').css({
+                    "background-color": "#c2e5b8",
+                    "-webkit-transition": "1s linear 0s",
+                    "-moz-transition": "1s linear 0s",
+                    "-o-transition": "1s linear 0s",
+                    "transition": "1s linear 0s"
+                });*/
+
         } else {
             $("#about").slideToggle("200");
             homepageAppear();
@@ -79,6 +99,7 @@ $(document).ready(function () {
             //---------------hide homepage
             $(".pic").css("transform", "rotateY(90deg)");
             $(".pic").fadeOut("200");
+            $(".dragTitle").fadeOut("300");
             $("#homepage").fadeOut("300");
             name = false;
 
@@ -99,12 +120,30 @@ $(document).ready(function () {
                 .slideToggle("200");
             $(".index").html("Back");
             index = true;
+
+                  //----------------background color change
+           /* $('.top').css({
+                "background-color": "#d0e6ff",
+                "box-shadow": "0px -1px 11px 12px #d0e6ff",
+                "-webkit-transition": "1s linear 0s",
+                "-moz-transition": "1s linear 0s",
+                "-o-transition": "1s linear 0s",
+                "transition": "1s linear 0s"
+            }); 
+            $('body').css({
+                "background-color": "#d0e6ff",
+                "-webkit-transition": "1s linear 0s",
+                "-moz-transition": "1s linear 0s",
+                "-o-transition": "1s linear 0s",
+                "transition": "1s linear 0s"
+            });*/
         } else {
             $("#index").slideToggle("200");
             homepageAppear();
             $(".index").html("Index");
             index = false;
             name = true;
+
 
             //---------------bring back project, if applicable
             $("#project").css("transform", "rotateY(90deg)");
@@ -116,7 +155,7 @@ $(document).ready(function () {
 
     //---------------------------------.name homepage turn
     $(".name").click(function () {
-        if (name == false) {
+
             let w = window.innerWidth; 
 
             $(".projectTitle").css("transform", "rotateY(90deg)");
@@ -133,11 +172,19 @@ $(document).ready(function () {
                 about = false;
             }
             //---------------bring back homepage
-            homepageAppear();
             $(".index").html("Index");
+
+            $(document).delay(300).queue(function (next) {
+                window.location.href = "index.html";
+                next();
+            });
+
+            homepageAppear();
+        
+        return false;
             name = true;
 
-        }
+
     });
 
     //--------------------------------------------------------go to project pages

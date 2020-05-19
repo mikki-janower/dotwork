@@ -10,6 +10,7 @@
 
     <link rel="shortcut icon" type="image/png" href="assets/bigfavicon.png"/>
 
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="css/style.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/draggable/1.0.0-beta.9/draggable.min.js"></script>
@@ -17,14 +18,14 @@
 </head>
 <body>
     <section class="top sticky">
-    <a class="name">Mikki Janower <span class="dot">dot</span> Work</a>
+    <a class="name">Mikki Janower <span class="dot"> dot</span> Work</a>
     <a class="flip about">About</a>
     <a class="flip index">Index</a>
     </section>
    <!-- <div class="querytown"></div>-->
     <section id="about" style="display:none;">
    <!-- <div class="big">Mikki Janower <span class="bigsmall">is a</span> graphic designer<span class="bigsmall"> and </span>art director<span class="bigsmall"> based in</span> Brooklyn.</div>--> 
-    <p>Mikki Janower is a graphic designer and art director based in Brooklyn. Her work reflects her multidisciplinary background, robust visual research, and acute typophilia. She loves freelance projects and collaborations, particularly work skewed towards music and the arts.<br><br>She recently recieved a BFA in Communication Design from Washington University in St. Louis and is currently looking for postgraduate opportunities. Previous clients include Nike and The Governor's Ball Music Festival; previous internships include The Collected Works.</p>
+    <p>Mikki Janower is a graphic designer and art director based in Brooklyn. She loves freelance projects and collaborations. <br><br>She recently recieved a BFA in Communication Design from Washington University in St. Louis and is currently looking for postgraduate opportunities. Previous clients include Nike and The Governor's Ball Music Festival; previous internships include The Collected Works.</p>
     <img src="assets/headshot.jpg">    
 </section>
 
@@ -34,41 +35,42 @@
         </section>
     
 <section id="homepage"style="display:none">
-        <div class="pic cyberotica">
-            <img src="cyberotica/factoryofthesun2.jpg">
-             <div id="label"><span class="labelita">Cyberotica</span><span class="		 			labelreg">2020</span></div>
-       </div>
-        
-      <div class="pic postcursor">
-            <img src="postcursor/postcursor-01.png">
-            <div id="label"><span class="labelita">Postcursor/Starry Nite</span><span class="labelreg">2020</span></div>
-      </div>
-      <div class="pic reflections">
-        <img src="reflections/IMG_6544-copy.jpg">
-        <div id="label"><span class="labelita">Reflections on Practice</span><span class="labelreg">2019</span></div>
-    </div>
-    <div class="pic majorarcana">
-        <img src="majorarcana/IMG_2527-copy.jpg">
-        <div id="label"><span class="labelita">Cocktails of the Major Arcana</span><span class="labelreg">2019</span></div>
-    </div>
-    <div class="pic reconna">
-        <img src="reconna/IMG_1234-2.jpg">
-        <div id="label"><span class="labelita">Reconna Typeface</span><span class="labelreg">2019</span></div>
-    </div>
-    <div class="pic soundscapes">
-        <img src="soundscapes/IMG_1099.jpg">
-        <div id="label"><span class="labelita">Found Soundscapes</span><span class="labelreg">2019</span></div>
-    </div>
-    <div class="pic spiritmolecule">
-        <img src="spiritmolecule/spirit-molecule-02.png">
-        <div id="label"><span class="labelita">The Spirit Molecule</span><span class="labelreg">2019</span></div>
-    </div>
-    <div class="pic discoveryourair">
-        <img src="discoveryourair/Bumper-Sticker.jpg">
-        <div id="label"><span class="labelita">Nike: Discover Your Air</span><span class="labelreg">2017</span></div>
-    </div>
+    <div class="pic cyberotica">
+        <img src="cyberotica/factoryofthesun2.jpg">
+         <div id="label"><span class="labelita">Cyberotica</span><span class="		 			labelreg">2020</span></div>
+   </div>
+    
+  <div class="pic postcursor">
+        <img src="postcursor/postcursor-01.png">
+        <div id="label"><span class="labelita">Postcursor/Starry Nite</span><span class="labelreg">2020</span></div>
+  </div>
+  <div class="pic reflections">
+    <img src="reflections/IMG_6544-copy.jpg">
+    <div id="label"><span class="labelita">Reflections on Practice</span><span class="labelreg">2019</span></div>
+</div>
+<div class="pic majorarcana">
+    <img src="majorarcana/IMG_2527-copy.jpg">
+    <div id="label"><span class="labelita">Cocktails of the Major Arcana</span><span class="labelreg">2019</span></div>
+</div>
+<div class="pic reconna">
+    <img src="reconna/IMG_1234-2.jpg">
+    <div id="label"><span class="labelita">Reconna Typeface</span><span class="labelreg">2019</span></div>
+</div>
+<div class="pic soundscapes">
+    <img src="soundscapes/IMG_1099.jpg">
+    <div id="label"><span class="labelita">Found Soundscapes</span><span class="labelreg">2019</span></div>
+</div>
+<div class="pic spiritmolecule">
+    <img src="spiritmolecule/spirit-molecule-02.png">
+    <div id="label"><span class="labelita">The Spirit Molecule</span><span class="labelreg">2019</span></div>
+</div>
+<div class="pic discoveryourair">
+    <img src="discoveryourair/Bumper-Sticker.jpg">
+    <div id="label"><span class="labelita">Nike: Discover Your Air</span><span class="labelreg">2017</span></div>
+</div>
 </section>
 
+<section class="dragTitle" style="display:none;"></section>
 <section class="bottom sticky">
     <a class="flip" href="https://www.instagram.com/mikki.indd/" target="_blank">Instagram</a>
     <a class="flip" href="https://www.are.na/mikki-janower" target="_blank">Are.na</a>
@@ -78,6 +80,7 @@
     </section>
 
     <script src="assets/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/draggable/1.0.0-beta.9/draggable.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/instantclick/3.1.0/instantclick.min.js"></script>
     <script src="js/gallery.js"></script>

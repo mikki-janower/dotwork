@@ -16,7 +16,6 @@ $(document).ready(function () {
     }
 
     $(".name").click(function () {
-    let w = window.innerWidth;
        $(".projectTitle").css("transform", "rotateY(90deg)");
         $("#project").slideToggle(200);
         $(document)
