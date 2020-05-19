@@ -1,5 +1,26 @@
 $(document).ready(function () {
     $("#project").fadeIn("100");
+      //---------------------------------dot change 
+      const dot = (function () {
+        const w = window.innerWidth;
+        if (w >= 1000) {
+            $(".name").html(
+                "Mikki Janower<span class='dot'>&nbsp dot &nbsp</span>Work"
+            );
+        } else if (w >= 700) {
+            $(".name").html(
+                "Mikki<span class='dot'>&nbsp dot &nbsp</span>Work"
+            );
+        } else {
+            $(".name").html(
+                "Mikki"
+            ); 
+        }
+    });
+    dot();
+    $(window).resize(function() {
+        dot();
+    });
 
     //------------------------------------redirect to homepage when .name or .projectTitle are clicked
 

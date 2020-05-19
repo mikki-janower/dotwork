@@ -634,7 +634,7 @@ display:none;
     flex-direction:column;
     align-items:flex-start;
     justify-items:flex-start;
-    margin-top:100px;
+    margin-top:160px;
     margin-bottom:160px;
     width:98vw;
   }
@@ -642,37 +642,43 @@ display:none;
     margin-bottom:15px;
   }
   #about img{
-    width:120vw;
+    max-width:99%;
+    padding-right:10px;
   }
   #homepage{
-    min-width:100vw;
+    width:100vw;
     position:absolute;
     min-height:100vh;
-    margin:0;
-    padding:0;
-    top:0;
-    left:0;
-    right:0;
+    top:4.5vh;
     margin-top:0;
     display:flex;
-    margin-bottom:0;
+    left:0;
+    right:0;
+    padding:0;
     flex-direction:column;
-   overflow:hidden;
   }
   .pic #label{
-    font-size:16px;
+    font-size:18px;
     margin-top:12px;
+    margin-bottom:16px;
   }
   .pic{
-    max-width:30%;
-    width:101vw;
+    position:relative;
+    max-width:98%;
     height:auto;
+    cursor:pointer;
+    left:10px;
+    right:10px;
   }
-  /*.majorarcana, .soundscapes, .discoveryourair, .reconna, .spiritmolecule, .reflections, .postcursor{
-    margin-top:20px;
+  .pic:hover{
+    cursor:pointer;
   }
   .discoveryourair{
-    padding-bottom:160px;
+    padding-bottom:140px;
+  }
+
+  /*.majorarcana, .soundscapes, .discoveryourair, .reconna, .spiritmolecule, .reflections, .postcursor{
+    margin-top:20px;
   }*/
 }
 
