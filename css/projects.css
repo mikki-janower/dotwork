@@ -77,7 +77,7 @@ body{
     grid-column:3;
 }
 #project #label{
-    font-size:22px;
+    font-size:18px;
     margin-bottom:16px;
     display:flex;
     flex-direction:row;
@@ -309,7 +309,7 @@ input:focus::-webkit-slider-runnable-track {
     }
 @media (max-width: 900px) {
         #description, #description a, .detail{
-            font-size:12px;
+            font-size:13px;
         }
         #project #label{
             font-size:18px;

@@ -5,11 +5,11 @@ $(document).ready(function () {
         const w = window.innerWidth;
         if (w >= 1000) {
             $(".name").html(
-                "Mikki Janower<span class='dot'>&nbsp dot &nbsp</span>Work"
+                "Mikki Janower<span class='dot'>&nbspdot&nbsp</span>Work"
             );
         } else if (w >= 700) {
             $(".name").html(
-                "Mikki<span class='dot'>&nbsp dot &nbsp</span>Work"
+                "Mikki<span class='dot'>&nbspdot&nbsp</span>Work"
             );
         } else {
             $(".name").html(
@@ -74,55 +74,13 @@ $(document).ready(function () {
         }
     }); */
 
-//----------------------------make top and bottom sections sticky
-//----------------------------make bottom visible only at the bottom of the page on mobile
-   $(window).scroll(function () {
-            let sticky = $(".sticky");
-            scroll = $(window).scrollTop();
-            
-            if (scroll >= 0){
-                sticky.css("position", "fixed");
-            }else {
-                sticky.removeClass("position","fixed");
-            } 
-     });
-
-var bottomScrolled = $(window).scroll(function() {
-        let w = window.innerWidth;
-        if (w < 700) {
-          //  if($(window).scrollTop() + $(window).height() == $(document).height()) {
-            if($(window).scrollTop() + $(window).height() >= $(document).height() - 160) {
-                $(".bottom").fadeIn(200); 
-            } else {
-                $(".bottom").fadeOut(200);  
-            } 
-        }
-     });
-
-     const bottomVisibility = function () {
-         let w = window.innerWidth;
-         if (w < 700){
-            $(".bottom").css("display", "none");
-            bottomScrolled();
-         } else {
-            $(".bottom").css("display", "flex"); 
-         }
-     }
-
-     $(window).resize(function () {
-        bottomVisibility();
-     });
-     $(window).load(function () {
-        bottomVisibility();
-     });
-
     //------------------------------------------------------------------to fix media queries
     $(window).resize(function () {
         let width = window.innerWidth;
         $(".querytown").html("Width: " + width + " px");
 
         //.pic cyberotica label gets smaller
-        if (width < 900) {
+        if (width < 1000) {
             $(".cyberotica .labelita").html("Cyberotica");
             if (width < 700) {
                 $(".cyberotica .labelita").html(
@@ -135,6 +93,48 @@ var bottomScrolled = $(window).scroll(function() {
             );
         }
     });
+
+    //----------------------------make top and bottom sections sticky
+//----------------------------make bottom visible only at the bottom of the page on mobile
+   $(window).scroll(function () {
+    let sticky = $(".sticky");
+    scroll = $(window).scrollTop();
+    
+    if (scroll >= 0){
+        sticky.css("position", "fixed");
+    }else {
+        sticky.removeClass("position","fixed");
+    } 
+});
+
+var bottomScrolled = $(window).scroll(function() {
+let w = window.innerWidth;
+if (w < 700) {
+  //  if($(window).scrollTop() + $(window).height() == $(document).height()) {
+    if($(window).scrollTop() + $(window).height() >= $(document).height() - 160) {
+        $(".bottom").fadeIn(200); 
+    } else {
+        $(".bottom").fadeOut(200);  
+    } 
+}
+});
+
+const bottomVisibility = function () {
+ let w = window.innerWidth;
+ if (w < 700){
+    $(".bottom").css("display", "none");
+    bottomScrolled();
+ } else {
+    $(".bottom").css("display", "flex"); 
+ }
+}
+
+$(window).resize(function () {
+bottomVisibility();
+});
+$(window).load(function () {
+bottomVisibility();
+});
 
     //--------------------document closing bracket, don't touch
 });

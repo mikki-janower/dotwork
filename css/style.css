@@ -19,6 +19,10 @@
   font-family: 'Serif Light';
   src: url('fonts/SerifLight.otf');
 }
+@font-face{
+  font-family: 'Neue Machina';
+  src: url('fonts/NeueMachina-Regular.otf')
+}
 
 ::selection{
   background-color: yellow;
@@ -37,7 +41,8 @@ body {
 }
 .dot{
   font-size: 16px;
-  font-family: 'Serif Light Italic';
+  font-family: 'Times New Roman';
+  font-style:italic;
 }
 .top{
   z-index:100;
@@ -136,6 +141,7 @@ a{
    }
   #index p{
     position:absolute;
+    font-family: 'Neue Machina';
     left:50%;
     top:30%;
     transform:translate(-50%, -50%) rotate(-2deg);
@@ -156,8 +162,8 @@ a{
   position: relative;
   height: auto;
   color: black;
-  font-size: 1.2em;
-  font-family: "Serif Light";
+  font-size: 1em;
+  font-family: "Neue Machina";
   margin-top: 3px;
   display: flex;
   flex-direction: row;
@@ -165,10 +171,11 @@ a{
   max-width: 100%;
 }
 .labelita{
-  font-family: "Serif Light Italic";
+  font-family: "Neue Machina";
+  padding-right:10px;
 }
 .labelreg{
-  font-family: "TSerif Light";
+  font-family: "Neue Machina";
 }
 .pic{
   position:relative;
@@ -286,6 +293,7 @@ display:none;
     }
     .majorarcana{
       justify-self:flex-start;
+      margin-top:20px;
     }
     .discoveryourair{
       margin-top:-160px;
@@ -349,7 +357,7 @@ display:none;
 
 @media (max-width: 1275px) { 
   .majorarcana{
-    margin-top:-60px;
+    margin-top:-40px;
   }
   .soundscapes{
     margin-top:120px;
@@ -377,7 +385,7 @@ display:none;
     width:95vw;
   }
   .majorarcana{
-    margin-top:-60px;
+    margin-top:-50px;
   }
   .soundscapes{
     margin-top:100px;
@@ -403,7 +411,7 @@ display:none;
 
 @media (max-width: 1100px) { 
   .majorarcana{
-    margin-top:-120px;
+    margin-top:-70px;
   }
   .soundscapes{
     margin-top:40px;
@@ -425,7 +433,7 @@ display:none;
 
 @media (max-width: 1025px) { 
   .majorarcana{
-    margin-top:-150px;
+    margin-top:-110px;
   }
   .soundscapes{
     margin-top:-10px;
