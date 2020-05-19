@@ -188,10 +188,24 @@ $(document).ready(function () {
     });
 
     //--------------------------------------------------------go to project pages
+    //-----------------------------------------check whether clicking or dragging
+    // (ONLY redirect to link if the user is CLICKING the image, not dragging it)
+    var $body = $('body');
+    $body.on('mousedown', function (evt) {
+      $body.on('mouseup mousemove', function handler(evt) {
+        if (evt.type === 'mouseup') {
+          isDragging = false;
+        } else {
+          isDragging = true;
+        }
+        $body.off('mouseup mousemove', handler);
+      });
+    });
 
     $(".cyberotica").click(function () {
         //---------------hide homepage
-        $(".pic").css("transform", "rotateY(90deg)");
+        if (isDragging ==false){
+            $(".pic").css("transform", "rotateY(90deg)");
         $(".about").css("transform", "rotateY(90deg)");
         $(".pic").fadeOut("200");
         $(document)
@@ -201,11 +215,13 @@ $(document).ready(function () {
                 next();
             });
         return false;
-   
+        }
+        
     });
 
     $(".postcursor").click(function () {
         //---------------hide homepage
+        if (isDragging ==false){
         $(".pic").css("transform", "rotateY(90deg)");
         $(".about").css("transform", "rotateY(90deg)");
         $(".pic").fadeOut("200");
@@ -216,9 +232,10 @@ $(document).ready(function () {
                 next();
             });
         return false;
-  
+        }
     });
     $(".majorarcana").click(function () {
+        if (isDragging ==false){
         //---------------hide homepage
         $(".pic").css("transform", "rotateY(90deg)");
         $(".about").css("transform", "rotateY(90deg)");
@@ -230,9 +247,10 @@ $(document).ready(function () {
                 next();
             });
         return false;
-
+        }
     });
     $(".reflections").click(function () {
+        if (isDragging ==false){
         //---------------hide homepage
         $(".pic").css("transform", "rotateY(90deg)");
         $(".about").css("transform", "rotateY(90deg)");
@@ -244,9 +262,10 @@ $(document).ready(function () {
                 next();
             });
         return false;
- 
+        }
     });
     $(".spiritmolecule").click(function () {
+        if (isDragging ==false){
         //---------------hide homepage
         $(".pic").css("transform", "rotateY(90deg)");
         $(".about").css("transform", "rotateY(90deg)");
@@ -258,9 +277,10 @@ $(document).ready(function () {
                 next();
             });
         return false;
-
+        }
     });
     $(".soundscapes").click(function () {
+        if (isDragging ==false){
         //---------------hide homepage
         $(".pic").css("transform", "rotateY(90deg)");
         $(".about").css("transform", "rotateY(90deg)");
@@ -272,9 +292,10 @@ $(document).ready(function () {
                 next();
             });
         return false;
-
+        }
     });
     $(".discoveryourair").click(function () {
+        if (isDragging ==false){
         //---------------hide homepage
         $(".pic").css("transform", "rotateY(90deg)");
         $(".about").css("transform", "rotateY(90deg)");
@@ -286,9 +307,10 @@ $(document).ready(function () {
                 next();
             });
         return false;
-
+        }
     });
     $(".reconna").click(function () {
+        if (isDragging ==false){
         //---------------hide homepage
         $(".pic").css("transform", "rotateY(90deg)");
         $(".about").css("transform", "rotateY(90deg)");
@@ -300,7 +322,7 @@ $(document).ready(function () {
                 next();
             });
         return false;
-
+        }
     }); 
 
     //--------------document closing bracket—don't touch

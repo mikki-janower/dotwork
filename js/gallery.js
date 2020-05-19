@@ -21,19 +21,6 @@ $(document).ready(function () {
     $(window).resize(function() {
         dot();
     });
-
-
-  /*  const homepageAppear = function () {
-        let w = window.innerWidth;
-        if (w > 700){
-            $(".pic").css("transform", "rotateY(90deg)");
-            $(".pic").fadeIn("200");
-        } else {
-            $(".pic").css("transform", "rotateY(0deg)");
-            $(".pic").fadeIn("200");
-        }
-        $("#homepage").fadeIn("300");
-    }*/
     //-----------------------a weird attempt at random positioning
    
 // collect all the divs
@@ -76,12 +63,7 @@ function getRandomNumber(min, max) {
     
   return Math.random() * (max - min) + min;
 } 
-    
 
-/*var divs = document.querySelectorAll('.pic');
-var pics = jQuery.makeArray( divs );*/
-
-positionRandom();
 
 //reload homepage function
 const reloadHome = function(){
@@ -95,6 +77,7 @@ const reloadHome = function(){
 
 return false;
 }
+
 const homepageAppear = function () {
 let w = window.innerWidth;
 if (w > 700){
@@ -318,16 +301,6 @@ $('.pic').on("dragstop", function( event, ui ) {
             });
         }
         });
-
- 
-
-
-
-
-
-
-
-
 
 
     //--------------------document closing bracket, don't touch
