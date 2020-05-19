@@ -4,6 +4,15 @@
   src: url("fonts/SansMedium.otf");
 }
 @font-face{
+  font-family: 'Saol Italic';
+  src: url("fonts/SaolDisplay-RegularItalic.otf");
+}
+@font-face{
+  font-family: 'Saol';
+  src: url('fonts/SaolDisplay-Regular.otf');
+}
+
+@font-face{
   font-family:  'Serif Light Italic';
   src: url('fonts/SerifLightItalic.otf');
 }
@@ -24,6 +33,7 @@
   src: url('fonts/NeueMachina-Regular.otf')
 }
 
+
 ::selection{
   background-color: yellow;
 }
@@ -41,8 +51,7 @@ body {
 }
 .dot{
   font-size: 16px;
-  font-family: 'Times New Roman';
-  font-style:italic;
+  font-family: 'Saol Italic';
 }
 .top{
   z-index:100;
@@ -61,14 +70,20 @@ body {
 -moz-box-shadow: 0px -1px 11px 12px rgba(255,255,255,1);
 box-shadow: 0px -1px 11px 12px rgba(255,255,255,1);
 }
-.top p, a{
+.top p, .top a, .bottom a, #projfooter{
   color: black;
   font-family: 'Sans Medium';
-  font-size: 1.7em;
+  letter-spacing:-.2px;
+  /*font-family: 'Neue Machina';
+  text-transform:uppercase;*/
+  font-size: 1.8rem;
   margin-right: 2vw;
   text-align: left;
   cursor: pointer;
   padding-right: 20px;
+}
+a{
+  color:black;
 }
 .about{
   justify-self:flex-start;
@@ -95,22 +110,41 @@ a{
   transform: rotateY(180deg);
 }
 
+.big{
+  font-family:"Saol Italic";
+  font-size:2.5em;
+  line-height:1;
+  grid-row:1;
+  grid-column: 1/span 2;
+}
+/*.bigsmall{
+  font-family: "Saol Italic";
+  text-transform:uppercase;
+  font-size:30px;
+  padding-right:6px;
+  padding-left:6px;
+  left:0;
+  right:0;
+}*/
 #about{
- position: fixed;
+ position: absolute;
  font-size: 1.9em;;
  line-height:1.1;
  font-family: 'Times New Roman';
  margin-top: 80px;
+ margin-bottom:120px;
  left: 0;
  width: 100vw;
- max-height: 100vh;
  padding: 10px 16px 16px 10px;
  display: grid;
  grid-template-columns: 35vw 58vw 1fr;
+ grid-template-rows: auto auto;
  justify-content:space-evenly;
+ overflow-y:scroll;
 }
 #about p{
   mix-blend-mode:multiply;
+  grid-row:2;
   grid-column:2;
   max-width:60vw;
   align-self:flex-start;
@@ -119,12 +153,16 @@ a{
   margin:0;
 }
 #about img{
+  position:relative;
   grid-column:1;
-  grid-row:1;
-  max-width:75%;
+  grid-row:2;
+  max-width:90%;
   margin:0;
   padding:0;
-  padding-bottom:160px;
+  margin-right:20px;
+  margin-top:2px;
+  justify-self:flex-start
+
 }
 
 #index{
@@ -142,6 +180,7 @@ a{
   #index p{
     position:absolute;
     font-family: 'Neue Machina';
+    line-height:1;
     left:50%;
     top:30%;
     transform:translate(-50%, -50%) rotate(-2deg);
@@ -172,10 +211,11 @@ a{
 }
 .labelita{
   font-family: "Neue Machina";
+  line-height:1;
   padding-right:10px;
 }
 .labelreg{
-  font-family: "Neue Machina";
+  font-family: "Saol";
 }
 .pic{
   position:relative;
@@ -293,7 +333,7 @@ display:none;
     }
     .majorarcana{
       justify-self:flex-start;
-      margin-top:20px;
+      margin-top:0px;
     }
     .discoveryourair{
       margin-top:-160px;
@@ -333,7 +373,7 @@ display:none;
     width:auto;
   }
   .majorarcana{
-    margin-top:-20px;
+    margin-top:-60px;
   }
   .soundscapes{
     margin-top:160px;
@@ -357,7 +397,7 @@ display:none;
 
 @media (max-width: 1275px) { 
   .majorarcana{
-    margin-top:-40px;
+    margin-top:-100px;
   }
   .soundscapes{
     margin-top:120px;
@@ -385,7 +425,7 @@ display:none;
     width:95vw;
   }
   .majorarcana{
-    margin-top:-50px;
+    margin-top:-90px;
   }
   .soundscapes{
     margin-top:100px;
@@ -411,7 +451,7 @@ display:none;
 
 @media (max-width: 1100px) { 
   .majorarcana{
-    margin-top:-70px;
+    margin-top:-120px;
   }
   .soundscapes{
     margin-top:40px;
@@ -433,7 +473,7 @@ display:none;
 
 @media (max-width: 1025px) { 
   .majorarcana{
-    margin-top:-110px;
+    margin-top:-160px;
   }
   .soundscapes{
     margin-top:-10px;
@@ -461,7 +501,10 @@ display:none;
 
 @media (max-width: 925px) { 
   .majorarcana{
-    margin-top: -120px;
+    margin-top: -200px;
+  }
+  .soundscapes{
+    margin-top: -30px;
   }
 
 }
@@ -471,7 +514,7 @@ display:none;
     font-size: 2em;
   }
   #index p{
-    width:80vw;
+    width:85vw;
   }
   #about p{
     width: 75vw;
@@ -504,10 +547,10 @@ display:none;
     justify-self:center;
   }
   .discoveryourair{
-    margin-top:-160px;
+    margin-top:-130px;
   }
   .soundscapes{
-    margin-top:-120px;
+    margin-top:-80px;
     justify-self:center;
   }
   .reconna{
@@ -568,8 +611,8 @@ display:none;
    /* overflow-y:scroll;*/
   }
   .pic #label{
-    font-size:22px;
-    margin-top:8px;
+    font-size:20px;
+    margin-top:12px;
   }
   .pic{
     max-width:100%;

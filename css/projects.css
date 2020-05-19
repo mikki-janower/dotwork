@@ -12,19 +12,20 @@
     src: url('fonts/ReconnaSerif.otf');
   }
 @font-face{
-    font-family: 'TSerif Light';
-    src: url('fonts/Tserif Light.otf');
+    font-family: 'Neue Machina Medium';
+    src: url('fonts/NeueMachina-Medium.otf');
   }
 
 body{
     overflow-y:scroll;
 }
 
-#projfooter{
+#projfooter, #projfooter a{
         display:flex;
+        color:black;
         justify-content:space-between;
         padding-top:40px;
-        margin-bottom:10px;
+        margin-bottom:2px;
         grid-column:3/span 2;
         grid-row:4;
  }
@@ -77,6 +78,7 @@ body{
     grid-column:3;
 }
 #project #label{
+    margin-top:10px;
     font-size:18px;
     margin-bottom:16px;
     display:flex;
@@ -101,14 +103,14 @@ body{
 }
 #description a{
     font-size:16px;
-    font-family: "Sans Medium Italic";
+    font-style:italic;
 }
 .detail{
     font-size:14px;
     display:flex;
     flex-direction:row;
     justify-content:space-between;
-    border-top:1.3px black solid;
+   border-top:1.3px black solid;
     padding-top:0px;
     padding-bottom:0px;
 }
@@ -119,6 +121,7 @@ body{
     font-size:14px; 
     padding:0;
     margin:0;
+    font-style:italic;
 }
 #gallery{
 grid-column:3;
@@ -304,7 +307,7 @@ input:focus::-webkit-slider-runnable-track {
             font-size:20px;
         }
         #projfooter{
-            font-size: 1em;
+            font-size: 1.8rem;
         }
     }
 @media (max-width: 900px) {

@@ -12,7 +12,22 @@ $(document).ready(function () {
             $(".pic").css("transform", "rotateY(0deg)");
             $(".pic").fadeIn("200");
         }
+        $('.top').css({
+            "transition" : ".2s",
+            "background-color": "white",
+            "-webkit-box-shadow": "0px -1px 11px 12px white",
+            "-moz-box-shadow": "0px -1px 11px 12px white",
+            "box-shadow": "0px -1px 11px 12px white"
+        }); 
+        $('body').css({
+            "transition" : ".2s",
+            "background-color": "white",
+        });
         $("#homepage").fadeIn("300");
+
+    //--------background change back
+    //---------------background color change{
+
     }
 
     //----------------------------------------------------------#about page turn
@@ -43,16 +58,10 @@ $(document).ready(function () {
                 .slideToggle("200");
             $(".about").html("Back");
             about = true;
+            //---------------background color change{
+            
         } else {
             $("#about").slideToggle("200");
-            /*if (w > 700){
-                $(".pic").css("transform", "rotateY(90deg)");
-                $(".pic").fadeIn("200");
-            } else {
-                $(".pic").css("transform", "rotateY(0deg)");
-                $(".pic").fadeIn("200");
-            }
-            $("#homepage").fadeIn("300");*/
             homepageAppear();
             $(".about").html("About");
             about = false;
@@ -92,14 +101,6 @@ $(document).ready(function () {
             index = true;
         } else {
             $("#index").slideToggle("200");
-           /* if (w > 500){
-                $(".pic").css("transform", "rotateY(90deg)");
-                $(".pic").fadeIn("200");
-            } else {
-                $(".pic").css("transform", "rotateY(0deg)");
-                $(".pic").fadeIn("200");
-            }
-            $("#homepage").fadeIn("300");*/
             homepageAppear();
             $(".index").html("Index");
             index = false;
@@ -132,14 +133,6 @@ $(document).ready(function () {
                 about = false;
             }
             //---------------bring back homepage
-           /* if (w > 500){
-                $(".pic").css("transform", "rotateY(90deg)");
-                $(".pic").fadeIn("200");
-            } else {
-                $(".pic").css("transform", "rotateY(0deg)");
-                $(".pic").fadeIn("200");
-            }
-            $("#homepage").fadeIn("300");*/
             homepageAppear();
             $(".index").html("Index");
             name = true;

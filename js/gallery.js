@@ -1,15 +1,16 @@
 $(document).ready(function () {
 
+
     //---------------------------------do the same thing on window resize
     const dot = (function () {
         const w = window.innerWidth;
         if (w >= 1000) {
             $(".name").html(
-                "Mikki Janower<span class='dot'>&nbspdot&nbsp</span>Work"
+                "Mikki Janower<span class='dot'> dot &nbsp</span>Work"
             );
         } else if (w >= 700) {
             $(".name").html(
-                "Mikki<span class='dot'>&nbspdot&nbsp</span>Work"
+                "Mikki<span class='dot'> dot &nbsp</span>Work"
             );
         } else {
             $(".name").html(
@@ -42,8 +43,8 @@ $(document).ready(function () {
 
             //-----------change angle for X and Y to turn each pic as the mouse move
 
-            let angleX = (targetY - y) / 30;
-            let angleY = (targetX - x) / -30;
+            let angleX = (targetY - y) / 25;
+            let angleY = (targetX - x) / -25;
 
             //-----------transform each pic
             if (w >= 700) {
@@ -80,7 +81,7 @@ $(document).ready(function () {
         $(".querytown").html("Width: " + width + " px");
 
         //.pic cyberotica label gets smaller
-        if (width < 1000) {
+       /* if (width < 1000) {
             $(".cyberotica .labelita").html("Cyberotica");
             if (width < 700) {
                 $(".cyberotica .labelita").html(
@@ -91,7 +92,7 @@ $(document).ready(function () {
             $(".cyberotica .labelita").html(
                 "Cyberotica: Technology & Fetish in Contemporary Art"
             );
-        }
+        } */
     });
 
     //----------------------------make top and bottom sections sticky
@@ -107,17 +108,19 @@ $(document).ready(function () {
     } 
 });
 
-var bottomScrolled = $(window).scroll(function() {
-let w = window.innerWidth;
-if (w < 700) {
-  //  if($(window).scrollTop() + $(window).height() == $(document).height()) {
-    if($(window).scrollTop() + $(window).height() >= $(document).height() - 160) {
-        $(".bottom").fadeIn(200); 
-    } else {
-        $(".bottom").fadeOut(200);  
-    } 
-}
+const bottomScrolled = function() {
+$(window).scroll(function () {
+    let w = window.innerWidth;
+    if (w < 700) {
+      //  if($(window).scrollTop() + $(window).height() == $(document).height()) {
+        if($(window).scrollTop() + $(window).height() >= $(document).height() - 160) {
+            $(".bottom").fadeIn(200); 
+        } else {
+            $(".bottom").fadeOut(200);  
+        } 
+    }
 });
+};
 
 const bottomVisibility = function () {
  let w = window.innerWidth;
@@ -132,9 +135,14 @@ const bottomVisibility = function () {
 $(window).resize(function () {
 bottomVisibility();
 });
-$(window).load(function () {
+
 bottomVisibility();
-});
+
+        //----------------------make images draggable
+        $( ".pic" ).draggable({
+            containment: "#homepage"
+        });
+
 
     //--------------------document closing bracket, don't touch
 });
