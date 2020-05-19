@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    $( ".pic" ).draggable();
     
     //---------------------------------dot change 
     const dot = (function () {
@@ -110,18 +109,19 @@ if (w > 700){
 const isDraggable = function(){
     let w = window.innerWidth;
     if (w > 700){
+        $( ".pic" ).draggable();
         $( ".pic" ).draggable( "option", "disabled", false );
         positionRandom();
         dragFunction = true;
     } else {
         $( ".pic" ).draggable( "option", "disabled", true );
         dragFunction = false;
-//reload homepage
     }
 };
 $( window ).on( "load", function() {
     isDraggable();
 });
+
 $(window).resize(function(){
    isDraggable();
    if (dragFunction == false){
