@@ -122,6 +122,7 @@ const isDraggable = function(){
 $(window).resize(function(){
    isDraggable();
    if (dragFunction == false){
+    
     reloadHome();
    }
 });
@@ -131,7 +132,7 @@ isDraggable();
 
     //-----------------------track mouse position on the page
     document.addEventListener("mousemove", function (event) {
-        const w = window.innerWidth;
+        let w = window.innerWidth;
         const x = event.pageX;
         const y = event.pageY;
 
@@ -151,7 +152,7 @@ isDraggable();
             let angleY = (targetX - x) / -6;
 
             //-----------transform each pic
-            if (w >= 700) {
+            if (dragFunction == true) {
                 this.style.transform =
                     "rotateX(" + angleX + "deg) rotateY(" + angleY + "deg)";
             } else {
