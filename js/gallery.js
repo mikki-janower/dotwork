@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $( ".pic" ).draggable();
-    let dragFunction = true;
+    
     //---------------------------------dot change 
     const dot = (function () {
         const w = window.innerWidth;
@@ -129,9 +129,6 @@ $(window).resize(function(){
 $( window ).on( "load", function() {
     isDraggable();
 });
-
-
-
 
     //-----------------------track mouse position on the page
     document.addEventListener("mousemove", function (event) {
