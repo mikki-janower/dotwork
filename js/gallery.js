@@ -119,15 +119,15 @@ const isDraggable = function(){
 //reload homepage
     }
 };
+$( window ).on( "load", function() {
+    isDraggable();
+});
 $(window).resize(function(){
    isDraggable();
    if (dragFunction == false){
     
     reloadHome();
    }
-});
-$( window ).on( "load", function() {
-    isDraggable();
 });
 
     //-----------------------track mouse position on the page

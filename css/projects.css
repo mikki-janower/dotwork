@@ -328,7 +328,7 @@ input:focus::-webkit-slider-runnable-track {
     .projectTitle{
         text-align:center;
     }
-    .top .index{
+    .top .index, .finishedindex{
                 display:none;
                 transition:.2s;
          }

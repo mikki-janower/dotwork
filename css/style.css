@@ -103,7 +103,7 @@ a{
 .about{
   justify-self:flex-start;
 }
-.index{
+.index, .finishedindex{
   justify-self:flex-end;
 }
 .bottom{
@@ -126,13 +126,13 @@ a{
   transform: rotateY(180deg);
 }
 
-.big{
+/*.big{
   font-family:"Saol Italic";
   font-size:2.5em;
   line-height:1;
   grid-row:1;
   grid-column: 1/span 2;
-}
+}*/
 #about{
  position: absolute;
  font-size: 1.9em;;
