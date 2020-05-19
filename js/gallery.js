@@ -110,7 +110,7 @@ const isDraggable = function(){
     let w = window.innerWidth;
     if (w > 700){
         $( ".pic" ).draggable();
-        $( ".pic" ).draggable( "option", "disabled", false );
+       // $( ".pic" ).draggable( "option", "disabled", false );
         positionRandom();
         dragFunction = true;
     } else {
@@ -125,7 +125,6 @@ $( window ).on( "load", function() {
 $(window).resize(function(){
    isDraggable();
    if (dragFunction == false){
-    
     reloadHome();
    }
 });
