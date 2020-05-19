@@ -47,6 +47,7 @@ body {
 	margin: 6px 10px 10px 10px;
   left:16px;
   overflow-x: hidden;
+  overflow-y:scroll;
 
   transition: background-color 0.5s;
   -webkit-transition: background-color 0.5s linear;

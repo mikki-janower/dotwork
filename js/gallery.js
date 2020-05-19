@@ -126,7 +126,10 @@ $(window).resize(function(){
     reloadHome();
    }
 });
-isDraggable();
+$( window ).on( "load", function() {
+    isDraggable();
+});
+
 
 
 
