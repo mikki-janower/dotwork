@@ -89,6 +89,12 @@ $(document).ready(function () {
             $("#about").slideToggle("200");
             homepageAppear();
             $(".about").html("About");
+
+                        //---------------bring back project, if applicable
+                        $("#project")
+                        .delay("300")
+                        .fadeIn("200");
+                }
                         //---------------show REAL index
                         $("#projectindex").delay("300").fadeIn("200");
             about = false;
@@ -150,10 +156,7 @@ $(document).ready(function () {
             $(".index").html("Index");
             index = false;
             name = true;
-
-
             //---------------bring back project, if applicable
-            $("#project").css("transform", "rotateY(90deg)");
             $("#project")
                 .delay("300")
                 .fadeIn("200");
