@@ -4,26 +4,26 @@ $(document).ready(function () {
     const dot = (function () {
         const w = window.innerWidth;
         if (w >= 1000) {
-            dragFunction = true;
             $(".name").html(
                 "Mikki Janower<span class='dot'>&nbsp dot &nbsp</span>Work"
             );
             $(".index").html(
                 "Project Index"
             );
-        } else if (w >= 700) {
             dragFunction = true;
+        } else if (w >= 700) {
             $(".name").html(
                 "Mikki<span class='dot'>&nbsp dot &nbsp</span>Work"
             );
             $(".index").html(
                 "Index"
             );
+            dragFunction = true;
         } else {
-            dragFunction = false
             $(".name").html(
                 "Mikki"
             ); 
+            dragFunction = false;
         }
     });
     dot();
