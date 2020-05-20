@@ -6,7 +6,7 @@ $(document).ready(function () {
         next();
     });
 
-    let dragFunction;
+   // let dragFunction;
 
 //----------------------------------decide if homepage is wide enough to make pics draggable
 
@@ -37,6 +37,7 @@ $(document).ready(function () {
         positionRandom();
     }
 });
+
 
 //----------------------------------------------------------------position pics randomly on page load AND on resize 
     // collect all the divs

@@ -46,7 +46,6 @@ body {
 	color: black;
 	margin: 6px 10px 10px 10px;
   left:16px;
-  overflow-x: hidden;
   overflow-y:scroll;
 
   transition: background-color 0.5s;
@@ -184,7 +183,6 @@ a{
     height: 90vh;
     padding: 10px 16px 16px 10px;
     display: none;
-    overflow-y:hidden;
    }
   #index p{
     position:absolute;
@@ -631,6 +629,9 @@ display:none;
 }
 
 @media (max-width: 700px) { 
+  body{
+    overflow-y:scroll;
+  }
   #about{
     display:flex;
     flex-direction:column;
