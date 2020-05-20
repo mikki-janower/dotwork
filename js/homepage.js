@@ -7,7 +7,6 @@ let dragFunction;
         next();
     });
 
-   // let dragFunction;
 
 //----------------------------------decide if homepage is wide enough to make pics draggable
 
@@ -16,7 +15,6 @@ let dragFunction;
         if (w > 700){
             $( ".pic" ).draggable( "option", "disabled", false );
             dragFunction = true;
-           //positionRandom();
         } else {
             $( ".pic" ).draggable( "option", "disabled", true );
             dragFunction = false;
