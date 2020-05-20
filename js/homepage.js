@@ -1,5 +1,6 @@
 $(document).ready(function () {
-    let w = window.innerWidth;
+let dragFunction;
+
     $( ".pic" ).draggable();
     $(document).delay(150).queue(function (next) {
         $(".pic").css("transform", "rotateY(0deg)");
