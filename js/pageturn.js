@@ -55,6 +55,8 @@ $(document).ready(function () {
                 $(".index").html("Index");
                 index = false;
             }
+            //---------------hide REAL index
+            $("#projectindex").fadeOut("150");
 
             //---------------show about section
             $("#about")
@@ -84,6 +86,8 @@ $(document).ready(function () {
             $("#about").slideToggle("200");
             homepageAppear();
             $(".about").html("About");
+                        //---------------show REAL index
+                        $("#projectindex").delay("300").fadeIn("200");
             about = false;
             name = true;
         }

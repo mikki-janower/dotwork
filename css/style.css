@@ -737,7 +737,7 @@ display:none;
 
 
 
-/*.querytown{
+.querytown{
   z-index:1000;
   width:300px;
   font-size:2em;
@@ -747,4 +747,4 @@ display:none;
   position:fixed;
   text-align:center;
   background-color:red;
-}*/
+}
