@@ -103,7 +103,7 @@ a{
 .about{
   justify-self:flex-start;
 }
-.index, .finishedindex{
+.index{
   justify-self:flex-end;
 }
 .bottom{
@@ -232,6 +232,7 @@ a{
   max-width:30vw;
   min-width:20vw;
   cursor:pointer;
+  transform:rotateY(90deg);
 }
 .pic:hover{
   cursor:move;

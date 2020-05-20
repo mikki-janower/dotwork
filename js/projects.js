@@ -1,27 +1,9 @@
 $(document).ready(function () {
     $("#project").fadeIn("100");
-      //---------------------------------dot change 
-      const dot = (function () {
-        const w = window.innerWidth;
-        if (w >= 1000) {
-            $(".name").html(
-                "Mikki Janower<span class='dot'>&nbsp dot &nbsp</span>Work"
-            );
-        } else if (w >= 700) {
-            $(".name").html(
-                "Mikki<span class='dot'>&nbsp dot &nbsp</span>Work"
-            );
-        } else {
-            $(".name").html(
-                "Mikki"
-            ); 
-        }
+    $(document).delay(200).queue(function (next) {
+        $(".projectTitle").css("transform", "rotate(0deg)");
+        next();
     });
-    dot();
-    $(window).resize(function() {
-        dot();
-    });
-
     //------------------------------------redirect to homepage when .name or .projectTitle are clicked
 
     const homepageAppear = function () {
@@ -124,11 +106,60 @@ $(document).ready(function () {
         $(".top p, a").css({
             transition: ".1s",
             color: "black"
-        });
+            });
     });
+
+
+//------------------------------------------------------------------project page turns--------------
+//----------------------------------------project appear
+const projectAppear = function () {
+    $("#project").delay("300").fadeIn("200");
+    }
+
+//------------------------------#index page turn
+let index = false;
+$(".index").click(function () {
+
+    if (index == false) {
+
+        //---------------hide project
+        $("#project").fadeOut("200");
+
+        //---------------show index section
+        $("#index")
+            .delay("200")
+            .slideToggle("200");
+            $(".index").html("Back");
+            index = true;
+
+    } else {
+
+        $("#index").slideToggle("200");
+        $(".index").html("Index");
+        index = false;
+        projectAppear();
+    }
 });
 
-//------------------------------------------------------------------changes to specific pages
+//---------------------------------.name homepage turn
+$(".name").click(function () {
+
+    //---------------hide index
+    if (index == true) {
+        $("#index").slideToggle("200");
+        $(".index").html("Index");
+        index = false;
+    }
+    //---------------bring back homepage
+    $(document).delay(300).queue(function (next) {
+        window.location.href = "index.html";
+        next();
+    });
+
+return false;
+});
+
 
 
 //-----------------------------document closing bracket; don't touch
+});

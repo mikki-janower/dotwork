@@ -58,6 +58,9 @@ body{
         cursor: default;
         transition:.2s;
 }
+.projectTitle:hover{
+    cursor:default;
+}
 #project{
     position: relative;
     font-size:16px;

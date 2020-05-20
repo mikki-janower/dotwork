@@ -1,9 +1,21 @@
-#projectindex{
+#fullindex{
     position:absolute;
     left:0;
     width:100%;
     margin-top:10vh;
 }
+.fullindex{
+    justify-self:flex-end;
+}
+.indexbottom{
+    display: inline-flex;
+    flex-direction: column;
+    position:fixed;
+    bottom:10px;
+    z-index:100;
+    font-size:1.8rem;
+    letter-spacing:-.2px;
+  }
 .listing{
     position:relative;
     padding-left:10px;

@@ -1,34 +1,12 @@
 $(document).ready(function(){
-
+    
+$('.bottom').fadeOut("200");
 //lozad is supposed to help with lazyloading, etc
 var image = $('img');
 image.addClass(lozad);
 
 const observer = lozad(); // lazy loads elements with default selector as '.lozad'
 observer.observe();
-
-//----------------------------make bottom visible only at the bottom of the page on mobile
-$(window).scroll(function () {
-    let sticky = $(".sticky");
-    scroll = $(window).scrollTop();
-    
-    if (scroll >= 0){
-        sticky.css("position", "fixed");
-    } else {
-        sticky.removeClass("position","fixed");
-    } 
-});
-
-let about = false;
-$('.about').click(function (){
-    if (about == false) {
-        $(".bottom").delay(300).fadeIn(200); 
-        about = true;
-    } else {
-        $(".bottom").fadeOut(200); 
-        about = false
-    }
-});
 
 //----------------------------make extender visible on click
 var listing = $('.listing');
@@ -51,6 +29,54 @@ var extender = $('.extender');
        bottomScrolled(); 
         });
 
+//--------------------------------------------------------------------------------index page turns
+
+//----------------------------------------index appear
+const indexAppear = function () {
+    $("#fullindex").delay("300").fadeIn("200");
+    $('.indexbottom').fadeOut("200");
+    }
+
+//-----------------------------------------#about page turn
+let about = false;
+
+$(".about").click(function () {
+     if (about == false) {
+         //---------------hide index
+         $("#fullindex").fadeOut("200");
+
+         //---------------show about
+         $("#about")
+             .delay("200")
+             .slideToggle("200");
+             $(".about").html("Back");
+             about = true;
+             $('.indexbottom').fadeIn("200");
+
+     } else {
+         $("#about").slideToggle("200");
+         $(".about").html("About");
+         about = false;
+         indexAppear();
+     }
+});
+
+//---------------------------------.name homepage turn
+$(".name").click(function () {
+
+    //---------------hide index
+    if (index == true) {
+        $("#fullindex").slideToggle("200");
+        index = false;
+    }
+    //---------------bring back homepage
+    $(document).delay(300).queue(function (next) {
+        window.location.href = "index.html";
+        next();
+    });
+
+return false;
+});
 
 //---------------------------closing bracket don't touch bby
 });
