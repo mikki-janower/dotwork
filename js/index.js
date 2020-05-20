@@ -14,58 +14,42 @@ $(window).scroll(function () {
     
     if (scroll >= 0){
         sticky.css("position", "fixed");
-    }else {
+    } else {
         sticky.removeClass("position","fixed");
     } 
 });
 
-const bottomScrolled = function() {
-$(window).scroll(function () {
-      //  if($(window).scrollTop() + $(window).height() == $(document).height()) {
-        if($(window).scrollTop() + $(window).height() >= $(document).height() - 100) {
-            $(".bottom").fadeIn(200); 
-        } else {
-            $(".bottom").fadeOut(200);  
-        } 
+let about = false;
+$('.about').click(function (){
+    if (about == false) {
+        $(".bottom").delay(300).fadeIn(200); 
+        about = true;
+    } else {
+        $(".bottom").fadeOut(200); 
+        about = false
+    }
 });
-};
-
-const bottomVisibility = function () {
-    bottomScrolled();
-}
-$(window).resize(function() {
-    bottomVisibility();
-});
-
-bottomVisibility();
 
 //----------------------------make extender visible on click
-var extended = false;
 var listing = $('.listing');
 var extender = $('.extender');
 
-jQuery.each(listing, function(){
-    $(this).click(function(){
-        if (extended == false){
-            $(extender).slideToggle(300);
-            $(this).css({
-                "padding-bottom":"326px"
+//when a listing is clicked, this function toggles the listing and closes the others.
+
+    $(listing).click(function(){
+        //label all extenders "other" except for the selected one
+        $(extender).addClass('otherextender');
+        $(this).find(extender).removeClass('otherextender');
+        
+        //get rid of all "other" elements
+        $('.otherextender').slideUp(250);
+
+        //toggle the selected element on click as the "other" elements close
+        $(this).find(extender).slideToggle(250);
+       
+        //check the bottom menu, which should fade out as the document height is extended
+       bottomScrolled(); 
         });
-        extended = true;
-
-        } else {
-             $(extender).slideToggle(300);
-            $(this).css({
-                "padding-bottom":"16px"
-            });
-            extended = false;
-        }
-        bottomVisibility(); 
-    });
-});
-
-
-
 
 
 //---------------------------closing bracket don't touch bby

@@ -11,6 +11,7 @@ $(document).ready(function () {
         } else {
             $(".pic").css("transform", "rotateY(0deg)");
             $(".pic").fadeIn("200");
+            $('.bottom').fadeOut("200");
         }
 
             //---------------background color change{

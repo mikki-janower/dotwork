@@ -228,7 +228,7 @@ a{
 }
 .pic{
   position:absolute;
-  transition: .2s;
+  transition: transform .2s;
   max-width:30vw;
   min-width:20vw;
   cursor:pointer;

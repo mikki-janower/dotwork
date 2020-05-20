@@ -9,17 +9,16 @@
     padding-left:10px;
     padding-right:10px;
     width:100%;
-    height:20px;
+    height:auto;
     margin-top:10px;
     display:grid;
     grid-template-columns: 35vw 35vw 10vw 20vw;
     grid-template-rows: auto auto;
     align-items:center;
     border-bottom:1px solid black;
-    padding-bottom:12px;
-    margin-bottom:10px;
+    padding-bottom:8px;
     cursor:pointer;
-    transition:.35s;
+    transition:.325s;
 }
 .title, .description, .year, .thumbnails{
     grid-row:1;
@@ -40,23 +39,47 @@
 }
 .thumbnails img{
     height:26px;
-    margin-right:6px;
+    padding-right:6px;
     display:inline-block;
 }
 .more{
     font-family: "Neue Machina";
-    margin-top:16px;
+    margin-top:60px;
     padding-left:10px;
     line-height:1.2;
-    margin-bottom:180px;
+    margin-bottom:10px;
 }
 .extender{
     position:relative;
-    height:300px;
+    display:inline-grid;
+    grid-template-columns: 35vw 65vw;
+    grid-template-rows: auto auto;
+    height:auto;
     grid-row:2;
     grid-column:1/span 4;
     margin-right:20px;
-    padding-top:8px;
+    padding-top:20px;
+}
+.extender img{
+    position:relative;
+    display:inline-block;
+    margin-right:8px;
+    max-height: 280px;
+    max-width:100%;
+}
+.images{
+    grid-column:2;
+    display:flex;
+    justify-content:flex-start;
+    position:relative;
+    max-width:100%;
+    margin-right:10px;
+}
+.words{
+    font-family: 'Sans Regular';
+    position:relative;
+    max-width:90%;
+    line-height:1.25;
 }
 /*-----------------------------------meeeeeeeedia queeeeeeeeeeeeeerieesssssssssss-------------------*/
 @media (max-width: 1100px){

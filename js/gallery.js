@@ -7,9 +7,15 @@ $(document).ready(function () {
             $(".name").html(
                 "Mikki Janower<span class='dot'>&nbsp dot &nbsp</span>Work"
             );
+            $(".index").html(
+                "Project Index"
+            );
         } else if (w >= 700) {
             $(".name").html(
                 "Mikki<span class='dot'>&nbsp dot &nbsp</span>Work"
+            );
+            $(".index").html(
+                "Index"
             );
         } else {
             $(".name").html(
@@ -130,8 +136,8 @@ $(window).resize(function(){
 
             //-----------change angle for X and Y to turn each pic as the mouse move
 
-            let angleX = (targetY - y) / 6;
-            let angleY = (targetX - x) / -6;
+            let angleX = (targetY - y) / 18;
+            let angleY = (targetX - x) / -18;
 
             //-----------transform each pic
             if (dragFunction == true) {
