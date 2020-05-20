@@ -1,9 +1,10 @@
 $(document).ready(function () {
-    
+    let dragFunction;
     //---------------------------------dot change 
     const dot = (function () {
         const w = window.innerWidth;
         if (w >= 1000) {
+            dragFunction = true;
             $(".name").html(
                 "Mikki Janower<span class='dot'>&nbsp dot &nbsp</span>Work"
             );
@@ -11,6 +12,7 @@ $(document).ready(function () {
                 "Project Index"
             );
         } else if (w >= 700) {
+            dragFunction = true;
             $(".name").html(
                 "Mikki<span class='dot'>&nbsp dot &nbsp</span>Work"
             );
@@ -18,6 +20,7 @@ $(document).ready(function () {
                 "Index"
             );
         } else {
+            dragFunction = false
             $(".name").html(
                 "Mikki"
             ); 
