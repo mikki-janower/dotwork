@@ -94,7 +94,6 @@ $(document).ready(function () {
                         $("#project")
                         .delay("300")
                         .fadeIn("200");
-                }
                         //---------------show REAL index
                         $("#projectindex").delay("300").fadeIn("200");
             about = false;
