@@ -1,5 +1,29 @@
 $(document).ready(function () {
     let dragFunction;
+
+    const isDraggable = function(){
+        let w = window.innerWidth;
+        if (w > 700){
+            $( ".pic" ).draggable();
+           // $( ".pic" ).draggable( "option", "disabled", false );
+            positionRandom();
+            dragFunction = true;
+        } else {
+            $( ".pic" ).draggable( "option", "disabled", true );
+            dragFunction = false;
+        }
+    };
+    
+    $( window ).on( "load", function() {
+        isDraggable();
+    });
+    
+    $(window).resize(function(){
+       isDraggable();
+       if (dragFunction == false){
+        reloadHome();
+       }
+    });
     //---------------------------------dot change 
     const dot = (function () {
         const w = window.innerWidth;
@@ -7,23 +31,14 @@ $(document).ready(function () {
             $(".name").html(
                 "Mikki Janower<span class='dot'>&nbsp dot &nbsp</span>Work"
             );
-            $(".index").html(
-                "Project Index"
-            );
-            dragFunction = true;
         } else if (w >= 700) {
             $(".name").html(
                 "Mikki<span class='dot'>&nbsp dot &nbsp</span>Work"
             );
-            $(".index").html(
-                "Index"
-            );
-            dragFunction = true;
         } else {
             $(".name").html(
                 "Mikki"
             ); 
-            dragFunction = false;
         }
     });
     dot();
@@ -92,34 +107,13 @@ let w = window.innerWidth;
 if (w > 700){
     $(".pic").css("transform", "rotateY(90deg)");
     $(".pic").fadeIn("200");
+    dragFunction = true;
 } else {
     $(".pic").css("transform", "rotateY(0deg)");
     $(".pic").fadeIn("200");
+    dragFunction = false;
 }
 }
-
-const isDraggable = function(){
-    let w = window.innerWidth;
-    if (w > 700){
-        $( ".pic" ).draggable();
-       // $( ".pic" ).draggable( "option", "disabled", false );
-        positionRandom();
-        dragFunction = true;
-    } else {
-        $( ".pic" ).draggable( "option", "disabled", true );
-        dragFunction = false;
-    }
-};
-$( window ).on( "load", function() {
-    isDraggable();
-});
-
-$(window).resize(function(){
-   isDraggable();
-   if (dragFunction == false){
-    reloadHome();
-   }
-});
 
     //-----------------------track mouse position on the page
     document.addEventListener("mousemove", function (event) {

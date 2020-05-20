@@ -8,10 +8,12 @@ $(document).ready(function () {
         if (w > 700){
             $(".pic").css("transform", "rotateY(90deg)");
             $(".pic").fadeIn("200");
+            dragFunction = true;
         } else {
             $(".pic").css("transform", "rotateY(0deg)");
             $(".pic").fadeIn("200");
             $('.bottom').fadeOut("200");
+            dragFunction = false;
         }
 
             //---------------background color change{
