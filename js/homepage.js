@@ -1,8 +1,7 @@
 $(document).ready(function () {
-
-    $("#homepage").fadeIn("200");
-    $(".pic").delay(200).fadeIn("100");
-    $(document).delay(200).queue(function (next) {
+    let w = window.innerWidth;
+    $( ".pic" ).draggable();
+    $(document).delay(150).queue(function (next) {
         $(".pic").css("transform", "rotateY(0deg)");
         next();
     });
@@ -10,30 +9,36 @@ $(document).ready(function () {
     let dragFunction;
 
 //----------------------------------decide if homepage is wide enough to make pics draggable
+
     const isDraggable = function(){
         let w = window.innerWidth;
         if (w > 700){
-            $( ".pic" ).draggable();
-            positionRandom();
+            $( ".pic" ).draggable( "option", "disabled", false );
             dragFunction = true;
+           //positionRandom();
         } else {
             $( ".pic" ).draggable( "option", "disabled", true );
             dragFunction = false;
         }
     };
-    
     $( window ).on( "load", function() {
         isDraggable();
     });
-    
-    $(window).resize(function(){
+
+
+ $(window).resize(function(){
        isDraggable();
        if (dragFunction == false){
-        reloadHome();
-       }
-    });
+        $(document).delay(300).queue(function (next) {
+            window.location.href = "index.html";
+            next();
+        });
+    } else{
+        positionRandom();
+    }
+});
 
-//----------------------------------------------------------------position pics randomly on page load 
+//----------------------------------------------------------------position pics randomly on page load AND on resize 
     // collect all the divs
 const positionRandom = function(){
     let w = window.innerWidth;
@@ -42,7 +47,6 @@ const positionRandom = function(){
 
 var winWidth = window.innerWidth - 200;
 var winHeight = window.innerHeight - 200;
-
 
 // i stands for "index". you could also call this banana or haircut. it's a variable
     for ( var i=0; i < divs.length; i++ ) {
@@ -73,6 +77,7 @@ function getRandomNumber(min, max) {
   return Math.random() * (max - min) + min;
 } 
 
+positionRandom();
 
 //--------------------------------------------------------------3d effect on pics 
   //--------track mouse position on the page
