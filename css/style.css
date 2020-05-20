@@ -4,6 +4,14 @@
   src: url("fonts/SansMedium.otf");
 }
 @font-face{
+  font-family:  'Sans Medium Italic';
+  src: url('fonts/SansMediumItalic.otf');
+}
+@font-face{
+  font-family: 'Sans Regular';
+  src: url('fonts/SansRegular.otf');
+}
+@font-face{
   font-family: 'Saol Italic';
   src: url("fonts/SaolDisplay-RegularItalic.otf");
 }
@@ -11,22 +19,13 @@
   font-family: 'Saol';
   src: url('fonts/SaolDisplay-Regular.otf');
 }
-
 @font-face{
-  font-family:  'Serif Light Italic';
-  src: url('fonts/SerifLightItalic.otf');
+  font-family: 'Reconna';
+  src: url('fonts/ReconnaSerif.otf');
 }
 @font-face{
-  font-family:  'Serif Light';
-  src: url('fonts/SerifLight.otf');
-}
-@font-face{
-  font-family:  'Sans Medium Italic';
-  src: url('fonts/SansMediumItalic.otf');
-}
-@font-face{
-  font-family: 'Serif Light';
-  src: url('fonts/SerifLight.otf');
+  font-family: 'Neue Machina Medium';
+  src: url('fonts/NeueMachina-Medium.otf');
 }
 @font-face{
   font-family: 'Neue Machina';
@@ -46,7 +45,6 @@ body {
 	color: black;
 	margin: 6px 10px 10px 10px;
   left:16px;
-  overflow-y:scroll;
 
   transition: background-color 0.5s;
   -webkit-transition: background-color 0.5s linear;
@@ -86,8 +84,6 @@ transition: background-color 0.5s linear;
   color: black;
   font-family: 'Sans Medium';
   letter-spacing:-.2px;
-  /*font-family: 'Neue Machina';
-  text-transform:uppercase;*/
   font-size: 1.8rem;
   margin-right: 2vw;
   text-align: left;
@@ -97,7 +93,7 @@ a{
   color:black;
 }
 .top a:last-of-type{
-  margin-right:20px;
+  margin-right:10px;
 }
 .about{
   justify-self:flex-start;
@@ -110,6 +106,7 @@ a{
   flex-direction: column;
   position:fixed;
   bottom:10px;
+  left:0;
   z-index:100;
 }
 a{
@@ -120,6 +117,8 @@ a{
   transition: .2s;
   text-align:left;
   justify-content:flex-start;
+  padding-left:10px;
+  padding-right:10px;
 }
 .top .flip:hover, .flip:hover, .top .flip:active{
   transform: rotateY(180deg);
