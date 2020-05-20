@@ -136,8 +136,8 @@ $(window).resize(function(){
 
             //-----------change angle for X and Y to turn each pic as the mouse move
 
-            let angleX = (targetY - y) / 18;
-            let angleY = (targetX - x) / -18;
+            let angleX = (targetY - y) / 20;
+            let angleY = (targetX - x) / -20;
 
             //-----------transform each pic
             if (dragFunction == true) {
