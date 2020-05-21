@@ -38,6 +38,7 @@
 }
 html{
   overflow:scroll;
+  -webkit-overflow-scrolling: touch;
 }
 body {
   max-width: 99vw;

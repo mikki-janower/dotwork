@@ -1,10 +1,11 @@
 $(document).ready(function () {
     
 let about = false;
-//let index = false;
-$('html').css("overflow", "scroll");
 
-$( ".pic" ).draggable();
+$( ".pic" ).draggable({
+    appendTo: 'body',
+containment: 'window',
+});
 let dragFunction;
 
 
@@ -42,10 +43,15 @@ $(document).delay(150).queue(function (next) {
 const positionRandom = function(){
     let w = window.innerWidth;
     var divs = document.querySelectorAll('.pic');
+    let homepage = $('#homepage');
 // get window width and height
 
 var winWidth = window.innerWidth - 200;
-var winHeight = window.innerHeight - 200;
+var winHeight = window.innerHeight - 250;
+
+//var winWidth = homepage.width();
+//var winHeight = homepage.height();
+
 
 // i stands for "index". you could also call this banana or haircut. it's a variable
     for ( var i=0; i < divs.length; i++ ) {
