@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    $('#fullindex').fadeIn("100");
     
 //lozad is supposed to help with lazyloading, etc
 var image = $('img');
@@ -61,6 +62,7 @@ $(".about").click(function () {
      if (about == false) {
          //---------------hide index
          $("#fullindex").fadeOut("200");
+         $(".back").html("Home");
 
          //---------------show about
          $("#about")
@@ -74,12 +76,13 @@ $(".about").click(function () {
          $("#about").slideToggle("200");
          $(".about").html("About");
          about = false;
+         $(".back").html("Back");
          indexAppear();
      }
 });
 
 //---------------------------------.name homepage turn
-$(".name").click(function () {
+$(".name, .back").click(function () {
 
     //---------------hide index
     if (index == true) {

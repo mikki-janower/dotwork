@@ -56,5 +56,7 @@ $(window).resize(function() {
 
 bottomVisibility();
 
+
+
 //--------------------document closing bracket, don't touch
 });

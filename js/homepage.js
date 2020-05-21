@@ -38,7 +38,9 @@ $(document).delay(150).queue(function (next) {
 
 
 //----------------------------------------------------------------position pics randomly on page load AND on resize 
-    // collect all the divs
+
+
+// collect all the divs
 const positionRandom = function(){
     let w = window.innerWidth;
     var divs = document.querySelectorAll('.pic');

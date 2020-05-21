@@ -736,6 +736,24 @@ display:none;
 }
 
 @media (max-width: 450px) { 
+  ::-webkit-scrollbar {
+    display:inherit;
+  }
+  ::-webkit-scrollbar-thumb {
+    height:10px;
+    width:6px;
+    opacity:1;
+    background-color:black;
+    border-radius:40px;
+    margin-right:3px;
+    display:inherit;
+  }
+  ::-webkit-scrollbar-track {
+  width:8px;
+  border-radius:40px;
+  margin-right:3px;
+  display:inherit;
+  }
 
 }
 
