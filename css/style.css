@@ -48,6 +48,7 @@ body {
 	color: black;
 	margin: 6px 10px 10px 10px;
   left:16px;
+  -webkit-overflow-scrolling: touch;
 
   transition: background-color 0.5s;
   -webkit-transition: background-color 0.5s linear;
@@ -244,6 +245,7 @@ overflow:scroll;
   position:absolute;
   top:10px;
   left:10px;
+  -webkit-overflow-scrolling: touch;
 }
 
 /*.soundscapes{

@@ -13,8 +13,6 @@ $(document).delay(150).queue(function (next) {
         isDraggable();
         next();
     });
-
-
 //----------------------------------decide if homepage is wide enough to make pics draggable
     const isDraggable = function(){
         let w = window.innerWidth;
