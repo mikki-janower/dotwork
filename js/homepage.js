@@ -1,30 +1,31 @@
 $(document).ready(function () {
+    
+let about = false;
+let index = false;
+$('html').css("overflow", "scroll");
+
+$( ".pic" ).draggable();
 let dragFunction;
 
-    $( ".pic" ).draggable();
-    $(document).delay(150).queue(function (next) {
+
+$(document).delay(150).queue(function (next) {
         $(".pic").css("transform", "rotateY(0deg)");
+        isDraggable();
         next();
     });
 
 
 //----------------------------------decide if homepage is wide enough to make pics draggable
-
     const isDraggable = function(){
         let w = window.innerWidth;
         if (w > 700){
-            $( ".pic" ).draggable( "option", "disabled", false );
             dragFunction = true;
+            positionRandom();
         } else {
             $( ".pic" ).draggable( "option", "disabled", true );
             dragFunction = false;
         }
     };
-    $( window ).on( "load", function() {
-        isDraggable();
-    });
-
-
  $(window).resize(function(){
        isDraggable();
        if (dragFunction == false){
@@ -32,8 +33,6 @@ let dragFunction;
             window.location.href = "index.html";
             next();
         });
-    } else{
-        positionRandom();
     }
 });
 
@@ -65,16 +64,12 @@ var winHeight = window.innerHeight - 200;
         thisDiv.style.top = randomTop +"px";
         thisDiv.style.left = randomLeft +"px";
     } 
-
-    
     }
-
 }
 
 // function that returns a random number between a min and max
-function getRandomNumber(min, max) {
-    
-  return Math.random() * (max - min) + min;
+function getRandomNumber(min, max) { 
+return Math.random() * (max - min) + min;
 } 
 
 positionRandom();
@@ -102,7 +97,7 @@ positionRandom();
         let angleY = (targetX - x) / -20;
 
         //------transform each pic
-        if (dragFunction == true) {
+        if (w > 700) {
             this.style.transform =
                 "rotateX(" + angleX + "deg) rotateY(" + angleY + "deg)";
         } else {
@@ -237,8 +232,9 @@ const homepageAppear = function () {
         dragFunction = false;
     }
     }
+    homepageAppear();
 //-----------------------------------------#about page turn
-let about = false;
+
 $(".about").click(function () {
      if (about == false) {
          //---------------hide homepage
@@ -269,7 +265,6 @@ $(".about").click(function () {
 });
 
 //------------------------------#index page turn
-let index = false;
 $(".index").click(function () {
 
 

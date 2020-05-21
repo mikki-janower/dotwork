@@ -1,6 +1,5 @@
 $(document).ready(function(){
     
-$('.bottom').fadeOut("200");
 //lozad is supposed to help with lazyloading, etc
 var image = $('img');
 image.addClass(lozad);
@@ -29,8 +28,25 @@ var extender = $('.extender');
        bottomScrolled(); 
         });
 
-//--------------------------------------------------------------------------------index page turns
+//-----------------------------------------button hover effect
 
+$('.buttons a').hover(function(){
+            $(this).css({
+                "background-color": "yellow",
+               "-webkit-box-shadow": "0px -1px 5px 5px yellow",
+               "-moz-box-shadow": "0px -1px 5px 5px yellow",
+               "box-shadow" : "0px -1px 5px 5px yellow"
+            });
+        });
+$('.buttons a').mouseout(function() {
+        $(this).css({
+            "background-color": "transparent",
+            "-webkit-box-shadow": "none",
+            "-moz-box-shadow": "none",
+            "box-shadow" : "none"
+        });
+    });
+//--------------------------------------------------------------------------------index page turns
 //----------------------------------------index appear
 const indexAppear = function () {
     $("#fullindex").delay("300").fadeIn("200");

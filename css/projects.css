@@ -1,9 +1,5 @@
 /*-----------------------#project denotes standards consistent between pages-----------------*/ 
 
-body{
-    overflow-y:scroll;
-}
-
 #projfooter, #projfooter a{
         display:flex;
         color:black;
@@ -13,30 +9,6 @@ body{
         grid-column:3/span 2;
         grid-row:4;
  }
-
-/*----------------------------------scrollbarrrrrr--------------------------------*/
-::-webkit-scrollbar {
-    border-radius:40px;
-    background-color:transparent;
-    width:6px;
-    height:20px;
-    margin-right:3px;
-    border:1.4px solid black;
-  }
-  ::-webkit-scrollbar-thumb {
-    height:10px;
-    width:6px;
-    opacity:1;
-    background-color:black;
-    border-radius:40px;
-    margin-right:3px;
-  }
-  ::-webkit-scrollbar-track {
-  width:8px;
-  border-radius:40px;
-  margin-right:3px;
-  }
-
 .projectTitle{
         justify-self:flex-start;
         cursor: default;

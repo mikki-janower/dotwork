@@ -26,18 +26,6 @@ $(document).ready(function () {
         let width = window.innerWidth;
         $(".querytown").html("Width: " + width + " px");
     });
-
-//----------------------------------------------------------make top and bottom sections sticky
-   $(window).scroll(function () {
-    let sticky = $(".sticky");
-    scroll = $(window).scrollTop();
-    
-    if (scroll >= 0){
-        sticky.css("position", "fixed");
-    }else {
-        sticky.removeClass("position","fixed");
-    } 
-});
 //----------------------------------make bottom visible only at the bottom of the page on mobile
 const bottomScrolled = function() {
 $(window).scroll(function () {
@@ -67,9 +55,6 @@ $(window).resize(function() {
 });
 
 bottomVisibility();
-
-//--------------------------------------------------------------------universal page turns
-
 
 //--------------------document closing bracket, don't touch
 });

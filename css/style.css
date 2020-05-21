@@ -36,6 +36,9 @@
 ::selection{
   background-color: yellow;
 }
+html{
+  overflow:scroll;
+}
 body {
   max-width: 99vw;
   max-height: 100vh;
@@ -56,8 +59,8 @@ body {
   font-family: 'Saol Italic';
 }
 .top{
+  position:fixed;
   z-index:100;
-  position: fixed; 
   display:grid;
   grid-template-columns: 35vw 38vw 27vw;
   flex-direction: row;
@@ -124,13 +127,6 @@ a{
   transform: rotateY(180deg);
 }
 
-/*.big{
-  font-family:"Saol Italic";
-  font-size:2.5em;
-  line-height:1;
-  grid-row:1;
-  grid-column: 1/span 2;
-}*/
 #about{
  position: absolute;
  font-size: 1.9em;;
@@ -168,9 +164,11 @@ a{
   margin-right:20px;
   margin-top:2px;
   justify-self:flex-start
-
 }
-
+#draggable-live-region{
+position:absolute;
+overflow:scroll;
+} 
 #index{
     position: fixed;
     font-size: 3em;;
@@ -241,14 +239,9 @@ a{
 }
 #homepage{
   max-width:98vw;
-  max-height:96vh;
+  max-height:96%;
   margin-top:3vh;
-  position:fixed;
-  /*display:grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows:33% 33% 33%;
-  grid-row-gap: 6px;
-  grid-column-gap:6px;*/
+  position:absolute;
   top:10px;
   left:10px;
 }
@@ -290,7 +283,7 @@ a{
   text-align:center;
   transition:.35s;
   padding:2px;
-  border-radius:6px;
+  border-radius:10px;
 }
 
 /*----------------------------------scrollbarrrrrr--------------------------------*/
@@ -628,9 +621,15 @@ display:none;
 }
 
 @media (max-width: 700px) { 
-  body{
-    overflow-y:scroll;
+  /*::-webkit-scrollbar {
+    display:inherit;
   }
+  ::-webkit-scrollbar-thumb {
+    display:inherit;
+  }
+  ::-webkit-scrollbar-track {
+  display:inherit;
+  }*/
   #about{
     display:flex;
     flex-direction:column;
@@ -668,7 +667,7 @@ display:none;
   }
   .pic{
     position:relative;
-    max-width:98%;
+    max-width:99%;
     height:auto;
     cursor:pointer;
     left:10px;
