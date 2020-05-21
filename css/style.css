@@ -440,7 +440,7 @@ display:none;
 @media (max-width: 1200px) { 
   #homepage{
     margin-top:8vh;
-    height:91vh;
+   /* height:91vh;*/
     width:95vw;
   }
   #top{
@@ -653,8 +653,7 @@ display:none;
   }
   #homepage{
     width:98vw;
-    position:absolute;
-    min-height:100vh;
+    position:relative;
     top:4.5vh;
     margin-top:0;
     margin-right:10px;
@@ -676,7 +675,7 @@ display:none;
     max-width:98%;
     height:auto;
     cursor:pointer;
-    left:10px;
+    left:0px;
     right:10px;
   }
   .pic:hover{
