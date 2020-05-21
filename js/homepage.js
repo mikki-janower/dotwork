@@ -46,7 +46,7 @@ const positionRandom = function(){
     let homepage = $('#homepage');
 // get window width and height
 
-var winWidth = window.innerWidth - 200;
+var winWidth = window.innerWidth - 250;
 var winHeight = window.innerHeight - 250;
 
 //var winWidth = homepage.width();
