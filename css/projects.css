@@ -1,5 +1,8 @@
 /*-----------------------#project denotes standards consistent between pages-----------------*/ 
 
+body{
+    width:100%;
+}
 #projfooter, #projfooter a{
         display:flex;
         color:black;
@@ -292,15 +295,20 @@ input:focus::-webkit-slider-runnable-track {
                 transition:.2s;
          }
         #project{
+            width:96.5vw;
             display:flex;
             flex-direction:column;
         }
         #description, #description a{
             font-size:20px;
         }
+        #description p{
+            padding-right:24px;
+        }
         .detail{
             font-size:13px;
             margin-bottom:20px;
+            width:96vw;
         }
         .detail a{
             font-size:13px;
@@ -342,3 +350,16 @@ input:focus::-webkit-slider-runnable-track {
         }
     }
  }
+
+
+.querytown{
+    z-index:1000;
+    width:300px;
+    font-size:2em;
+    color:white;
+    margin-top:10vh;
+    margin-left:50px;
+    position:fixed;
+    text-align:center;
+    background-color:red;
+  }
