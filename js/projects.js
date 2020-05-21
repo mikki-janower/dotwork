@@ -156,7 +156,7 @@ $(".name").click(function () {
         next();
     });
 
-return false;
+//return false;
 });
 
 //----------------------------------index page turn
