@@ -1,7 +1,7 @@
 $(document).ready(function () {
     
 let about = false;
-let index = false;
+//let index = false;
 $('html').css("overflow", "scroll");
 
 $( ".pic" ).draggable();
@@ -243,12 +243,6 @@ $(".about").click(function () {
          $("#homepage").fadeOut("300");
          $(".dragTitle").fadeOut("300");
 
-         //---------------hide index
-         if (index == true) {
-             $("#index").slideToggle("200");
-             $(".index").html("Index");
-             index = false;
-         }
          //---------------show about
          $("#about")
              .delay("200")
@@ -264,8 +258,8 @@ $(".about").click(function () {
      }
 });
 
-//------------------------------#index page turn
-$(".index").click(function () {
+//------------------------------#index-under-construction page turn
+/*$(".index").click(function () {
 
 
     if (index == false) {
@@ -296,17 +290,11 @@ $(".index").click(function () {
         index = false;
         homepageAppear();
     }
-});
+});*/
 
 //---------------------------------.name homepage turn
 $(".name").click(function () {
 
-    //---------------hide index
-    if (index == true) {
-        $("#index").slideToggle("200");
-        $(".index").html("Index");
-        index = false;
-    }
     //---------------hide about
     if (about == true) {
         $("#about").slideToggle("200");
@@ -322,7 +310,30 @@ $(".name").click(function () {
 return false;
 });
 
+//--------------------------------index page turn
 
+$(".index").click(function () {
+
+    //---------------hide index
+    if (about == true) {
+        $("#about").slideToggle("200");
+        $(".about").html("About");
+        about = false;
+    }
+    //---------------hide homepage
+    $(".pic").css("transform", "rotateY(90deg)");
+    $(".pic").fadeOut("200");
+    $("#homepage").fadeOut("300");
+    $(".dragTitle").fadeOut("300");
+
+    //---------------page redirect
+    $(document).delay(300).queue(function (next) {
+        window.location.href = "project-index.html";
+        next();
+    });
+
+return false;
+});
 
 //-------------------------------projects page turn 
 //check whether clicking or dragging—(ONLY redirect to link if the user is CLICKING the image, not dragging it)

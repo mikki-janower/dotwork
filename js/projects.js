@@ -62,7 +62,7 @@ $(document).ready(function () {
         );
         $(".modal-overlay, .modal-img").fadeIn("100");
         //------------------------style the page so menus show despite the overlay---------//
-        $("body").css("overflow-y", "hidden");
+        $("body").css("overflow", "hidden");
         $(".top").css({
             "background-color": "transparent",
             "-webkit-box-shadow": "none",
@@ -86,7 +86,7 @@ $(document).ready(function () {
         $(".top")
             .delay(200)
             .queue(function (next) {
-                $("body").css("overflow-y", "scroll");
+                $("body").css("overflow", "scroll");
                 $(".top").css({
                     transition: "0s",
                     "background-color": "white",
@@ -116,8 +116,8 @@ const projectAppear = function () {
     $("#project").delay("300").fadeIn("200");
     }
 
-//------------------------------#index page turn
-let index = false;
+//------------------------------#index-under-construction page turn
+/*let index = false;
 $(".index").click(function () {
 
     if (index == false) {
@@ -139,7 +139,7 @@ $(".index").click(function () {
         index = false;
         projectAppear();
     }
-});
+});*/
 
 //---------------------------------.name homepage turn
 $(".name").click(function () {
@@ -159,6 +159,28 @@ $(".name").click(function () {
 return false;
 });
 
+//----------------------------------index page turn
+//--------------------------------index page turn
+
+$(".index").click(function () {
+
+    //---------------hide index
+    if (about == true) {
+        $("#about").slideToggle("200");
+        $(".index").html("Index");
+        index = false;
+    }
+    //---------------hide projects
+    $("#project").fadeOut("200");
+
+    //---------------page redirect
+    $(document).delay(300).queue(function (next) {
+        window.location.href = "project-index.html";
+        next();
+    });
+
+return false;
+});
 
 
 //-----------------------------document closing bracket; don't touch

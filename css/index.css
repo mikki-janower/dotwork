@@ -101,7 +101,7 @@
 .buttons{
     display:inline-flex;
     position:relative;
-    padding-right:60px;
+    padding-right:20px;
     bottom:0;
     margin-bottom:0;
     padding-bottom:0;
@@ -114,14 +114,18 @@
 }
 .buttons a{
     position:relative;
-    margin-right: 20px;
+    margin-right: 16px;
     align-self:flex-end;
+    padding:1px;
+}
+.extender a, .more a{
     transition: background-color, box-shadow;
     transition-duration:.5s;
-    padding:1px;
     border-radius:8px;
 }
-
+.words a, .words i{
+    font-family: "Saol Italic";
+}
 /*-----------------------------------meeeeeeeedia queeeeeeeeeeeeeerieesssssssssss-------------------*/
 @media (max-width: 1100px){
     .listing{
@@ -171,20 +175,36 @@
         padding-right:30px;
     }
     .extender{
+        grid-template-columns: 35% 40% 5% 20%;
+        grid-template-rows: auto auto auto;
         grid-row-gap: 20px;
     }
     .images{
         grid-column:1/span 4;
+        grid-row:1;
     }
     .words{
-        grid-column:1/span 3;
+        grid-column:1/span 2;
         grid-row:2;
         font-size:16px;
         padding-bottom:6px;
     }
+    .buttons{
+        justify-content:flex-start;
+        text-align:left;
+        flex-direction:column;
+        grid-column:3/span 4;
+        grid-row:2;
+        justify-content:flex-end;
+    }
+    .buttons a{
+        align-self:flex-start;
+    }
+
     .extender img{
         grid-column:1/span 4;
         grid-row:1;
     }
 
 }
+

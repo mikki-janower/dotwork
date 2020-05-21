@@ -723,6 +723,12 @@ display:none;
   .top{
     padding-bottom:0px;
   }
+
+  @media (max-width:500px){
+    #homepage{
+        max-width: 97vw;
+    }
+}
 }
 
 @media (max-width: 475px) { 

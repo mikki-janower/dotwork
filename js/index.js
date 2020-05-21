@@ -25,12 +25,11 @@ var extender = $('.extender');
         $(this).find(extender).slideToggle(250);
        
         //check the bottom menu, which should fade out as the document height is extended
-       bottomScrolled(); 
         });
 
 //-----------------------------------------button hover effect
 
-$('.buttons a').hover(function(){
+$('.listing a, .more a').hover(function(){
             $(this).css({
                 "background-color": "yellow",
                "-webkit-box-shadow": "0px -1px 5px 5px yellow",
@@ -38,7 +37,7 @@ $('.buttons a').hover(function(){
                "box-shadow" : "0px -1px 5px 5px yellow"
             });
         });
-$('.buttons a').mouseout(function() {
+$('.listing a, .more a').mouseout(function() {
         $(this).css({
             "background-color": "transparent",
             "-webkit-box-shadow": "none",
@@ -48,9 +47,11 @@ $('.buttons a').mouseout(function() {
     });
 //--------------------------------------------------------------------------------index page turns
 //----------------------------------------index appear
+let index = true;;
 const indexAppear = function () {
     $("#fullindex").delay("300").fadeIn("200");
     $('.indexbottom').fadeOut("200");
+    index = true;
     }
 
 //-----------------------------------------#about page turn
@@ -82,7 +83,7 @@ $(".name").click(function () {
 
     //---------------hide index
     if (index == true) {
-        $("#fullindex").slideToggle("200");
+        $("#fullindex").slideUp("200");
         index = false;
     }
     //---------------bring back homepage
