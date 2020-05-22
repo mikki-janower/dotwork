@@ -1,5 +1,4 @@
 /*-----------------------#project denotes standards consistent between pages-----------------*/ 
-
 body{
     width:100%;
 }
@@ -21,14 +20,15 @@ body{
     cursor:default;
 }
 #project{
-    position: relative;
+    position: absolute;
     font-size:16px;
     line-height:1.3;
-    margin-left:2px;
+    left:0;
+    padding-right:12px;
     font-family: "Sans Medium";
     top: 140px;
     padding-top:10px;
-    max-width: 100vw;
+    max-width: 99vw;
     max-height: 100%;
     display: grid;
     grid-template-columns:32vw 3vw 63vw 2vw;
