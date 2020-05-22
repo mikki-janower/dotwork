@@ -19,6 +19,7 @@
 }
 
 #fullindex{
+    overflow-x:hidden;
     position:relative;
     left:-10px;
     margin:0;
