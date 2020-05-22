@@ -1,13 +1,12 @@
 $(document).ready(function () {
     
 let about = false;
-
-$( ".pic" ).draggable({
-    appendTo: 'body',
-containment: 'window',
-});
 let dragFunction;
 
+/*$( ".pic" ).draggable({
+    appendTo: 'body',
+    containment: 'window',
+});
 
 $(document).delay(150).queue(function (next) {
         $(".pic").css("transform", "rotateY(0deg)");
@@ -24,8 +23,37 @@ $(document).delay(150).queue(function (next) {
             $( ".pic" ).draggable( "option", "disabled", true );
             dragFunction = false;
         }
+    };*/
+
+$(document).delay(150).queue(function (next) {
+        $(".pic").css("transform", "rotateY(0deg)");
+        isDraggable();
+        next();
+    });
+//----------------------------------decide if homepage is wide enough to make pics draggable
+    const isDraggable = function(){
+        let w = window.innerWidth;
+        if (w > 700){
+            $( ".pic" ).draggable({
+                appendTo: 'body',
+                containment: 'window',
+            });
+            dragFunction = true;
+            positionRandom();
+        }
     };
- $(window).resize(function(){
+
+    $(window).resize(function(){
+        let w = window.innerWidth;
+        isDraggable();
+        if (w < 700){
+         $(document).delay(300).queue(function (next) {
+             window.location.href = "index.html";
+             next();
+         });
+     }
+ });
+ /*$(window).resize(function(){
        isDraggable();
        if (dragFunction == false){
         $(document).delay(300).queue(function (next) {
@@ -33,7 +61,7 @@ $(document).delay(150).queue(function (next) {
             next();
         });
     }
-});
+});*/
 
 
 //----------------------------------------------------------------position pics randomly on page load AND on resize 
