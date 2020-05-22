@@ -1,5 +1,9 @@
 $(document).ready(function(){
-    $('#fullindex').fadeIn("100");
+
+    $(window).on("load",function(){
+        $('#loader').fadeOut(200);
+        $('#fullindex').delay(200).fadeIn(200);
+    });
     
 //lozad is supposed to help with lazyloading, etc
 var image = $('img');
@@ -50,7 +54,7 @@ $('.listing a, .more a').mouseout(function() {
 //----------------------------------------index appear
 let index = true;;
 const indexAppear = function () {
-    $("#fullindex").delay("300").fadeIn("200");
+    $("#fullindex").delay("200").fadeIn("200");
     $('.indexbottom').fadeOut("200");
     index = true;
     }

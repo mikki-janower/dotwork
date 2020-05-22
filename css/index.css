@@ -1,4 +1,4 @@
-/*#loader{
+#loader{
     position:fixed;
     z-index:50;
     top:0;
@@ -10,9 +10,18 @@
 
     animation: type 4s steps(60, end); 
 }
-#loader span{
-    animation: blink 1s infinite;
-  }*/
+#loader img{
+    width: 10vw;
+    height:auto;
+    position: absolute;
+    margin-left:20px;
+    bottom:16px;
+    animation: rotateAnimation 3s linear infinite;
+  }
+  @keyframes rotateAnimation {
+	from {transform: rotate3d(1, .5, .5, 0deg);}
+    to {transform: rotate3d(1,.5,.5, 359deg);}
+}
 
 .back{
     justify-self:flex-end;
