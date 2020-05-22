@@ -73,9 +73,6 @@ $(document).ready(function () {
             transition: ".1s",
             color: "rgba(255,255,255,.4)"
         });
-        $(".index").css("display", "none");
-       // $(".projectTitle").css("display", "none");
-        $(".finishedindex").css("display", "none");
         $(".about").css("display", "none");
     }
 
@@ -96,11 +93,9 @@ $(document).ready(function () {
                 });
                 $(".projectTitle").css("display", "flex");
                     if (w > 750){
-                        $(".index").css("display", "flex");
                         $(".finishedindex").css("display", "flex");
                     };
                     $(".about").css("display", "flex");
-                  //  $(".projectTitle").css("display", "flex");
                 next();
             });
         $(".top p, a").css({
