@@ -7,12 +7,6 @@ let dragFunction;
     appendTo: 'body',
     containment: 'window',
 });
-
-$(document).delay(150).queue(function (next) {
-        $(".pic").css("transform", "rotateY(0deg)");
-        isDraggable();
-        next();
-    });
 //----------------------------------decide if homepage is wide enough to make pics draggable
     const isDraggable = function(){
         let w = window.innerWidth;
@@ -43,16 +37,26 @@ $(document).delay(150).queue(function (next) {
         }
     };
 
+    var cachedWidth = $(window).width();
     $(window).resize(function(){
-        let w = window.innerWidth;
-        isDraggable();
-        if (w < 700){
-         $(document).delay(300).queue(function (next) {
-             window.location.href = "index.html";
-             next();
+        var newWidth = $(window).width();
+        if(newWidth !== cachedWidth){
+            //DO RESIZE HERE
+            $(window).resize(function(){
+                let w = window.innerWidth;
+                isDraggable();
+                if (w < 700){
+                 $(document).delay(300).queue(function (next) {
+                     window.location.href = "index.html";
+                     next();
+                     dragFunction = false;
+                 });
+             }
          });
-     }
- });
+            cachedWidth = newWidth;
+        }
+    });
+
  /*$(window).resize(function(){
        isDraggable();
        if (dragFunction == false){
