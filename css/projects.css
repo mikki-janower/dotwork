@@ -1,4 +1,11 @@
 /*-----------------------#project denotes standards consistent between pages-----------------*/ 
+body{
+    position:absolute;
+    right:0;
+    left:0;
+    min-width:100%;
+    overflow-x:hidden;
+}
 
 #projfooter, #projfooter a{
         display:flex;
@@ -117,6 +124,7 @@ grid-row:3;
 }
 /*-----------------------zoom-in overlay----------------*/
 .modal-overlay{
+    z-index:50;
     position:fixed;
     width:100%;
     max-height:100%;
@@ -131,13 +139,14 @@ grid-row:3;
 }
 .modal-overlay img{
     z-index:50;
-    position:fixed;
+    position:relative;
     max-height:85%;
     max-width:90%;
+    top:0;
+    left:0;
     margin-left:50vw;
     margin-top:50vh;
     transform:translate(-50%, -50%);
-    display:none;
 }
 
 /*-----------------------non-universal changes for specific projects----------------*/

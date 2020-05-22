@@ -79,11 +79,11 @@ $(document).ready(function () {
     $("body").on("click", ".modal-overlay", function () {
         let w = window.innerWidth;
         $(".modal-overlay, .modal-img").fadeOut("100");
+        $("body").css("overflow", "scroll");
         //------------------------fade out the changes to the menus---------//
         $(".top")
             .delay(200)
             .queue(function (next) {
-                $("body").css("overflow", "scroll");
                 $(".top").css({
                     transition: "0s",
                     "background-color": "white",
