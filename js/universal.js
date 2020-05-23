@@ -31,12 +31,11 @@ const bottomScrolled = function() {
 $(window).scroll(function () {
     let w = window.innerWidth;
     if (w < 700) {
-      //  if($(window).scrollTop() + $(window).height() == $(document).height()) {
-        if($(window).scrollTop() + $(window).height() >= $(document).height() - 160) {
+        if($(window).scrollTop() + $(window).height() >= $(document).height() - 400) {
             $(".bottom").fadeIn(200); 
-        } else {
-            $(".bottom").fadeOut(200);  
         } 
+    } else {
+      $(".bottom").fadeOut(200);  
     }
 });
 };
@@ -51,6 +50,10 @@ const bottomVisibility = function () {
  }
 }
 $(window).resize(function() {
+    bottomVisibility();
+});
+
+$(window).scroll(function () {
     bottomVisibility();
 });
 

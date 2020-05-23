@@ -41,7 +41,7 @@ html{
   -webkit-overflow-scrolling: touch;
 }
 body {
-  max-width: 88vw;
+  width: 100%;
   max-height:100vh;
   position:relative;
 	font-family: 'Sans Medium';
@@ -160,10 +160,6 @@ a{
   margin-top:2px;
   justify-self:flex-start
 }
-#draggable-live-region{
-position:relative;
-overflow:scroll;
-} 
 /*#index{
     position: fixed;
     font-size: 3em;;
@@ -519,7 +515,6 @@ display:none;
   .soundscapes{
     margin-top: -30px;
   }*/
-
 } 
 
 @media (max-width: 900px) { 
@@ -615,15 +610,6 @@ display:none;
 }
 
 @media (max-width: 700px) { 
-  /*::-webkit-scrollbar {
-    display:inherit;
-  }
-  ::-webkit-scrollbar-thumb {
-    display:inherit;
-  }
-  ::-webkit-scrollbar-track {
-  display:inherit;
-  }*/
   #about{
     display:flex;
     flex-direction:column;
@@ -643,7 +629,7 @@ display:none;
     padding-right:10px;
   }
   #homepage{
-    width:98vw;
+    width:110%;
     position:relative;
     top:4.5vh;
     margin-top:0;
@@ -652,9 +638,11 @@ display:none;
     left:0;
     right:0;
     padding:0;
-    flex-direction:column;
+    flex-direction:column-reverse;
     overflow-x:hidden;
-    overflow-y:scroll;
+  }
+  .discoveryourair{
+    padding-bottom:160px;
   }
   .pic #label{
     font-size:18px;
@@ -663,22 +651,16 @@ display:none;
   }
   .pic{
     position:relative;
-    max-width:98%;
+    max-width:98vw;
     height:auto;
     cursor:pointer;
     left:0px;
     right:10px;
+    min-width:98vw;
   }
   .pic:hover{
     cursor:pointer;
   }
-  .discoveryourair{
-    padding-bottom:140px;
-  }
-
-  /*.majorarcana, .soundscapes, .discoveryourair, .reconna, .spiritmolecule, .reflections, .postcursor{
-    margin-top:20px;
-  }*/
 }
 
 @media (max-width: 675px) { 
@@ -732,24 +714,6 @@ display:none;
 }
 
 @media (max-width: 450px) { 
-  ::-webkit-scrollbar {
-    display:inherit;
-  }
-  ::-webkit-scrollbar-thumb {
-    height:10px;
-    width:6px;
-    opacity:1;
-    background-color:black;
-    border-radius:40px;
-    margin-right:3px;
-    display:inherit;
-  }
-  ::-webkit-scrollbar-track {
-  width:8px;
-  border-radius:40px;
-  margin-right:3px;
-  display:inherit;
-  }
 
 }
 
