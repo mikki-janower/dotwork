@@ -36,25 +36,15 @@
 ::selection{
   background-color: yellow;
 }
-html{
-  overflow:scroll;
-  -webkit-overflow-scrolling: touch;
-}
+
 body {
-  width: 100%;
-  max-height:100vh;
+  margin:0;
   position:relative;
 	font-family: 'Sans Medium';
 	font-size: 16px;
 	line-height: 1;
 	color: black;
-	margin: 6px 10px 10px 10px;
-  -webkit-overflow-scrolling: touch;
-
-  transition: background-color 0.5s;
-  -webkit-transition: background-color 0.5s linear;
-  -ms-transition: background-color 0.5s linear;
-  transition: background-color 0.5s linear;
+  overflow-x:hidden;
 }
 .dot{
   font-size: 16px;
@@ -69,6 +59,7 @@ body {
   width: 99vw;
   padding-top:6px;
   flex-wrap:wrap;
+  right:10px;
   left:10px;
   top:0;
   background-color:white;
@@ -90,11 +81,12 @@ transition: background-color 0.5s linear;
   margin-right: 1vw;
   text-align: left;
   cursor: pointer;
+  padding-left:10px;
+  padding-right:10px;
 }
 a{
   color:black;
 }
-
 .about{
   justify-self:flex-start;
 }
@@ -105,8 +97,8 @@ a{
   display: inline-flex;
   flex-direction: column;
   position:fixed;
-  bottom:10px;
-  left:0;
+  bottom:0px;
+  padding-bottom:10px;
   z-index:100;
 }
 a{
@@ -125,17 +117,17 @@ a{
 }
 
 #about{
- position: fixed;
+ position: absolute;
  font-size: 1.9em;;
  line-height:1.1;
  font-family: 'Times New Roman';
- left: 0;
+ left: 10px;
+ right:10px;
  max-width: 100vw;
  max-height:100vh;
  bottom:160px;
  top:0;
  margin-top:80px;
- padding: 10px 16px 16px 10px;
  display: grid;
  grid-template-columns: 35vw 58vw 1fr;
  grid-template-rows: auto;
@@ -160,36 +152,6 @@ a{
   margin-top:2px;
   justify-self:flex-start
 }
-/*#index{
-    position: fixed;
-    font-size: 3em;;
-    line-height:1.1;
-    font-family: "Times New Roman";
-    top: 10vh;
-    left: 0;
-    width: 98vw;
-    height: 90vh;
-    padding: 10px 16px 16px 10px;
-    display: none;
-   }
-  #index p{
-    position:absolute;
-    font-family: 'Neue Machina';
-    line-height:1;
-    left:50%;
-    top:30%;
-    transform:translate(-50%, -50%) rotate(-2deg);
-    text-align:center;
-    width:80vw;
-    z-index:10;
-    background-color:transparent;
-   }
-   #index img{
-     z-index:1;
-     margin-top:-8vh;
-     height:75vh;
-     opacity:.8;
-   }*/
 
 #label{
   transform-origin: 50% 50%;
@@ -202,7 +164,7 @@ a{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  max-width: 100%;
+  width: 100%;
 }
 .labelita{
   font-family: "Neue Machina";
@@ -211,12 +173,12 @@ a{
 }
 .labelreg{
   font-family: "Saol";
+  padding-right:10px;
 }
 .pic{
   position:absolute;
   transition: transform .2s;
-  max-width:30vw;
-  min-width:20vw;
+  max-width:20vw;
   cursor:pointer;
   transform:rotateY(90deg);
 }
@@ -226,44 +188,17 @@ a{
 .pic img{
   position:relative;
   transition: .2s;
-  max-width:100%;
+  width:100%;
 }
 #homepage{
-  max-width:100vw;
+  width:100%;
+  height:100vh;
   margin-top:3vh;
   position:relative;
   top:10px;
-  left:0;
-  -webkit-overflow-scrolling: touch;
+  right:10px;
+  left:10px;
 }
-
-/*.soundscapes{
-  grid-column: 2;
-  grid-row:2/span 2;
-  align-self:center;
-  margin-top:220px;
-}
-.majorarcana{
-  grid-row:2/span 2;
-  align-self:center;
-}
-.discoveryourair{
-  grid-column:4;
-  grid-row:3;
-}
-.discoveryourair{
-  grid-column:3;
-  grid-row:2/span 2;
-  align-self:center;
-  margin-top:-20px;
-}
-.spiritmolecule{
-  grid-column: 4;
-  grid-row:2/span 2;
-  align-self:center;
-  margin-top:140px;
-} */
-
 /*----------------------------------drag shit--------------------------------*/
 .dragTitle{
   font-size: 1.8rem;
@@ -305,232 +240,9 @@ display:none;
 
 /*---------------------------------meeeeeeeeeedia queeeeeeeeriiiiiiiiiiiiesssssss-----------*/
 
-@media (max-width: 1500px){ 
-  .pic{
-    max-width:20%;
-  }
-
-  /* #homepage{
-    margin-top:8vh;
-    height:90vh;
-    width:96vw;
-    margin-bottom:0px;
-    grid-template-columns: 20% 20% 20% 20% 20%;
-    grid-template-rows: 20% 20% 20% 20%;
-  }
-
-    .pic{
-      max-width: 90%;
-    }
-    .reflections{
-      justify-self:center;
-      grid-column:4;
-      grid-row:1;
-      align-self:flex-start;
-      margin-top:-10px;
-    }
-    .spiritmolecule{
-      grid-column:5;
-      grid-row: 3/span 2;
-      margin-top:20px;
-      justify-self:center;
-    }
-    .reconna{
-      grid-column:3;
-      grid-row:1/span 2;
-      justify-self:flex-start;
-      align-self:flex-end;
-    }
-    .majorarcana{
-      justify-self:flex-start;
-      margin-top:0px;
-    }
-    .discoveryourair{
-      margin-top:-160px;
-      grid-column:3;
-      grid-row:4;
-      align-self:flex-end;
-    }
-    .soundscapes{
-      margin-top:0px;
-      justify-self:center;
-      grid-column:5;
-      grid-row:2;
-    }
-    .reconna{
-      grid-row:1;
-      align-self:flex-start;
-      margin-top:-10px;
-
-    }
-    .postcursor{
-      grid-column:2;
-      grid-row:3;
-      margin-top:-125px;
-    } */
-} 
-
-@media (max-width: 1375px) { 
-
-}
-@media (max-width: 1350px) { 
-  #homepage{
-    margin-top:3vh;
-    width:96vw;
-  }
-  /*.majorarcana{
-    margin-top:-60px;
-  }
-  .soundscapes{
-    margin-top:160px;
-  }
-  .discoveryourair{
-    margin-top: -60px;
-  }
-  .spiritmolecule{
-    margin-top:80px;
-  }*/
-
-}
-
-@media (max-width: 1325px) { 
-
-}
-
-@media (max-width: 1300px) { 
-
-} 
-
-@media (max-width: 1275px) { 
- /* .majorarcana{
-    margin-top:-100px;
-  }
-  .soundscapes{
-    margin-top:120px;
-  }
-  .discoveryourair{
-    margin-top: -100px;
-  }
-  .spiritmolecule{
-    margin-top:40px;
-  }*/
-}
-
-@media (max-width: 1250px) { 
-
-}
-
-@media (max-width: 1225px) { 
-
-}
-
-@media (max-width: 1200px) { 
-  #homepage{
-    margin-top:8vh;
-   /* height:91vh;*/
-    width:95vw;
-  }
-  #top{
-    width:96vw;
-  }
-  /*.majorarcana{
-    margin-top:-90px;
-  }
-  .soundscapes{
-    margin-top:100px;
-  }
-  .discoveryourair{
-    margin-top: -100px;
-  }
-  .spiritmolecule{
-    margin-top:20px;
-  }*/
-}
-
-@media (max-width: 1175px) { 
-
-}
-
-@media (max-width: 1150px) { 
-}
-
-@media (max-width: 1125px) { 
-
-}
-
-@media (max-width: 1100px) { 
-  /*.majorarcana{
-    margin-top:-120px;
-  }
-  .soundscapes{
-    margin-top:40px;
-  }
-  .discoveryourair{
-    margin-top: -140px;
-  }
-  .spiritmolecule{
-    margin-top:-20px;
-  }*/
-}
-
-@media (max-width: 1075px) { 
-}
-
-@media (max-width: 1050px) { 
-
-}
-
-@media (max-width: 1025px) { 
- /* .majorarcana{
-    margin-top:-160px;
-  }
-  .soundscapes{
-    margin-top:-10px;
-  }
-  .discoveryourair{
-    margin-top: -180px;
-  }
-  .spiritmolecule{
-    margin-top:-80px;
-  }*/
-}
-
-@media (max-width: 1000px) { 
-
-}
-
-@media (max-width: 975px) { 
-
-}
-@media (max-width: 950px) { 
-  #homepage{
-    width:94vw;
-  }
-}
-
-@media (max-width: 925px) { 
-  /*.majorarcana{
-    margin-top: -200px;
-  }
-  .soundscapes{
-    margin-top: -30px;
-  }*/
-} 
-
 @media (max-width: 900px) { 
-  #index p{
-    width:85vw;
-  } 
-  #index{
-    font-size:35px;
-    max-height:90vh;
-  }
-  #top{
-    width:94vw;
-  }
   #about{
     position:relative;
-    margin-left:-10px;
     grid-template-columns: 30vw 58vw 2vw;
   }
   #about p{
@@ -539,77 +251,13 @@ display:none;
     margin:0;
     left:0;
   }
-/*
-  #homepage{
-  margin-top:6vh;
-  max-height:93vh;
-  width:96vw;
-  grid-template-rows: 25% 25% 25%;
-  grid-template-columns: 35% 33% 31%;
-  }
-  .pic{
-    max-width: 70%;
-  }
-  .reflections{
-    justify-self:flex-end;
-  }
-  .spiritmolecule{
-    grid-column:3;
-    grid-row: 3/span 2;
-    margin-top:20px;
-    justify-self:center;
-  }
-  .reconna{
-    grid-column:2;
-    grid-row:3/span 2;
-  }
-  .majorarcana{
-    margin-top:-100px;
-    justify-self:center;
-  }
-  .discoveryourair{
-    margin-top:-130px;
-  }
-  .soundscapes{
-    margin-top:-80px;
-    justify-self:center;
-  }
-  .reconna{
-    margin-top: 60px;
-  } */
 } 
-
-@media (max-width: 875px) { 
-
-}
-
-@media (max-width: 850px) { 
-}
-
-@media (max-width: 825px) { 
-
-}
 
 @media (max-width: 800px) { 
   #about p{
     width: 90vw;
     font-size:.75em;
   }
-}
-
-@media (max-width: 775px) { 
-
-}
-
-@media (max-width: 750px) { 
-
-}
-
-@media (max-width: 725px) { 
-
-}
-
-@media (max-width: 700px) { 
   #about{
     display:flex;
     flex-direction:column;
@@ -628,18 +276,27 @@ display:none;
     max-width:99%;
     padding-right:10px;
   }
+}
+  
+  @media (max-width: 700px) { 
   #homepage{
-    width:110%;
+    width:97%;
     position:relative;
-    top:4.5vh;
-    margin-top:0;
-    margin-right:10px;
+    top:0;
+    margin-top:4.5vh;
+    right:10px;
     display:flex;
-    left:0;
-    right:0;
-    padding:0;
-    flex-direction:column-reverse;
+    flex-direction:column;
     overflow-x:hidden;
+  }
+  .pic{
+    position:relative;
+    max-width:96%;
+    right:10px;
+    cursor:pointer;
+    left:0px;
+    right:10px;
+    min-width:97vw;
   }
   .discoveryourair{
     padding-bottom:160px;
@@ -648,74 +305,18 @@ display:none;
     font-size:18px;
     margin-top:12px;
     margin-bottom:16px;
-  }
-  .pic{
-    position:relative;
-    max-width:98vw;
-    height:auto;
-    cursor:pointer;
-    left:0px;
-    right:10px;
-    min-width:98vw;
+    margin-right:16px;
   }
   .pic:hover{
     cursor:pointer;
   }
 }
 
-@media (max-width: 675px) { 
-
-}
-
-@media (max-width: 650px) { 
-
-}
-@media (max-width: 625px) { 
-
-}
-
-@media (max-width: 600px) { 
-
-}
-
-@media (max-width: 575px) { 
-
-}
-
-@media (max-width: 550px) { 
-
-}
-
-@media (max-width: 525px) { 
-
-}
-
 @media (max-width: 500px) { 
   .top .flip:hover, .flip:hover, .top .flip:active{
     transform: rotateY(0deg);
   }
-  #index img{
-    width: 70vw;
-    height:auto;
-  }
-  .top{
-    padding-bottom:0px;
-  }
-
-  @media (max-width:500px){
-    #homepage{
-        max-width: 97vw;
-    }
-}
-}
-
-@media (max-width: 475px) { 
-
-}
-
-@media (max-width: 450px) { 
-
-}
+  } 
 
 
 

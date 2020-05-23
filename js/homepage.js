@@ -3,22 +3,6 @@ $(document).ready(function () {
 let about = false;
 let dragFunction;
 
-/*$( ".pic" ).draggable({
-    appendTo: 'body',
-    containment: 'window',
-});
-//----------------------------------decide if homepage is wide enough to make pics draggable
-    const isDraggable = function(){
-        let w = window.innerWidth;
-        if (w > 700){
-            dragFunction = true;
-            positionRandom();
-        } else {
-            $( ".pic" ).draggable( "option", "disabled", true );
-            dragFunction = false;
-        }
-    };*/
-
 $(document).delay(150).queue(function (next) {
         $(".pic").css("transform", "rotateY(0deg)");
         isDraggable();
@@ -57,16 +41,6 @@ $(document).delay(150).queue(function (next) {
         }
     });
 
- /*$(window).resize(function(){
-       isDraggable();
-       if (dragFunction == false){
-        $(document).delay(300).queue(function (next) {
-            window.location.href = "index.html";
-            next();
-        });
-    }
-});*/
-
 
 //----------------------------------------------------------------position pics randomly on page load AND on resize 
 
@@ -75,7 +49,6 @@ $(document).delay(150).queue(function (next) {
 const positionRandom = function(){
     let w = window.innerWidth;
     var divs = document.querySelectorAll('.pic');
-    let homepage = $('#homepage');
 // get window width and height
 
 var winWidth = window.innerWidth - 250;
@@ -295,40 +268,6 @@ $(".about").click(function () {
          homepageAppear();
      }
 });
-
-//------------------------------#index-under-construction page turn
-/*$(".index").click(function () {
-
-
-    if (index == false) {
-        //---------------hide homepage
-        $(".pic").css("transform", "rotateY(90deg)");
-        $(".pic").fadeOut("200");
-        $(".dragTitle").fadeOut("300");
-        $("#homepage").fadeOut("300");
-
-        //---------------hide about
-        if (about == true) {
-            $("#about").slideToggle("200");
-            $(".about").html("About");
-            about = false;
-        }
-
-        //---------------show index section
-        $("#index")
-            .delay("200")
-            .slideToggle("200");
-        $(".index").html("Back");
-        index = true;
-
-    } else {
-
-        $("#index").slideToggle("200");
-        $(".index").html("Index");
-        index = false;
-        homepageAppear();
-    }
-});*/
 
 //---------------------------------.name homepage turn
 $(".name").click(function () {

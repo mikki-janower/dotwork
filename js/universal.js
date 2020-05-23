@@ -31,24 +31,23 @@ const bottomScrolled = function() {
 $(window).scroll(function () {
     let w = window.innerWidth;
     if (w < 700) {
-        if($(window).scrollTop() + $(window).height() >= $(document).height() - 400) {
+        if ($(window).scrollTop() + $(window).height() >= $(document).height() - 160) {
             $(".bottom").fadeIn(200); 
-        } 
-    } else {
-      $(".bottom").fadeOut(200);  
+        } else {
+            $(".bottom").fadeOut(200); 
+        }
     }
 });
 };
-
 const bottomVisibility = function () {
  let w = window.innerWidth;
  if (w < 700){
-    $(".bottom").css("display", "none");
+  $(".bottom").css("display", "none");
     bottomScrolled();
  } else {
-    $(".bottom").css("display", "flex"); 
+    $(".bottom").css("display", "flex");
  }
-}
+};
 $(window).resize(function() {
     bottomVisibility();
 });
@@ -56,10 +55,11 @@ $(window).resize(function() {
 $(window).scroll(function () {
     bottomVisibility();
 });
+$(window).on("load",function () {
+    bottomVisibility();
+});
 
 bottomVisibility();
-
-
 
 //--------------------document closing bracket, don't touch
 });

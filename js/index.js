@@ -1,8 +1,7 @@
 $(document).ready(function(){
 
     $(window).on("load",function(){
-        $('#loader').fadeOut(200);
-        $('#fullindex').delay(200).fadeIn(200);
+        $('#fullindex').fadeIn(200);
     });
     
 //lozad is supposed to help with lazyloading, etc
