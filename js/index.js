@@ -1,8 +1,5 @@
 $(document).ready(function(){
-
-    $(window).on("load",function(){
-        $('#fullindex').fadeIn(200);
-    });
+ $('#fullindex').fadeIn(100);
     
 //lozad is supposed to help with lazyloading, etc
 var image = $('img');
