@@ -87,9 +87,9 @@ $(document).ready(function () {
                 $(".top").css({
                     transition: "0s",
                     "background-color": "white",
-                    "-webkit-box-shadow": "0px -1px 11px 12px rgba(255,255,255,1)",
-                    "-moz-box-shadow": "0px -1px 11px 12px rgba(255,255,255,1)",
-                    "box-shadow": "0px -1px 11px 12px rgba(255,255,255,1)"
+                    "-webkit-box-shadow": "0px -1px 11px 12px rgba(221,221,221,1)",
+                    "-moz-box-shadow": "0px -1px 11px 12px rgba(221,221,221,1)",
+                    "box-shadow": "0px -1px 11px 12px rgba(221,221,221,1)"
                 });
                 $(".projectTitle").css("display", "flex");
                     if (w > 750){

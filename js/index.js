@@ -48,7 +48,9 @@ $('.listing a, .more a').mouseout(function() {
     });
 //--------------------------------------------------------------------------------index page turns
 //----------------------------------------index appear
-let index = true;;
+let index = true;
+let about = false;
+
 const indexAppear = function () {
     $("#fullindex").delay("200").fadeIn("200");
     $('.indexbottom').fadeOut("200");
@@ -56,8 +58,6 @@ const indexAppear = function () {
     }
 
 //-----------------------------------------#about page turn
-let about = false;
-
 $(".about").click(function () {
      if (about == false) {
          //---------------hide index
