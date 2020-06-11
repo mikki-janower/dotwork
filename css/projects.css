@@ -152,6 +152,7 @@ textarea {
     color:#111111;
     overflow:hidden;
     font-family: "Reconna";
+    background-color: transparent;
     font-size: 30px;
     height:150px;
     width: auto;
