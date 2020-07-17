@@ -8,6 +8,9 @@
 cursor:default;
 }
 
+.index{
+    justify-self:flex-start;
+}
 #project{
     position:relative;
     max-width: 100%;
