@@ -45,6 +45,9 @@ body {
   font-family: 'Saol Display Reg';
   font-style:italic;
 }
+.main{
+  grid-template-columns: 29% 35.5% 35.5%;
+}
 .top{
   position:absolute;
   z-index:100;
@@ -122,7 +125,7 @@ a{
 #about{
  max-width: 100%;
  display: grid;
- grid-template-columns: 35% 32.5% 32.5%;
+ grid-template-columns: 29% 35.5% 35.5%;
  grid-template-rows: auto;
  border-bottom:1px black solid;
 }
@@ -142,6 +145,7 @@ a{
 #about img{
   padding-right: 10px;
   max-height:200px;
+  max-width: 92%;
   width:auto;
   transition:.2s;
   padding-left:12px;
@@ -197,7 +201,7 @@ a{
   padding-top:12px;
   padding-bottom:10px;
   align-items:center;
-  grid-template-columns: 35% 32.5% 32.5%;
+  grid-template-columns: 29% 35.5% 35.5%;
   border-bottom:1px solid black;
   cursor:pointer;
   transition: .3s;
@@ -242,7 +246,7 @@ a{
   max-width: 100%;
   display: grid;
   grid-column:1/span 3;
-  grid-template-columns: 35% 65%;
+  grid-template-columns: 29% 71%;
   grid-template-rows: auto auto auto;
   padding-top:10px;
   padding-right:10px;

@@ -3,7 +3,7 @@ $(document).ready(function () {
 //---------------------------------shorten main title accordingly to fit the width of the screen
     const dot = (function () {
         const w = window.innerWidth;
-        if (w >= 1000) {
+        if (w >= 1050) {
             $(".name").html(
                 "Mikki Janower<span class='dot'> dot &nbsp</span>Work"
             );
