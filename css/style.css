@@ -486,10 +486,12 @@ a{
     display:none;
   }
 #fullindex{
-  top:30px;
+  top:20px;
 }
 .listing{
   font-size:22px;
+  padding-top:9px;
+  padding-bottom:9px
 }
 .description{
   display:none;
