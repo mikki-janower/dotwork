@@ -1,25 +1,15 @@
 $(document).ready(function () {
-    $("#project").fadeIn("100");
+   $("#project").fadeIn("100");
     $(document).delay(200).queue(function (next) {
         $(".projectTitle").css("transform", "rotate(0deg)");
+        //$(".index").css("transform", "rotate(0deg)");
         next();
     });
+
     //------------------------------------redirect to homepage when .name or .projectTitle are clicked
-
-    const homepageAppear = function () {
-        let w = window.innerWidth;
-        if (w > 700){
-            $(".pic").css("transform", "rotateY(90deg)");
-            $(".pic").fadeIn("200");
-        } else {
-            $(".pic").css("transform", "rotateY(0deg)");
-            $(".pic").fadeIn("200");
-        }
-        $("#homepage").fadeIn("300");
-    }
-
-    $(".name").click(function () {
+    $(".name, .index").click(function () {
        $(".projectTitle").css("transform", "rotateY(90deg)");
+       $(".index").css("transform", "rotateY(90deg)");
         $("#project").slideToggle(200);
         $(document)
             .delay(300)
@@ -27,7 +17,6 @@ $(document).ready(function () {
                 window.location.href = "index.html";
                 next();
             });
-            homepageAppear();
         
         return false;
     });
@@ -62,7 +51,7 @@ $(document).ready(function () {
         );
         $(".modal-overlay, .modal-img").fadeIn("100");
         //------------------------style the page so menus show despite the overlay---------//
-        $("body").css("overflow", "hidden");
+        $("body").css("overflow-y", "hidden");
         $(".top").css({
             "background-color": "transparent",
             "-webkit-box-shadow": "none",
@@ -70,91 +59,34 @@ $(document).ready(function () {
             "box-shadow": "none"
         });
         $(".top p, a").css({
-            transition: ".1s",
+            transition: ".2s",
             color: "rgba(255,255,255,.4)"
         });
-        $(".about").css("display", "none");
     }
 
     $("body").on("click", ".modal-overlay", function () {
-        let w = window.innerWidth;
         $(".modal-overlay, .modal-img").fadeOut("100");
-        $("body").css("overflow", "scroll");
         //------------------------fade out the changes to the menus---------//
         $(".top")
-            .delay(200)
+            .delay(300)
             .queue(function (next) {
+                $("body").css("overflow-y", "scroll");
                 $(".top").css({
                     transition: "0s",
-                    "background-color": "#dddddd",
-                    "-webkit-box-shadow": "0px -1px 11px 12px rgba(221,221,221,1)",
-                    "-moz-box-shadow": "0px -1px 11px 12px rgba(221,221,221,1)",
-                    "box-shadow": "0px -1px 11px 12px rgba(221,221,221,1)"
+                    "background-color": "#f2f2f2",
+                  /* "-webkit-box-shadow": "0px -1px 10px 11px #f2f2f2",
+                    "-moz-box-shadow": "0px -1px 10px 11px #f2f2f2",
+                    "box-shadow": "0px -1px 10px 11px #f2f2f2"*/
                 });
-                $(".projectTitle").css("display", "flex");
-                    if (w > 750){
-                        $(".finishedindex").css("display", "flex");
-                    };
-                    $(".about").css("display", "flex");
                 next();
             });
         $(".top p, a").css({
-            transition: ".1s",
+            transition: ".2s",
             color: "black"
-            });
+        });
     });
-
-
-//------------------------------------------------------------------project page turns--------------
-//----------------------------------------project appear
-const projectAppear = function () {
-    $("#project").delay("300").fadeIn("200");
-    }
-
-//------------------------------#index-under-construction page turn
-/*let index = false;
-$(".index").click(function () {
-
-    if (index == false) {
-
-        //---------------hide project
-        $("#project").fadeOut("200");
-
-        //---------------show index section
-        $("#index")
-            .delay("200")
-            .slideToggle("200");
-            $(".index").html("Back");
-            index = true;
-
-    } else {
-
-        $("#index").slideToggle("200");
-        $(".index").html("Index");
-        index = false;
-        projectAppear();
-    }
-});*/
-
-//---------------------------------.name homepage turn
-$(".name").click(function () {
-
-    //---------------hide index
-    if (index == true) {
-        $("#index").slideToggle("200");
-        $(".index").html("Index");
-        index = false;
-    }
-    //---------------bring back homepage
-    $(document).delay(300).queue(function (next) {
-        window.location.href = "index.html";
-        next();
-    });
-
-//return false;
 });
 
-//----------------------------------index page turn
 //--------------------------------index page turn
 
 $(".index").click(function () {
@@ -170,13 +102,17 @@ $(".index").click(function () {
 
     //---------------page redirect
     $(document).delay(300).queue(function (next) {
-        window.location.href = "project-index.html";
+        window.location.href = "index.html";
         next();
     });
-
-return false;
+});
+$('.projectTitle').mouseout(function(){
+$('.projectTitle').html(title);
+$('.projectTitle').css("transform", "rotateY(0deg)");
 });
 
+$("#reconnatest textarea").hover(function () {
+    scrollTop: $("#Reconnatest textarea").offset().top;
+});
 
 //-----------------------------document closing bracket; don't touch
-});

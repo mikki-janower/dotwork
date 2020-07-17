@@ -5,7 +5,7 @@ $(document).ready(function () {
         const w = window.innerWidth;
         if (w >= 1000) {
             $(".name").html(
-                "Mikki Janower<span class='dot'>&nbsp dot &nbsp</span>Work"
+                "Mikki Janower<span class='dot'> dot &nbsp</span>Work"
             );
         } else if (w >= 700) {
             $(".name").html(
@@ -21,6 +21,23 @@ $(document).ready(function () {
     $(window).resize(function() {
         dot();
     });
+
+    //-------------------------fade in on scroll
+//AOS
+/*AOS.init();
+
+let image = $('#gallery img');
+$(image).attr({
+    "data-aos": "fade-in",
+    "data-aos-anchor-placement": "top-bottom",
+    "data-aos-delay" : "0",
+    "data-aos-easing" : "linear",
+    "data-aos-duration": "500",
+});
+
+/*let listing = $('.listing');
+$(listing).attr("data-aos", "fade-in"); */
+
  //--------------------temporary div that shows width—use to fix media queries as precisely as possible
     $(window).resize(function () {
         let width = window.innerWidth;
@@ -30,7 +47,7 @@ $(document).ready(function () {
 const bottomScrolled = function() {
 $(window).scroll(function () {
     let w = window.innerWidth;
-    if (w < 700) {
+    if (w < 900) {
         if ($(window).scrollTop() + $(window).height() >= $(document).height() - 160) {
             $(".bottom").fadeIn(200); 
         } else {
@@ -41,7 +58,7 @@ $(window).scroll(function () {
 };
 const bottomVisibility = function () {
  let w = window.innerWidth;
- if (w < 700){
+ if (w < 900){
   $(".bottom").css("display", "none");
     bottomScrolled();
  } else {

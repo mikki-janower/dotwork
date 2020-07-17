@@ -1,88 +1,100 @@
 $(document).ready(function(){
+
+let listing = $('.listing');
+let extender= $('.extender');
+
  $('#fullindex').fadeIn(200);
+
+
+
+ let index = true;
+
+if (window.innerWidth > 800) {
+//function to get every listing to open up sequentially, .3s apart
+$('#about').delay(400).slideToggle(250);
+$('.extender').each(function (i) {
+ // store the item around for use in the 'timeout' function
+var $item = $(this); 
+// execute this function sometime later:
+setTimeout(function() { 
+$item.delay(700).slideToggle(250)}, 300*i);
+// each element should animate half a second after the last one.
+});
+
+} else {
+    $('.firstfeature').find(extender).delay(400).slideToggle(350);
+}
+ 
+//clicking the index button makes the index into a list
+$('.list').click(function(){
+    $('.extender').each(function (i) {
+ // store the item around for use in the 'timeout' function
+var $item = $(this); 
+// execute this function sometime later:
+setTimeout(function() { 
+$item.slideToggle(250)}, 150*i);
+});
+});
     
-//lozad is supposed to help with lazyloading, etc
+//----------------lozad is supposed to help with lazyloading, etc
 var image = $('img');
 image.addClass(lozad);
-
 const observer = lozad(); // lazy loads elements with default selector as '.lozad'
 observer.observe();
 
 //----------------------------make extender visible on click
-var listing = $('.listing');
-var extender = $('.extender');
 
-//when a listing is clicked, this function toggles the listing and closes the others.
 
-    $(listing).click(function(){
-        //label all extenders "other" except for the selected one
-        $(extender).addClass('otherextender');
-        $(this).find(extender).removeClass('otherextender');
-        
-        //get rid of all "other" elements
-        $('.otherextender').slideUp(250);
+/* $(listing).click(function(){
+    //label all extenders "other" except for the selected one
+    $(extender).removeClass('thisextender').addClass('otherextender');
+    $(listing).removeClass('thislisting');
+    $(this).find(extender).removeClass('otherextender').addClass('thisextender');
 
-        //toggle the selected element on click as the "other" elements close
-        $(this).find(extender).slideToggle(250);
-       
-        //check the bottom menu, which should fade out as the document height is extended
-        });
+    //get rid of all "other" elements
+  //  $('.otherextender').slideUp(250);
+    //toggle selected element
+    $('.thisextender').slideToggle(250);
+}); */
 
-//-----------------------------------------button hover effect
-
-$('.listing a, .more a').hover(function(){
-            $(this).css({
-                "background-color": "yellow",
-               "-webkit-box-shadow": "0px -1px 5px 5px yellow",
-               "-moz-box-shadow": "0px -1px 5px 5px yellow",
-               "box-shadow" : "0px -1px 5px 5px yellow"
-            });
-        });
-$('.listing a, .more a').mouseout(function() {
-        $(this).css({
-            "background-color": "transparent",
-            "-webkit-box-shadow": "none",
-            "-moz-box-shadow": "none",
-            "box-shadow" : "none"
-        });
-    });
-//--------------------------------------------------------------------------------index page turns
-//----------------------------------------index appear
-let index = true;
-let about = false;
-
-const indexAppear = function () {
-    $("#fullindex").delay("200").fadeIn("200");
-    $('.indexbottom').fadeOut("200");
-    index = true;
+//go to case study / link when you click a listing on the index
+$('.listing').click(function(){
+    let thisextender = $(this).find(extender);
+    let dataLink = $(thisextender).data("link");
+    if (dataLink == "0"){
+    } else if ($(thisextender).data("target") == "_blank") {
+        window.open(dataLink);
+    } else {
+        window.location.href = dataLink;
     }
+}); 
 
-//-----------------------------------------#about page turn
+
+/*$('.listing:not(.firstfeature)').mouseenter(function(){
+   if ($('.listing:not(.firstfeature):hover').length > .5){
+        $(this).find(extender).slideDown(150);
+    }
+}).mouseleave(function(){
+    $(this).find(extender).slideUp(150);
+});*/
+
+
+//--------------------------------------------------------------------------------index page turns
+//----------------------------------------about
+
 $(".about").click(function () {
-     if (about == false) {
-         //---------------hide index
-         $("#fullindex").fadeOut("200");
-         $(".back").html("Home");
+        //---------------show about
+        $("#about").slideToggle(250);
 
-         //---------------show about
-         $("#about")
-             .delay("200")
-             .slideToggle("200");
-             $(".about").html("Back");
-             about = true;
-             $('.indexbottom').fadeIn("200");
 
-     } else {
-         $("#about").slideToggle("200");
-         $(".about").html("About");
-         about = false;
-         $(".back").html("Back");
-         indexAppear();
-     }
+
+    $('html,body').animate({
+        scrollTop: $("#about").offset().top - 80
+     });
 });
 
 //---------------------------------.name homepage turn
-$(".name, .back").click(function () {
+$(".name").click(function () {
 
     //---------------hide index
     if (index == true) {
