@@ -103,9 +103,9 @@ a{
   text-align:left;
   justify-content:flex-start;
 }
-.flip:hover{
+/*.flip:hover{
   transform:rotateY(180deg);
-}
+}*/
 .about{
   justify-self:flex-start;
 }
