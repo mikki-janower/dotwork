@@ -1,7 +1,14 @@
+
 @font-face{
   font-family: "Neue Montreal Medium";
   src:url('fonts/NeueMontreal-Medium.otf');
 }
+
+@font-face{
+  font-family: "Neue Montreal";
+  src:url('fonts/NeueMontreal-Regular.otf');
+}
+
 @font-face{
   font-family: "Saol Display Reg";
   src:url('fonts/SaolDisplay-RegularItalic.otf');
@@ -10,18 +17,24 @@
   font-family: "Saol Display";
   src:url('fonts/SaolDisplay-LightItalic.otf');
 }
+
 @font-face{
   font-family: "Reconna";
   src:url('fonts/ReconnaSerif.otf');
 }
-@font-face{
+/*@font-face{
   font-family: "Neue Machina";
   src:url('fonts/NeueMachina-Regular.woff');
 }
 @font-face{
-  font-family: "Neue Montreal";
-  src:url('fonts/NeueMontreal-Regular.otf');
+  font-family: "Neue Montreal Medium";
+  src:url('fonts/AgipoRegular.otf');
 }
+@font-face{
+  font-family: "Neue Montreal";
+  src:url('fonts/AgipoRegular.otf');
+}
+*/
 
 
 
@@ -463,6 +476,7 @@ a{
     grid-row:1;
     padding-right:20px;
     border-bottom:1px black solid;
+    margin-bottom:8px;
   }
   #about img{
     display:block;
