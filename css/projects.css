@@ -327,7 +327,7 @@ input:focus::-webkit-slider-runnable-track {
         #project{
             display:flex;
             flex-direction:column;
-            top:60px;
+            top:75px;
         }
         #description, #description a{
             font-size:24px;

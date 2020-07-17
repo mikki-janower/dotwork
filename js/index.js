@@ -17,7 +17,7 @@ $('.extender').each(function (i) {
 var $item = $(this); 
 // execute this function sometime later:
 setTimeout(function() { 
-$item.delay(700).slideToggle(250)}, 300*i);
+$item.delay(700).slideToggle(250)}, 20*i);
 // each element should animate half a second after the last one.
 });
 
@@ -88,9 +88,9 @@ $(".about").click(function () {
 
 
 
-    $('html,body').animate({
-        scrollTop: $("#about").offset().top - 80
-     });
+  /*  $('html,body').animate({
+        scrollTop: $("#about").offset().top 
+     }); */
 });
 
 //---------------------------------.name homepage turn
