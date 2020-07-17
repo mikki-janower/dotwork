@@ -207,7 +207,7 @@ a{
 
 /*------------make featured story one huge image rather than 2 thumbnails--------*/
 
-/*.firstfeature .extender img:nth-of-type(2){
+.firstfeature .extender img:nth-of-type(2){
   display:none;
 }
 .firstfeature .extender img{
@@ -217,7 +217,7 @@ a{
 
 .firstfeature .images{
   padding-right:0px;
-}*/
+}
 /*----back 2 our regularly scheduled programming----*/
 .title, .description, .thumbnails{
   grid-row:1;
