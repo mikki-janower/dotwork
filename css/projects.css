@@ -208,10 +208,11 @@ grid-row:3;
 
 /*---------------------------------reconna-------------------------*/
 #reconnatest{
-    display:inline-flex;
+    display:flex;
     flex-direction:column;
     width:100%;
     margin-bottom:20px;
+    grid-column:2;
 }
 textarea {
     background-color:#f2f2f2;

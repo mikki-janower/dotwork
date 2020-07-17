@@ -53,6 +53,9 @@ body {
   overflow-x: hidden;
   margin:0;
 }
+a{
+  transition:.325s;
+}
 .dot{
   font-size: 17px;
   font-family: 'Saol Display Reg';
@@ -304,7 +307,7 @@ a{
 .listing:not(.firstfeature) .words{
   display:none;
 }
-.details{
+.year{
   display:inline-flex;
   position:relative;
   padding-right:14px;
@@ -313,7 +316,7 @@ a{
   vertical-align:bottom;
   align-self:flex-end;
 }
-.details span{
+.year span{
   position:relative;
   margin-right: 24px;
 }
@@ -453,7 +456,7 @@ a{
 }*/
 
 @media (max-width: 700px){
- .details{
+ .year{
     display:none;
   }
   #about{

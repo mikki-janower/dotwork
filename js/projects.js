@@ -106,13 +106,15 @@ $(".index").click(function () {
         next();
     });
 });
-$('.projectTitle').mouseout(function(){
+
+
+/*$('.projectTitle').mouseout(function(){
 $('.projectTitle').html(title);
 $('.projectTitle').css("transform", "rotateY(0deg)");
-});
+});*/
 
-$("#reconnatest textarea").hover(function () {
+/*$("#reconnatest textarea").hover(function () {
     scrollTop: $("#Reconnatest textarea").offset().top;
-});
+});*/
 
 //-----------------------------document closing bracket; don't touch
