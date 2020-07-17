@@ -26,7 +26,7 @@ $item.delay(700).slideToggle(250)}, 300*i);
 }
  
 //clicking the index button makes the index into a list
-$('.list').click(function(){
+/* $('.list').click(function(){
     $('.extender').each(function (i) {
  // store the item around for use in the 'timeout' function
 var $item = $(this); 
@@ -34,7 +34,7 @@ var $item = $(this);
 setTimeout(function() { 
 $item.slideToggle(250)}, 150*i);
 });
-});
+});*/
     
 //----------------lozad is supposed to help with lazyloading, etc
 var image = $('img');
