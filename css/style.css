@@ -458,7 +458,7 @@ a{
   #about{
     padding-top:30px;
     display:none;
-    grid-template-columns: 35fr 65fr;
+    grid-template-columns: 29fr 71fr;
     grid-column-gap:10px;
     grid-template-rows: auto auto;
     padding-left:5px;
