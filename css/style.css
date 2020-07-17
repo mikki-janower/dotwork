@@ -50,7 +50,7 @@ body {
   z-index:100;
   display:grid;
   width: 100%;
-  grid-template-columns: 35fr 35fr 30fr 10px;
+  grid-template-columns: 35% 32.5% 32.5%;
   flex-direction: row;
   padding-left:8px;
   padding-top:12px;
@@ -110,7 +110,6 @@ a{
 }
 .list{
   justify-self:flex-start; 
-  padding-left:8px;
 }
 
 /*-------------------------------------about----------------------------------------*/
@@ -123,7 +122,7 @@ a{
 #about{
  max-width: 100%;
  display: grid;
- grid-template-columns: 35fr 35fr 30fr;
+ grid-template-columns: 35% 32.5% 32.5%;
  grid-template-rows: auto;
  border-bottom:1px black solid;
 }
@@ -159,8 +158,8 @@ a{
   display:inline-block;
   justify-content:flex-start;
   text-align:left;
-  padding-right:20px;
-  padding-left:12px;
+  padding-right:24px;
+  padding-left:10px;
   grid-column:3;
   grid-row:1;
   padding-bottom:14px;
@@ -198,7 +197,7 @@ a{
   padding-top:12px;
   padding-bottom:10px;
   align-items:center;
-  grid-template-columns: 35% 35% 30%;
+  grid-template-columns: 35% 32.5% 32.5%;
   border-bottom:1px solid black;
   cursor:pointer;
   transition: .3s;
@@ -312,11 +311,7 @@ a{
 }
 /*---------------------------------meeeeeeeeeedia queeeeeeeeriiiiiiiiiiiiesssssss-----------*/
 
-@media (max-width: 1100px){
-  .listing{
-      grid-template-columns: 35% 50% 15%;
-  }
-}
+
 /*@media (max-width:1000px){
   body{
       font-size:15px;
