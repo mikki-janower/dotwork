@@ -9,7 +9,7 @@ let extender= $('.extender');
 
  let index = true;
 
-if (window.innerWidth > 800) {
+if (window.innerWidth > 700) {
 //function to get every listing to open up sequentially, .3s apart
 $('#about').delay(400).slideToggle(250);
 $('.extender').each(function (i) {
@@ -24,7 +24,10 @@ $item.delay(700).slideToggle(250)}, 20*i);
 } else {
     $('.firstfeature').find(extender).delay(400).slideToggle(350);
 }
- 
+//-----------------------append projpage
+/*$('.extender').append('<div class="projpage">Read more...</div>');*/
+
+
 //clicking the index button makes the index into a list
 /* $('.list').click(function(){
     $('.extender').each(function (i) {

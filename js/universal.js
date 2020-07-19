@@ -44,7 +44,7 @@ $(listing).attr("data-aos", "fade-in"); */
         $(".querytown").html("Width: " + width + " px");
     });
 //----------------------------------make bottom visible only at the bottom of the page on mobile
-const bottomScrolled = function() {
+/*const bottomScrolled = function() {
 $(window).scroll(function () {
     let w = window.innerWidth;
     if (w < 900) {
@@ -76,7 +76,7 @@ $(window).on("load",function () {
     bottomVisibility();
 });
 
-bottomVisibility();
+bottomVisibility();*/
 
 //--------------------document closing bracket, don't touch
 });

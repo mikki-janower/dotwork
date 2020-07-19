@@ -197,11 +197,10 @@ a{
   justify-content:flex-start;
 }
 .contact a:hover, .p a:hover, .listing a:hover, .more a:hover, #description a:hover{
-  border-radius:10px;
-  box-shadow: 0px -1px 16px 4px yellow;
+  /*border-radius:10px;
+  box-shadow: 0px -1px 16px 4px yellow;*/
   background-color: yellow;
 }
-
 /*---------------------------------------------index-------------------------------*/
 #fullindex{
   position:relative;
@@ -262,7 +261,8 @@ a{
 .thumbnails{
   grid-column:3;
   padding-right:4px;
-  display:flex;
+  /*display:flex;*/
+  display:none;
   justify-content:flex-end;
 }
 .thumbnails img{
@@ -304,38 +304,46 @@ a{
   transition:.2s;
   padding-bottom:16px;
 }
-.listing:not(.firstfeature) .words{
+/*.listing:not(.firstfeature) .words{
   display:none;
-}
+}*/
 .year{
   display:inline-flex;
   position:relative;
   padding-right:14px;
-  grid-column:1;
+  grid-column:3;
+  grid-row:1;
+  align-self:flex-start;
+  /*grid-column:1;
   grid-row:3;
-  vertical-align:bottom;
-  align-self:flex-end;
+  align-self:flex-end;*/
 }
 .year span{
   position:relative;
   margin-right: 24px;
 }
+.projpage{
+  grid-row:3;
+  grid-column:1;
+  justify-self:flex-start;
+  align-self:start;
+}
 .extender a, .more a, .contact a, .words a, .words i, .p a{
   transition: background-color, box-shadow;
   transition-duration:.3s;
-  border-radius:8px;
-  font-family: "Saol Display Reg";
-  font-style:italic;
+  /*border-radius:8px;*/
+  font-family: "Neue Montreal Medium";
+  text-decoration:underline;
 }
 .words a, .words i{
-  font-family: "Saol Display Reg";
+  font-family: "Neue Montreal Medium";
 }
 .more{
   margin-top:20px;
   padding-left:10px;
   padding-right:10px;
   line-height:1.2;
-  margin-bottom:10px;
+  margin-bottom:20px;
   background-color:#f2f2f2;
   display:flex;
   flex-direction:row;
@@ -508,7 +516,9 @@ a{
     padding-left:5px;
   }
   .list{
-    display:none;
+    /*display:none;*/
+    justify-self:flex-end;
+    margin-right:10px;
   }
   .thumbnails img:nth-of-type(3){
     display:none;
