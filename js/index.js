@@ -11,13 +11,13 @@ let extender= $('.extender');
 
 if (window.innerWidth > 700) {
 //function to get every listing to open up sequentially, .3s apart
-$('#about').delay(400).slideToggle(250);
+$('#about').delay(300).slideToggle(250);
 $('.extender').each(function (i) {
  // store the item around for use in the 'timeout' function
 var $item = $(this); 
 // execute this function sometime later:
 setTimeout(function() { 
-$item.delay(700).slideToggle(250)}, 20*i);
+$item.delay(680).slideToggle(250)}, 20*i);
 // each element should animate half a second after the last one.
 });
 
