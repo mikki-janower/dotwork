@@ -78,7 +78,6 @@ cursor:default;
 }
 
 .detail a{
-    font-size:14px; 
     padding:0;
     margin:0;
 }
@@ -308,7 +307,7 @@ input:focus::-webkit-slider-runnable-track {
         #projfooter{
             font-size: 1em;
         }
-        #description, #description a{
+        #description{
             font-size:15px;
         }
  }
@@ -329,7 +328,7 @@ input:focus::-webkit-slider-runnable-track {
             flex-direction:column;
             top:75px;
         }
-        #description, #description a{
+        #description{
             font-size:24px;
         }
         
@@ -374,7 +373,7 @@ input:focus::-webkit-slider-runnable-track {
     }
     @media (max-width: 550px) {
 
-        #description, #description a{
+        #description{
             font-size:22px;
             transition:.2s;
         }
