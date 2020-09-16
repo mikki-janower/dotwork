@@ -40,10 +40,10 @@ $item.slideToggle(250)}, 150*i);
 });*/
     
 //----------------lozad is supposed to help with lazyloading, etc
-var image = $('img');
+/*var image = $('img');
 image.addClass(lozad);
 const observer = lozad(); // lazy loads elements with default selector as '.lozad'
-observer.observe();
+observer.observe();*/
 
 //----------------------------make extender visible on click
 
