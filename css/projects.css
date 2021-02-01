@@ -11,6 +11,9 @@ cursor:default;
 .index{
     justify-self:flex-start;
 }
+.top{
+    padding-left:10px;
+}
 #project{
     position:relative;
     max-width: 100%;
@@ -41,9 +44,9 @@ cursor:default;
     width:100%;
     position:relative;
 }
-#description a{
+/*#description a{
     text-decoration:underline;
-}
+}*/
 #project img{
     position:relative;
     max-width:100%;
