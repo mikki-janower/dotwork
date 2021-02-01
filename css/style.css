@@ -133,6 +133,7 @@ a{
   margin:0;
 }
 #about .p{
+  margin-left:8px;
   grid-row:1;
   grid-column:2;
   padding-right:30px;
