@@ -22,6 +22,9 @@ $(document).ready(function () {
         dot();
     });
 
+//--------------------------------navigate to next project on "next"
+
+
     //-------------------------fade in on scroll
 //AOS
 /*AOS.init();
