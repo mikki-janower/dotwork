@@ -295,7 +295,7 @@ a{
   transition-duration:.3s;
   /*border-radius:8px;*/
   font-family: "Neue Montreal Medium";
-  text-decoration:underline;
+  /*text-decoration:underline;*/
 }
 .words a, .words i{
   font-family: "Neue Montreal Medium";
