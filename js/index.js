@@ -11,19 +11,28 @@ let extender= $('.extender');
 
 if (window.innerWidth > 700) {
 //function to get every listing to open up sequentially, .3s apart
-$('#about').delay(300).slideToggle(250);
+$('#about').delay(300).slideToggle(300);
 $('.extender').each(function (i) {
  // store the item around for use in the 'timeout' function
 var $item = $(this); 
 // execute this function sometime later:
 setTimeout(function() { 
-$item.delay(680).slideToggle(250)}, 20*i);
+$item.delay(550).slideToggle(300)}, 20*i);
 // each element should animate half a second after the last one.
 });
-
-} else {
-    $('.firstfeature').find(extender).delay(400).slideToggle(350);
 }
+
+//--------highlight title, description, and year when you hover over a listing
+ $(".info").each(function(i){
+     $(this).mouseover(function(){
+        $(this).find(".title, .description, .year").css("background-color", "yellow");
+     }); 
+     $(this).mouseout(function(){
+        $(this).find(".title, .description, .year").css("background-color", "transparent");
+     }); 
+});
+
+   
 //-----------------------append projpage
 /*$('.extender').append('<div class="projpage">Read more...</div>');*/
 

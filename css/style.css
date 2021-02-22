@@ -140,8 +140,9 @@ a{
   padding-bottom:14px;
 }
 #about img{
+  /*display:none;*/
   padding-right: 10px;
-  max-height:200px;
+  max-height:120px;
   max-width: 92%;
   width:auto;
   transition:.2s;
@@ -180,6 +181,7 @@ a{
 .contact a:hover, .p a:hover, .listing a:hover, .more a:hover, #description a:hover{
   background-color: yellow;
 }
+
 /*---------------------------------------------index-------------------------------*/
 #fullindex{
   position:relative;
@@ -193,9 +195,9 @@ a{
   max-width: 100%;
   display: grid;
   padding-left:12px;
-  padding-top:12px;
+  padding-top:10px;
   padding-bottom:10px;
-  align-items:center;
+  /*align-items:center;*/
   /*grid-template-columns: 29% 35.5% 35.5%;*/
   grid-template-columns: 29% 35.5% 28% 7.5%;
   border-bottom:1px solid black;
@@ -203,16 +205,12 @@ a{
   transition: .3s;
 }
 
-.title, .description, .thumbnails{
-  grid-row:1;
-}
-.title, .description{
+
+.info{
   transition:.3s;
-  padding-right:20px;
-  line-height:1.2;
-  display:inline;
-  align-self:start;
+  line-height:1.25;
 }
+
 .thumbnails{
   grid-column:3;
   padding-right:4px;
@@ -223,17 +221,16 @@ a{
 .thumbnails img{
   height:26px;
   padding-right:6px;
-  display:inline-block;
 }
+
 .extender{
   max-width: 100%;
   display: grid;
-  grid-column:1/span 4;
+  grid-column:2/span 4;
+  /*grid-column:1/span 4;*/
   grid-template-columns: 29% 71%;
-  grid-template-rows: auto auto auto;
-  padding-top:10px;
+  /*grid-template-rows: auto auto auto;*/
   padding-right:10px;
-  grid-row:2;
 }
 
 .images img{
@@ -243,67 +240,37 @@ a{
 }
 .images{
   max-width:100%;
-  grid-column:2;
-  grid-row: 1/span 3;
+  grid-column:1/span 3;
+  /*grid-row: 1/span 3;*/
   display:flex;
   flex-direction:row;
   align-items:flex-start;
   justify-content:flex-start;
   padding-right:10px;
 }
-.words{
-  font-family: 'Neue Montreal';
-  position:relative;
-  max-width:90%;
-  line-height:1.3;
-  transition:.2s;
-  padding-bottom:16px;
-}
-/*.listing:not(.firstfeature) .words{
-  display:none;
-}*/
 .type{
-  grid-column:3;
-  grid-row:1;
-  align-self:flex-start;
-  padding-right:14px;
+  /*grid-column:3;*/
+  display:none;
 }
 .year{
-  display:inline-flex;
-  position:relative;
-  /*grid-column:3;
-  grid-row:1;
-  align-self:flex-start;*/
-  grid-column:4;
-  grid-row:1;
-  align-self:flex-start;
-  align-content:right;
-  justify-self:flex-end;
+  font-family: "Saol Display Reg";
 }
-.year span{
-  position:relative;
-  margin-right: 14px;
-}
-.projpage{
+/*.projpage{
   grid-row:3;
   grid-column:1;
   justify-self:flex-start;
   align-self:start;
-}
-.extender a, .more a, .contact a, .words a, .words i, .p a{
+}*/
+.extender a, .more a, .contact a, .p a{
   transition: background-color, box-shadow;
   transition-duration:.3s;
   /*border-radius:8px;*/
-  font-family: "Neue Montreal Medium";
-  /*text-decoration:underline;*/
-}
-.words a, .words i{
-  font-family: "Neue Montreal Medium";
 }
 .more{
   margin-top:20px;
   padding-left:10px;
   padding-right:10px;
+  padding-bottom:10px;
   line-height:1.2;
   margin-bottom:28px;
   background-color:#f2f2f2;
@@ -314,14 +281,7 @@ a{
 /*---------------------------------meeeeeeeeeedia queeeeeeeeriiiiiiiiiiiiesssssss-----------*/
 
 
-/*@media (max-width:1000px){
-  body{
-      font-size:15px;
-  }
-  .title, .description, .details, .more{
-    font-size: 17px;
-  }
-}*/
+
 @media (max-width: 900px){
 
   #about .p{
@@ -334,16 +294,22 @@ a{
 }
 
 @media (max-width: 700px){
+#fullindex{
+  top:60px;
+}
+  .info{
+    grid-column:1/span 2;
+  }
  .year{
     display:none;
   }
   #about{
-    padding-top:60px;
+    top:60px;
     display:none;
     grid-template-columns: 29fr 71fr;
     grid-column-gap:10px;
     grid-template-rows: auto auto;
-    padding-left:5px;
+    padding-left:2px;
     padding-right:15px;
     border-bottom:none;
   }
@@ -356,11 +322,10 @@ a{
     padding-right:6px;
     grid-row:1;
     padding-right:20px;
-    /*border-bottom:1px black solid;*/
     margin-bottom:8px;
   }
   #about img{
-    display:none;
+   display:none;
     max-width:100%;
     max-height:100%;
     padding:0;
@@ -374,22 +339,15 @@ a{
     /*display:none;*/
     font-size:22px;
   }
-  /*#about .mobilecontact{
-    display:flex;
-    flex-direction:column;
-    grid-column:2;
-    font-size:22px;
-  }*/
   #about span{
     font-size:22px;
     grid-column:1;
     padding-left:5px;
   }
-  .list{
-    /*display:none;*/
+  /*.list{
     justify-self:flex-end;
     margin-right:10px;
-  }
+  }*/
   .thumbnails img:nth-of-type(3){
     display:none;
   }
@@ -397,36 +355,26 @@ a{
     display:flex;
     grid-column:3/span 4;
   }
-#fullindex{
-  top:20px;
-}
+
 .listing{
   font-size:22px;
   padding-top:8px;
-  padding-bottom:8px
+  padding-bottom:8px;
 }
-.description,.type{
+.description{
   display:none;
 }
-.title{
-  align-self:end;
-  grid-column:1/span 4;
-}
-.firstfeature .title, .firstfeature .thumbnails{
-  grid-row:3;
-  padding-top: 14px;
-}
-.firstfeature .images img:nth-of-type(2){
+.listing br{
   display:none;
 }
-.firstfeature .images img:first-of-type{
-  width:100%;
-}
-.firstfeature .images{
-  grid-column:1/span 4;
-  padding-right:0px;
-}
-.listing:not(.firstfeature) .extender{
+
+/*.description{
+  font-family:"Saol Display Reg";
+  font-size:16px;
+  line-height:1;
+}*/
+
+.listing .extender{
   display:none;
 }
 

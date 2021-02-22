@@ -24,7 +24,9 @@ cursor:default;
     line-height:1.3;
     font-family: "Neue Montreal";
     top: 120px;
-    grid-template-columns: 35fr 65fr;
+    /*grid-template-columns: 35fr 65fr;
+    grid-template-columns: 29% 35.5% 28% 7.5%;*/
+    grid-template-columns: 29fr 71fr;
     justify-content:space-between;
     align-items:start;
 }
@@ -303,15 +305,15 @@ input:focus::-webkit-slider-runnable-track {
 
 /*-----------------------medddddddia queriesssssss------------------------------------*/
 
-@media (max-width: 1050px) {
+@media (max-width: 1150px) {
         #label, #label a, .detail{
-            font-size:14px;
+            font-size:12px;
         }
         #projfooter{
             font-size: 1em;
         }
         #description{
-            font-size:15px;
+            font-size:14px;
         }
  }
 
