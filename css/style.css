@@ -209,6 +209,7 @@ a{
 .info{
   transition:.3s;
   line-height:1.25;
+  padding-right:10px;
 }
 
 .thumbnails{
