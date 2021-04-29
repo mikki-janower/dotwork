@@ -14,15 +14,17 @@ cursor:default;
 .top{
     padding-left:10px;
 }
+a:hover{
+    /*background-color: yellow;*/
+    opacity:.6;
+  }
+  
 #project{
     position:relative;
     max-width: 100%;
     display: grid;
     padding-left:10px;
     padding-right:10px;
-    font-size:17px;
-    line-height:1.3;
-    font-family: "Neue Montreal";
     top: 120px;
     /*grid-template-columns: 35fr 65fr;
     grid-template-columns: 29% 35.5% 28% 7.5%;*/
@@ -30,16 +32,10 @@ cursor:default;
     justify-content:space-between;
     align-items:start;
 }
-.labelita{
-    font-family: 'Neue Montreal Medium';
-}
-.labelreg{
-    font-family: 'Neue Montreal Medium';
-}
+
 #project #label{
-    font-size:17px;
-    margin-top:10px;
-    margin-bottom:16px;
+    margin-top:4px;
+    margin-bottom:10px;
     display:flex;
     flex-direction:row;
     justify-content:space-between;
@@ -60,7 +56,6 @@ cursor:default;
     font-size:17px;
     align-self:start;
     vertical-align:top;
-    font-family: 'Neue Montreal Medium';
     margin:0;
     margin-top:-18px;
     padding-right:36px;
@@ -69,7 +64,7 @@ cursor:default;
     transition:.2s;
 }
 .detail{
-    font-size:14px;
+    font-size:12px;
     display:flex;
     flex-direction:row;
     justify-content:space-between;
@@ -98,10 +93,9 @@ grid-row:3;
     display:flex;
     color:black;
     justify-content:space-between;
-    font-size:1.8rem;
     align-content:flex-start;
-    padding-top:40px;
-    padding-bottom:2px;
+    margin-top:10px;
+    margin-bottom:4px;
     grid-column:2;
     grid-row:4;
     padding-left:0px;
@@ -198,14 +192,15 @@ grid-row:3;
 
 .caption{
     max-width:50%;
-    font-size:13px;
+    font-size:15px;
     padding-right: 30px;
-    font-family: 'Neue Montreal';
+    font-family: 'Suisse Intl Italic';
+    opacity:.6;
 }
 .citation{
     max-width:50%;
-    font-size:13px;
-    font-family: 'Neue Montreal';
+    font-size:12px;
+    opacity:.6;
 }
 /*-----------------------non-universal changes for specific projects----------------*/
 
@@ -246,9 +241,9 @@ textarea:hover{
     font-size:14px;
     margin-bottom:20px;
 }
-.sliderlabel span{
-    font-family:"Montreal Neue";
-}
+/*.sliderlabel span{
+    font-family:"Times New Roman";
+}*/
 /*-------style slider*/
 .reconnapage input{
     margin-top:10px;

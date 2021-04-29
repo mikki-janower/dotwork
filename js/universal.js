@@ -5,11 +5,11 @@ $(document).ready(function () {
         const w = window.innerWidth;
         if (w >= 1050) {
             $(".name").html(
-                "Mikki Janower<span class='dot'> dot &nbsp</span>Work"
+                "Mikki Janower<span class='dot'>&nbsp(dot)&nbsp</span>Work"
             );
         } else if (w >= 700) {
             $(".name").html(
-                "Mikki<span class='dot'>&nbsp dot &nbsp</span>Work"
+                "Mikki<span class='dot'>&nbsp(dot)&nbsp</span>Work"
             );
         } else {
             $(".name").html(

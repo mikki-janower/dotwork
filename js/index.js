@@ -23,12 +23,16 @@ $item.delay(550).slideToggle(300)}, 20*i);
 }
 
 //--------highlight title, description, and year when you hover over a listing
- $(".info").each(function(i){
+$(".info").each(function(i){
      $(this).mouseover(function(){
-        $(this).find(".title, .description, .year").css("background-color", "yellow");
+       // $(this).find(".title, .description, .year").css("background-color", "yellow");
+       $(this).find(".title, .description, .year").css({
+           opacity: .6
+    });
      }); 
      $(this).mouseout(function(){
-        $(this).find(".title, .description, .year").css("background-color", "transparent");
+        //$(this).find(".title, .description, .year").css("background-color", "transparent");
+        $(this).find(".title, .description, .year").css("opacity", "1");
      }); 
 });
 

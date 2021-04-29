@@ -17,6 +17,18 @@
   font-family: "Saol Display";
   src:url('fonts/SaolDisplay-LightItalic.otf');
 }
+@font-face{
+  font-family: "Suisse Intl";
+  src:url('fonts/SuisseIntl-Regular.otf');
+}
+@font-face{
+  font-family: "Suisse Intl Italic";
+  src:url('fonts/SuisseIntl-RegularItalic.otf');
+}
+@font-face{
+  font-family: "Suisse Intl Medium";
+  src:url('fonts/SuisseIntl-Medium.otf');
+}
 
 @font-face{
   font-family: "Reconna";
@@ -33,20 +45,21 @@ html{
   background-color: yellow;
 }
 body {
-	font-family: 'Neue Montreal Medium';
-	font-size: 17px;
-	line-height: 1.15;
+	font-family: 'Suisse Intl';
+	font-size: 15px;
+	line-height: 1.35;
 	color: black;
   overflow-x: hidden;
   margin:0;
 }
-a{
-  transition:.325s;
+a, .title, .year, .description{
+  transition:.2s;
 }
+
 .dot{
-  font-size: 17px;
-  font-family: 'Saol Display Reg';
-  font-style:italic;
+  font-size: 12px;
+  opacity:.6;
+ /* font-family: 'Saol Display Reg';*/
 }
 .main{
   /*grid-template-columns: 29% 35.5% 35.5%;*/
@@ -69,10 +82,10 @@ transition-duration: 0.5s, .5s;
 transition: background-color 0.5s linear;
 }
 
-.top p, .top a, .bottom a, #projfooter, .mobilecontact{
+.top p, .top a, .bottom a, #projfooter, #projfooter a, .mobilecontact{
   color: black;
-  font-family: 'Neue Montreal Medium';
-  font-size: 1.8rem;
+  font-size: 1.3rem;
+  font-family:'Suisse Intl';
   text-align: left;
   cursor: pointer;
   padding-right:10px;
@@ -124,11 +137,10 @@ a{
  /*grid-template-columns: 29% 35.5% 35.5%;*/
  grid-template-columns: 29% 35.5% 28% 7.5%;
  grid-template-rows: auto;
- border-bottom:1px black solid;
+ border-bottom:.5px black dotted;
 }
 
 #about p{
-  line-height:1.25;
   padding:0;
   margin:0;
 }
@@ -156,7 +168,6 @@ a{
   padding-bottom:14px;
 }
 #about .contact{
-  line-height:1.175;
   display:inline-block;
   justify-content:flex-start;
   text-align:left;
@@ -178,9 +189,14 @@ a{
   transition:.2s; 
   justify-content:flex-start;
 }
-.contact a:hover, .p a:hover, .listing a:hover, .more a:hover, #description a:hover{
-  background-color: yellow;
+a, .more{
+  transition: opacity.2s linear;
 }
+a:hover{
+  /*background-color: yellow;*/
+  opacity:.6;
+}
+
 
 /*---------------------------------------------index-------------------------------*/
 #fullindex{
@@ -200,7 +216,7 @@ a{
   /*align-items:center;*/
   /*grid-template-columns: 29% 35.5% 35.5%;*/
   grid-template-columns: 29% 35.5% 28% 7.5%;
-  border-bottom:1px solid black;
+  border-bottom:.5px dotted black;
   cursor:pointer;
   transition: .3s;
 }
@@ -208,7 +224,6 @@ a{
 
 .info{
   transition:.3s;
-  line-height:1.25;
   padding-right:10px;
 }
 
@@ -254,7 +269,8 @@ a{
   display:none;
 }
 .year{
-  font-family: "Saol Display Reg";
+  opacity:.6;
+  font-size:12px;
 }
 /*.projpage{
   grid-row:3;
@@ -272,7 +288,6 @@ a{
   padding-left:10px;
   padding-right:10px;
   padding-bottom:10px;
-  line-height:1.2;
   margin-bottom:28px;
   background-color:#f2f2f2;
   display:flex;
@@ -290,11 +305,16 @@ a{
     padding-right:14px;
   }
   body{
-    font-size:17px;
+    font-size:14px;
+    line-height:1.35;
   }
 }
 
 @media (max-width: 700px){
+
+body{
+  font-size:16px;
+}
 #fullindex{
   top:60px;
 }
@@ -315,10 +335,9 @@ a{
     border-bottom:none;
   }
   #about .p{
-    font-size:22px;
+    /*font-size:18px;*/
     padding-right: 6px;
     padding-bottom:8px;
-    font-family: 'Neue Montreal Medium';
     grid-column:1/span 2;
     padding-right:6px;
     grid-row:1;
@@ -336,12 +355,12 @@ a{
     grid-column:1/span 2;
     padding-right:10px;
   }
-  #about .contact{
-    /*display:none;*/
-    font-size:22px;
-  }
+  /*#about .contact{
+    display:none;
+    font-size:18px;
+  }*/
   #about span{
-    font-size:22px;
+    /*font-size:18px;*/
     grid-column:1;
     padding-left:5px;
   }
@@ -358,9 +377,8 @@ a{
   }
 
 .listing{
-  font-size:22px;
-  padding-top:8px;
-  padding-bottom:8px;
+  padding-top:12px;
+  padding-bottom:6px;
 }
 .description{
   display:none;
