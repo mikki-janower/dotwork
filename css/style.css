@@ -39,7 +39,7 @@
 
 html{
  min-height:100vh;
- background-color: #f2f2f2;
+ /*background-color: #f2f2f2;*/
 }
 ::selection{
   background-color: yellow;
@@ -263,7 +263,9 @@ a:hover{
   align-items:flex-start;
   justify-content:flex-start;
   padding-right:10px;
+  transition: opacity .2s;
 }
+
 .type{
   /*grid-column:3;*/
   display:none;
@@ -321,9 +323,9 @@ body{
   .info{
     grid-column:1/span 2;
   }
- .year{
+ /*.year{
     display:none;
-  }
+  }*/
   #about{
     top:60px;
     display:none;
@@ -332,7 +334,6 @@ body{
     grid-template-rows: auto auto;
     padding-left:2px;
     padding-right:15px;
-    border-bottom:none;
   }
   #about .p{
     /*font-size:18px;*/
@@ -362,13 +363,16 @@ body{
   #about span{
     /*font-size:18px;*/
     grid-column:1;
-    padding-left:5px;
+    /*padding-left:5px;*/
   }
   /*.list{
     justify-self:flex-end;
     margin-right:10px;
   }*/
-  .thumbnails img:nth-of-type(3){
+  /*.thumbnails img:nth-of-type(3){
+    display:none;
+  }*/
+  .thumbnails img{
     display:none;
   }
   .thumbnails{
@@ -380,12 +384,35 @@ body{
   padding-top:12px;
   padding-bottom:6px;
 }
-.description{
+.extender{
+  grid-column:1/span 4;
+  grid-row: 2;
+  /*grid-column:1/span 4;*/
+  grid-template-columns: 29% 71%;
+  /*grid-template-rows: auto auto auto;*/
+  padding-right:12px;
+  padding-top:10px;
+  padding-bottom:8px;
+}
+
+.images img{
+  width:100%;
+}
+.images img:nth-of-type(2){
+  display:none;
+}
+.images{
+  grid-column:1/span 4;
+  /*grid-row: 1/span 3;*/
+  padding-right:0px;
+}
+
+/*.description{
   display:none;
 }
 .listing br{
   display:none;
-}
+}*/
 
 /*.description{
   font-family:"Saol Display Reg";
@@ -393,9 +420,9 @@ body{
   line-height:1;
 }*/
 
-.listing .extender{
+/*.listing .extender{
   display:none;
-}
+}*/
 
 
 .more span:nth-of-type(2){

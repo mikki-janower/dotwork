@@ -9,30 +9,45 @@ let extender= $('.extender');
 
  let index = true;
 
-if (window.innerWidth > 700) {
-//function to get every listing to open up sequentially, .3s apart
+/*if (window.innerWidth > 700) {
 $('#about').delay(300).slideToggle(300);
 $('.extender').each(function (i) {
- // store the item around for use in the 'timeout' function
 var $item = $(this); 
-// execute this function sometime later:
 setTimeout(function() { 
 $item.delay(550).slideToggle(300)}, 20*i);
-// each element should animate half a second after the last one.
 });
+}*/
+if (window.innerWidth > 200) {
+    //function to get every listing to open up sequentially, .3s apart
+    //$('#about').delay(300).slideToggle(300);
+    $('.extender').each(function (i) {
+     // store the item around for use in the 'timeout' function
+    var $item = $(this); 
+    // execute this function sometime later:
+    setTimeout(function() { 
+    $item.delay(550).slideToggle(300)}, 20*i);
+    // each element should animate half a second after the last one.
+    });
+    }
+if (window.innerWidth > 700) {
+     $('#about').delay(300).slideToggle(300);
 }
 
 //--------highlight title, description, and year when you hover over a listing
-$(".info").each(function(i){
+$(".listing").each(function(i){
      $(this).mouseover(function(){
        // $(this).find(".title, .description, .year").css("background-color", "yellow");
        $(this).find(".title, .description").css({
            opacity: .6
     });
+   /* $(this).css({
+        'background-color': 'rgba(0,0,0,.025)'
+ });*/
      }); 
      $(this).mouseout(function(){
         //$(this).find(".title, .description, .year").css("background-color", "transparent");
         $(this).find(".title, .description").css("opacity", "1");
+       /* $(this).css("background-color", "white");*/
      }); 
 });
 
