@@ -325,7 +325,7 @@ input:focus::-webkit-slider-runnable-track {
         #project{
             display:flex;
             flex-direction:column;
-            top:85px;
+            top:75px;
         }
         #description{
             font-size:16px;
@@ -371,7 +371,9 @@ input:focus::-webkit-slider-runnable-track {
         }
     }
     @media (max-width: 550px) {
-
+        #project{
+            top:85px;
+        }
         #description{
             transition:.2s;
         }
