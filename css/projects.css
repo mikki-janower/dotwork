@@ -53,7 +53,6 @@ a:hover{
 }
 #description{
     grid-row:1;
-    font-size:17px;
     align-self:start;
     vertical-align:top;
     margin:0;
@@ -326,10 +325,10 @@ input:focus::-webkit-slider-runnable-track {
         #project{
             display:flex;
             flex-direction:column;
-            top:75px;
+            top:85px;
         }
         #description{
-            font-size:24px;
+            font-size:16px;
         }
         
         .detail{
@@ -374,10 +373,9 @@ input:focus::-webkit-slider-runnable-track {
     @media (max-width: 550px) {
 
         #description{
-            font-size:22px;
             transition:.2s;
         }
         .detail{
-            font-size:14px;
+            font-size:12px;
     }
 }

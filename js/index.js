@@ -26,13 +26,13 @@ $item.delay(550).slideToggle(300)}, 20*i);
 $(".info").each(function(i){
      $(this).mouseover(function(){
        // $(this).find(".title, .description, .year").css("background-color", "yellow");
-       $(this).find(".title, .description, .year").css({
+       $(this).find(".title, .description").css({
            opacity: .6
     });
      }); 
      $(this).mouseout(function(){
         //$(this).find(".title, .description, .year").css("background-color", "transparent");
-        $(this).find(".title, .description, .year").css("opacity", "1");
+        $(this).find(".title, .description").css("opacity", "1");
      }); 
 });
 
