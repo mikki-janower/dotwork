@@ -73,7 +73,8 @@ $(document).ready(function () {
                 $("body").css("overflow-y", "scroll");
                 $(".top").css({
                     transition: "0s",
-                    "background-color": "#f2f2f2",
+                   // "background-color": "#f2f2f2",
+                   "background-color": "white"
                   /* "-webkit-box-shadow": "0px -1px 10px 11px #f2f2f2",
                     "-moz-box-shadow": "0px -1px 10px 11px #f2f2f2",
                     "box-shadow": "0px -1px 10px 11px #f2f2f2"*/

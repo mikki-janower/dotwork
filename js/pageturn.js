@@ -1,3 +1,4 @@
+//-----NOTE: this is an obsolete doc from an obsolete version of this website. DO NOT USE!!!!!
 $(document).ready(function () {
     $("#homepage").fadeIn("100");
 
@@ -27,8 +28,8 @@ $(document).ready(function () {
     $(".about").click(function () {
         if (about == false) {
             //---------------hide homepage
-            $(".pic").css("transform", "rotateY(90deg)");
-            $(".pic").fadeOut("200");
+            //$(".pic").css("transform", "rotateY(90deg)");
+            //$(".pic").fadeOut("200");
             name = false;
 
             //---------------hide projects
@@ -50,8 +51,8 @@ $(document).ready(function () {
             about = true;
         } else {
             $("#about").slideToggle("200");
-            $(".pic").css("transform", "rotateY(90deg)");
-            $(".pic").fadeIn("200");
+            //$(".pic").css("transform", "rotateY(90deg)");
+            //$(".pic").fadeIn("200");
             $(".about").html("About");
             about = false;
             name = true;
@@ -69,8 +70,8 @@ $(document).ready(function () {
     $(".index").click(function () {
         if (index == false) {
             //---------------hide homepage
-            $(".pic").css("transform", "rotateY(90deg)");
-            $(".pic").fadeOut("200");
+            //$(".pic").css("transform", "rotateY(90deg)");
+            //$(".pic").fadeOut("200");
             name = false;
 
             //---------------hide about
@@ -88,12 +89,11 @@ $(document).ready(function () {
             $("#index")
                 .delay("200")
                 .slideToggle("200");
-            $(".index").html("Back");
             index = true;
         } else {
             $("#index").slideToggle("200");
-            $(".pic").css("transform", "rotateY(90deg)");
-            $(".pic").fadeIn("200");
+            //$(".pic").css("transform", "rotateY(90deg)");
+            //$(".pic").fadeIn("200");
             $(".index").html("Index");
             index = false;
             name = true;
@@ -122,8 +122,8 @@ $(document).ready(function () {
                 about = false;
             }
             //---------------bring back homepage
-            $(".pic").css("transform", "rotateY(90deg)");
-            $(".pic").fadeIn("200");
+          //  $(".pic").css("transform", "rotateY(90deg)");
+          // $(".pic").fadeIn("200");
         }
     });
 
@@ -131,9 +131,9 @@ $(document).ready(function () {
 
     $(".cyberotica").click(function () {
         //---------------hide homepage
-        $(".pic").css("transform", "rotateY(90deg)");
+       // $(".pic").css("transform", "rotateY(90deg)");
         $(".about").css("transform", "rotateY(90deg)");
-        $(".pic").fadeOut("200");
+       // $(".pic").fadeOut("200");
         $(document)
             .delay(200)
             .queue(function (next) {
@@ -145,9 +145,9 @@ $(document).ready(function () {
 
     $(".postcursor").click(function () {
         //---------------hide homepage
-        $(".pic").css("transform", "rotateY(90deg)");
+        //$(".pic").css("transform", "rotateY(90deg)");
         $(".about").css("transform", "rotateY(90deg)");
-        $(".pic").fadeOut("200");
+        //$(".pic").fadeOut("200");
         $(document)
             .delay(200)
             .queue(function (next) {
@@ -158,9 +158,9 @@ $(document).ready(function () {
     });
     $(".majorarcana").click(function () {
         //---------------hide homepage
-        $(".pic").css("transform", "rotateY(90deg)");
+       // $(".pic").css("transform", "rotateY(90deg)");
         $(".about").css("transform", "rotateY(90deg)");
-        $(".pic").fadeOut("200");
+        //$(".pic").fadeOut("200");
         $(document)
             .delay(200)
             .queue(function (next) {
@@ -171,9 +171,9 @@ $(document).ready(function () {
     });
     $(".reflections").click(function () {
         //---------------hide homepage
-        $(".pic").css("transform", "rotateY(90deg)");
+       // $(".pic").css("transform", "rotateY(90deg)");
         $(".about").css("transform", "rotateY(90deg)");
-        $(".pic").fadeOut("200");
+        //$(".pic").fadeOut("200");
         $(document)
             .delay(200)
             .queue(function (next) {
@@ -184,9 +184,9 @@ $(document).ready(function () {
     });
     $(".spiritmolecule").click(function () {
         //---------------hide homepage
-        $(".pic").css("transform", "rotateY(90deg)");
+       // $(".pic").css("transform", "rotateY(90deg)");
         $(".about").css("transform", "rotateY(90deg)");
-        $(".pic").fadeOut("200");
+       // $(".pic").fadeOut("200");
         $(document)
             .delay(200)
             .queue(function (next) {
@@ -197,9 +197,9 @@ $(document).ready(function () {
     });
     $(".soundscapes").click(function () {
         //---------------hide homepage
-        $(".pic").css("transform", "rotateY(90deg)");
+       // $(".pic").css("transform", "rotateY(90deg)");
         $(".about").css("transform", "rotateY(90deg)");
-        $(".pic").fadeOut("200");
+       // $(".pic").fadeOut("200");
         $(document)
             .delay(200)
             .queue(function (next) {
@@ -210,9 +210,9 @@ $(document).ready(function () {
     });
     $(".discoveryourair").click(function () {
         //---------------hide homepage
-        $(".pic").css("transform", "rotateY(90deg)");
+       // $(".pic").css("transform", "rotateY(90deg)");
         $(".about").css("transform", "rotateY(90deg)");
-        $(".pic").fadeOut("200");
+       // $(".pic").fadeOut("200");
         $(document)
             .delay(200)
             .queue(function (next) {
@@ -223,9 +223,9 @@ $(document).ready(function () {
     });
     $(".reconna").click(function () {
         //---------------hide homepage
-        $(".pic").css("transform", "rotateY(90deg)");
+       // $(".pic").css("transform", "rotateY(90deg)");
         $(".about").css("transform", "rotateY(90deg)");
-        $(".pic").fadeOut("200");
+       // $(".pic").fadeOut("200");
         $(document)
             .delay(200)
             .queue(function (next) {

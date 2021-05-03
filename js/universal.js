@@ -1,3 +1,5 @@
+//-----on this doc: name shortens as window gets narrower; querytown div for coding media queries; lots of abandoned ideas 
+
 $(document).ready(function () {
  
 //---------------------------------shorten main title accordingly to fit the width of the screen
@@ -22,6 +24,16 @@ $(document).ready(function () {
         dot();
     });
 
+//------------temporary div that shows width—use to fix media queries as precisely as possible
+ //------put querytown anywhere on a page while coding and it will show you your window width
+ $(window).resize(function () {
+    let width = window.innerWidth;
+    $(".querytown").html("Width: " + width + " px");
+});
+
+
+//-----------everything below this line is obsolete except the document closing bracket
+
 //--------------------------------navigate to next project on "next"
 
 
@@ -41,11 +53,6 @@ $(image).attr({
 /*let listing = $('.listing');
 $(listing).attr("data-aos", "fade-in"); */
 
- //--------------------temporary div that shows width—use to fix media queries as precisely as possible
-    $(window).resize(function () {
-        let width = window.innerWidth;
-        $(".querytown").html("Width: " + width + " px");
-    });
 //----------------------------------make bottom visible only at the bottom of the page on mobile
 /*const bottomScrolled = function() {
 $(window).scroll(function () {
