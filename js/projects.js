@@ -1,15 +1,16 @@
 $(document).ready(function () {
    $("#project").fadeIn("100");
     $(document).delay(200).queue(function (next) {
-        $(".projectTitle").css("transform", "rotate(0deg)");
+        //$(".projectTitle").css("transform", "rotate(0deg)");
+        $(".projectTitle").css("opacity", "1");
         //$(".index").css("transform", "rotate(0deg)");
         next();
     });
 
     //------------------------------------redirect to homepage when .name or .projectTitle are clicked
     $(".name, .index").click(function () {
-       $(".projectTitle").css("transform", "rotateY(90deg)");
-       $(".index").css("transform", "rotateY(90deg)");
+      // $(".projectTitle").css("transform", "rotateY(90deg)");
+      // $(".index").css("transform", "rotateY(90deg)");
         $("#project").slideToggle(200);
         $(document)
             .delay(300)

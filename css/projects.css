@@ -1,8 +1,9 @@
 .projectTitle{
     justify-self:flex-start;
     cursor: default;
-    transition:.2s;
-    transform:rotateY(90deg);
+    transition:.4s;
+    opacity:0;
+    /*transform:rotateY(90deg);*/
 }
 .projectTitle:hover{
 cursor:default;

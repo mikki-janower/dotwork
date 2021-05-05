@@ -28,12 +28,12 @@ $(document).ready(function () {
     $(".about").click(function () {
         if (about == false) {
             //---------------hide homepage
-            //$(".pic").css("transform", "rotateY(90deg)");
+            $(".pic").css("transform", "rotateY(90deg)");
             //$(".pic").fadeOut("200");
             name = false;
 
             //---------------hide projects
-            $("#project").css("transform", "rotateY(90deg)");
+           $("#project").css("transform", "rotateY(90deg)");
             $("#project").fadeOut("200");
 
             //---------------hide index
@@ -58,7 +58,7 @@ $(document).ready(function () {
             name = true;
 
             //---------------bring back project, if applicable
-            $("#project").css("transform", "rotateY(0deg)");
+           // $("#project").css("transform", "rotateY(0deg)");
             $("#project")
                 .delay("300")
                 .fadeIn("200");
