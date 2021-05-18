@@ -18,7 +18,7 @@ if (window.innerWidth > 200) {
     var $item = $(this); 
     // execute this function sometime later:
     setTimeout(function() { 
-    $item.delay(550).slideToggle(300)}, 20*i);
+    $item.delay(600).slideToggle(300)}, 20*i);
     // each element should animate half a second after the last one.
     });
     }

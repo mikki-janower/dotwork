@@ -93,12 +93,12 @@ $(document).ready(function () {
 
 $(".index").click(function () {
 
-    //---------------hide index
-    if (about == true) {
+    //---------------hide about
+    /*if (about == true) {
         $("#about").slideToggle("200");
         $(".index").html("Index");
         index = false;
-    }
+    }*/
     //---------------hide projects
     $("#project").fadeOut("200");
 

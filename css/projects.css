@@ -198,6 +198,13 @@ grid-row:3;
     padding-right: 30px;
     font-family: 'Suisse Intl Italic';
     opacity:.6;
+    transition: opacity .3s;
+}
+.caption:hover, .caption a:hover, #label a:hover{
+    opacity:1;
+}
+.caption a{
+    cursor:pointer;
 }
 .citation{
     max-width:50%;
