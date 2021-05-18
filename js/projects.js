@@ -109,6 +109,16 @@ $(".index").click(function () {
     });
 });
 
+//----------------insert menu onto every page
+/*$( "#projfooter" ).insertAfter( $( ".bottom sticky" ) );
+
+
+var $bottomsticky = $( "<section class='bottom sticky'></section>" ),
+  newdiv2 = document.createElement( "div" ),
+  existingdiv1 = document.getElementById( "foo" );
+ 
+$( "body" ).append( $newdiv1, [ newdiv2, existingdiv1 ] );*/
+
 
 /*$('.projectTitle').mouseout(function(){
 $('.projectTitle').html(title);
