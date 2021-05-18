@@ -3,6 +3,7 @@
     cursor: default;
     transition:.4s;
     opacity:0;
+    grid-column:2/span 3;
     /*transform:rotateY(90deg);*/
 }
 .projectTitle:hover{
