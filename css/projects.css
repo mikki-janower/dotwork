@@ -38,7 +38,7 @@ a:hover{
 }
 
 #project #label{
-    margin-top:4px;
+    padding-bottom:8px;
     margin-bottom:10px;
     display:flex;
     flex-direction:row;
