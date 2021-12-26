@@ -3,7 +3,7 @@
 $(document).ready(function () {
  
 //---------------------------------shorten main title accordingly to fit the width of the screen
-    const dot = (function () {
+   /* const dot = (function () {
         const w = window.innerWidth;
         if (w >= 1050) {
             $(".name").html(
@@ -22,7 +22,7 @@ $(document).ready(function () {
     dot();
     $(window).resize(function() {
         dot();
-    });
+    }); */
 
 //------------temporary div that shows width—use to fix media queries as precisely as possible
  //------put querytown anywhere on a page while coding and it will show you your window width
