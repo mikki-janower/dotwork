@@ -52,7 +52,7 @@ body {
   overflow-x: hidden;
   margin:0;
 }
-a, .title, .year, .description{
+a, .title, .description{
   transition:.2s;
 }
 
@@ -260,15 +260,14 @@ a:hover{
 }
 
 .images img{
-  width:50%;
+  width:100%;
   /*width:100%;*/
   height:auto;
-  padding-right:10px;
+  /*padding-right:10px;*/
 }
-/*.images img:nth-of-type(2){
+.images img:nth-of-type(2){
   display:none;
-
-}*/
+}
 .images{
   max-width:100%;
   grid-column:1/span 3;
@@ -277,17 +276,8 @@ a:hover{
   flex-direction:row;
   align-items:flex-start;
   justify-content:flex-start;
-  padding-right:10px;
+  /*padding-right:10px;*/
   transition: opacity .2s;
-}
-
-.type{
-  /*grid-column:3;*/
-  display:none;
-}
-.year{
-  opacity:.6;
-  font-size:12px;
 }
 /*.projpage{
   grid-row:3;
