@@ -21,9 +21,10 @@ if (window.innerWidth > 200) {
     $item.delay(600).slideToggle(300)}, 20*i);
     // each element should animate half a second after the last one.
     });
+    $('#about').delay(300).slideToggle(300);
     }
 /*if (window.innerWidth > 750) { */
-     $('#about').delay(300).slideToggle(300);
+     
 /*}*/
 
 //--------highlight title, description, and year when you hover over a listing
@@ -32,14 +33,9 @@ $(".listing").each(function(i){
        $(this).find(".title, .description").css({
            opacity: .6
     });
-   /* $(this).css({
-        'background-color': 'rgba(0,0,0,.025)'
- });*/
      }); 
      $(this).mouseout(function(){
-        //$(this).find(".title, .description, .year").css("background-color", "transparent");
         $(this).find(".title, .description").css("opacity", "1");
-       /* $(this).css("background-color", "white");*/
      }); 
 });
 

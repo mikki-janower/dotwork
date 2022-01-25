@@ -56,7 +56,6 @@ transition: background-color 0.5s linear;
   color: black;
   font-size: 1.2rem;
   font-family:'Suisse Intl';
-  text-align: left;
   cursor: pointer;
 }
 

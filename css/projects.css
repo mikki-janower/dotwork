@@ -331,11 +331,9 @@ input:focus::-webkit-slider-runnable-track {
 /*-----------------------medddddddia queriesssssss------------------------------------*/
 
 @media (max-width: 850px) {
-    .top{   
-        grid-template-columns: 35vw 65vw;
-    }
+
     .projectTitle{
-        text-align:center;
+        text-align:right;
     }
     .top .index, .finishedindex{
                 display:none;
