@@ -330,19 +330,7 @@ input:focus::-webkit-slider-runnable-track {
 
 /*-----------------------medddddddia queriesssssss------------------------------------*/
 
-@media (max-width: 1150px) {
-        #label, #label a, .detail{
-            font-size:12px;
-        }
-        #projfooter{
-            font-size: 1em;
-        }
-        #description{
-            font-size:14px;
-        }
- }
-
-@media (max-width: 900px) {
+@media (max-width: 850px) {
     .top{   
         grid-template-columns: 35vw 65vw;
     }
@@ -356,14 +344,9 @@ input:focus::-webkit-slider-runnable-track {
         #project{
             display:flex;
             flex-direction:column;
-            top:75px;
-        }
-        #description{
-            font-size:16px;
         }
         
         .detail{
-            font-size:17px;
             margin-bottom:20px;
         }
         .detail p{
@@ -371,7 +354,7 @@ input:focus::-webkit-slider-runnable-track {
         }
         #description{
             padding-top:10px;
-            width:92vw;
+            padding-right: 24px;
         }
         #projfooter{
             font-size:22px;
@@ -400,15 +383,7 @@ input:focus::-webkit-slider-runnable-track {
         #projfooter a{
             font-size:24px;
         }
-    }
-    @media (max-width: 550px) {
-        #project{
-            top:85px;
+        .name{
+            display:block;
         }
-        #description{
-            transition:.2s;
-        }
-        .detail{
-            font-size:12px;
     }
-}
