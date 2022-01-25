@@ -22,9 +22,9 @@ if (window.innerWidth > 200) {
     // each element should animate half a second after the last one.
     });
     }
-if (window.innerWidth > 700) {
+/*if (window.innerWidth > 750) { */
      $('#about').delay(300).slideToggle(300);
-}
+/*}*/
 
 //--------highlight title, description, and year when you hover over a listing
 $(".listing").each(function(i){

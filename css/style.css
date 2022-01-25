@@ -8,15 +8,6 @@
   font-family: "Neue Montreal";
   src:url('fonts/NeueMontreal-Regular.otf');
 }
-
-@font-face{
-  font-family: "Saol Display Reg";
-  src:url('fonts/SaolDisplay-RegularItalic.otf');
-}
-@font-face{
-  font-family: "Saol Display";
-  src:url('fonts/SaolDisplay-LightItalic.otf');
-}
 @font-face{
   font-family: "Suisse Intl";
   src:url('fonts/SuisseIntl-Regular.otf');
@@ -36,17 +27,12 @@
 }
 
 
-
-html{
- min-height:100vh;
- /*background-color: #f2f2f2;*/
-}
 ::selection{
   background-color: yellow;
 }
 body {
 	font-family: 'Suisse Intl';
-	font-size: 15px;
+	font-size: 12px;
 	line-height: 1.35;
 	color: black;
   overflow-x: hidden;
@@ -55,25 +41,9 @@ body {
 a, .title, .description{
   transition:.2s;
 }
-
-.dot{
-  font-size: 12px;
-  opacity:.6;
- /* font-family: 'Saol Display Reg';*/
-}
-.main{
-  /*grid-template-columns: 29% 35.5% 35.5%;*/
-  padding-left: 10px;
-}
-.top{
-  position:absolute;
+.top, .bottom{
   z-index:100;
-  display:grid;
-  width: 100vw;
-  /*grid-template-columns: 35% 32.5% 32.5%;*/
-  grid-template-columns: 29% 35.5% 28% 7.5%;
-  flex-direction: row;
-  padding-top:12px;
+  padding-bottom:10px;
 
 transition-property: background-color, box-shadow;
 transition-duration: 0.5s, .5s;
@@ -82,17 +52,12 @@ transition-duration: 0.5s, .5s;
 transition: background-color 0.5s linear;
 }
 
-.top p, .top a, .bottom a, #projfooter, #projfooter a, .mobilecontact{
+.top p, .top a, .bottom a, .about p, #projfooter, #projfooter a, .mobilecontact{
   color: black;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-family:'Suisse Intl';
   text-align: left;
   cursor: pointer;
-  padding-right:10px;
-}
-
-.top, .bottom{
-  z-index:10;
 }
 
 .bottom{
@@ -126,56 +91,47 @@ a{
 
 /*-------------------------------------about----------------------------------------*/
 #aboutContainer{
-  display:block;
   height:auto;
-  width:100%;
-  min-height:10px;
+  max-width:100%;
+  padding-top: 14px;
 }
 #about{
+padding-left: 10px;
  max-width: 100%;
  display: grid;
- /*grid-template-columns: 29% 35.5% 35.5%;*/
- grid-template-columns: 29% 35.5% 28% 7.5%;
- grid-template-rows: auto auto;
+ grid-template-columns: 25% 37.5% 37.5%;
  border-bottom:.5px black dotted;
+ padding-bottom:10px;
+}
+.name, #about .p{
+font-size:1.1rem;
+}
+
+.name{
+  margin-top:-2px;
 }
 
 #about p{
   padding:0;
   margin:0;
 }
+
 #about .p{
-  margin-left:8px;
   grid-row:1;
-  grid-column:2;
+  grid-column-start: 2;
+  grid-column-end: 4;
   padding-right:30px;
-  padding-bottom:10px;
-}
-#about img{
-  /*display:none;*/
-  padding-right: 10px;
-  max-height:120px;
-  max-width: 92%;
-  width:auto;
-  transition:.2s;
-  padding-left:12px;
-  grid-column:1;
-  grid-row:1;
-  margin-right:10px;
-  margin-top:2px;
-  justify-self:flex-start;
-  align-self:flex-start;
-  padding-bottom:10px;
+  padding-bottom:14px;
+  padding-right:36px;
+  max-width: 900px;
 }
 #about .contact{
   display:inline-block;
   justify-content:flex-start;
   text-align:left;
   padding-right:24px;
-  padding-left:10px;
-  grid-column:3/span 4;
-  grid-row:1;
-  padding-bottom:10px;
+  grid-column-start:2;
+  grid-row:2;
 }
 /*#about .mobilecontact{
   display:none;
@@ -193,18 +149,27 @@ a, .more{
   transition: opacity.2s linear;
 }
 a:hover{
-  /*background-color: yellow;*/
   opacity:.6;
 }
-.clients{
-  grid-row:1;
-  grid-column:3/span 4;
-  width:100%;
-  padding-bottom:12px;
-  font-size:12px;
-}
-.clients p:nth-of-type(2){
+.twocols, .clients{
   columns:2;
+  /*----display flex so the cols don't stretch across the whole grid box-----*/
+  display:flex;
+  flex-direction:row;
+  align-items:flex-start;
+}
+.twocols{
+  grid-row:2;
+  grid-column-start:2;
+  padding-right:24px;
+}
+
+.clients{
+  grid-row:2;
+  grid-column-start:3;
+}
+.clients div:nth-of-type(1){
+  padding-right:24px;
 }
 
 
@@ -215,22 +180,18 @@ a:hover{
   padding:0;
   padding-left:0px;
   width:100%;
-  top:70px;
 }
 .listing{
   max-width: 100%;
   display: grid;
-  padding-left:12px;
+  padding-left:10px;
   padding-top:10px;
   padding-bottom:10px;
-  /*align-items:center;*/
-  /*grid-template-columns: 29% 35.5% 35.5%;*/
-  grid-template-columns: 29% 35.5% 28% 7.5%;
+  grid-template-columns: 25% 37.5% 37.5%;
   border-bottom:.5px dotted black;
   cursor:pointer;
   transition: .3s;
 }
-
 
 .info{
   transition:.3s;
@@ -241,9 +202,7 @@ a:hover{
   max-width: 100%;
   display: grid;
   grid-column:2/span 3;
-  /*grid-column:1/span 4;*/
   grid-template-columns: 29% 71%;
-  /*grid-template-rows: auto auto auto;*/
   padding-right:10px;
 }
 
@@ -267,22 +226,15 @@ a:hover{
   padding-right:10px;
   transition: opacity .2s;
 }
-/*.projpage{
-  grid-row:3;
-  grid-column:1;
-  justify-self:flex-start;
-  align-self:start;
-}*/
 .extender a, .more a, .contact a, .p a{
   transition: background-color, box-shadow;
   transition-duration:.3s;
 }
 .more{
-  margin-top:20px;
+  margin-top:10px;
   padding-left:10px;
   padding-right:10px;
   padding-bottom:10px;
-  margin-bottom:28px;
   /*background-color:#f2f2f2;*/
   display:flex;
   flex-direction:row;
@@ -291,44 +243,20 @@ a:hover{
 /*---------------------------------meeeeeeeeeedia queeeeeeeeriiiiiiiiiiiiesssssss-----------*/
 
 
-
-@media (max-width: 900px){
-
-  #about .p{
-    padding-bottom:20px;
-    padding-right:14px;
-  }
-  body{
-    font-size:14px;
-    line-height:1.35;
-  }
-}
-
-@media (max-width: 700px){
-
-body{
-  font-size:16px;
-}
-#fullindex{
-  top:60px;
-}
-  .info{
-    grid-column:1/span 2;
-  }
- /*.year{
-    display:none;
-  }*/
+@media (max-width: 750px){
+ 
   #about{
     top:60px;
-    display:none;
-    grid-template-columns: 29fr 71fr;
-    grid-column-gap:10px;
-    grid-template-rows: auto auto;
-    padding-left:2px;
+    grid-template-rows: auto auto auto;
+    padding-left:10px;
     padding-right:15px;
+    grid-template-columns: 50% 50%;
   }
+  .name{
+    display:none;
+  }
+
   #about .p{
-    /*font-size:18px;*/
     padding-right: 6px;
     padding-bottom:8px;
     grid-column:1/span 2;
@@ -337,57 +265,27 @@ body{
     padding-right:20px;
     margin-bottom:8px;
   }
-  #about img{
-   display:none;
-    max-width:100%;
-    max-height:100%;
-    padding:0;
-    padding-left:5px;
-    padding-bottom:10px;
-    grid-row:2;
-    grid-column:1/span 2;
-    padding-right:10px;
-  }
-  /*#about .contact{
-    display:none;
-    font-size:18px;
-  }*/
-  #about span{
-    /*font-size:18px;*/
-    grid-column:1;
-    /*padding-left:5px;*/
-  }
-  /*.list{
-    justify-self:flex-end;
-    margin-right:10px;
-  }*/
-  /*.thumbnails img:nth-of-type(3){
-    display:none;
-  }*/
-/*
-  .thumbnails img{
-    display:none;
-  }
-  .thumbnails{
-    display:flex;
-    grid-column:3/span 4;
-  }
+ 
+.twocols{
+  grid-column: 1/span 2;
+}
+.clients{
+  display:none;
+}
 
 .listing{
-  padding-top:12px;
-  padding-bottom:6px;
-}*/
+  padding-top:10px;
+}
+
+.info{
+  grid-column:1/span 2;
+}
 .extender{
   grid-column:1/span 4;
   grid-row: 2;
-  /*grid-column:1/span 4;*/
-  grid-template-columns: 29% 71%;
-  /*grid-template-rows: auto auto auto;*/
-  padding-right:12px;
+  padding-right:10px;
   padding-top:10px;
-  padding-bottom:8px;
 }
-
 .images img{
   width:100%;
 }
@@ -396,43 +294,15 @@ body{
 }
 .images{
   grid-column:1/span 4;
-  /*grid-row: 1/span 3;*/
   padding-right:0px;
 }
-
-/*.description{
-  display:none;
-}
-.listing br{
-  display:none;
-}*/
-
-/*.description{
-  font-family:"Saol Display Reg";
-  font-size:16px;
-  line-height:1;
-}*/
-
-/*.listing .extender{
-  display:none;
-}*/
-
-
 .more span:nth-of-type(2){
   display:none;
 }
 .more{
-  padding-bottom:20px;
   bottom:10px;
 }
 
-
-  .flip:hover{
-    transform:rotateY(0deg);
-  }
-  .top p, .top a, .bottom a, .bottom a, .flip{
-    font-size: 24px;
-  }
 }
 
 
