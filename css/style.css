@@ -119,9 +119,8 @@ font-size:1.1rem;
   grid-row:1;
   grid-column-start: 2;
   grid-column-end: 4;
-  padding-right:24px;
   padding-bottom:14px;
-  padding-right:36px;
+  padding-right: 24px;
   max-width: 900px;
 }
 #about .contact{
@@ -259,9 +258,8 @@ a:hover{
     padding-right: 6px;
     padding-bottom:8px;
     grid-column:1/span 2;
-    padding-right:6px;
+    padding-right:12px;
     grid-row:1;
-    padding-right:20px;
     margin-bottom:8px;
   }
  
