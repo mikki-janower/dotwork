@@ -30,7 +30,6 @@ cursor:default;
     max-width: 100%;
     display: grid;
     grid-template-columns: 25fr 75fr;
-    grid-template-rows:auto;
     justify-content:space-between;
     align-items:start;
 }
