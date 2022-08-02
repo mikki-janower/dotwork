@@ -1,28 +1,32 @@
 $(document).ready(function () {
-   $("#project").fadeIn("100");
-    $(document).delay(200).queue(function (next) {
-        //$(".projectTitle").css("transform", "rotate(0deg)");
-        $(".projectTitle").css("opacity", "1");
-        //$(".index").css("transform", "rotate(0deg)");
-        next();
-    });
 
-    //------------------------------------redirect to homepage when .name or .projectTitle are clicked
-    $(".name, .index").click(function () {
-      // $(".projectTitle").css("transform", "rotateY(90deg)");
-      // $(".index").css("transform", "rotateY(90deg)");
-        $("#project").slideToggle(200);
-        $(document)
-            .delay(300)
-            .queue(function (next) {
-                window.location.href = "index.html";
-                next();
-            });
+//--------------------start at the top of a page after every page redirect
+window.scrollTo(0, 0);
+
+//standardize the site title on every page across the site. 
+$(".name").append("mikki.studio");
+//---------make the 'about' section of the index slide in after about half a second
+$('#about').delay(300).slideToggle(300);
+
+//----------------When you hover on a listing on the index, fade out its label.
+   $(".listing").each(function(i){
+    $(this).mouseover(function(){
+    $(this).find(".title, .description").css({
+        opacity: .6
+    }); }); 
+    $(this).mouseout(function(){
+        $(this).find(".title, .description").css("opacity", "1");
+    }); });
+
+//-------When you click a listing on the index, redirect to the corresponding project page.
+    $('.listing').click(function(){
+        window.location.replace($(this).data("link"));
+    });
         
-        return false;
-    });
-    //-------------------------------------------------------------enlarge image on click
+//--------------------load project case studies with a subtle fade effect
+$("#project").delay("200").fadeIn("100");
 
+//---------------------zoom in on an image when it's clicked
     $("#project img").each(function (index) {
         if ($(this).attr("onclick") != null) {
             if (
@@ -63,7 +67,7 @@ $(document).ready(function () {
             transition: ".2s",
             color: "rgba(255,255,255,.4)"
         });
-    }
+    }  
 
     $("body").on("click", ".modal-overlay", function () {
         $(".modal-overlay, .modal-img").fadeOut("100");
@@ -74,11 +78,7 @@ $(document).ready(function () {
                 $("body").css("overflow-y", "scroll");
                 $(".top").css({
                     transition: "0s",
-                   // "background-color": "#f2f2f2",
                    "background-color": "white"
-                  /* "-webkit-box-shadow": "0px -1px 10px 11px #f2f2f2",
-                    "-moz-box-shadow": "0px -1px 10px 11px #f2f2f2",
-                    "box-shadow": "0px -1px 10px 11px #f2f2f2"*/
                 });
                 next();
             });
@@ -87,46 +87,27 @@ $(document).ready(function () {
             color: "black"
         });
     });
-});
 
-//--------------------------------index page turn
-
-$(".index").click(function () {
-
-    //---------------hide about
-    /*if (about == true) {
-        $("#about").slideToggle("200");
-        $(".index").html("Index");
-        index = false;
-    }*/
-    //---------------hide projects
-    $("#project").fadeOut("200");
-
-    //---------------page redirect
-    $(document).delay(300).queue(function (next) {
-        window.location.href = "index.html";
-        next();
+    //--------------------------------------redirect to index page
+    $(".name").click(function () {
+        $(document).delay(200).queue(function (next) {
+           window.location.href = "index.html";
+            next();
+        });
     });
-});
 
-//----------------insert menu onto every page
-/*$( "#projfooter" ).insertAfter( $( ".bottom sticky" ) );
+    //------------------------Insert footer menu onto every project page
+    $(".bottom").append("<a class='flip' href='https://www.instagram.com/_miikki/' target='_blank'>Instagram</a><a class='flip' href='mailto:info@mikki.studio' target='_blank'>Email</a><a class='flip' href='https://www.are.na/mikki-janower' target='_blank'>Are.na</a>");
 
+    //----------- back button automatically redirects to the visitor's last page visited
+    $('.backbtn').click(function(){
+        history.back();
+    });
 
-var $bottomsticky = $( "<section class='bottom sticky'></section>" ),
-  newdiv2 = document.createElement( "div" ),
-  existingdiv1 = document.getElementById( "foo" );
- 
-$( "body" ).append( $newdiv1, [ newdiv2, existingdiv1 ] );*/
-
-
-/*$('.projectTitle').mouseout(function(){
-$('.projectTitle').html(title);
-$('.projectTitle').css("transform", "rotateY(0deg)");
-});*/
-
-/*$("#reconnatest textarea").hover(function () {
-    scrollTop: $("#Reconnatest textarea").offset().top;
-});*/
-
+    //-----------activate 'querydown', a temporary div that shows browser width. Useful for setting media queries as precisely as possible.
+    $(window).resize(function () {
+        let width = window.innerWidth;
+        $(".querytown").html("Width: " + width + " px");
+    });
 //-----------------------------document closing bracket; don't touch
+});

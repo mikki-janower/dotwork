@@ -2,9 +2,7 @@
     justify-self:flex-start;
     cursor: default;
     transition:.4s;
-    opacity:0;
     grid-column:2/span 3;
-    /*transform:rotateY(90deg);*/
 }
 .projectTitle:hover{
 cursor:default;
@@ -14,14 +12,15 @@ cursor:default;
     justify-self:flex-start;
 }
 .top{
-    padding-left:10px;
     padding-top:14px;
     padding-bottom:24px;
     display:grid;
     grid-template-columns: 25fr 75fr;
 }
+.bottom{
+    bottom:10px;
+}
 a:hover{
-    /*background-color: yellow;*/
     opacity:.6;
   }
   
@@ -30,8 +29,6 @@ a:hover{
     position:relative;
     max-width: 100%;
     display: grid;
-    padding-left:10px;
-    padding-right:10px;
     grid-template-columns: 25fr 75fr;
     grid-template-rows:auto;
     justify-content:space-between;
@@ -49,9 +46,6 @@ a:hover{
     opacity:.6;
 }
 
-/*#description a{
-    text-decoration:underline;
-}*/
 #project img{
     position:relative;
     max-width:100%;
@@ -66,16 +60,13 @@ a:hover{
     margin:0;
     margin-top:-18px;
     padding-right:36px;
-    padding-top:0;
     top:0;
     transition:.2s;
 }
 .detail{
-    font-size:12px;
     display:flex;
     flex-direction:row;
     justify-content:space-between;
-  /*  border-top:.5px black dotted;*/
     padding-top:0px;
     padding-bottom:0px;
 }
@@ -102,7 +93,6 @@ grid-row:3;
     justify-content:space-between;
     align-content:flex-start;
     margin-top:10px;
-    margin-bottom:4px;
     grid-column:2;
     grid-row:4;
     padding-left:0px;
@@ -198,7 +188,6 @@ grid-row:3;
 
 .caption{
     max-width:50%;
-    font-size:12px;
     padding-right: 30px;
     font-family: 'Suisse Intl Italic';
     transition: opacity .3s;
@@ -211,7 +200,6 @@ grid-row:3;
 }
 .citation{
     max-width:50%;
-    font-size:12px;
 }
 
 
@@ -222,7 +210,7 @@ grid-row:3;
     padding-right:36px;
    /* padding-top:6px;*/
     padding-bottom:1.35%;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     /*border-top:.65px dotted;*/
 }
 .subhead_2{
@@ -268,12 +256,9 @@ textarea:hover{
     justify-content:space-between;
     width:98%;
     margin-left:1%;
-    font-size:14px;
     margin-bottom:20px;
 }
-/*.sliderlabel span{
-    font-family:"Times New Roman";
-}*/
+
 /*-------style slider*/
 .reconnapage input{
     margin-top:10px;
@@ -335,10 +320,10 @@ input:focus::-webkit-slider-runnable-track {
     .projectTitle{
         text-align:right;
     }
-    .top .index, .finishedindex{
+  /*  .top .index, .finishedindex{
                 display:none;
                 transition:.2s;
-         }
+         }*/
         #project{
             display:flex;
             flex-direction:column;
@@ -355,9 +340,8 @@ input:focus::-webkit-slider-runnable-track {
             padding-right: 24px;
         }
         #projfooter{
-            font-size:22px;
+            font-size:1.1rem;
             padding-top:80px;
-            margin-bottom:24px;
             align-self:flex-end;
             width:65%;
             position:relative;
@@ -366,22 +350,19 @@ input:focus::-webkit-slider-runnable-track {
             position:relative;
         }
         .bottom{
-            position:fixed;
-            margin-bottom:28px;
+            position:absolute;
         }
         .modal-overlay img{
             max-width:96%;
         }
-       /* #project #label, #label a{
-            display:none;
-        }*/
 }
+@media (max-width: 750px) {
+    .name{
+        display:block;
+    }
 
     @media (max-width: 700px) {
         #projfooter a{
-            font-size:24px;
-        }
-        .name{
-            display:block;
+            font-size:1.1rem;
         }
     }
