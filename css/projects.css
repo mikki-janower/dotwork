@@ -5,7 +5,7 @@
     grid-column:2/span 3;
 }
 .projectTitle:hover{
-cursor:default;
+    cursor:default;
 }
 
 .index{
@@ -54,20 +54,16 @@ cursor:default;
 }
 #description{
     grid-row:1;
-    align-self:start;
-    vertical-align:top;
-    margin:0;
-    margin-top:-18px;
     padding-right:36px;
-    top:0;
     transition:.2s;
+}
+#description p:first-of-type{ /*this removes the top margin automatically added to paragraphs*/
+    margin-top:0px;
 }
 .detail{
     display:flex;
     flex-direction:row;
     justify-content:space-between;
-    padding-top:0px;
-    padding-bottom:0px;
 }
 .detail p{
     width:48%;
@@ -201,12 +197,10 @@ grid-row:3;
 /*------------------subheads, for dividing project pages into sections----------*/
 
 .subhead{
-    padding-top:72px;
+    padding-top:2.2rem;
     padding-right:36px;
-   /* padding-top:6px;*/
     padding-bottom:1.35%;
     font-size: 1.1rem;
-    /*border-top:.65px dotted;*/
 }
 .subhead_2{
     grid-column:1;
@@ -216,7 +210,6 @@ grid-row:3;
 }
 
 /*-----------------------non-universal changes for specific projects----------------*/
-
 /*---------------------------------reconna-------------------------*/
 #reconnatest{
     display:flex;
@@ -314,11 +307,8 @@ input:focus::-webkit-slider-runnable-track {
 
     .projectTitle{
         text-align:right;
+        padding-left:14px;
     }
-  /*  .top .index, .finishedindex{
-                display:none;
-                transition:.2s;
-         }*/
         #project{
             display:flex;
             flex-direction:column;
@@ -361,3 +351,4 @@ input:focus::-webkit-slider-runnable-track {
             font-size:1.1rem;
         }
     }
+}

@@ -3,8 +3,9 @@ $(document).ready(function () {
 //--------------------start at the top of a page after every page redirect
 window.scrollTo(0, 0);
 
-//standardize the site title on every page across the site. 
+//------------standardize the site title on every page across the site. 
 $(".name").append("mikki.studio");
+
 //---------make the 'about' section of the index slide in after about half a second
 $('#about').delay(300).slideToggle(300);
 
@@ -98,6 +99,9 @@ $("#project").delay("200").fadeIn("100");
 
     //------------------------Insert footer menu onto every project page
     $(".bottom").append("<a class='flip' href='https://www.instagram.com/_miikki/' target='_blank'>Instagram</a><a class='flip' href='mailto:info@mikki.studio' target='_blank'>Email</a><a class='flip' href='https://www.are.na/mikki-janower' target='_blank'>Are.na</a>");
+
+    //------insert all scripts and into the <head> tag of every page on the site instead of repeating it on each (this lets me batch edit)
+    $("head").append('<title>mikki.studio</title><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta property="og:image" content="community/cover.jpg"><link rel="shortcut icon" type="image/png" href="assets/bigfavicon.png"/><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/projects.css"><link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">');
 
     //----------- back button automatically redirects to the visitor's last page visited
     $('.backbtn').click(function(){
