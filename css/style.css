@@ -27,7 +27,7 @@ body {
 	color: black;
   overflow-x: hidden;
   margin:0;
-  padding-top:14px;
+  padding-top:10px;
   padding:10px;
 }
 a, .title, .description{
@@ -51,16 +51,6 @@ transition: background-color 0.5s linear;
   cursor: pointer;
 }
 
-.bottom{
-  display: flex;
-  flex-direction: column;
-  padding:0;
-  left: 10px;
-  position: fixed;
-}
-.bottom a{
-  margin:0px;
-}
 a{
   color:black;
   text-decoration: none;
@@ -82,10 +72,8 @@ a{
 #aboutContainer{
   height:auto;
   max-width:100%;
-  padding-top: 14px;
 }
 #about{
-padding-left: 10px;
  max-width: 100%;
  display: grid;
  grid-template-columns: 25% 37.5% 37.5%;
