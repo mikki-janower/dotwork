@@ -101,12 +101,13 @@ $("#project").delay("200").fadeIn("100");
     $(".bottom").append("<a class='flip' href='https://www.instagram.com/_miikki/' target='_blank'>Instagram</a><a class='flip' href='mailto:info@mikki.studio' target='_blank'>Email</a><a class='flip' href='https://www.are.na/mikki-janower' target='_blank'>Are.na</a>");
 
     //------insert all scripts and into the <head> tag of every page on the site instead of repeating it on each (this lets me batch edit)
-    $("head").append('<title>mikki.studio</title><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta property="og:image" content="community/cover.jpg"><link rel="shortcut icon" type="image/png" href="assets/bigfavicon.png"/><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/projects.css"><link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">');
+    $("head").append('<title>mikki.studio</title><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta property="og:image" content="community/cover.jpg"><link rel="shortcut icon" type="image/png" href="assets/bigfavicon.png"/><link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">');
 
     //----------- back button automatically redirects to the visitor's last page visited
-    $('.backbtn').click(function(){
+    // not currently working
+   /* $('.backbtn').click(function(){
         history.back();
-    });
+    });*/
 
     //-----------activate 'querydown', a temporary div that shows browser width. Useful for setting media queries as precisely as possible.
     $(window).resize(function () {
