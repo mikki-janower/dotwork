@@ -188,9 +188,6 @@ a:hover{
     padding-right:15px;
     grid-template-columns: 50% 50%;
   }
-  .name{
-    display:none;
-  }
 
   #about .p{
     padding-right: 6px;
@@ -200,7 +197,10 @@ a:hover{
     grid-row:1;
     margin-bottom:8px;
   }
- 
+
+.indexname{
+  display:none;
+}
 .twocols{
   grid-column: 1/span 2;
 }
@@ -231,8 +231,6 @@ a:hover{
 }
 
 }
-
-
 
 .querytown{
   z-index:1000;
