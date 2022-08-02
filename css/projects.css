@@ -24,13 +24,6 @@ cursor:default;
     bottom:10px;
     position: fixed;
   }
-  .bottom a{
-    margin:0px;
-  }
-a:hover{
-    opacity:.6;
-  }
-  
 
 #project{
     position:relative;
@@ -94,7 +87,7 @@ grid-column:2;
 grid-row:3;
 }
 
-#projfooter, #projfooter a{
+#projfooter{
     display:flex;
     color:black;
     justify-content:space-between;
@@ -102,15 +95,11 @@ grid-row:3;
     margin-top:10px;
     grid-column:2;
     grid-row:4;
-    padding-left:0px;
-}
-#projfooter{
- cursor:default;
+    cursor:default;
 }
 #projfooter a{
- cursor:pointer;
+    cursor:pointer;
 }
-
 /*-----------------------various polyptych setups for multiple images in one row----------------*/
 /*---!!!!!-------!!!!-----On mobile, make sure these classes are removed-  !!!!!!     !!!!!------*/
 .diptych{

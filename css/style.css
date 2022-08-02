@@ -56,8 +56,10 @@ a{
   text-decoration: none;
   display:inline;
 }
+a:hover{
+  opacity:.6;
+}
 .flip{
-  transition: .2s;
   text-align:left;
   justify-content:flex-start;
 }
