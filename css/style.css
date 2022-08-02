@@ -194,9 +194,7 @@ a:hover{
 @media (max-width: 750px){
  
   #about{
-    top:60px;
     grid-template-rows: auto auto auto;
-    padding-left:10px;
     padding-right:15px;
     grid-template-columns: 50% 50%;
   }
