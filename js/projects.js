@@ -160,7 +160,7 @@ $(".next").click(function(){
     $(".bottom").append("<a class='flip' href='https://www.instagram.com/_miikki/' target='_blank'>Instagram</a><a class='flip' href='mailto:info@mikki.studio' target='_blank'>Email</a><a class='flip' href='https://www.are.na/mikki-janower' target='_blank'>Are.na</a>");
 
     //------insert all scripts and into the <head> tag of every page on the site instead of repeating it on each (this lets me batch edit)
-    $("head").append('<title>mikki.studio</title><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta property="og:image" content="community/cover.jpg"><link rel="shortcut icon" type="image/png" href="assets/bigfavicon.png"/><link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">');
+    $("head").append('<meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">');
 
     //----------- back button automatically redirects to the visitor's last page visited
     // not currently working
