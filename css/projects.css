@@ -33,23 +33,13 @@
     align-items:start;
 }
 
-#project #label{
-    padding-bottom:8px;
-    margin-bottom:10px;
-    display:flex;
-    flex-direction:row;
-    justify-content:space-between;
-    width:100%;
-    position:relative;
-    opacity:5;
-}
-
 #project img{
+    display:block;
     position:relative;
     max-width:100%;
     cursor:zoom-in;
     padding-right:0;
-    padding-bottom:8px;
+    padding-bottom:10px;
 }
 #description{
     grid-row:1;
@@ -94,50 +84,18 @@ grid-row:1;
 }
 /*-----------------------various polyptych setups for multiple images in one row----------------*/
 /*---!!!!!-------!!!!-----On mobile, make sure these classes are removed-  !!!!!!     !!!!!------*/
-.diptych{
-    display:inline-grid;
-    grid-template-columns:auto auto;
-    grid-column-gap: 8px;
-    max-width:100%;
-    justify-content:space-between;
-    overflow-x:hidden;
+.diptych, .triptych, .polyptych{
+    display:grid;
+    grid-column-gap: 10px;
 }
-.diptych img{
-    position:relative;
-    padding-right:6px;
-    grid-column-gap:8px;
-    align-self:flex-start;
+.diptych{
+    grid-template-columns:auto auto;
 }
 .triptych{
-    display:inline-grid;
     grid-template-columns: auto auto auto;
-    grid-column-gap:8px;
-    max-width:100%;
-    justify-content:space-between;
-    overflow-x:hidden;
-    margin-bottom:8px;
-}
-.triptych img{
-    position:relative;
-    padding-right:6px;
-    width:100%;
-    align-self:flex-start;
 }
 .polyptych{
-    display:inline-grid;
     grid-template-columns: auto auto auto auto;
-    grid-column-gap:8px;
-    grid-row-gap:8px;
-    max-width:100%;
-    justify-content:space-between;
-    overflow-x:hidden;
-    margin-bottom:8px;
-}
-.polyptych img{
-    position:relative;
-    padding-right:6px;
-    width:100%;
-    align-self:flex-start;
 }
 /*-----------------------zoom-in overlay----------------*/
 .modal-overlay{
@@ -163,31 +121,26 @@ grid-row:1;
 }
 
 /*------------------for pictures with captions----------*/
-.captioned{
-    grid-template-rows: auto auto;
-}
-.captioned img{
-    grid-row:1;
-}
-.captioned #label{
-    grid-row: 2;
-    grid-column:1/span 2;
-}
 
 .caption{
-    max-width:50%;
-    padding-right: 30px;
-    /*transition: opacity .3s;*/
-}
-.citation{
-    max-width:50%;
+    width:100%;
+    margin-top:-4px;
+    padding-bottom:16px;
 }
 
+.citation{
+    padding-left:5px;
+    opacity:.5;
+}
+
+.diptych span{
+    width:25vw;
+}
 
 /*------------------subheads, for dividing project pages into sections----------*/
 
 .subhead{
-    padding-top:2.2rem;
+    padding-top:2rem;
     padding-right:36px;
     padding-bottom:1.35%;
     font-size: 1.1rem;
@@ -296,7 +249,6 @@ input:focus::-webkit-slider-runnable-track {
 @media (max-width: 850px) {
 
     .projectTitle{
-        text-align:right;
         padding-left:14px;
     }
         #project{

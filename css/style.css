@@ -173,6 +173,10 @@ a:hover{
   flex-direction:row;
   justify-content:space-between;
 }
+
+.more p{
+  margin:0px;
+}
 /*---------------------------------meeeeeeeeeedia queeeeeeeeriiiiiiiiiiiiesssssss-----------*/
 
 
