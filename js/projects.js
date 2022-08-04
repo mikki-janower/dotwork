@@ -12,20 +12,79 @@ $('#about').delay(300).slideToggle(300);
 //----------------When you hover on a listing on the index, fade out its label.
    $(".listing").each(function(i){
     $(this).mouseover(function(){
-    $(this).find(".title, .description").css({
+    $(this).find(".info").css({
         opacity: .6
     }); }); 
     $(this).mouseout(function(){
-        $(this).find(".title, .description").css("opacity", "1");
+        $(this).find(".info").css("opacity", "1");
     }); });
 
 //-------When you click a listing on the index, redirect to the corresponding project page.
     $('.listing').click(function(){
         window.location.replace($(this).data("link"));
     });
-        
+
 //--------------------load project case studies with a subtle fade effect
 $("#project").delay("200").fadeIn("100");
+
+//this array lists all currently active case studies in order. The 'back' and 'next' functions below navigate between its contents.
+//manually update this array every time you'd like to add a new case study or change the order of the existing ones. 
+const pagelinks = [
+    "mhns.html",
+    "community.html",
+    "nytimes.html",
+    "spaceopera.html",
+    "transientgrounds.html",
+    "cyberotica.html",
+    "joshualeifer.html",
+    "mariovoid.html",
+    "sober21.html",
+    "reconnatypeface.html",
+    "reflections.html",
+    "postcursor.html"
+]
+
+//-----when you press the 'back' button, go back one case study 
+$('.btn-back').click(function(){
+    let currentPage = window.location.pathname.substring(1);
+    //------get position (index, or i for short) of the page you're on in the larger array 
+    let i = pagelinks.indexOf(currentPage);
+    //if you're on the first case study, cycle back to the last one
+    if(i==0){
+        window.location.pathname = pagelinks[pagelinks.length - 1];
+    //if you're on the last case study, cycle back to the first
+    } else if(i==pagelinks.length){
+        window.location.pathname = pagelinks[0];
+    //if you're on any other case study, go back to the last one
+    } else {
+        window.location.pathname = pagelinks[i-1];
+    };
+});
+
+//-----when you press the 'next' button, go forward one case study 
+$('.btn-next').click(function(){
+    let currentPage = window.location.pathname.substring(1);
+    //------get position (index, or i for short) of the page you're on in the larger array 
+    let i = pagelinks.indexOf(currentPage);
+    //if you're on the last case study, cycle back to the first
+    if(i==pagelinks.length-1){
+        window.location.pathname = pagelinks[0];
+    //if you're on any other case study, go back to the last one
+    } else {
+        window.location.pathname = pagelinks[i+1];
+    };
+});
+
+//-----find all the 'data-link' items (there's one per listing) and put them in a big old array
+
+$(".previous").click(function(){
+    var nextPage = Number(window.location.href.split("")[window.location.href.length - 1]) - 1;
+    window.location.href = window.location.href.split("").push(nextPage).join("");
+});
+$(".next").click(function(){
+    var nextPage = Number(window.location.href.split("")[window.location.href.length - 1]) + 1;
+    window.location.href = window.location.href.split("").push(nextPage).join("");
+});
 
 //---------------------zoom in on an image when it's clicked
     $("#project img").each(function (index) {
@@ -108,6 +167,7 @@ $("#project").delay("200").fadeIn("100");
    /* $('.backbtn').click(function(){
         history.back();
     });*/
+
 
     //-----------activate 'querydown', a temporary div that shows browser width. Useful for setting media queries as precisely as possible.
     $(window).resize(function () {
