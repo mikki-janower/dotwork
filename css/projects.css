@@ -337,5 +337,9 @@ input:focus::-webkit-slider-runnable-track {
         #projfooter a{
             font-size:1.1rem;
         }
+        .polyptych{
+            grid-template-columns: auto auto;
+            max-width:100%;
+        }
     }
 }
