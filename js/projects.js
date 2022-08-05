@@ -6,6 +6,19 @@ window.scrollTo(0, 0);
 //------------standardize the site title on every page across the site. 
 $(".name").append("mikki.studio");
 
+//------Initialize lozad lazyload library
+lozad('.lozad', {
+    load: function(el) {
+        el.src = el.dataset.src;
+        el.onload = function() {
+            el.classList.add('fade')
+        }
+    }
+}).observe()
+
+const observer = lozad(); //lazy loads elements with default selector as ".lozad"
+observer.observe();
+
 //---------make the 'about' section of the index slide in after about half a second
 $('#about').delay(300).slideToggle(300);
 
@@ -25,22 +38,7 @@ $('#about').delay(300).slideToggle(300);
     });
 
 //--------------------load project case studies with a subtle fade effect
-$("#project").delay("200").fadeIn("100");
-
-//------------------activate the 'lozad' lazy loading library
-
-//Initialize library
-lozad('.lozad', {
-    load: function(el) {
-        el.src = el.dataset.src;
-        el.onload = function() {
-            el.classList.add('fade')
-        }
-    }
-}).observe()
-
-const observer = lozad(); //lazy loads elements with default selector as ".lozad"
-observer.observe();
+$("#project").delay("200").fadeIn("300");
 
 
 //this array lists all currently active case studies in order. The 'back' and 'next' functions below navigate between its contents.
