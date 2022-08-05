@@ -178,6 +178,20 @@ a:hover{
   margin:0px;
 }
 
+/*-----------fade animation on lazyload--------------*/
+.fade {
+  animation-name: fade;
+  animation-duration: 1.8s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 /*---------------------------------meeeeeeeeeedia queeeeeeeeriiiiiiiiiiiiesssssss-----------*/
 
 

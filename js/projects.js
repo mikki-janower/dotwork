@@ -27,6 +27,22 @@ $('#about').delay(300).slideToggle(300);
 //--------------------load project case studies with a subtle fade effect
 $("#project").delay("200").fadeIn("100");
 
+//------------------activate the 'lozad' lazy loading library
+
+//Initialize library
+lozad('.lozad', {
+    load: function(el) {
+        el.src = el.dataset.src;
+        el.onload = function() {
+            el.classList.add('fade')
+        }
+    }
+}).observe()
+
+const observer = lozad(); //lazy loads elements with default selector as ".lozad"
+observer.observe();
+
+
 //this array lists all currently active case studies in order. The 'back' and 'next' functions below navigate between its contents.
 //manually update this array every time you'd like to add a new case study or change the order of the existing ones. 
 const pagelinks = [
@@ -161,13 +177,6 @@ $(".next").click(function(){
 
     //------insert all scripts and into the <head> tag of every page on the site instead of repeating it on each (this lets me batch edit)
     $("head").append('<meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">');
-
-    //----------- back button automatically redirects to the visitor's last page visited
-    // not currently working
-   /* $('.backbtn').click(function(){
-        history.back();
-    });*/
-
 
     //-----------activate 'querydown', a temporary div that shows browser width. Useful for setting media queries as precisely as possible.
     $(window).resize(function () {
