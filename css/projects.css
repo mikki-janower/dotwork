@@ -154,11 +154,7 @@ textarea {
     outline:none;
     transition:.3s;
 }
-/*textarea:hover{
-    height:300px;
-    resize:none;
-    overflow-y:scroll;
-}*/
+
 .sliderlabel{
     position:relative;
     width:75vw;
