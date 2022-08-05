@@ -48,20 +48,7 @@
 #description p:first-of-type{ /*this removes the top margin automatically added to paragraphs*/
     margin-top:0px;
 }
-/*.detail{
-    display:flex;
-    flex-direction:row;
-    justify-content:space-between;
-}
-.detail p{
-    width:48%;
-    margin-top:6px;
-}
 
-.detail a{
-    padding:0;
-    margin:0;
-}*/
 #gallery{
     grid-column:2;
     grid-row:1;
@@ -148,6 +135,7 @@
 /*-----------------------non-universal changes for specific projects----------------*/
 /*---------------------------------reconna-------------------------*/
 #reconnatest{
+    position:relative;
     display:flex;
     flex-direction:column;
     width:100%;
@@ -155,48 +143,45 @@
     grid-column:2;
 }
 textarea {
-    color:#111111;
-    overflow:hidden;
+    overflow-y:scroll;
     font-family: "Reconna";
     font-size: 30px;
-    height:150px;
-    width: auto;
-    padding: 1.2rem;
-    border-radius:5px;
-    border: 1px solid black;
+    height:300px;
+    padding: 10px 15px 10px 15px;
+    border-radius:8px;
+    border: .6px solid rgba(0,0,0,.5);
     resize: none;
     outline:none;
-    transition: all 0.2s;
+    transition:.3s;
 }
-textarea:hover{
-    transition: 0.2s;
+/*textarea:hover{
     height:300px;
     resize:none;
     overflow-y:scroll;
-}
-.reconnapage .sliderlabel{
+}*/
+.sliderlabel{
+    position:relative;
+    width:75vw;
     display:flex;
     flex-direction:row;
     justify-content:space-between;
-    width:98%;
-    margin-left:1%;
     margin-bottom:20px;
 }
 
 /*-------style slider*/
-.reconnapage input{
+#reconnatest input{
     margin-top:10px;
     cursor:pointer;
     margin-bottom:6px;
     background-color:transparent;
-    border:1px solid black;
-    border-radius: 5px;
-    height:5px;
+    border:.6px solid rgba(0,0,0,.5);
+    border-radius: 8px;
+    height:8px;
     -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
 }
 input:hover, input:active, input:focus, td:hover, td:focus, table:focus{
     outline:none;
-    border:1px solid black;
+    border:.6px solid rgba(0,0,0,.5);
     box-shadow:none;
     box-shadow: 0px 0px 0px transparent;
     text-decoration:none;
@@ -214,28 +199,26 @@ input:focus::-webkit-slider-runnable-track {
     -webkit-appearance:none;
     outline:none;
   }
-.reconnapage input::-webkit-slider-thumb {
+#reconnatest input::-webkit-slider-thumb {
     -webkit-appearance: none;
     width:30px;
-    height:5px;
-    background-color:black;
-    border-radius:5px;
+    height:8px;
+    background-color:rgba(0,0,0,.4);
+    border-radius:8px;
   }
   input::-ms-track {
-    width: 100%;
     cursor: pointer;
     background-color:black;
   }
-.reconnapage iframe{
-    display:inline-block;
+/*.reconnapage iframe{
+    display:block;
     border:0px solid white;
-    width:100%;
     height:100%;
 }
 .reconnapage iframe:hover{
     border:0px solid white;
     background:white;
-}
+}*/
 
 /*-----------------------medddddddia queriesssssss------------------------------------*/
 
@@ -249,12 +232,6 @@ input:focus::-webkit-slider-runnable-track {
             flex-direction:column;
         }
         
-        /*.detail{
-            margin-bottom:20px;
-        }
-        .detail p{
-            width: 45%;
-        }*/
         #description{
             padding-top:5px;
             padding-right: 24px;
@@ -280,9 +257,6 @@ input:focus::-webkit-slider-runnable-track {
 @media (max-width: 750px) {
 
     @media (max-width: 700px) {
-       /* #projfooter a{
-            font-size:1.1rem;
-        }*/
         .polyptych{
             grid-template-columns: auto auto;
             max-width:100%;

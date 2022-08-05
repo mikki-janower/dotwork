@@ -89,17 +89,6 @@ $('.btn-next').click(function(){
     };
 });
 
-//-----find all the 'data-link' items (there's one per listing) and put them in a big old array
-
-$(".previous").click(function(){
-    var nextPage = Number(window.location.href.split("")[window.location.href.length - 1]) - 1;
-    window.location.href = window.location.href.split("").push(nextPage).join("");
-});
-$(".next").click(function(){
-    var nextPage = Number(window.location.href.split("")[window.location.href.length - 1]) + 1;
-    window.location.href = window.location.href.split("").push(nextPage).join("");
-});
-
 //---------------------zoom in on an image when it's clicked
     $("#project img").each(function (index) {
         if ($(this).attr("onclick") != null) {
