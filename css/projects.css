@@ -56,7 +56,7 @@
 
 #projfooter{
     display:flex;
-    color:black;
+    color:#0a0a0a;
     justify-content:space-between;
     align-content:flex-start;
     margin-top:10px;
@@ -88,7 +88,7 @@
     position:fixed;
     width:100%;
     max-height:100%;
-    background-color:black;
+    background-color:#0a0a0a;
     transition:.2s;
     cursor:zoom-out;
     top:0;
@@ -204,17 +204,9 @@ input:focus::-webkit-slider-runnable-track {
   }
   input::-ms-track {
     cursor: pointer;
-    background-color:black;
+    background-color: #0a0a0a;
   }
-/*.reconnapage iframe{
-    display:block;
-    border:0px solid white;
-    height:100%;
-}
-.reconnapage iframe:hover{
-    border:0px solid white;
-    background:white;
-}*/
+
 
 /*-----------------------medddddddia queriesssssss------------------------------------*/
 

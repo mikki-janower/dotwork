@@ -24,7 +24,7 @@ body {
 	font-family: 'Suisse Intl';
 	font-size: 12px;
 	line-height: 1.35;
-	color: black;
+	color: #0a0a0a;
   overflow-x: hidden;
   margin:0;
   padding-top:11px;
@@ -59,7 +59,7 @@ h3{
   justify-content:flex-start;
 }
 a{
-  color:black;
+  color:#0a0a0a;
   text-decoration: none;
   display:inline;
 }
