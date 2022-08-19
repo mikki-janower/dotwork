@@ -46,8 +46,8 @@ $("#project").delay("200").fadeIn("300");
 const pagelinks = [
     "mhns.html",
     "community.html",
-    "nytimes.html",
     "leren.html",
+    "nytimes.html",
     "spaceopera.html",
     "transientgrounds.html",
     "cyberotica.html",
