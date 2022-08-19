@@ -1,11 +1,5 @@
 $(document).ready(function () {
 
-//--------------------start at the top of a page after every page redirect
-window.scrollTo(0, 0);
-
-//------------standardize the site title on every page across the site. 
-$(".name").append("mikki.studio");
-
 //------Initialize lozad lazyload library
 lozad('.lozad', {
     load: function(el) {
@@ -18,6 +12,12 @@ lozad('.lozad', {
 
 const observer = lozad(); //lazy loads elements with default selector as ".lozad"
 observer.observe();
+
+//--------------------start at the top of a page after every page redirect
+window.scrollTo(0, 0);
+
+//------------standardize the site title on every page across the site. 
+$(".name").append("mikki.studio");
 
 //---------make the 'about' section of the index slide in after about half a second
 $('#about').delay(300).slideToggle(300);

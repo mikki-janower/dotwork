@@ -184,6 +184,11 @@ a:hover{
   animation-duration: 1.8s;
 }
 
+img {
+  animation-name: fade;
+  animation-duration: 1.8s;
+}
+
 @keyframes fade {
   from {
     opacity: 0;
