@@ -47,6 +47,7 @@ const pagelinks = [
     "mhns.html",
     "community.html",
     "nytimes.html",
+    "leren.html",
     "spaceopera.html",
     "transientgrounds.html",
     "cyberotica.html",

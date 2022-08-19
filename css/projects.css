@@ -42,7 +42,6 @@
     padding-bottom:10px;
 }
 #description{
-    grid-row:1;
     padding-right:36px;
 }
 #description p:first-of-type{ /*this removes the top margin automatically added to paragraphs*/
