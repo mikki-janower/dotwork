@@ -171,5 +171,42 @@ $('.btn-next').click(function(){
         let width = window.innerWidth;
         $(".querytown").html("Width: " + width + " px");
     });
+// Function to check if an element is in the viewport
+function isElementInViewport(element) {
+    var rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+  
+  //-----------------Lazyload blur-in effect
+  // Function to lazy load the images
+function lazyLoadImages() {
+    var lazyImages = document.querySelectorAll('.lazyload');
+  
+    lazyImages.forEach(function (lazyImage) {
+      if (isElementInViewport(lazyImage)) {
+        if (!lazyImage.classList.contains('loaded')) {
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.onload = function () {
+            lazyImage.classList.add('loaded');
+          };
+        }
+      }
+    });
+  }
+  
+  // Add event listener to trigger lazy loading on scroll
+  window.addEventListener('scroll', lazyLoadImages);
+  window.addEventListener('resize', lazyLoadImages);
+  window.addEventListener('orientationchange', lazyLoadImages);
+  
+  // Trigger lazy loading on page load
+  window.addEventListener('DOMContentLoaded', lazyLoadImages);
+
+  
 //-----------------------------document closing bracket; don't touch
 });

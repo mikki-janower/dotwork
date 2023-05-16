@@ -262,3 +262,14 @@ img {
   text-align:center;
   background-color:red;
 }
+/*----- CSS for the blur-in lazy load effect */
+
+.lazyload {
+  filter: blur(20px);   /* Initial blur amount */
+  transition: filter 0.3s ease-in-out; /* Transition effect for smooth blur-in */
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.lazyload.loaded {
+  filter: blur(0);/* Remove the blur effect when image is loaded */
+}
