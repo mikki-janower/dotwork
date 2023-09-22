@@ -264,6 +264,11 @@ h2:has(.col3){
     padding-bottom:9px;
   }
 }
+@media only screen and (max-width: 400px) {
+  #navcontainer, .listing, #gallery, #projfooter, #about, #downloadcv{
+    grid-template-columns: 1fr;
+  }
+}
 
 /*--------a div i turn on to find breakpoints-------*/
 .querytown{
