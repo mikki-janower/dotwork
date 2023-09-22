@@ -1,48 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head><link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/projects.css">
     <link rel="shortcut icon" type="image/png" href="assets/bigfavicon.png"/>
 
-    <title>mikki.studio: Joshua Leifer</title>
+    <title>Mikki Janower: Portfolio, Joshua Leifer</title>
     <meta property="og:image" content="joshualeifer/jleifer1.png">
 </head>
 
 <body>
-    <section class="top sticky">
-     <a class="name"></a>
-    <a class="projectTitle">Website: Joshua Leifer</a>
-    </section>
+    <section id=navcontainer></section>
 
 <!--------------------------insert project information in this section ONLY----------------------->
-    <section id="project" style="display:none">
+    <section id="gallery">
 
-    <div id="description"><p>An animated typing effect and stripped-down formatting for writer, editor, and reporter <a href = "https://joshualeifer.com" target="_blank">Joshua Leifer.</a></p>
-    <p> Designed to reference the editorial process, the site features word processor-inspired typography, a draggable information panel, and a bibliography-inspired mobile index.</p>
-    <p>Visit the live site <a href="https://www.joshualeifer.com" target= "_blank>">here.</a></p>
+    <div class="description">
+        <h2>Portfolio<br><span class="client">Joshua Leifer</span></h2>
+        <p>An animated typing effect and stripped-down formatting for writer, editor, and reporter <a href = "https://joshualeifer.com" target="_blank">Joshua Leifer.</a></p>
+        <p> Designed to reference the editorial process, the site features word processor-inspired typography, a draggable information panel, and a bibliography-inspired mobile index.</p>
+        <p>Visit the live site <a href="https://www.joshualeifer.com" target= "_blank>">here.</a></p>
     </div>
 
-    <div id="gallery">
-        <img class="lozad lazyload" data-src="joshualeifer/jleifer1.png">
-        <div class="caption">Joshua Leifer dotcom, 2020</div>
-        <img class="lozad lazyload" data-src="joshualeifer/jleifer-12.png">
-        <div class="diptych">
+
+        <img class="col23 lozad lazyload" data-src="joshualeifer/jleifer1.png">
+        <div class="col23 caption">Joshua Leifer dotcom, 2020</div>
+        <img class="col23 lozad lazyload" data-src="joshualeifer/jleifer-12.png">
+        <div class="col23 diptych">
             <img class="lozad lazyload" data-src="joshualeifer/jleifer-08.png">  
             <img class="lozad lazyload" data-src="joshualeifer/jleifer-11.png">
         </div>
-        <div class="diptych">
+        <div class="col23 diptych">
             <img class="lozad lazyload" data-src="joshualeifer/jleifer-10.png">  
             <img class="lozad lazyload" data-src="joshualeifer/jleifer-07.png">
         </div>
-    </div>
-       
-    <div id="projfooter">
-        <a class="btn-back flip">Back</a>
-        <a class="btn-next flip">Next</a>
-    </div>
+
+    </section>    
+    <div id="projfooter"></div>
    
 <!--------------------------UNIFORM—don't change anything BELOW this line------------------------->
-</section>
+
 <section class="bottom"></section>
     
     <script src="assets/jquery.min.js"></script>

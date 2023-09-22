@@ -16,170 +16,266 @@
   src:url('fonts/ReconnaSerif.otf');
 }
 
+/*------universal grid--------*/
+body{
+  max-width: 100vw;
+  margin: 26px 0px 26px 0px;
+  overflow-x: hidden;
+  font-family: 'Suisse Intl';
+	font-size: 12px;
+	line-height: 13.5px;
+  letter-spacing:.1px;
+	color: #0a0a0a;
+}
+#navcontainer, .listing, #gallery, #projfooter, #about, #downloadcv{
+  max-width: 100%;
+  display: grid;
+  padding: 0px 26px 0px 26px;
+  grid-template-columns: 370px 1fr 1fr;
+  grid-column-gap: 9px;
+}
+.col1{
+  grid-column:1;
+}
+.col2{
+  grid-column:2;
+}
+.col3{
+  grid-column:3/end;
+}
+.col12{
+  grid-column: 1/span 2;
+}
+.col23{
+  grid-column: 2/end;
+}
+.col123{
+  grid-column: 1/end;
+}
+/*-----universal styles-----*/
+h2, .subhead{
+  font-size:25px;
+  line-height:26px;
+  letter-spacing:-.2px;
+  font-weight:400;
+  margin:0;
+}
+h3{
+  font-size: 16.5px;
+  line-height:18px;
+  font-weight:400;
+}
+p{
+  width: 324px;
+}
+
+a{
+  color:#0a0a0a;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+.link{
+  cursor:pointer;
+}
+a:hover, a:active{
+  opacity:.5;
+}
 
 ::selection{
   background-color: rgba(0,0,0,.1);
 }
-body {
-	font-family: 'Suisse Intl';
-	font-size: 13px;
-	line-height: 1.3;
-	color: #0a0a0a;
-  overflow-x: hidden;
-  margin:0;
-  padding-top:11px;
-  padding:11px;
+img{
+ padding-bottom:9px;
+ width: 100%;
 }
-
-.top, .bottom{
-  z-index:100;
-  padding-bottom:11px;
-  font-size:1.1rem;
-
-/*this adds a nice transition when the text colors change to accommodate the modal overlay on zoom.*/
-transition-property: background-color, box-shadow;
-transition-duration: 0.5s;
--webkit-transition: background-color 0.5s;
--ms-transition: background-color 0.5s;
-transition: background-color 0.5s;
+/*---------------nav---------------*/
+.name{
+  display:grid;
+  grid-column:1;
 }
-
-h3{
-  font-size:1.1rem;
-  line-height:1.25;
-  padding:0px;
-  margin:0px;
-  font-weight:400;
+.nav-1, #projfooter h2:first-of-type{
+  grid-column:2;
 }
-
-.name, .flip{ 
-  /*----'flip' styles links with the same specs as h3-----*/
-  cursor:pointer;
-  font-size:1.1rem;
-  text-align:left;
-  justify-content:flex-start;
+.nav-2, #projfooter h2:nth-of-type(2){
+  grid-column:3;
 }
-a{
-  color:#0a0a0a;
-  text-decoration: none;
-  display:inline;
+.nav-1 a, .nav-2 a:first-of-type{
+  margin-right:26px;
 }
-a:hover{
-  opacity:.5;
-}
-
-/*-------------------------------------about/CV----------------------------------------*/
-#aboutContainer{
-  height:auto;
-  max-width:100%;
-}
-#about{
- max-width: 100%;
- display: grid;
- grid-template-columns: 25% 18.75% 18.75% 18.75% 18.75%;
- border-bottom:.6px solid rgba(0,0,0,.5);
- padding-bottom:10px;
-}
-
-#about p{
-  padding:0;
-  margin:0;
-}
-
-#about .p{
-  grid-row:1;
-  grid-column: 2/span 4;
-  padding-right: 36px; /*was 14px*/
-     /*padding-bottom:14px;*/
-  max-width: 950px;
-}
-.links{
-  display:flex;
-  flex-direction:row;
-}
-
-.links a{
-  padding-right:24px;
-}
-#about .contact #opencv{
-  align-self:start;
-  vertical-align:bottom;
-  cursor: pointer;
-}
-
-a, .flip, .name, .info, #opencv{
-  transition: opacity .2s linear;
-}
-a:hover, #opencv:hover{
-  opacity:.5;
-}
-.cv{
-  max-width:100%;
-  grid-column-start:1;
-  grid-column-end:6;
-  padding-top:10px;
-  padding-bottom:0px;
-  display: flex;
-  flex-direction:row;
-  grid-column: 2/span 5;
-  grid-template-columns: 50% 50%;
-}
-/*.press, .clients{
-  columns:2;
-  ----display flex so the cols don't stretch across the whole grid box-----
-  display:flex;
-  flex-direction:row;
-  align-items:flex-start;
-}*/
-/*.cv-item{
-  padding-right: 42px;
-}*/
-
-/*---------------------------------------------index-------------------------------*/
-#fullindex{
-  position:relative;
-  width:100%;
-}
+/*----------homepage listings----------*/
 .listing{
-  padding-top:10px;
-  padding-bottom:10px;
-  max-width: 100%;
-  display: grid;
-  grid-template-columns: 25% 37.5% 37.5%;
-  border-bottom:.6px solid rgba(0,0,0,.5);
   cursor:pointer;
 }
-
-.info{
-  padding-right:10px;
-  grid-column: 1;
+.listing:first-of-type, #gallery, #about{
+  margin-top:42px;
+}
+.listing h2, #hero h2{
+  align-self:center;
+}
+h2:has(.col3){
+  padding-left:26px;
+}
+.client{
+  opacity:.5;
+}
+/*******************PROJECT PAGES******************/
+/*----------project case studies----------*/
+#projfooter{
+  color:#0a0a0a;
+  align-content:flex-start;
+  margin-top:26px;
+  grid-column:2/span 3;
+  grid-row:4;
+}
+#projfooter a{
+  cursor:pointer;
+}
+.description{
+  grid-column:1;
+}
+/*---------------hero sections-------------------*/
+/*-----------------------various polyptych setups for multiple images in one row----------------*/
+.diptych, .triptych, .polyptych{
+  display:grid;
+  width: 100%;
+  grid-column-gap: 9px;
+}
+.diptych{
+  grid-template-columns:auto auto;
+}
+.triptych{
+  grid-template-columns: auto auto auto;
+}
+.polyptych{
+  grid-template-columns: auto auto auto auto;
+}
+/*-----------------------zoom-in overlay on photos----------------*/
+.modal-overlay{
+  position:fixed;
+  width:100%;
+  max-height:100%;
+  background-color:#0a0a0a;
+  transition:.2s;
+  cursor:zoom-out;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  margin:0;
+}
+.modal-overlay img{
+  position:absolute;
+  max-height:85%;
+  max-width:90%;
+  margin-left:50vw;
+  margin-top:50vh;
+  transform:translate(-50%, -50%);
 }
 
-.images{
-  max-width:100%;
-  grid-column: 2/span 3;
-  display:flex;
-  flex-direction:row;
-  align-items:flex-start;
-  justify-content:flex-start;
-  transition: opacity .2s;
-  margin-right:10px;
+/*------------------captions and subheads----------*/
+.caption{
+  width: 324px;
+  padding:0px 0px 18px 0px;
 }
-.images img{
-  width:50%;
-  height:auto;
-  padding-right:10px;
+.citation{
+  padding-left:4.5px;
+  opacity:.5;
+}
+.subhead{
+  padding-top:26px;
+  padding-bottom:18px;
+}
+/*------------------about page------------------*/
+#about{
+  padding-right:42px;
+  max-width:1225px;
+}
+#about h2{
+  line-height: 30px;
+  padding-bottom: 9px;
+}
+.item-title{
+  opacity:.5;
+  margin-bottom: 4.5px;
+}
+#about .col2 a, #about .col2 span, #about .col3 a, #about .col3 span{
+  display:block;
+  padding-bottom: 1.5px;
+}
+#downloadcv h2{
+  grid-column:2;
+  padding-top: 42px;
+
+}
+/*-----------------------medddddddia queriesssssss------------------------------------*/
+
+@media (max-width: 850px) {
+  body{
+    margin: 18px 0px 18px 0px;
+  }
+  #navcontainer, .listing, #gallery, #projfooter, #about, #downloadcv{
+    grid-template-columns: 1fr 350px;
+    padding: 0px 18px 0px 18px;
+  }
+
+  .nav-1, .nav-2{
+    grid-column:2;
+    display:flex;
+    flex-direction:row;
+  }
+  .nav-1 h2, .nav-2 h2{
+    grid-column: 2;
+    display:flex;
+    flex-direction:column;
+  }
+  .col1, .col2, .col3, .col12, .col23{
+    grid-column: 1/end;
+  }
+
+  /*-----type styles-----*/
+  .description, .caption, .subhead, #about h2, .cv, #downloadcv{
+    grid-column: 2;
+  }
+  h2, .subhead, #about h2{
+    font-size: 16.5px;
+    line-height:19px;
+  }
+  /*------image arrangements------*/
+  .polyptych{
+    grid-template-columns: auto auto;
+  }
+  .triptych{
+    grid-template-columns: auto;
+  }
+  .modal-overlay img{
+    max-width:96%;
+ }
 }
 
-.more{
-  padding-top:10px;
-  display:flex;
-  flex-direction:row;
-  justify-content:space-between;
+@media (max-width: 566px) {
+  #navcontainer, .nav-1 h2, .nav-2 h2, .description, .caption, .subhead, #projfooter, #about h2, .cv, #downloadcv{
+    grid-column:1/end;
+  }
+  .nav-1, .nav-2, #projfooter h2:first-of-type{
+    grid-column:1;
+  }
+  .name{
+    padding-bottom:9px;
+  }
 }
 
-.more p{
-  margin:0px;
+/*--------a div i turn on to find breakpoints-------*/
+.querytown{
+  z-index:1000;
+  width:300px;
+  font-size:1.1rem;
+  color:white;
+  margin-top:10vh;
+  margin-left:50px;
+  position:fixed;
+  text-align:center;
+  background-color:red;
 }
 
 /*-----------fade animation on lazyload--------------*/
@@ -201,79 +297,91 @@ img {
     opacity: 1;
   }
 }
-/*---------------------------------meeeeeeeeeedia queeeeeeeeriiiiiiiiiiiiesssssss-----------*/
-
-
-@media (max-width: 750px){
- 
-  #about{
-    grid-template-rows: auto auto auto;
-    padding-right:15px;
-    grid-template-columns: 50% 50%;
-  }
-
-  #about .p{
-    padding-right: 6px;
-    padding-bottom:8px;
-    grid-column:1/span 2;
-    padding-right:12px;
-    grid-row:1;
-    margin-bottom:8px;
-  }
-
-.indexname{
-  display:none;
-}
-.twocols{
-  grid-column: 1/span 2;
-}
-.clients{
-  display:none;
-}
-/*-----------put labels below their pictures on mobile-------*/
-.info{
-  grid-column:1/span 2;
-  grid-row:2;
-  padding-top:10px;
-}
-
-.images img:nth-of-type(2){
-  display:none;
-}
-.images{
-  margin-right:0;
-  grid-column:1/span 3;
-}
-
-.images img{
-  width:100%;
-}
-
-.more span:nth-of-type(2){
-  display:none;
-}
-
-}
-
-.querytown{
-  z-index:1000;
-  width:300px;
-  font-size:1.1rem;
-  color:white;
-  margin-top:10vh;
-  margin-left:50px;
-  position:fixed;
-  text-align:center;
-  background-color:red;
-}
 /*----- CSS for the blur-in lazy load effect */
+.image-container {
+  position: relative;
+  display: inline-block; /* Allow containers to size based on their content */
+  overflow: hidden; /* Hide any part of the image that goes beyond the container */
+}
 
 .lazyload {
-  filter: blur(20px);   /* Initial blur amount */
-  transition: filter 0.3s ease-in-out; /* Transition effect for smooth blur-in */
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  filter: blur(6px);  
+  transition: filter 0.2s ease-in; 
 }
 
 .lazyload.loaded {
   filter: blur(0);/* Remove the blur effect when image is loaded */
 }
+/*-----------------------non-universal changes for specific projects----------------*/
+/*---------------------------------reconna-------------------------*/
+#reconnatest{
+  position:relative;
+  display:inline-flex;
+  flex-direction:column;
+  margin-bottom:20px;
+}
+textarea {
+  overflow-y:scroll;
+  font-family: "Reconna";
+  font-size: 30px;
+  height:300px;
+  padding: 10px 15px 10px 15px;
+  border-radius:8px;
+  border: .6px solid rgba(0,0,0,.5);
+  resize: none;
+  outline:none;
+  transition:.3s;
+}
+
+.sliderlabel{
+  position:relative;
+  width:75vw;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  margin-bottom:20px;
+}
+
+/*-------style slider*/
+#reconnatest input{
+  margin-top:10px;
+  cursor:pointer;
+  margin-bottom:6px;
+  background-color:transparent;
+  border:.6px solid rgba(0,0,0,.5);
+  border-radius: 8px;
+  height:8px;
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+}
+input:hover, input:active, input:focus, td:hover, td:focus, table:focus{
+  outline:none;
+  border:.6px solid rgba(0,0,0,.5);
+  box-shadow:none;
+  box-shadow: 0px 0px 0px transparent;
+  text-decoration:none;
+  background:transparent;
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+}
+input:focus::-webkit-slider-runnable-track {
+  background: transparent;
+  box-shadow:none;
+  -webkit-appearance:none;
+  outline:none;
+}
+input:focus::-ms-fill-upper {
+  box-shadow:none;
+  -webkit-appearance:none;
+  outline:none;
+}
+#reconnatest input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width:30px;
+  height:8px;
+  background-color:rgba(0,0,0,.4);
+  border-radius:8px;
+}
+input::-ms-track {
+  cursor: pointer;
+  background-color: #0a0a0a;
+}
+

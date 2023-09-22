@@ -3,46 +3,44 @@
 
 <head>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/projects.css">
     <link rel="shortcut icon" type="image/png" href="assets/bigfavicon.png"/>
 
-    <title>mikki.studio: Reconna Typeface</title>
+    <title>Mikki Janower: Reconna Typeface</title>
     <meta property="og:image" content="reconna/reconna screenie.png">
 </head>
 <body>
-    <section class="top">
-    <a class="name"></a>
-    <a class="projectTitle">Reconna Typeface</a>
-    </section>
+    <section id=navcontainer></section>
 
 <!--------------------------insert project information in this section ONLY----------------------->
-    <section id="project" style="display:none">
 
 
-    <div id="description"><p><i>Reconna</i> is a prototype inspired letterforms by found in 20th-century Italian print archives. The condensed serif has high ascenders and angled serifs. Glyph set includes numerals, basic punctuation, and a variety of symbols. </p>
+<section id="gallery">
+    <div class="description">
+        <h2>Reconna Typeface<br></h2>
+        <p><i>Reconna</i> is a prototype inspired letterforms by found in 20th-century Italian print archives. The condensed serif has high ascenders and angled serifs. Glyph set includes numerals, basic punctuation, and a variety of symbols. </p>
         <p>This typeface would not exist without instruction and encouragement from <a href="https://alessiodellena.com/" target="_blank">Alessio D'Ellena.</a> You can download the full specimen <a href="https://files.cargocollective.com/c186171/Reconna_Specimen.pdf" target= "_blank">here.</a></p>
-        </div>
-        <div id="reconnatest">
-            <!--      autofocus means text box will have clicker in it immediately-->
-                    <textarea id="text" spellcheck="false">Take Reconna for a spin! Write your deepest secret here.</textarea>
-                    <td><input type="range" min="12" max="100" value="24" id="font-size"></td></tr></tbody></table>
-            <div class=sliderlabel><span>12px</span><span id="fontsize">Type size: 30px</span><span>100px</span></div>
-        </div>  
-        
-    <div id="gallery">
-        <img src="reconna/reconna screenie.png">
-            <div class="caption">Reconna Typeface, 2019</div>
+    </div>
+
+    <img class="col23" src="reconna/reconna screenie.png">
+    <div class="col23 caption">Reconna Typeface, 2019</div>
+
+    <div class="col123" id="reconnatest">
+        <!--      autofocus means text box will have clicker in it immediately-->
+        <textarea id="text" spellcheck="false">Take Reconna for a spin! Write your deepest secret here.</textarea>
+        <td><input type="range" min="12" max="100" value="24" id="font-size"></td></tr></tbody></table>
+        <div class=sliderlabel><span>12px</span><span id="fontsize">Type size: 30px</span><span>100px</span></div>
+    </div> 
+    <img class="col123 lozad lazyload" data-src="reconna/IMG_1234-2.jpg">
+    <img class="col23 lozad lazyload" data-src="reconna/IMG_1237-2.jpg"> 
+  
+    <div class="col23 diptych">
         <img class="lozad lazyload" data-src="reconna/IMG_1271-2.jpg">
         <img class="lozad lazyload" data-src="reconna/IMG_1247-2.jpg">
-        <img class="lozad lazyload" data-src="reconna/IMG_1234-2.jpg">
-        <img class="lozad lazyload" data-src="reconna/IMG_1237-2.jpg">
-         </div>
-       
-         <div id="projfooter">
-            <a class="btn-back flip">Back</a>
-            <a class="btn-next flip">Next</a>
-        </div>
-        </section>
+    </div>
+
+
+</section>    
+<div id="projfooter"></div>
 
 
         <script>
@@ -57,7 +55,7 @@
         </script>
    
 <!--------------------------UNIFORM—don't change anything BELOW this line------------------------->
-<section class="bottom"></section>
+
     
     <script src="assets/jquery.min.js"></script>
     <script src="js/projects.js"></script>

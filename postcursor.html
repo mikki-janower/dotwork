@@ -3,50 +3,42 @@
 
 <head>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/projects.css">
     <link rel="shortcut icon" type="image/png" href="assets/bigfavicon.png"/>
 
-    <title>mikki.studio: Postcursor</title>
+    <title>Mikki Janower: Postcursor</title>
     <meta property="og:image" content="postcursor/postcursor-01.png">
 </head>
 <body>
-    <section class="top">
-     <a class="name"></a>
-    <a class="projectTitle">Postcursor</a>
-    </section>
+    <section id=navcontainer></section>
 
 <!--------------------------insert project information in this section ONLY----------------------->
-    <section id="project" style="display:none">
 
+<section id="gallery">
 
-    <div id="description"><p><i>Postcursor</i> is a microsite built according to the principles of relational design. The site uses machine learning to generate graphics according to users’ hand movements,
+    <div class="description">
+        <h2>Postcursor / Starrynite</h2>
+        <p><i>Postcursor</i> is a microsite built according to the principles of relational design. The site uses machine learning to generate graphics according to users’ hand movements,
         exploring the notion of process-as-product.</p>
         <p>Models used: tensorflow.js & handtrack.js</p></div>
     </div>
    
+    <img class="col23" src="postcursor/postcursor-01.png">
+    <div class="col23 caption"><i>Postcursor / Starrynite</i>, 2020.</div>
+    <div class="col23 diptych">
+        <img class="lozad lazyload" data-src="postcursor/postcursor-02.png">  
+        <img class="lozad lazyload" data-src="postcursor/postcursor-04.png">
+    </div>
+    <img class="col23 lozad lazyload" data-src="postcursor/starrynite-03.png">  
+    <div class="col23 diptych">
+        <img class="lozad lazyload" data-src="postcursor/starrynite-04.png">  
+        <img class="lozad lazyload" data-src="postcursor/starrynite-05.png">
+    </div>
 
-    <div id="gallery">
-        <img src="postcursor/postcursor-01.png">
-        <div class="caption"><i>Postcursor / Starrynite</i>, 2020.</div>
-        <div class="diptych">
-            <img class="lozad lazyload" data-src="postcursor/postcursor-02.png">  
-            <img class="lozad lazyload" data-src="postcursor/postcursor-04.png">
-        </div>
-            <img class="lozad lazyload" data-src="postcursor/starrynite-03.png">  
-        <div class="diptych">
-            <img class="lozad lazyload" data-src="postcursor/starrynite-04.png">  
-            <img class="lozad lazyload" data-src="postcursor/starrynite-05.png">
-        </div>
-    </div>
-       
-    <div id="projfooter">
-        <a class="btn-back flip">Back</a>
-        <a class="btn-next flip">Next</a>
-    </div>
+     
+</section>
+ <div id="projfooter"></div>
    
 <!--------------------------UNIFORM—don't change anything BELOW this line------------------------->
-</section>
-<section class="bottom"></section>
 
     <script src="assets/jquery.min.js"></script>
     <script src="js/projects.js"></script>
