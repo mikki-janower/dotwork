@@ -210,7 +210,7 @@ h2:has(.col3){
 }
 /*-----------------------medddddddia queriesssssss------------------------------------*/
 
-@media only screen and(max-width: 850px) {
+@media (max-width: 850px) {
   body{
     margin: 18px 0px 18px 0px;
   }
@@ -229,8 +229,28 @@ h2:has(.col3){
     display:flex;
     flex-direction:column;
   }
+  .listing{
+    padding-bottom:18px;
+  }
+  .listing img:first-of-type{
+    grid-column: 1/end;
+    grid-row:2;
+  }
+  .listing img:nth-of-type(2){
+    display:none;
+  }
+  .listing h2{
+    grid-column: 1/end;
+    grid-row:1;
+  }
   .col1, .col2, .col3, .col12, .col23{
     grid-column: 1/end;
+  }
+  h2:has(.col3){
+    padding-left:0px;
+  }
+  .listing h2{
+    padding-bottom:9px;
   }
 
   /*-----type styles-----*/
@@ -253,7 +273,7 @@ h2:has(.col3){
  }
 }
 
-@media only screen and (max-width: 566px) {
+@media (max-width: 566px) {
   #navcontainer, .nav-1 h2, .nav-2 h2, .description, .caption, .subhead, #projfooter, #about h2, .cv, #downloadcv{
     grid-column:1/end;
   }
@@ -264,9 +284,9 @@ h2:has(.col3){
     padding-bottom:9px;
   }
 }
-@media only screen and (max-width: 400px) {
+@media(max-width: 400px) {
   #navcontainer, .listing, #gallery, #projfooter, #about, #downloadcv{
-    grid-template-columns: 1fr;
+  grid-template-columns: 1fr;
   }
 }
 
