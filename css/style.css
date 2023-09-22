@@ -210,7 +210,7 @@ h2:has(.col3){
 }
 /*-----------------------medddddddia queriesssssss------------------------------------*/
 
-@media (max-width: 850px) {
+@media only screen and(max-width: 850px) {
   body{
     margin: 18px 0px 18px 0px;
   }
@@ -253,7 +253,7 @@ h2:has(.col3){
  }
 }
 
-@media (max-width: 566px) {
+@media only screen and (max-width: 566px) {
   #navcontainer, .nav-1 h2, .nav-2 h2, .description, .caption, .subhead, #projfooter, #about h2, .cv, #downloadcv{
     grid-column:1/end;
   }
