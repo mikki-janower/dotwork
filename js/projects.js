@@ -38,7 +38,7 @@ $('#projfooter').append('<h2><a class="btn-back flip">Back</a></h2><h2><a class=
 //this array lists all currently active case studies in order. The 'back' and 'next' functions below navigate between its contents.
 //manually update this array every time you'd like to add a new case study or change the order of the existing ones. 
 const pagelinks = [
-    "fossora,html",
+    "fossora.html",
     "mhns.html",
     "community.html",
     "leren.html",
