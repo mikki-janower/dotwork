@@ -44,10 +44,8 @@ const pagelinks = [
     "leren.html",
     "nytimes.html",
     "spaceopera.html",
-    "transientgrounds.html",
     "cyberotica.html",
     "joshualeifer.html",
-    "reconnatypeface.html",
     "reflections.html",
     "postcursor.html"
 ]
