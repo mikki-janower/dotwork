@@ -254,7 +254,7 @@ h2:has(.col3){
   }
 
   /*-----type styles-----*/
-  .description, .caption, .subhead, #about h2, .cv, #downloadcv{
+    .description, .caption, .subhead, #about h2, .cv, #downloadcv{
     grid-column: 2;
   }
   h2, .subhead, #about h2{
