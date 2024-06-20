@@ -101,7 +101,7 @@ img{
   grid-column:3;
 }
 .nav-1 a, .nav-2 a:first-of-type{
-  margin-right:12px;
+  margin-right:24px;
 }
 /*----------homepage listings----------*/
 .listing{
