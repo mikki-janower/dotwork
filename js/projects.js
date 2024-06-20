@@ -195,6 +195,8 @@ function lazyLoadImages() {
   // Trigger lazy loading on page load
   window.addEventListener('DOMContentLoaded', lazyLoadImages);
 
+  //--------------video settings-------------//
+
   
 //-----------------------------document closing bracket; don't touch
 });
