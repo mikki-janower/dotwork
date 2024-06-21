@@ -183,6 +183,5 @@ function lazyLoadImages() {
     });
 });
 
-
 //-----------------------------document closing bracket; don't touch
 });
