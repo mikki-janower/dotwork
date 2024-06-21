@@ -195,6 +195,25 @@ function lazyLoadImages() {
   // Trigger lazy loading on page load
   window.addEventListener('DOMContentLoaded', lazyLoadImages);
 
+  //---------------lightbox-------------------//
+  $(document).ready(function() {
+    $('img, gif, video').click(function() {
+        var src = $(this).attr('src');
+        $('#lightbox-img').attr('src', src);
+        $('#lightbox').fadeIn();
+    });
+
+    $('.close').click(function() {
+        $('#lightbox').fadeOut();
+    });
+
+    $('#lightbox').click(function(event) {
+        if ($(event.target).is('#lightbox')) {
+            $(this).fadeOut();
+        }
+    });
+});
+
   //--------------video settings-------------//
 
   
