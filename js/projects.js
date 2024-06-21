@@ -81,68 +81,6 @@ $('.btn-next').click(function(){
     };
 });
 
-//---------------------zoom in on an image when it's clicked
-    $("#project img").each(function (index) {
-        if ($(this).attr("onclick") != null) {
-            if (
-                $(this)
-                .attr("onclick")
-                .indexOf("runThis()") == -1
-            ) {
-                $(this).click(function () {
-                    $(this).attr("onclick");
-                    var src = $(this).attr("src");
-                    ShowLargeImage(src);
-                });
-            }
-        } else {
-            $(this).click(function () {
-                var src = $(this).attr("src");
-                ShowLargeImage(src);
-            });
-        }
-    });
-
-    function ShowLargeImage(imagePath) {
-        $("body").append(
-            '<div class="modal-overlay" style="display:none"><div class="modal-img" style="display:none"><img src="' +
-            imagePath.replace("small", "large") +
-            '" /></div></div>'
-        );
-        $(".modal-overlay, .modal-img").fadeIn("100");
-        //------------------------style the page so menus show despite the overlay---------//
-        $("body").css("overflow-y", "hidden");
-        $(".top").css({
-            "background-color": "transparent",
-            "-webkit-box-shadow": "none",
-            "-moz-box-shadow": "none",
-            "box-shadow": "none"
-        });
-        $(".top p, a").css({
-            transition: ".2s",
-            color: "rgba(255,255,255,.4)"
-        });
-    }  
-
-    $("body").on("click", ".modal-overlay", function () {
-        $(".modal-overlay, .modal-img").fadeOut("100");
-        //------------------------fade out the changes to the menus---------//
-        $(".top")
-            .delay(300)
-            .queue(function (next) {
-                $("body").css("overflow-y", "scroll");
-                $(".top").css({
-                    transition: "0s",
-                   "background-color": "white"
-                });
-                next();
-            });
-        $(".top p, a").css({
-            transition: ".2s",
-            color: "black"
-        });
-    });
-
     //--------------------------------------redirect to index page
     $(".name").click(function () {
         $(document).delay(200).queue(function (next) {
@@ -195,27 +133,56 @@ function lazyLoadImages() {
   // Trigger lazy loading on page load
   window.addEventListener('DOMContentLoaded', lazyLoadImages);
 
+
   //---------------lightbox-------------------//
+
   $(document).ready(function() {
-    $('img, gif, video').click(function() {
-        var src = $(this).attr('src');
-        $('#lightbox-img').attr('src', src);
+    // Auto-apply 'data-type' attribute to all media elements
+    $('img').each(function() {
+        $(this).attr('data-type', 'image');
+    });
+
+    $('video').each(function() {
+        $(this).attr('data-type', 'video');
+    });
+
+    // Lightbox functionality
+    $('img, video').click(function() {
+        var tagName = $(this).prop('tagName').toLowerCase();
+
+        $('#lightbox-img').hide();
+        $('#lightbox-video').hide();
+
+        if (tagName === 'img') {
+            var src = $(this).attr('src');
+            $('#lightbox-img').attr('src', src).show();
+        } else if (tagName === 'video') {
+            var src = $(this).find('source').attr('src');
+            $('#lightbox-source').attr('src', src);
+            $('#lightbox-video').get(0).load(); // Load the new video source
+            $('#lightbox-video').show();
+        }
+
         $('#lightbox').fadeIn();
     });
 
     $('.close').click(function() {
-        $('#lightbox').fadeOut();
+        $('#lightbox').fadeOut(function() {
+            $('#lightbox-img').attr('src', '');
+            $('#lightbox-source').attr('src', '');
+        });
     });
 
     $('#lightbox').click(function(event) {
         if ($(event.target).is('#lightbox')) {
-            $(this).fadeOut();
+            $(this).fadeOut(function() {
+                $('#lightbox-img').attr('src', '');
+                $('#lightbox-source').attr('src', '');
+            });
         }
     });
 });
 
-  //--------------video settings-------------//
 
-  
 //-----------------------------document closing bracket; don't touch
 });
