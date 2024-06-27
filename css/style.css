@@ -302,6 +302,7 @@ video{
   }
   .triptych{
     grid-template-columns: auto;
+    grid-gap: 4px;
   }
 }
 
