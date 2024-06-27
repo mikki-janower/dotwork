@@ -380,13 +380,13 @@ img {
   overflow: hidden; /* Hide any part of the image that goes beyond the container */
 }
 
-.lazyload {
+.lozad {
   opacity:0; 
-  -webkit-transition: opacity .5s linear 0.2s;
--moz-transition: opacity .5s linear 0.2s;
-transition: opacity .5s linear 0.2s;
+  -webkit-transition: opacity .2s linear 0.1s;
+  -moz-transition: opacity .2s linear 0.1s;
+transition: opacity .2s linear 0.1s;
 }
 
-.lazyload.loaded {
+.lozad.loaded {
   opacity:1;
 }

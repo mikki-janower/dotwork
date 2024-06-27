@@ -20,15 +20,6 @@ window.scrollTo(0, 0);
 $('#navcontainer').append('<div class="name"><h2><a href="https://mikki.studio">Mikki Janower</a></h2></div><div class="nav-1"><h2><a href="about.html">About</a><a href="mailto:info@mikki.studio" target="_blank">Contact</a></h2></div><div class="nav-2"><h2><a href="https://www.instagram.com/_miikki/" target="_blank">Instagram</a><a href="https://www.are.na/mikki-janower" target="_blank">Are.na</a></h2></div>');
 //---------append footer to the #projfooter section on every page
 $('#projfooter').append('<h2><a class="btn-back flip">Back</a></h2><h2><a class="btn-next flip">Next</a></h2>');
-//----------------When you hover on a listing on the index, fade out its label.
-   $(".listing").each(function(i){
-    $(this).mouseover(function(){
-    $(this).find(".info").css({
-        opacity: .6
-    }); }); 
-    $(this).mouseout(function(){
-        $(this).find(".info").css("opacity", "1");
-    }); });
 
 //-------When you click a listing on the index, redirect to the corresponding project page.
     $('.listing, .new-listing').click(function(){
@@ -109,30 +100,53 @@ function isElementInViewport(element) {
     );
   }
   
-  //-----------------Lazyload blur-in effect
-  // Function to lazy load the images
-function lazyLoadImages() {
-    var lazyImages = document.querySelectorAll('.lazyload');
+//---------------------------lazyload fade-in effect
+function isElementInViewport(el) {
+    var rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
   
-    lazyImages.forEach(function (lazyImage) {
-      if (isElementInViewport(lazyImage)) {
-        if (!lazyImage.classList.contains('loaded')) {
-          lazyImage.src = lazyImage.dataset.src;
-          lazyImage.onload = function () {
-            lazyImage.classList.add('loaded');
-          };
+  // Function to fade in any media that's lazy loaded
+  function lazyLoadMedia() {
+    var lazyElements = document.querySelectorAll('.lozad');
+  
+    lazyElements.forEach(function (lazyElement) {
+      if (isElementInViewport(lazyElement)) {
+        if (!lazyElement.classList.contains('loaded')) {
+          if (lazyElement.tagName === 'IMG') {
+            lazyElement.src = lazyElement.dataset.src;
+            lazyElement.onload = function () {
+              lazyElement.classList.add('loaded');
+            };
+          } else if (lazyElement.tagName === 'VIDEO') {
+            var sources = lazyElement.querySelectorAll('source');
+            sources.forEach(function (source) {
+              source.src = source.dataset.src;
+            });
+            lazyElement.load();
+            lazyElement.onloadeddata = function () {
+              lazyElement.classList.add('loaded');
+            };
+          } else {
+            // handle other types if needed
+          }
         }
       }
     });
   }
   
-  // Add event listener to trigger lazy loading on scroll
-  window.addEventListener('scroll', lazyLoadImages);
-  window.addEventListener('resize', lazyLoadImages);
-  window.addEventListener('orientationchange', lazyLoadImages);
+  // Add event listener to trigger lazy loading on scroll, resize, and orientation change
+  window.addEventListener('scroll', lazyLoadMedia);
+  window.addEventListener('resize', lazyLoadMedia);
+  window.addEventListener('orientationchange', lazyLoadMedia);
   
   // Trigger lazy loading on page load
-  window.addEventListener('DOMContentLoaded', lazyLoadImages);
+  window.addEventListener('DOMContentLoaded', lazyLoadMedia);
 
 
   //---------------lightbox-------------------//
