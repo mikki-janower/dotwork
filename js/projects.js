@@ -151,7 +151,7 @@ function isElementInViewport(el) {
 
   //---------------lightbox-------------------//
 
-  $(document).ready(function() {
+ /* $(document).ready(function() {
     // Auto-apply 'data-type' attribute to all media elements
     $('img').each(function() {
         $(this).attr('data-type', 'image');
@@ -196,13 +196,61 @@ function isElementInViewport(el) {
             });
         }
     });
-});
+});*/
+$(document).ready(function() {
+    // Auto-apply 'data-type' attribute to all media elements
+    $('img').each(function() {
+        $(this).attr('data-type', 'image');
+    });
 
+    $('video').each(function() {
+        $(this).attr('data-type', 'video');
+    });
+
+    // Lightbox functionality for images
+    $('img').click(function() {
+        var src = $(this).attr('src') || $(this).attr('data-src');
+        $('#lightbox-video').hide();
+        $('#lightbox-source').attr('src', ''); // Clear video source
+        $('#lightbox-img').attr('src', src).show();
+
+        $('#lightbox').fadeIn();
+    });
+
+    // Lightbox functionality for videos
+    $('video').click(function() {
+        var src = $(this).find('source').attr('src') || $(this).find('source').attr('data-src');
+        $('#lightbox-img').hide();
+        $('#lightbox-source').attr('src', src);
+        $('#lightbox-video').get(0).load();
+        $('#lightbox-video').show();
+
+        $('#lightbox').fadeIn();
+    });
+
+    // Close lightbox
+    $('.close').click(function() {
+        $('#lightbox').fadeOut(function() {
+            $('#lightbox-img').attr('src', '');
+            $('#lightbox-source').attr('src', '');
+            $('#lightbox-video').get(0).pause(); // Pause the video when closing
+        });
+    });
+
+    $('#lightbox').click(function(event) {
+        if ($(event.target).is('#lightbox')) {
+            $(this).fadeOut(function() {
+                $('#lightbox-img').attr('src', '');
+                $('#lightbox-source').attr('src', '');
+                $('#lightbox-video').get(0).pause(); // Pause the video when closing
+            });
+        }
+    });
+});
 //---------------------iframe autosize---------------//
 window.addEventListener("load", playerSizer);  /* Resize on load */
 window.addEventListener("resize", playerSizer);  /* Resize on change in window size */
 
-/* Resize function */
 function playerSizer() {
   var player = document.getElementById("player");  /* Element ID */
   var width = player.offsetWidth;  /* Get width */
