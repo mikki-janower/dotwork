@@ -248,21 +248,24 @@ $(document).ready(function() {
     });
 });
 //---------------------iframe autosize---------------//
-
+// Function to resize the iframe player based on its width
 function playerSizer() {
-  var player = document.getElementById("player");  /* Element ID */
-  var width = player.offsetWidth;  /* Get width */
-  player.style.height = (width * 0.5625) + "px";  /* Aspect ratio */
+    var player = document.getElementById("player");  // Get the iframe element
+    if (player) {
+        var width = player.offsetWidth;  // Get the current width of the iframe
+        player.style.height = (width * 0.5625) + "px";  // Set the height based on the aspect ratio (16:9)
+    }
 }
 
-window.addEventListener("load", playerSizer);  /* Resize on load */
-window.addEventListener("resize", playerSizer);  /* Resize on change in window size */
+// Event listener for page load
+window.addEventListener("load", function() {
+    playerSizer();  // Resize the player on page load
+});
 
-Window.onload = function (){
-    var player = document.getElementById("player");  /* Element ID */
-    var width = player.offsetWidth;  /* Get width */
-    player.style.height = (width * 0.5625) + "px";  /* Aspect ratio */
- }
+// Event listener for window resize
+window.addEventListener("resize", function() {
+    playerSizer();  // Resize the player whenever the window is resized
+});
 
 //-----------------------------document closing bracket; don't touch
 });
