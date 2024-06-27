@@ -150,53 +150,6 @@ function isElementInViewport(el) {
 
 
   //---------------lightbox-------------------//
-
- /* $(document).ready(function() {
-    // Auto-apply 'data-type' attribute to all media elements
-    $('img').each(function() {
-        $(this).attr('data-type', 'image');
-    });
-
-    $('video').each(function() {
-        $(this).attr('data-type', 'video');
-    });
-
-    // Lightbox functionality
-    $('img, video').click(function() {
-        var tagName = $(this).prop('tagName').toLowerCase();
-
-        $('#lightbox-img').hide();
-        $('#lightbox-video').hide();
-
-        if (tagName === 'img') {
-            var src = $(this).attr('src');
-            $('#lightbox-img').attr('src', src).show();
-        } else if (tagName === 'video') {
-            var src = $(this).find('source').attr('src');
-            $('#lightbox-source').attr('src', src);
-            $('#lightbox-video').get(0).load(); // Load the new video source
-            $('#lightbox-video').show();
-        }
-
-        $('#lightbox').fadeIn();
-    });
-
-    $('.close').click(function() {
-        $('#lightbox').fadeOut(function() {
-            $('#lightbox-img').attr('src', '');
-            $('#lightbox-source').attr('src', '');
-        });
-    });
-
-    $('#lightbox').click(function(event) {
-        if ($(event.target).is('#lightbox')) {
-            $(this).fadeOut(function() {
-                $('#lightbox-img').attr('src', '');
-                $('#lightbox-source').attr('src', '');
-            });
-        }
-    });
-});*/
 $(document).ready(function() {
     // Auto-apply 'data-type' attribute to all media elements
     $('img').each(function() {

@@ -103,6 +103,10 @@ a:hover, a:active{
 img{
  width: 100%;
 }
+/*------------turn cursor to zoom-in icon UNLESS the image is in a .new-listing div-----------*/
+img:not(.new-listing *), video:not(.new-listing *) {
+  cursor: zoom-in;
+}
 .spaced{
   padding-top:72px;
 }
@@ -122,14 +126,8 @@ img{
   margin-right:24px;
 }
 /*----------homepage listings----------*/
-.listing, .new-listing{
+.new-listing{
   cursor:pointer;
-}
-.listing:first-of-type, #gallery, #about{
-  margin-top:42px;
-}
-.listing h2 {
-  padding-bottom:12px;
 }
 .client{
   opacity:.5;
@@ -182,29 +180,6 @@ video{
   margin:0px;
   padding:0px;
 }
-/*-----------------------zoom-in overlay on photos----------------*/
-.modal-overlay{
-  position:fixed;
-  width:100%;
-  max-height:100%;
-  background-color:#0a0a0a;
-  transition:.2s;
-  cursor:zoom-out;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  margin:0;
-}
-.modal-overlay img{
-  position:absolute;
-  max-height:85%;
-  max-width:90%;
-  margin-left:50vw;
-  margin-top:50vh;
-  transform:translate(-50%, -50%);
-}
-
 /*------------------captions and subheads----------*/
 .caption{
   padding:4px 0px 4px 0px;
