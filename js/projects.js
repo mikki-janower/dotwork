@@ -248,14 +248,15 @@ $(document).ready(function() {
     });
 });
 //---------------------iframe autosize---------------//
-window.addEventListener("load", playerSizer);  /* Resize on load */
-window.addEventListener("resize", playerSizer);  /* Resize on change in window size */
 
 function playerSizer() {
   var player = document.getElementById("player");  /* Element ID */
   var width = player.offsetWidth;  /* Get width */
   player.style.height = (width * 0.5625) + "px";  /* Aspect ratio */
 }
+
+window.addEventListener("load", playerSizer);  /* Resize on load */
+window.addEventListener("resize", playerSizer);  /* Resize on change in window size */
 
 //-----------------------------document closing bracket; don't touch
 });
