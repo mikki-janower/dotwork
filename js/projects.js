@@ -251,17 +251,12 @@ $(document).ready(function() {
 // Function to resize the iframe player based on its width
 function playerSizer() {
     var player = document.getElementById("player");  // Get the iframe element
+    var playerWrapper = document.getElementById("player-wrapper");  // Get the iframe element
     if (player) {
-        var width = player.offsetWidth;  // Get the current width of the iframe
+        var width = playerWrapper.offsetWidth;  // Get the current width of the iframe
         player.style.height = (width * 0.5625) + "px";  // Set the height based on the aspect ratio (16:9)
     }
 }
-
-// Event listener for DOMContentLoaded
-document.addEventListener("DOMContentLoaded", function() {
-    playerSizer();  // Resize the player when the DOM content is fully loaded
-});
-
 
 // Event listener for page load
 window.onload = function() {
