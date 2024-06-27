@@ -168,7 +168,8 @@ img:not(.new-listing *), video:not(.new-listing *) {
 /*------------------------video--------------------*/
 .video-wrapper{
   position: relative; /* Needed for containing iframe */
-  /*padding-bottom: 56.25%; /* Aspect ratio (16:9) */
+  width: 100%;
+  padding-bottom: 56.25%; /* Aspect ratio (16:9) */
   overflow: hidden; /* Hide potential overflow */
 }
 video{
