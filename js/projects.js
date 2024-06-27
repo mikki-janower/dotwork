@@ -257,10 +257,16 @@ function playerSizer() {
     }
 }
 
-// Event listener for page load
-window.addEventListener("load", function() {
-    playerSizer();  // Resize the player on page load
+// Event listener for DOMContentLoaded
+document.addEventListener("DOMContentLoaded", function() {
+    playerSizer();  // Resize the player when the DOM content is fully loaded
 });
+
+
+// Event listener for page load
+window.onload = function() {
+    playerSizer();  // Resize the player on page load
+};
 
 // Event listener for window resize
 window.addEventListener("resize", function() {
