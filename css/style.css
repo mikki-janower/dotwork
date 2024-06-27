@@ -23,7 +23,6 @@
     box-sizing: border-box;
 }
 
-
 /* Reset margin and padding */
 html, body {
   margin: 0;
@@ -41,11 +40,12 @@ body{
 }
 
 #wrapper{
+  box-sizing: border-box;
   width:auto;
   display:grid;
+  width: 100%;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-column-gap:4px;
-  grid-row-gap:4px;
+  grid-gap:4px;
   overflow:hidden;
 }
 #navcontainer, .listing, #gallery, #projfooter, #about, #downloadcv{
@@ -59,16 +59,16 @@ body{
   grid-column:2;
 }
 .col3{
-  grid-column:3/end;
+  grid-column:3;
 }
 .col12{
   grid-column: 1/span 2;
 }
 .col23{
-  grid-column: 2/end;
+  grid-column: 2/span 2;
 }
 .col123{
-  grid-column: 1/end;
+  grid-column: 1/span 3;
 }
 /*-----type styles-----*/
 h3, h2, .subhead{
@@ -146,7 +146,7 @@ img:not(.new-listing *), video:not(.new-listing *) {
 }
 .description{
   grid-column:1;
-  grid-row: 2/span 3;
+  grid-row:2/span 2;
 }
 /*--------------------------------------------------------------galleries & media------------------------------------------------------*/
 /*-----------------------various polyptych setups for multiple images in one row----------------*/
@@ -168,7 +168,8 @@ img:not(.new-listing *), video:not(.new-listing *) {
 /*------------------------video--------------------*/
 .video-wrapper{
   margin:0px;
-  margin-bottom:-3px;
+  margin-bottom:-1.5px;
+  margin-top:-1.5px;
 }
 video{
   width: 100%;
@@ -193,13 +194,13 @@ video{
 }
 /*------------------captions and subheads----------*/
 .caption{
-  padding:4px 0px 4px 0px;
+  padding:2px 0px 2px 0px;
 }
 .nested{
   padding: 0px 0px 0px 0px;
 }
 .right{
-  padding: 0px 0px 0px 4px;
+  padding: 0px 0px 0px 1px;
 }
 .citation{
   padding-left:4.5px;
