@@ -258,5 +258,11 @@ function playerSizer() {
 window.addEventListener("load", playerSizer);  /* Resize on load */
 window.addEventListener("resize", playerSizer);  /* Resize on change in window size */
 
+Window.onload = function (){
+    var player = document.getElementById("player");  /* Element ID */
+    var width = player.offsetWidth;  /* Get width */
+    player.style.height = (width * 0.5625) + "px";  /* Aspect ratio */
+ }
+
 //-----------------------------document closing bracket; don't touch
 });
