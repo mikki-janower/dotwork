@@ -103,7 +103,7 @@ a:hover, a:active{
 img{
  width: 100%;
 }
-/*------------turn cursor to zoom-in icon UNLESS the image is in a .new-listing div-----------*/
+/*------------turn cursor to zoom-in icon on any media eligible for the lightbox----------------*/
 img:not(.new-listing *), video:not(.new-listing *) {
   cursor: zoom-in;
 }
@@ -167,14 +167,16 @@ img:not(.new-listing *), video:not(.new-listing *) {
 }
 /*------------------------video--------------------*/
 .video-wrapper{
-  margin:0px;
-  margin-bottom:-3px;
+  position: relative; /* Needed for containing iframe */
+  /*padding-bottom: 56.25%; /* Aspect ratio (16:9) */
+  overflow: hidden; /* Hide potential overflow */
 }
 video{
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height:auto;
-  margin:0px;
-  padding:0px;
+  height: 100%; /* Fills the entire padding-bottom space */
 }
 #player{
   margin:0px;
