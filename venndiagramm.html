@@ -63,12 +63,15 @@
 
         <img class="col123 spaced" src="venndiagramm/VennDiagramm 6.png">
 <!-----------------------lightbox---------------------->
-<div id="lightbox">
-    <div id="lightbox-content">
-        <img id="lightbox-img" style="display:none;">
-        <video id="lightbox-video" muted autoplay loop style="display:none;"></video>
-    </div>
+<!-- Lightbox container -->
+<div id="lightbox" style="display:none;">
+    <span class="close">&times;</span>
+    <img id="lightbox-img" style="display:none;" />
+    <video id="lightbox-video" autoplay mute loop style="display:none;">
+        <source id="lightbox-source" src="" />
+    </video>
 </div>
+       
        
     <div id="projfooter"></div>
 </section>
