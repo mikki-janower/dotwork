@@ -103,7 +103,7 @@ a:hover, a:active{
 img{
  width: 100%;
 }
-/*------------turn cursor to zoom-in icon on any media eligible for the lightbox----------------*/
+/*------------turn cursor to zoom-in icon on any media eligible the lightbox----------------*/
 img:not(.new-listing *), video:not(.new-listing *) {
   cursor: zoom-in;
 }
@@ -167,21 +167,29 @@ img:not(.new-listing *), video:not(.new-listing *) {
 }
 /*------------------------video--------------------*/
 .video-wrapper{
-  position: relative; /* Needed for containing iframe */
-  width: 100%;
-  padding-bottom: 56.25%; /* Aspect ratio (16:9) */
-  overflow: hidden; /* Hide potential overflow */
+  margin:0px;
+  margin-bottom:-3px;
 }
 video{
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%; /* Fills the entire padding-bottom space */
+  height:auto;
+  margin:0px;
+  padding:0px;
+}
+#player-wrapper{
+  position: relative; /* Needed for containing iframe */
+  padding-bottom: 56.25%; /* Aspect ratio (16:9) */
+  overflow: hidden; /* Hide potential overflow */
 }
 #player{
   margin:0px;
   padding:0px;
+
+  position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Fills the entire padding-bottom space */
 }
 /*------------------captions and subheads----------*/
 .caption{
