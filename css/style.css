@@ -16,24 +16,42 @@
   src:url('fonts/ReconnaSerif.otf');
 }
 
+/* Global box-sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/* Reset margin and padding */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 /*------universal grid--------*/
 body{
-  max-width: 100vw;
-  margin: 12px 0px 12px 0px;
-  overflow-x: hidden;
+  padding:12px;
   font-family: 'Suisse Intl';
 	font-size: 12px;
-	line-height: 13.5px;
+	line-height: 14px;
   letter-spacing:.1px;
 	color: #0a0a0a;
 }
-#navcontainer, .listing, #gallery, #projfooter, #about, #downloadcv{
-  max-width: 100%;
-  display: grid;
-  padding: 0px 12px 0px 12px;
-  grid-template-columns: 370px 1fr 1fr;
-  grid-column-gap: 9px;
+
+#wrapper{
+  width:auto;
+  display:grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  grid-column-gap:4px;
+  grid-row-gap:4px;
+  overflow:hidden;
 }
+#navcontainer, .listing, #gallery, #projfooter, #about, #downloadcv{
+  display:contents;
+}
+
 .col1{
   grid-column:1;
 }
@@ -52,21 +70,18 @@ body{
 .col123{
   grid-column: 1/end;
 }
-/*-----universal styles-----*/
-h2, .subhead{
-  font-size:25px;
-  line-height:26px;
-  letter-spacing:-.2px;
+/*-----type styles-----*/
+h3, h2, .subhead{
+  font-size: 18px;
+  line-height:20px;
   font-weight:400;
-  margin:0;
-}
-h3{
-  font-size: 16.5px;
-  line-height:18px;
-  font-weight:400;
+  margin-top:9px;
+  margin-bottom:9px;
+  letter-spacing:-.1px;
 }
 p{
-  width: 324px;
+  max-width: 336px;
+  padding-right: 24px;
 }
 
 a{
@@ -86,8 +101,10 @@ a:hover, a:active{
   background-color: rgba(0,0,0,.1);
 }
 img{
- padding-bottom:9px;
  width: 100%;
+}
+.spaced{
+  padding-top:72px;
 }
 /*---------------nav---------------*/
 .name{
@@ -99,22 +116,20 @@ img{
 }
 .nav-2, #projfooter h2:nth-of-type(2){
   grid-column:3;
+  text-align:right;
 }
 .nav-1 a, .nav-2 a:first-of-type{
   margin-right:24px;
 }
 /*----------homepage listings----------*/
-.listing{
+.listing, .new-listing{
   cursor:pointer;
 }
 .listing:first-of-type, #gallery, #about{
   margin-top:42px;
 }
-.listing h2, #hero h2{
-  align-self:center;
-}
-h2:has(.col3){
-  padding-left:26px;
+.listing h2 {
+  padding-bottom:12px;
 }
 .client{
   opacity:.5;
@@ -133,34 +148,39 @@ h2:has(.col3){
 }
 .description{
   grid-column:1;
-  grid-row:1/span 3;
+  grid-row: 2/span 3;
 }
-/*---------------hero sections-------------------*/
+/*--------------------------------------------------------------galleries & media------------------------------------------------------*/
 /*-----------------------various polyptych setups for multiple images in one row----------------*/
-.diptych, .triptych, .polyptych{
-  display:grid;
-  width: 100%;
-  grid-column-gap: 9px;
-}
 .diptych{
-  grid-template-columns:auto auto;
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-column-gap:4px;
 }
 .triptych{
-  grid-template-columns: auto auto auto;
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-column-gap:4px;
 }
 .polyptych{
-  grid-template-columns: auto auto auto auto;
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-column-gap:4px;
 }
 /*------------------------video--------------------*/
 .video-wrapper{
-  display:inline;
-  overflow:hidden;
+  margin:0px;
+  margin-bottom:-3px;
 }
 video{
-  position:relative;
   width: 100%;
   height:auto;
-  padding-bottom:7px;
+  margin:0px;
+  padding:0px;
+}
+#player{
+  margin:0px;
+  padding:0px;
 }
 /*-----------------------zoom-in overlay on photos----------------*/
 .modal-overlay{
@@ -188,24 +208,24 @@ video{
 /*------------------captions and subheads----------*/
 .caption{
   width: 324px;
-  padding:0px 0px 12px 0px;
+  padding:4px 0px 4px 0px;
+}
+.nested{
+  padding: 0px 0px 0px 0px;
+}
+.right{
+  padding: 0px 0px 0px 4px;
 }
 .citation{
   padding-left:4.5px;
   opacity:.5;
 }
-.subhead{
-  padding-top:24px;
-  padding-bottom:12px;
-}
 /*------------------about page------------------*/
-#about{
-  padding-right:42px;
-  max-width:1225px;
-}
+
 #about h2{
-  line-height: 30px;
-  padding-bottom: 9px;
+  line-height: 22px;
+  padding-right:42px;
+  max-width:850px;
 }
 .item-title{
   opacity:.5;
@@ -217,7 +237,7 @@ video{
 }
 #downloadcv h2{
   grid-column:2;
-  padding-top: 42px;
+  padding-top: 12px;
 
 }
 /*------------------------lightbox-------------------*/
@@ -243,14 +263,18 @@ video{
 /*-----------------------medddddddia queriesssssss------------------------------------*/
 
 @media (max-width: 850px) {
-  #navcontainer, .listing, #gallery, #projfooter, #about, #downloadcv{
-    grid-template-columns: 1fr 350px;
+  #wrapper{
+    grid-template-columns: 1fr 1fr;
   }
+
+  .nav-2, #projfooter h2:nth-of-type(2){
+    text-align:left;
+  }
+
   .nav-1, .nav-2{
     grid-column:2;
     display:flex;
     flex-direction:row;
-    transform:translateX(-9px);
   }
   .nav-1 h2, .nav-2 h2{
     grid-column: 2;
@@ -275,15 +299,12 @@ video{
   .col1, .col2, .col3, .col12, .col23{
     grid-column: 1/end;
   }
-  h2:has(.col3){
-    padding-left:0px;
-  }
   .listing h2{
     padding-bottom:9px;
   }
 
   /*-----type styles-----*/
-    .description, .caption, .subhead, #about h2, .cv, #downloadcv{
+ .description, .caption, .subhead, #about h2, .cv, #downloadcv{
     grid-column: 2;
   }
   h2, .subhead, #about h2{
@@ -309,9 +330,7 @@ video{
   .nav-1, .nav-2, #projfooter h2:first-of-type{
     grid-column:1;
   }
-  .nav-1, .nav-2{
-    transform:translateX(0px);
-  }
+
   .name{
     padding-bottom:9px;
   }
@@ -362,10 +381,12 @@ img {
 }
 
 .lazyload {
-  filter: blur(6px);  
-  transition: filter 0.2s ease-in; 
+  opacity:0; 
+  -webkit-transition: opacity .5s linear 0.2s;
+-moz-transition: opacity .5s linear 0.2s;
+transition: opacity .5s linear 0.2s;
 }
 
 .lazyload.loaded {
-  filter: blur(0);/* Remove the blur effect when image is loaded */
+  opacity:1;
 }

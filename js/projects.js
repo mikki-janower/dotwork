@@ -31,7 +31,7 @@ $('#projfooter').append('<h2><a class="btn-back flip">Back</a></h2><h2><a class=
     }); });
 
 //-------When you click a listing on the index, redirect to the corresponding project page.
-    $('.listing').click(function(){
+    $('.listing, .new-listing').click(function(){
         window.location.replace($(this).data("link"));
     });
 
@@ -39,15 +39,16 @@ $('#projfooter').append('<h2><a class="btn-back flip">Back</a></h2><h2><a class=
 //manually update this array every time you'd like to add a new case study or change the order of the existing ones. 
 const pagelinks = [
     "fossora.html",
+    "venndiagramm.html",
+    "acuity.html",
     "mhns.html",
+    "tetragrammaton.html",
     "community.html",
-    "leren.html",
-    "nytimes.html",
     "spaceopera.html",
-    "cyberotica.html",
+    "nytimes.html",
     "joshualeifer.html",
-    "reflections.html",
-    "postcursor.html"
+    "cyberotica.html",
+    "archive.html"
 ]
 
 //-----when you press the 'back' button, go back one case study 
@@ -182,6 +183,17 @@ function lazyLoadImages() {
         }
     });
 });
+
+//---------------------iframe autosize---------------//
+window.addEventListener("load", playerSizer);  /* Resize on load */
+window.addEventListener("resize", playerSizer);  /* Resize on change in window size */
+
+/* Resize function */
+function playerSizer() {
+  var player = document.getElementById("player");  /* Element ID */
+  var width = player.offsetWidth;  /* Get width */
+  player.style.height = (width * 0.5625) + "px";  /* Aspect ratio */
+}
 
 //-----------------------------document closing bracket; don't touch
 });
