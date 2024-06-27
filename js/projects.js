@@ -201,27 +201,6 @@ $(document).ready(function() {
     });
 });
 //---------------------iframe autosize---------------//
-// Function to resize the iframe player based on its width
-function playerSizer() {
-    var player = document.getElementById("player");  // Get the iframe element
-    var playerWrapper = document.getElementById("player-wrapper");  // Get the iframe element
-    if (player) {
-        var width = playerWrapper.offsetWidth;  // Get the current width of the iframe
-        player.style.width = (width) + "px";
-        player.style.height = (width * 0.5625) + "px";  // Set the height based on the aspect ratio (16:9)
-        console.log("attempted to resize");
-    }
-}
-
-// Event listener for page load
-window.onload = function() {
-    playerSizer();  // Resize the player on page load
-};
-
-// Event listener for window resize
-window.addEventListener("resize", function() {
-    playerSizer();  // Resize the player whenever the window is resized
-});
 
 
 //-----------------------------document closing bracket; don't touch
