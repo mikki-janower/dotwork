@@ -40,6 +40,7 @@ html, body {
 /*------universal grid--------*/
 body{
   padding:12px;
+  padding-bottom:0px;
   font-family: 'Suisse Intl';
 	font-size: 12px;
 	line-height: 15px;
