@@ -15,6 +15,14 @@
   font-family: "Reconna";
   src:url('fonts/ReconnaSerif.otf');
 }
+@font-face{
+  font-family: "Sampler";
+  src:url('fonts/samplerdisplay.otf');
+}
+@font-face{
+  font-family: "SamplerSmall";
+  src:url('fonts/samplersmall.otf');
+}
 
 /* Global box-sizing */
 *,
@@ -34,9 +42,12 @@ body{
   padding:12px;
   font-family: 'Suisse Intl';
 	font-size: 12px;
-	line-height: 14px;
+	line-height: 15px;
   letter-spacing:.1px;
 	color: #0a0a0a;
+}
+i{
+  font-family: "Suisse Intl Italic";
 }
 
 #wrapper{
@@ -57,6 +68,7 @@ body{
 }
 .col2{
   grid-column:2;
+  padding-right:16px;
 }
 .col3{
   grid-column:3;
@@ -194,7 +206,7 @@ video{
 }
 /*------------------captions and subheads----------*/
 .caption{
-  padding:2px 0px 2px 0px;
+  padding:2px 0px 2px 2px;
 }
 .nested{
   padding: 0px 0px 0px 0px;

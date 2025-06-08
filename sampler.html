@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" type="image/png" href="assets/bigfavicon.png"/>
+
+    <title>Mikki Janower: Sampler Typeface</title>
+    <meta property="og:image" content="tetragrammaton/Sampler-Display Horiz-1.png">
+    <meta name="description" content="A proportional family of cross-stitch fonts.">
+</head>
+
+<body>
+<section id="wrapper">
+<section id=navcontainer></section>
+
+<!--------------------------insert project information below this line----------------------->
+
+        <div class="description">
+            <h2>Sampler Typeface<br></h2>
+                <p>Sampler Display & Sampler Small are proportional cross-stitch sisters. Built from the same stitch-inspired module, the two fonts are designed to be used at a 3:1 ratio. When used this way, they adhere to the same grid, echoing the behavior of a real-world cross stitch. Their glyphs are modeled after a lettering style popular with 19th-century stitchers, commonly seen on samplers from that time.</p>
+                <p>The Sampler mini-family is open-access. If you'd like to use it, feel free to reach out.</p>
+        </div>
+<!----------------------documentation------------------------------>
+        <img class="col23" src="samplerdisplay/Sampler-Display Horiz-1.png">
+        <img class="col23" src="samplerdisplay/Sampler-Display Horiz-2.png">
+        <img class="lozad col23" data-src="samplerdisplay/Sampler-Display Horiz-3.png">
+        <img class="lozad col23" data-src="samplerdisplay/Sampler-Display Horiz-4.png">
+
+
+<!--------------type tests------------------->
+
+  <!-- Type Test 1: Sampler Display -->
+  <div class="spaced col23 typetest">
+    <div class="diptych">
+        <div class="subhead">Sampler Display</div>
+        <div class="slider-wrapper">
+            <input type="range" id="slider1" class="font-slider" min="24" max="120" value="60">
+             <label for="slider1">
+                 <span>-</span><span id="fontSize1">48px</span><span>+</span>
+                 </label>
+        </div>
+    </div>
+    <textarea id="textArea1" spellcheck="false" autofocus="on" placeholder="Try Sampler Display! Write a love letter here."></textarea>
+  </div>
+
+  <!-- Type Test 2: Sampler Small -->
+  <div class="col23 typetest">
+    <div class="diptych">
+        <div class="subhead">Sampler Small</div>
+        <div class="slider-wrapper">
+            <input type="range" id="slider2" class="font-slider" min="8" max="40" value="24">
+             <label for="slider2">
+                 <span>-</span><span id="fontSize2">16px</span><span>+</span>
+            </label>
+        </div>
+    </div>
+    <textarea id="textArea2" spellcheck="false" autofocus="on" placeholder="Take Sampler Small for a spin! Write your deepest secret here."></textarea>
+  </div>
+
+<!-----------------------lightbox---------------------->
+<!-- Lightbox container -->
+<div id="lightbox" style="display:none;">
+    <span class="close">&times;</span>
+    <img id="lightbox-img" style="display:none;" />
+    <video id="lightbox-video" autoplay mute loop style="display:none;">
+        <source id="lightbox-source" src="" />
+    </video>
+</div>
+       
+       
+    <div id="projfooter"></div>
+</section>
+
+<!---------------project-specific styling and javascript------------------------->
+
+   
+<style>
+.typetest{
+  position:relative;
+  display:inline-flex;
+  flex-direction:column;
+  margin-bottom:16px;
+  color:#3f3f3f;
+}
+.typetest .subhead{
+    height:100%;
+    background-color:#f4f4f4;
+    border-radius:4px;
+    padding: 12px;
+    margin:0px;
+    padding-top:16px;
+}
+.typetest .diptych{
+    margin-bottom:4px;
+}
+textarea {
+  overflow-y:scroll;
+  height:300px;
+  padding: 20px;
+  border-radius: 4px;
+  border: 0px solid rgba(0,0,0,.5);
+  resize: none;
+  outline:none;
+  transition:.2s;
+  background-color: #f4f4f4;
+}
+textarea:hover, .slider-wrapper:hover{
+    background-color:#EAEAEA;
+}
+textarea::placeholder{
+    opacity:.5;
+}
+#textArea1{
+      font-family: "Sampler";
+      font-size:60px;
+      line-height:1.2;
+      letter-spacing: -.5;
+      padding-left:24px;
+}
+#textArea2{
+    font-family:"SamplerSmall";
+    font-size:16px;
+    line-height:1.4;
+    letter-spacing:-1.5;
+}
+
+.typetest label{
+  position:relative;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  margin-bottom:6px;
+}
+
+.slider-wrapper{
+    border-radius: 4px;
+    background-color: #f4f4f4;
+    padding-left:12px;
+    padding-right:12px;
+    transition:.2s;
+}
+/*-------style slider*/
+.typetest input{
+  margin-top:12px;
+  margin-bottom:12px;
+  cursor:pointer;
+  margin-bottom:12px;
+  border:0px solid rgba(0,0,0,.5);
+  background-color:#DAD8D8;
+  border-radius: 8px;
+  height:6px;
+  width:100%;
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+}
+input:hover, input:active, input:focus, td:hover, td:focus, table:focus{
+  box-shadow:none;
+  box-shadow: 0px 0px 0px transparent;
+  text-decoration:none;
+  /*-webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+}
+input:focus::-webkit-slider-runnable-track {
+  box-shadow:none;
+  /*-webkit-appearance:none;*/
+  outline:none;
+}
+input:focus::-ms-fill-upper {
+  box-shadow:none;
+  -webkit-appearance:none;
+  outline:none;
+}
+.typetest input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width:24px;
+  height:6px;
+  background-color:#B9B5B5 !important;
+  border-radius:8px;
+}
+input::-ms-track {
+  cursor: pointer;
+  background-color: #3f3f3f;
+}
+
+/*---------media queries so the slider behaves the same way as the subhead div--------*/
+@media (max-width: 850px) {
+    .slider-wrapper{
+        grid-column: 2;
+        margin-top:4px;
+    }
+}
+@media (max-width: 566px) {
+  .slider-wrapper{
+    grid-column:1/end;
+  }
+}
+</style>
+
+</body>
+
+</html>
+<!--------------------------end of project-specific code------------------------->
+
+    <script src="assets/jquery.min.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lozad"></script>
+
+
+    <script>
+ 
+    $(document).ready(function() {
+      $('#slider1').on('input', function() {
+        const size = $(this).val();
+        $('#textArea1').css('font-size', size + 'px');
+        $('#fontSize1').text(size + 'px');
+      });
+
+      $('#slider2').on('input', function() {
+        const size = $(this).val();
+        $('#textArea2').css('font-size', size + 'px');
+        $('#fontSize2').text(size + 'px');
+      });
+    });
+
+    </script>
+
+</body>
+</html>
