@@ -28,7 +28,7 @@
         </div>
         <img class="col12" src="tategames2/IMG_0122.jpg">
         <div class="video-wrapper col12">
-            <video muted autoplay loop src="tategames2/Timeline 1.webm" type="video/mp4"></video>
+            <video muted playsinline autoplay loop src="tategames2/Timeline 1.webm" type="video/mp4"></video>
         </div>
         <div class="col2 caption">I was drawn the tensions that arose around crowdsourcing art. What makes crowdsourcing in a co-creative context different from using a micro-labor platform like Mechanical Turk? What makes it different from using AI? In spite of these differences, was I in some way perpetuating the cycle of unpaid labor in which I participated?</div>
             <img class="col3 lozad" data-src="tategames2/DSC2730.jpg">
@@ -61,15 +61,16 @@
 
 
 <!-----------------------lightbox---------------------->
-<!-- Lightbox container -->
-<div id="lightbox" style="display:none;">
-    <span class="close">&times;</span>
-    <img id="lightbox-img" style="display:none;" />
-    <video id="lightbox-video" autoplay mute loop style="display:none;">
-        <source id="lightbox-source" src="" />
+<div id="lightbox" style="display: none;">
+  <div class="lightbox-overlay"></div>
+  <div class="lightbox-content">
+    <img id="lightbox-img" style="display: none;" />
+    <video id="lightbox-video" muted playsinline autoplay loop style="display: none;">
+      <source id="lightbox-video-source" src="" />
     </video>
+    <iframe id="lightbox-iframe" style="display: none;" frameborder="0" allowfullscreen></iframe>
+  </div>
 </div>
-       
        
     <div id="projfooter"></div>
 </section>

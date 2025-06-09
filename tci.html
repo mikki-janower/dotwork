@@ -22,7 +22,7 @@
         </div>
 
         <div class="video-wrapper col23">
-            <video muted autoplay loop src="tci/2024 Site Documentation-4k.mp4" type="video/mp4"></video>
+            <video muted playsinline autoplay loop src="tci/2024 Site Documentation-4k.mp4" type="video/mp4"></video>
         </div>
         <img class="col23" src="tci/TCI_rolodex-dark.jpg">
         <div class="diptych col12">
@@ -38,7 +38,7 @@
         <div class="col1 caption" style="align-self:start"><span>Top: ASCII sticker set, creative directed by Amanda Rios. Right: Quote-a-day calendar, with graphics coded by <a href="https://www.maddy.pizza">Maddy Angstreich</a>.
         </a></span></div>
         <div class="video-wrapper col23">
-            <video muted autoplay loop class="lozad" data-src="tci/kickstarter-calendar-gif-2k.mp4" type="video/mp4"></video>
+            <video playsinline muted autoplay loop class="lozad" data-src="tci/kickstarter-calendar-gif-2k.mp4" type="video/mp4"></video>
         </div>
         <div class="diptych col23">
              <img class="lozad" data-src="tci/TCI_sober21_placeholder.jpg"><br>
@@ -68,13 +68,15 @@
         <img class="col12 lozad" data-src="tci/chairmanchen/ChairmanChen 2x3 33.jpg">
 
 <!-----------------------lightbox---------------------->
-<!-- Lightbox container -->
-<div id="lightbox" style="display:none;">
-    <span class="close">&times;</span>
-    <img id="lightbox-img" style="display:none;" />
-    <video id="lightbox-video" autoplay mute loop style="display:none;">
-        <source id="lightbox-source" src="" />
+<div id="lightbox" style="display: none;">
+  <div class="lightbox-overlay"></div>
+  <div class="lightbox-content">
+    <img id="lightbox-img" style="display: none;" />
+    <video id="lightbox-video" muted playsinline autoplay loop style="display: none;">
+      <source id="lightbox-video-source" src="" />
     </video>
+    <iframe id="lightbox-iframe" style="display: none;" frameborder="0" allowfullscreen></iframe>
+  </div>
 </div>
        
        

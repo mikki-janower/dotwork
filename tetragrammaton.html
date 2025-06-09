@@ -29,16 +29,16 @@
 
 <!---------------------motion------------------------>
 <div class="col12 video-wrapper">
-    <video class="lozad" muted autoplay loop data-src="tetragrammaton/tetragrammaton-logo-screen.mp4" type="video/mp4"></video>
+    <video class="lozad" muted playsinline autoplay loop data-src="tetragrammaton/tetragrammaton-logo-screen.mp4" type="video/mp4"></video>
 </div>
 <div class="col3 caption nested right">We began by expanding Rick's existing Tetragrammaton wordmark into a broader, more flexible system. The shorthand logomark, shown here in Rick's Los Angeles studio, would become the cornerstone of the site.</div>
 
 <div class="diptych col12">
     <div class="video-wrapper">
-        <video class="lozad" muted autoplay loop data-src="tetragrammaton/RR_Homepage_Logo.mp4" type="video/mp4"></video>
+        <video class="lozad" muted playsinline autoplay loop data-src="tetragrammaton/RR_Homepage_Logo.mp4" type="video/mp4"></video>
     </div>
     <div class="video-wrapper">
-        <video class="lozad" muted autoplay loop data-src="tetragrammaton/audiolines.mp4" type="video/mp4"></video>
+        <video class="lozad" muted playsinline autoplay loop data-src="tetragrammaton/audiolines.mp4" type="video/mp4"></video>
     </div>
 </div>
 
@@ -65,15 +65,16 @@
 
 
 <!-----------------------lightbox---------------------->
-<!-- Lightbox container -->
-<div id="lightbox" style="display:none;">
-    <span class="close">&times;</span>
-    <img id="lightbox-img" style="display:none;" />
-    <video id="lightbox-video" autoplay mute loop style="display:none;">
-        <source id="lightbox-source" src="" />
+<div id="lightbox" style="display: none;">
+  <div class="lightbox-overlay"></div>
+  <div class="lightbox-content">
+    <img id="lightbox-img" style="display: none;" />
+    <video id="lightbox-video" muted playsinline autoplay loop style="display: none;">
+      <source id="lightbox-video-source" src="" />
     </video>
+    <iframe id="lightbox-iframe" style="display: none;" frameborder="0" allowfullscreen></iframe>
+  </div>
 </div>
-       
        
     <div id="projfooter"></div>
 </section>

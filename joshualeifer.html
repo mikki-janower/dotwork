@@ -24,10 +24,10 @@
 
 
     <div class="video-wrapper col23">
-        <video muted autoplay loop src="joshualeifer/landing-animation-optimized.mp4" type="video/mp4"></video>
+        <video muted autoplay loop playsinline src="joshualeifer/landing-animation-optimized.mp4" type="video/mp4"></video>
     </div>
     <div class="video-wrapper col23">
-        <video muted autoplay loop src="joshualeifer/about-draggable-optimized.mp4" type="video/mp4"></video>
+        <video muted autoplay playsinline loop src="joshualeifer/about-draggable-optimized.mp4" type="video/mp4"></video>
     </div>
      <div class="diptych col23">
             <img class="lozad" data-src="joshualeifer/Mikki_JoshLeifer 8.jpg">  
@@ -41,15 +41,16 @@
     </section>  
     
 <!-----------------------lightbox---------------------->
-<!-- Lightbox container -->
-<div id="lightbox" style="display:none;">
-    <span class="close">&times;</span>
-    <img id="lightbox-img" style="display:none;" />
-    <video id="lightbox-video" autoplay mute loop style="display:none;">
-        <source id="lightbox-source" src="" />
+<div id="lightbox" style="display: none;">
+  <div class="lightbox-overlay"></div>
+  <div class="lightbox-content">
+    <img id="lightbox-img" style="display: none;" />
+    <video id="lightbox-video" muted playsinline autoplay loop style="display: none;">
+      <source id="lightbox-video-source" src="" />
     </video>
+    <iframe id="lightbox-iframe" style="display: none;" frameborder="0" allowfullscreen></iframe>
+  </div>
 </div>
-       
 
     <div id="projfooter"></div>
    </section>

@@ -30,15 +30,17 @@ $('#projfooter').append('<h2><a class="btn-back flip">Back</a></h2><h2><a class=
 //manually update this array every time you'd like to add a new case study or change the order of the existing ones. 
 const pagelinks = [
     "fossora.html",
-    "venndiagramm.html",
-    "acuity.html",
-    "mhns.html",
-    "tetragrammaton.html",
-    "community.html",
-    "spaceopera.html",
+    "tategames2.html",
+    "tci.html",
     "nytimes.html",
+    "venndiagramm.html",
+    "tetragrammaton.html",
+    "acuity.html",
+    "sampler.html",
+    "community.html",
+    "mhns.html",
+    "spaceopera.html",
     "joshualeifer.html",
-    "cyberotica.html",
     "archive.html"
 ]
 
@@ -150,7 +152,7 @@ function isElementInViewport(el) {
 
 
   //---------------lightbox-------------------//
-$(document).ready(function() {
+/*$(document).ready(function() {
     // Auto-apply 'data-type' attribute to all media elements
     $('img').each(function() {
         $(this).attr('data-type', 'image');
@@ -183,6 +185,7 @@ $(document).ready(function() {
 
     // Close lightbox
     $('.close').click(function() {
+  
         $('#lightbox').fadeOut(function() {
             $('#lightbox-img').attr('src', '');
             $('#lightbox-source').attr('src', '');
@@ -199,8 +202,64 @@ $(document).ready(function() {
             });
         }
     });
+});*/
+
+//--------------------------lightbox neue-------------------//
+$(document).ready(function () {
+  function openLightbox(el) {
+    const $lightbox = $('#lightbox');
+    const $img = $('#lightbox-img');
+    const $video = $('#lightbox-video');
+    const $videoSource = $('#lightbox-video-source');
+    const $iframe = $('#lightbox-iframe');
+
+    // Reset everything
+    $img.hide().attr('src', '');
+    $video.hide().get(0).pause();
+    $videoSource.attr('src', '');
+    $iframe.hide().attr('src', '');
+
+    let src = el.attr('data-src') || el.attr('src') || '';
+
+    if (!src) return;
+
+    // Decide media type
+    if (el.is('img')) {
+      $img.attr('src', src).show();
+    } else if (el.is('video')) {
+      $videoSource.attr('src', src);
+      $video.get(0).load();
+      $video.show();
+    } else if (el.data('type') === 'embed' || src.includes('youtube') || src.includes('vimeo')) {
+      $iframe.attr('src', src).show();
+    }
+
+    $lightbox.fadeIn(200);
+  }
+
+  function closeLightbox() {
+    $('#lightbox').fadeOut(200, function () {
+      $('#lightbox-video').get(0).pause();
+      $('#lightbox-iframe').attr('src', '');
+    });
+  }
+
+  // Trigger: click any .lightbox-trigger element
+$(document).on('click', 'img, video, iframe', function (e) {
+  // Optional: exclude if inside nav, footer, or already in the lightbox
+  if ($(this).closest('#lightbox, nav, footer, .no-lightbox').length) return;
+
+  openLightbox($(this));
 });
-//---------------------iframe autosize---------------//
+
+  // Close on overlay click or "X"
+  $('#lightbox .lightbox-overlay, #lightbox .close').on('click', closeLightbox);
+
+  // Close on ESC key
+  $(document).on('keydown', function (e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+});
 
 
 //-----------------------------document closing bracket; don't touch

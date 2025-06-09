@@ -25,7 +25,7 @@
         <img class="col23" src="acuity/Acuity_Guidelines_Applications_05.webp">
 <!---------------------color----------------------->
         <div class="video-wrapper col23">
-            <video muted autoplay loop src="acuity/logo-lockup.mp4" type="video/mp4"></video>
+            <video muted playsinline autoplay loop src="acuity/logo-lockup.mp4" type="video/mp4"></video>
         </div>
         <div class="diptych col23">
             <img class="" src="acuity/Logo Gradients.png">
@@ -57,7 +57,7 @@
 
 <!---------------------motion----------------------->
         <div class="spaced video-wrapper col23">
-            <video class="lozad" muted autoplay loop data-src="acuity/motion-colon.mp4" type="video/mp4"></video>
+            <video class="lozad" muted playsinline autoplay loop data-src="acuity/motion-colon.mp4" type="video/mp4"></video>
         </div>
         <div class="col23 caption">The Acuity colon evokes time in all of its forms: blinking like a clock face, orbiting like planets, or oscillating like pendulums.</div>
 
@@ -79,28 +79,30 @@
             <img class="lozad" data-src="acuity/F059_AcuityAttachedFlows_Email7_Hero.webp">
         </div>
         <div class="video-wrapper col23">
-            <video class="lozad" muted autoplay loop data-src="acuity/acuity-motion-calendarblocks.mp4" type="video/mp4">
+            <video class="lozad" muted playsinline autoplay loop data-src="acuity/acuity-motion-calendarblocks.mp4" type="video/mp4">
             </video>
         </div>
         <div class="col23 caption">In its brand communications, Acuity surfaces appear smooth and glassy, yet welcoming and warm.</div>
 
 <!---------------------applications------------------>
         <div class="spaced video-wrapper col12">
-            <video class="lozad" muted autoplay loop data-src="acuity/Acuity-motion-timepassage.mp4" type="video/mp4"></video>
+            <video class="lozad" muted playsinline autoplay loop data-src="acuity/Acuity-motion-timepassage.mp4" type="video/mp4"></video>
         </div>
         <div class="video-wrapper col12">
-            <video class="lozad" muted autoplay loop data-src="acuity/ooh-optimized.mp4" type="video/mp4"></video>
+            <video class="lozad" muted playsinline autoplay loop data-src="acuity/ooh-optimized.mp4" type="video/mp4"></video>
         </div>
 
 
 <!-----------------------lightbox---------------------->
-<!-- Lightbox container -->
-<div id="lightbox" style="display:none;">
-    <span class="close">&times;</span>
-    <img id="lightbox-img" style="display:none;" />
-    <video id="lightbox-video" autoplay mute loop style="display:none;">
-        <source id="lightbox-source" src="" />
+<div id="lightbox" style="display: none;">
+  <div class="lightbox-overlay"></div>
+  <div class="lightbox-content">
+    <img id="lightbox-img" style="display: none;" />
+    <video id="lightbox-video" muted playsinline autoplay loop style="display: none;">
+      <source id="lightbox-video-source" src="" />
     </video>
+    <iframe id="lightbox-iframe" style="display: none;" frameborder="0" allowfullscreen></iframe>
+  </div>
 </div>
        
     <div id="projfooter"></div>
