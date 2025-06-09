@@ -1,14 +1,20 @@
 @font-face{
   font-family: "Suisse Intl";
   src:url('fonts/SuisseIntl-Regular.otf');
+  font-weight:400;
+  font-style:normal;
 }
 @font-face{
-  font-family: "Suisse Intl Italic";
+  font-family: "Suisse Intl";
   src:url('fonts/SuisseIntl-RegularItalic.otf');
+  font-weight:400;
+  font-style:italic;
 }
 @font-face{
-  font-family: "Suisse Intl Medium";
+  font-family: "Suisse Intl";
   src:url('fonts/SuisseIntl-Medium.otf');
+  font-weight:500;
+  font-style:normal;
 }
 
 @font-face{
@@ -47,10 +53,6 @@ body{
   letter-spacing:.1px;
 	color: #0a0a0a;
 }
-i{
-  font-family: "Suisse Intl Italic";
-}
-
 #wrapper{
   box-sizing: border-box;
   width:auto;
