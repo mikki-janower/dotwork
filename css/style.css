@@ -302,6 +302,17 @@ video{
     display:flex;
     flex-direction:row;
   }
+  /*combine the navs into one cohesive stack on mobile screens*/
+  .nav-2{
+    grid-row:2;
+  }
+  .nav-1 h2{
+    margin-bottom:0px;
+  }
+  .nav-2 h2{
+    margin-top:-3px;
+    margin-bottom:36px;
+  }
 
   .nav-1 h2, .nav-2 h2{
     grid-column: 2;
@@ -333,6 +344,9 @@ video{
  .description, .caption, .subhead, #about h2, .cv, #downloadcv{
     grid-column: 2;
   }
+  .description{
+    grid-row:3;
+  }
   h2, .subhead, #about h2{
     font-size: 16.5px;
     line-height:20px;
@@ -354,9 +368,19 @@ video{
   .nav-1, .nav-2, #projfooter h2:first-of-type{
     grid-column:1;
   }
+  .nav-1{
+    grid-row:2;
+  }
+  .nav-2{
+    grid-row:3;
+  }
+  
+  .description{
+    grid-row:4;
+  }
 
   .name{
-    padding-bottom:9px;
+    margin-bottom:-8px;
   }
 }
 @media(max-width: 400px) {
