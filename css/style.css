@@ -16,7 +16,6 @@
   font-weight:500;
   font-style:normal;
 }
-
 @font-face{
   font-family: "Reconna";
   src:url('fonts/ReconnaSerif.otf');
@@ -28,6 +27,11 @@
 @font-face{
   font-family: "SamplerSmall";
   src:url('fonts/samplersmall.otf');
+}
+:root{
+  --default:#0a0a0a;
+  --defaultMedium:#848484;
+  --defaultLight: #e5e5e5;
 }
 
 /* Global box-sizing */
@@ -51,7 +55,7 @@ body{
 	font-size: 12px;
 	line-height: 15px;
   letter-spacing:.1px;
-	color: #0a0a0a;
+	color: var(--default);
 }
 #wrapper{
   box-sizing: border-box;
@@ -100,10 +104,14 @@ p{
 }
 
 a{
-  color:#0a0a0a;
+  color:var(--defaultMedium);
   text-decoration: none;
   cursor: pointer;
   transition: opacity .2s;
+}
+#navcontainer a, #about a, #downloadcv a, #projfooter a{
+  text-decoration:none;
+  color:var(--default);
 }
 .link{
   cursor:pointer;
@@ -143,9 +151,10 @@ img:not(.new-listing *), video:not(.new-listing *) {
 /*----------homepage listings----------*/
 .new-listing{
   cursor:pointer;
+  padding-bottom:4px;
 }
 .client{
-  opacity:.5;
+  color:var(--defaultMedium);
 }
 /*******************PROJECT PAGES******************/
 /*----------project case studies----------*/
@@ -211,6 +220,9 @@ video{
 .caption{
   padding:2px 0px 2px 2px;
 }
+.caption.col1, .caption.col2{
+  padding-right:8px;
+}
 .nested{
   padding: 0px 0px 0px 0px;
 }
@@ -219,7 +231,7 @@ video{
 }
 .citation{
   padding-left:4.5px;
-  opacity:.5;
+  color:var(--defaultMedium);
 }
 /*------------------about page------------------*/
 
@@ -228,7 +240,7 @@ video{
   max-width:850px;
 }
 .item-title{
-  opacity:.5;
+  color:var(--defaultMedium);
   margin-bottom: 4.5px;
 }
 #about .col2 a, #about .col2 span, #about .col3 a, #about .col3 span{
@@ -288,6 +300,9 @@ video{
 /*-----------------------medddddddia queriesssssss------------------------------------*/
 
 @media (max-width: 850px) {
+  body{
+    padding-top:2px;
+  }
   #wrapper{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -320,7 +335,7 @@ video{
     flex-direction:column;
   }
   .new-listing{
-    padding-bottom:18px;
+    padding-bottom:12px;
   }
   .new-listing img, .new-listing .video-wrapper {
     grid-column: 1/end;
@@ -328,7 +343,9 @@ video{
   .not-mobile{
     display:none;
   }
-
+  .client{
+    display:block;
+  }
   .new-listing h2{
     grid-column: 1/end;
     grid-row:1;
@@ -380,7 +397,7 @@ video{
   }
 
   .name{
-    margin-bottom:-8px;
+    margin-bottom:-24px;
   }
 }
 @media(max-width: 400px) {
