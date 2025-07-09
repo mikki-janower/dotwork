@@ -30,12 +30,13 @@ $('#projfooter').append('<h2><a class="btn-back flip">Back</a></h2><h2><a class=
 //manually update this array every time you'd like to add a new case study or change the order of the existing ones. 
 const pagelinks = [
     "fossora.html",
-    "tategames2.html",
+    "piratedistro.html",
     "tci.html",
     "nytimes.html",
     "venndiagramm.html",
-    "tetragrammaton.html",
     "acuity.html",
+    "tategames2.html",
+    "tetragrammaton.html",
     "sampler.html",
     "community.html",
     "mhns.html",
