@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" type="image/png" href="assets/bigfavicon.png"/>
+
+    <script src="assets/jquery.min.js"></script>
+    <script src="js/projects.js"></script>
 
     <title>Mikki Janower: fossora, Björk</title>
+    <link rel="shortcut icon" type="image/png" href="assets/bigfavicon.png"/>
+    <meta charset="UTF-8">
     <meta property="og:image" content="fossora/Mikki_Ovule 8.jpg">
     <meta name="description" content="An immersive virtual environment for the critically acclaimed album by Björk, built in collaboration with the artist.">
 </head>
@@ -29,7 +33,7 @@
     <img class="col23" src="fossora/Mikki_Fossora 1.jpg">
     <img class="col23" src="fossora/Mikki_Fossora 2.jpg">
         <!----------------------Ancestress---------------------------------->
-    <div class="subhead col12">b2. ancestress</div>
+    <div class="subhead spaced col12">b2. ancestress</div>
     <div class="video-wrapper col12">
         <video muted playsinline autoplay webkit-playsinline loop>
             <source src="fossora/ancestress-insitu-3.mp4" type="video/mp4">
@@ -39,11 +43,11 @@
             <img class="lozad" data-src="fossora/Mikki_Ancestress 2.jpg">
             <img class="lozad" data-src="fossora/Mikki_Ancestress 3.jpg">
     </div>
-        <div class="caption col3" style="align-self:end">Featuring stills and footage from ancestress, directed by Andrew Thomas Huang and costumed by Pier Paolo Piccioli for Valentino.</div>
         <img class="lozadcol23" data-src="fossora/Mikki_Ancestress 5.jpg">
+    <div class="caption col1">Featuring stills and footage from ancestress, directed by Andrew Thomas Huang and costumed by Pier Paolo Piccioli for Valentino.</div>
 
     <!----------------------Ovule---------------------------------->
-        <div class="subhead col12">a2. ovule</div>
+        <div class="subhead spaced col123">a2. ovule</div>
             <img class="col123" src="fossora/Mikki_Ovule 8.jpg">
             <div class="video-wrapper col123">
                 <video muted playsinline webkit-playsinline autoplay loop>
@@ -51,35 +55,34 @@
                     <source src="fossora/Mikki_Ovule-insitu-2.mp4" type="video/mp4">
                 </video>
             </div>
+             <div class="caption col1">Featuring stills and footage from ovule, directed by Nick Knight and costumed by Alessandro Michele for Gucci.</div>
             <img class="lozad col23" data-src="fossora/Mikki_Ovule 2.jpg"> 
              <div class="diptych col23">
                 <img class="lozad" data-src="fossora/Mikki_Ovule 4.jpg">
                 <img class="lozad" data-src="fossora/Mikki_Ovule 7.jpg">
             </div>
-            <img class="col1 lozad" data-src="fossora/Mikki_Ovule 6.jpg"> 
             <img class="col3 lozad" data-src="fossora/Mikki_Ovule 1.jpg">
-
+        <img class="col1 lozad" data-src="fossora/Mikki_Ovule 6.jpg"> 
         <img class="lozad col1" data-src="fossora/Mikki_Ovule 5.jpg">
-        <div class="caption col1">Featuring stills and footage from ovule, directed by Nick Knight and costumed by Alessandro Michele for Gucci.</div>
         <div class="video-wrapper col23">
             <video muted playsinline autoplay webkit-playsinline loop class="lozad" data-src="fossora/Mikki_Ovule-insitu-1.mp4" type="video/mp4"></video>
         </div>
             <img class="col123" src="fossora/Mikki_Ovule 3.jpg"> 
     <!----------------------------Atopos--------------------------------->
-        <div class="subhead col12">a1. atopos </div>
+        <div class="spaced subhead col12">a1. atopos </div>
             <img class="lozad col12" data-src="fossora/Mikki_Atopos 3.jpg">
-            <div class="caption col3" style="align-self:end">Featuring stills and footage from atopos, directed by Vidar Logi and costumed by Burberry.</div>
+            <div class="caption col1">Featuring stills and footage from atopos, directed by Vidar Logi and costumed by Burberry.</div>
             <img class="lozad col3" style="align-self:end" data-src="fossora/Mikki_Atopos 2.jpg">
             <div class="video-wrapper col23">
                 <video muted autoplay playsinline webkit-playsinline loop class="lozad" data-src="fossora/bjork-in-position.mp4" type="video/mp4"></video>
             </div>
     <!------------------------------Sorrowful Soil------------------------------------->
-    <div class="subhead col1">b4. sorrowful soil </div>
-    <div class="caption col2">Featuring stills and footage from sorrowful soil, directed by Vidar Logi.</div>
-    <img class="lozad col3" data-src="fossora/Mikki_SorrowfulSoil 1.jpg">
+    <div class="subhead spaced col12">b4. sorrowful soil </div>
     <div class="video-wrapper col123">
        <video muted playsinline autoplay webkit-playsinline loop class="lozad" data-src="fossora/Mikki_SorrowfulSoil.mp4" type="video/mp4"></video>
     </div>
+    <div class="caption col1">Featuring stills and footage from sorrowful soil, directed by Vidar Logi and costumed by Iris Van Herpen.</div>
+    <img class="lozad col3" data-src="fossora/Mikki_SorrowfulSoil 1.jpg">
 
        
   <!-----------------------lightbox---------------------->
@@ -96,10 +99,6 @@
     <div id="projfooter"></div>
 </section>
 <!--------------------------end of project-specific code------------------------->
-
-    <script src="assets/jquery.min.js"></script>
-    <script src="js/projects.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lozad"></script>
 
 </body>
 </html>

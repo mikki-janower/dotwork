@@ -1,7 +1,8 @@
 $(document).ready(function () {
 
-//------Initialize lozad lazyload library
-lozad('.lozad', {
+//------Initialize lazyload
+
+/*lozad('.lozad', {
     load: function(el) {
         el.src = el.dataset.src;
         el.onload = function() {
@@ -13,7 +14,124 @@ lozad('.lozad', {
 const observer = lozad(); //lazy loads elements with default selector as ".lozad"
 observer.observe();
 
-//--------------------start at the top of a page after every page redirect
+//---------------------------lazyload fade-in effect
+function isElementInViewport(el, preloadOffset = 200) {
+  const rect = el.getBoundingClientRect();
+  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+  const windowWidth = window.innerWidth || document.documentElement.clientWidth;
+
+  return (
+    rect.bottom > -preloadOffset &&
+    rect.right > -preloadOffset &&
+    rect.top < windowHeight + preloadOffset &&
+    rect.left < windowWidth + preloadOffset
+  );
+}
+// Function to fade in any media that's lazy loaded
+  function lazyLoadMedia() {
+    var lazyElements = document.querySelectorAll('.lozad');
+  
+    lazyElements.forEach(function (lazyElement) {
+      if (isElementInViewport(lazyElement)) {
+        if (!lazyElement.classList.contains('loaded')) {
+          if (lazyElement.tagName === 'IMG') {
+            lazyElement.src = lazyElement.dataset.src;
+            lazyElement.onload = function () {
+              lazyElement.classList.add('loaded');
+            };
+          } else if (lazyElement.tagName === 'VIDEO') {
+            var sources = lazyElement.querySelectorAll('source');
+            sources.forEach(function (source) {
+              source.src = source.dataset.src;
+            });
+            lazyElement.load();
+            lazyElement.onloadeddata = function () {
+              lazyElement.classList.add('loaded');
+            };
+          } else {
+            // handle other types if needed
+          }
+        }
+      }
+    });
+  }
+  
+  // Add event listener to trigger lazy loading on scroll, resize, and orientation change
+  window.addEventListener('scroll', lazyLoadMedia);
+  window.addEventListener('resize', lazyLoadMedia);
+  window.addEventListener('orientationchange', lazyLoadMedia);
+  
+  // Trigger lazy loading on page load
+  window.addEventListener('DOMContentLoaded', lazyLoadMedia);*/
+const preloadOffset = 200;
+
+// Select all images and videos for fade-in effect
+const allMedia = document.querySelectorAll("img, video");
+
+// Select only lazy-loaded media
+const lazyMedia = document.querySelectorAll(".lozad");
+
+// Add fade-on-scroll class to all images and videos for consistent fade effect
+allMedia.forEach(el => {
+  el.classList.add("fade-on-scroll");
+});
+
+// IntersectionObserver for fading in media on scroll
+const fadeObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      console.log("Fade in:", entry.target);
+      entry.target.classList.add("fade-in");
+      observer.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.01,
+  rootMargin: "0px 0px -10% 0px"
+});
+
+// Observe all images/videos for fade effect
+allMedia.forEach(el => fadeObserver.observe(el));
+
+// IntersectionObserver for lazy loading media with .lozad class
+const lazyObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      console.log("Lazy load:", el);
+
+      if (el.tagName === "IMG" && el.dataset.src) {
+        el.src = el.dataset.src;
+        el.removeAttribute('data-src'); // prevent reload
+      } else if (el.tagName === "VIDEO") {
+        // Support data-src on video tag itself
+        if (el.dataset.src) {
+          el.src = el.dataset.src;
+          el.removeAttribute('data-src');
+        }
+        // Support data-src on <source> tags inside the video
+        el.querySelectorAll("source").forEach(source => {
+          if (source.dataset.src) {
+            source.src = source.dataset.src;
+            source.removeAttribute('data-src');
+          }
+        });
+        el.load();
+      } else {
+        console.log("Unknown lazy media type:", el.tagName);
+      }
+
+      observer.unobserve(el);
+    }
+  });
+}, {
+  threshold: 0.01,
+  rootMargin: `0px 0px ${preloadOffset}px 0px`
+});
+
+// Observe only elements with .lozad class for lazy loading
+lazyMedia.forEach(el => lazyObserver.observe(el));
+//-------------------------start at the top of a page after every page redirect-----------*/
 window.scrollTo(0, 0);
 
 //---------append nav to the #navcontainer section on every page
@@ -29,13 +147,6 @@ $('[data-link]').on('click', function() {
       }
  });
 
-   /* $('img, video').css('cursor', 'zoom-in');
-    $('[data-link]').css('cursor', 'pointer');
-    $('.listing img, .listing video').css('cursor', 'pointer');*/
-/*//-------When you click a listing on the index, redirect to the corresponding project page.
-    $('.listing, .new-listing').click(function(){
-        window.location.replace($(this).data("link"));
-    });*/
 
 //this array lists all currently active case studies in order. The 'back' and 'next' functions below navigate between its contents.
 //manually update this array every time you'd like to add a new case study or change the order of the existing ones. 
@@ -112,108 +223,6 @@ function isElementInViewport(element) {
       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
   }
-  
-//---------------------------lazyload fade-in effect
-function isElementInViewport(el) {
-    var rect = el.getBoundingClientRect();
-    return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-  }
-  
-  // Function to fade in any media that's lazy loaded
-  function lazyLoadMedia() {
-    var lazyElements = document.querySelectorAll('.lozad');
-  
-    lazyElements.forEach(function (lazyElement) {
-      if (isElementInViewport(lazyElement)) {
-        if (!lazyElement.classList.contains('loaded')) {
-          if (lazyElement.tagName === 'IMG') {
-            lazyElement.src = lazyElement.dataset.src;
-            lazyElement.onload = function () {
-              lazyElement.classList.add('loaded');
-            };
-          } else if (lazyElement.tagName === 'VIDEO') {
-            var sources = lazyElement.querySelectorAll('source');
-            sources.forEach(function (source) {
-              source.src = source.dataset.src;
-            });
-            lazyElement.load();
-            lazyElement.onloadeddata = function () {
-              lazyElement.classList.add('loaded');
-            };
-          } else {
-            // handle other types if needed
-          }
-        }
-      }
-    });
-  }
-  
-  // Add event listener to trigger lazy loading on scroll, resize, and orientation change
-  window.addEventListener('scroll', lazyLoadMedia);
-  window.addEventListener('resize', lazyLoadMedia);
-  window.addEventListener('orientationchange', lazyLoadMedia);
-  
-  // Trigger lazy loading on page load
-  window.addEventListener('DOMContentLoaded', lazyLoadMedia);
-
-
-  //---------------lightbox-------------------//
-/*$(document).ready(function() {
-    // Auto-apply 'data-type' attribute to all media elements
-    $('img').each(function() {
-        $(this).attr('data-type', 'image');
-    });
-
-    $('video').each(function() {
-        $(this).attr('data-type', 'video');
-    });
-
-    // Lightbox functionality for images
-    $('img').click(function() {
-        var src = $(this).attr('src') || $(this).attr('data-src');
-        $('#lightbox-video').hide();
-        $('#lightbox-source').attr('src', ''); // Clear video source
-        $('#lightbox-img').attr('src', src).show();
-
-        $('#lightbox').fadeIn();
-    });
-
-    // Lightbox functionality for videos
-    $('video').click(function() {
-        var src = $(this).find('source').attr('src') || $(this).find('source').attr('data-src');
-        $('#lightbox-img').hide();
-        $('#lightbox-source').attr('src', src);
-        $('#lightbox-video').get(0).load();
-        $('#lightbox-video').show();
-
-        $('#lightbox').fadeIn();
-    });
-
-    // Close lightbox
-    $('.close').click(function() {
-  
-        $('#lightbox').fadeOut(function() {
-            $('#lightbox-img').attr('src', '');
-            $('#lightbox-source').attr('src', '');
-            $('#lightbox-video').get(0).pause(); // Pause the video when closing
-        });
-    });
-
-    $('#lightbox').click(function(event) {
-        if ($(event.target).is('#lightbox')) {
-            $(this).fadeOut(function() {
-                $('#lightbox-img').attr('src', '');
-                $('#lightbox-source').attr('src', '');
-                $('#lightbox-video').get(0).pause(); // Pause the video when closing
-            });
-        }
-    });
-});*/
 
 //--------------------------lightbox neue-------------------//
 $(document).ready(function () {
