@@ -106,19 +106,17 @@ p{
 a{
   color:var(--defaultMedium);
   text-decoration: none;
-  cursor: pointer;
   transition: opacity .2s;
 }
 #navcontainer a, #about a, #downloadcv a, #projfooter a{
   text-decoration:none;
   color:var(--default);
 }
-.link{
+/*.link{
   cursor:pointer;
-}
+}*/
 a:hover, a:active{
   opacity:.5;
-  cursor:pointer !important;
 }
 
 ::selection{
@@ -132,7 +130,7 @@ img{
 img, video{
   cursor:zoom-in;
 }
-#homepage-main img, #homepage-main video{
+[data-link]{
   cursor:pointer;
 }
 .spaced{
@@ -142,6 +140,7 @@ img, video{
 .name{
   display:grid;
   grid-column:1;
+  cursor:pointer;
 }
 .nav-1, .nav-2{
   padding-bottom:4px;
@@ -157,10 +156,10 @@ img, video{
   margin-right:24px;
 }
 /*----------homepage listings----------*/
-.new-listing{
+/*.new-listing{
   cursor:pointer;
   padding-bottom:4px;
-}
+}*/
 .client{
   color:var(--defaultMedium);
 }
@@ -276,7 +275,7 @@ video{
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
+  /*z-index: 9999; */
 }
 
 .lightbox-overlay {
@@ -545,12 +544,13 @@ img {
   opacity: 0;
   transform: translateY(10px);
   transition: opacity 0.4s ease-in, transform 0.4s ease-in;
+  pointer-events:none;
 }
-
 .fade-in {
-  z-index:1;
   opacity: 1;
   transform: translateY(0);
+  pointer-events:auto !important;
+  will-change: opacity, transform;
 }
 /*----- CSS for the blur-in lazy load effect */
 

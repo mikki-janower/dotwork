@@ -1,68 +1,20 @@
 $(document).ready(function () {
+  //-------------------------start at the top of a page after every page redirect-----------*/
+window.scrollTo(0, 0);
 
-//------Initialize lazyload
-
-/*lozad('.lozad', {
-    load: function(el) {
-        el.src = el.dataset.src;
-        el.onload = function() {
-            el.classList.add('fade')
-        }
-    }
-}).observe()
-
-const observer = lozad(); //lazy loads elements with default selector as ".lozad"
-observer.observe();
-
-//---------------------------lazyload fade-in effect
-function isElementInViewport(el, preloadOffset = 200) {
-  const rect = el.getBoundingClientRect();
-  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-  const windowWidth = window.innerWidth || document.documentElement.clientWidth;
-
-  return (
-    rect.bottom > -preloadOffset &&
-    rect.right > -preloadOffset &&
-    rect.top < windowHeight + preloadOffset &&
-    rect.left < windowWidth + preloadOffset
-  );
-}
-// Function to fade in any media that's lazy loaded
-  function lazyLoadMedia() {
-    var lazyElements = document.querySelectorAll('.lozad');
-  
-    lazyElements.forEach(function (lazyElement) {
-      if (isElementInViewport(lazyElement)) {
-        if (!lazyElement.classList.contains('loaded')) {
-          if (lazyElement.tagName === 'IMG') {
-            lazyElement.src = lazyElement.dataset.src;
-            lazyElement.onload = function () {
-              lazyElement.classList.add('loaded');
-            };
-          } else if (lazyElement.tagName === 'VIDEO') {
-            var sources = lazyElement.querySelectorAll('source');
-            sources.forEach(function (source) {
-              source.src = source.dataset.src;
-            });
-            lazyElement.load();
-            lazyElement.onloadeddata = function () {
-              lazyElement.classList.add('loaded');
-            };
-          } else {
-            // handle other types if needed
-          }
-        }
+//---------append nav to the #navcontainer section on every page
+$('#navcontainer').append('<div class="name"><h2><a>Mikki Janower</a></h2></div><div class="nav-1"><h2><a href="about.html">About</a><a href="mailto:info@mikki.studio" target="_blank">Contact</a></h2></div><div class="nav-2"><h2><a href="https://www.instagram.com/_miikki/" target="_blank">Instagram</a><a href="https://www.are.na/mikki-janower" target="_blank">Are.na</a></h2></div>');
+//---------append footer to the #projfooter section on every page
+$('#projfooter').append('<h2><a class="btn-back flip">Back</a></h2><h2><a class="btn-next flip">Next</a></h2>');
+//-----------------anytime the user clicks on an element with a 'data-link' redirect to the corresponding link------*/
+$('[data-link]').on('click', function() {
+      var link = $(this).attr('data-link');
+      if (link) {
+        window.location.href = link;
       }
-    });
-  }
-  
-  // Add event listener to trigger lazy loading on scroll, resize, and orientation change
-  window.addEventListener('scroll', lazyLoadMedia);
-  window.addEventListener('resize', lazyLoadMedia);
-  window.addEventListener('orientationchange', lazyLoadMedia);
-  
-  // Trigger lazy loading on page load
-  window.addEventListener('DOMContentLoaded', lazyLoadMedia);*/
+ });
+
+
 const preloadOffset = 200;
 
 // Select all images and videos for fade-in effect
@@ -80,9 +32,11 @@ allMedia.forEach(el => {
 const fadeObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      console.log("Fade in:", entry.target);
-      entry.target.classList.add("fade-in");
-      observer.unobserve(entry.target);
+      const el = entry.target;
+      /*console.log("Fade in:", el);*/
+      el.classList.add("fade-in");
+      el.classList.remove("fade-on-scroll"); // ← KEY LINE
+      observer.unobserve(el);
     }
   });
 }, {
@@ -98,7 +52,7 @@ const lazyObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       const el = entry.target;
-      console.log("Lazy load:", el);
+      /*console.log("Lazy load:", el);*/
 
       if (el.tagName === "IMG" && el.dataset.src) {
         el.src = el.dataset.src;
@@ -131,21 +85,6 @@ const lazyObserver = new IntersectionObserver((entries, observer) => {
 
 // Observe only elements with .lozad class for lazy loading
 lazyMedia.forEach(el => lazyObserver.observe(el));
-//-------------------------start at the top of a page after every page redirect-----------*/
-window.scrollTo(0, 0);
-
-//---------append nav to the #navcontainer section on every page
-$('#navcontainer').append('<div class="name"><h2><a>Mikki Janower</a></h2></div><div class="nav-1"><h2><a href="about.html">About</a><a href="mailto:info@mikki.studio" target="_blank">Contact</a></h2></div><div class="nav-2"><h2><a href="https://www.instagram.com/_miikki/" target="_blank">Instagram</a><a href="https://www.are.na/mikki-janower" target="_blank">Are.na</a></h2></div>');
-//---------append footer to the #projfooter section on every page
-$('#projfooter').append('<h2><a class="btn-back flip">Back</a></h2><h2><a class="btn-next flip">Next</a></h2>');
-//-----------------anytime the user clicks on an element with a 'data-link' redirect to the corresponding link------*/
-$('[data-link]').on('click', function() {
-      var link = $(this).attr('data-link');
-      if (link) {
-        window.location.href = link;
-      }
- });
-
 
 //this array lists all currently active case studies in order. The 'back' and 'next' functions below navigate between its contents.
 //manually update this array every time you'd like to add a new case study or change the order of the existing ones. 
@@ -279,7 +218,6 @@ $(document).on('click', 'img, video, iframe', function (e) {
     if (e.key === 'Escape') closeLightbox();
   });
 });
-
 
 //-----------------------------document closing bracket; don't touch
 });
