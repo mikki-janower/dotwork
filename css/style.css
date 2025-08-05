@@ -554,13 +554,12 @@ img {
 }
 /*----- CSS for the blur-in lazy load effect */
 
-.lozad {
-  /*opacity:0; */
+/*.lozad {
   -webkit-transition: opacity .3s linear 0.1s;
   -moz-transition: opacity .3s linear 0.1s;
-transition: opacity .3s linear 0.1s;
+  transition: opacity .3s linear 0.1s;
 }
 
 .lozad.loaded {
   opacity:1;
-}
+}*/
