@@ -118,6 +118,7 @@ a{
 }
 a:hover, a:active{
   opacity:.5;
+  cursor:pointer !important;
 }
 
 ::selection{
@@ -547,6 +548,7 @@ img {
 }
 
 .fade-in {
+  z-index:1;
   opacity: 1;
   transform: translateY(0);
 }

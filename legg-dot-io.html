@@ -3,19 +3,15 @@
 <head><link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" type="image/png" href="assets/bigfavicon.png"/>
 
-    <script src="assets/jquery.min.js"></script>
-    <script src="js/projects.js"></script>
-
     <title>Mikki Janower: Legg.io</title>
-        <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta property="og:image" content="dylio/Legg.io-detail-1.jpg">
     <meta name="description" content="A terminal emulator website with live dithering, custom animations, and a hacking simulation.">
 </head>
 
 <body>
     <section id="wrapper">
-        <div id=navcontainer></div>
-
+<section id=navcontainer></section>
 <!--------------------------insert project information in this section ONLY----------------------->
     <section id="gallery">
 
@@ -27,7 +23,10 @@
 
 
     <div class="video-wrapper col23">
-        <video muted autoplay loop webkit-playsinline playsinline src="dylio/Legg-io-MobileLoad.webM" class=".5" type="video/mp4"></video>
+        <video muted playsinline webkit-playsinline autoplay loop>
+            <source src="dylio/Legg-io-MobileLoad.webm" type="video/mp4">
+            <source src="dylio/Legg-io-MobileLoad.mp4" type="video/mp4">
+        </video>
     </div>
     <div class="caption col1" style="align-self:end">
         The site's wordmark revives Motter Tektura, a long-deprecated typeface that defined <a href="https://gizmodo.com/why-youve-never-heard-of-this-typeface-that-defined-the-1602584135" target="_blankl">Apple's early years</a>.
@@ -35,7 +34,10 @@
     <img class="col23" src="dylio/Legg.io-home-2.jpg">
     <img class="col123" src="dylio/Legg.io-hack-1.jpg">
     <div class="video-wrapper col12">
-    <video class="lozad" muted autoplay webkit-playsinline playsinline loop data-src="dylio/Legg-io-hack-2.webm" type="video/mp4"></video>
+        <video class="lozad" muted playsinline webkit-playsinline autoplay loop>
+            <source src="dylio/Legg-io-Hack-2.webm" type="video/mp4">
+            <source src="dylio/Legg-io-Hack-2.mp4" type="video/mp4">
+        </video>
     </div>
     <div class="caption col3">
         In addition to standard interactions, like accessing his resume and code base, visitors can try to "hack" Dylan's site — only to learn it's too well-secured. 
@@ -73,7 +75,8 @@
 <!--------------------------UNIFORM—don't change anything BELOW this line------------------------->
 
 <section class="bottom"></section>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="js/projects.js"></script>
 
 
 </body>

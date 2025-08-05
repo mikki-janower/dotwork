@@ -138,7 +138,6 @@ window.scrollTo(0, 0);
 $('#navcontainer').append('<div class="name"><h2><a>Mikki Janower</a></h2></div><div class="nav-1"><h2><a href="about.html">About</a><a href="mailto:info@mikki.studio" target="_blank">Contact</a></h2></div><div class="nav-2"><h2><a href="https://www.instagram.com/_miikki/" target="_blank">Instagram</a><a href="https://www.are.na/mikki-janower" target="_blank">Are.na</a></h2></div>');
 //---------append footer to the #projfooter section on every page
 $('#projfooter').append('<h2><a class="btn-back flip">Back</a></h2><h2><a class="btn-next flip">Next</a></h2>');
-
 //-----------------anytime the user clicks on an element with a 'data-link' redirect to the corresponding link------*/
 $('[data-link]').on('click', function() {
       var link = $(this).attr('data-link');
