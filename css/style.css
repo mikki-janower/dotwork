@@ -488,6 +488,9 @@ img[data-link="mhns.html"]{
   #homepage-main .spaced{
     padding-top:0;
   }
+  #downloadcv h2{
+    padding-bottom:24px;
+  }
 }
 
 @media (max-width: 566px) {
