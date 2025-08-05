@@ -370,7 +370,7 @@ img[data-link="mhns.html"]{
   #wrapper{
    width: calc(100% + 6px);
    grid-template-columns: 1fr 1fr 0;
-   grid-gap: 6cap;
+   grid-gap: 6px;
   }
   .nav-2{
     display:none;
@@ -407,7 +407,7 @@ img[data-link="mhns.html"]{
     margin-bottom:36px;
   }
   .caption{
-    padding-left:4px;
+    padding-left:6px;
   }
   .caption.col1, .caption.col2{
        padding-right:0px;
