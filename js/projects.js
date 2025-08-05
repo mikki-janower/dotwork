@@ -1,4 +1,37 @@
 $(document).ready(function () {
+
+  $(document).ready(function () {
+  const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+
+  if (isMobile) {
+    // Force load all .lozad elements immediately on mobile
+    document.querySelectorAll('.lozad').forEach(el => {
+      if (el.tagName === "IMG" && el.dataset.src) {
+        el.src = el.dataset.src;
+        el.removeAttribute('data-src');
+      } else if (el.tagName === "VIDEO") {
+        if (el.dataset.src) {
+          el.src = el.dataset.src;
+          el.removeAttribute('data-src');
+        }
+        el.querySelectorAll("source").forEach(source => {
+          if (source.dataset.src) {
+            source.src = source.dataset.src;
+            source.removeAttribute('data-src');
+          }
+        });
+        el.load();
+      }
+      // Also add fade-in class so media doesn't fade out on load
+      el.classList.add('fade-in');
+      el.classList.remove('fade-on-scroll');
+    });
+    // Skip rest of lazy loading code here
+    return;
+  }
+
+  // Else run your existing lazy loading & fade-in IntersectionObserver code here
+});
 //-----------------anytime the user clicks on an element with a 'data-link' redirect to the corresponding link------*/
 $('[data-link]').on('click', function() {
       var link = $(this).attr('data-link');
@@ -6,7 +39,6 @@ $('[data-link]').on('click', function() {
         window.location.href = link;
       }
  });
-
 //this array lists all currently active case studies in order. The 'back' and 'next' functions below navigate between its contents.
 //manually update this array every time you'd like to add a new case study or change the order of the existing ones. 
 const pagelinks = [
