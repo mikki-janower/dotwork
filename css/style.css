@@ -53,12 +53,12 @@ body{
   padding-top:2px;
   padding-bottom:0px;
   font-family: 'Suisse Intl';
-	font-size: 12px;
-	line-height: 15px;
+	font-size: 13px;
+	line-height: 17px;
   letter-spacing:.1px;
 	color: var(--default);
 }
-#wrapper{
+#wrapper, #homepage-main{
   box-sizing: border-box;
   width:auto;
   display:grid;
@@ -70,7 +70,6 @@ body{
 #navcontainer, .listing, #gallery, #projfooter, #about, #downloadcv{
   display:contents;
 }
-
 .col1{
   grid-column:1;
 }
@@ -92,15 +91,15 @@ body{
 }
 /*-----type styles-----*/
 h3, h2, .subhead{
-  font-size: 18px;
-  line-height:22.5px;
+  font-size: 17px;
+  line-height:21.5px;
   font-weight:400;
-  margin-top:9px;
-  margin-bottom:12px;
+  margin-top:6px;
+  margin-bottom:9px;
   letter-spacing:-.1px;
 }
 p{
-  max-width: 336px;
+  max-width: 360px;
   padding-right: 24px;
 }
 
@@ -127,9 +126,13 @@ a:hover, a:active{
 img{
  width: 100%;
 }
+
 /*------------turn cursor to zoom-in icon on any media eligible the lightbox----------------*/
-img:not(.new-listing *), video:not(.new-listing *) {
-  cursor: zoom-in;
+img, video{
+  cursor:zoom-in;
+}
+#homepage-main img, #homepage-main video{
+  cursor:pointer;
 }
 .spaced{
   padding-top:72px;
@@ -196,8 +199,6 @@ img:not(.new-listing *), video:not(.new-listing *) {
 /*------------------------video--------------------*/
 .video-wrapper{
   margin:0px;
-  margin-bottom:-1.5px;
-  margin-top:-1.5px;
 }
 video{
   width: 100%;
@@ -237,6 +238,13 @@ video{
   padding-left:4.5px;
   color:var(--defaultMedium);
 }
+.hcaption{
+  margin-bottom:4px;
+  margin-left:6px;
+}
+.hcaption.col1, .hcaption.col12, .hcaption .col123{
+  margin-left:0px;
+}
 /*------------------about page------------------*/
 
 #about h2{
@@ -254,7 +262,10 @@ video{
 #downloadcv h2{
   grid-column:2;
   padding-top: 12px;
+}
 
+.cv.col2{
+  margin-right:24px;
 }
 /*------------------------lightbox-------------------*/
 #lightbox {
@@ -299,6 +310,50 @@ video{
   font-size: 32px;
   cursor: pointer;
   z-index: 11;
+}
+
+/*-----------------------specific img placement for homepage-------------*/
+.hcaption[data-link="acuity.html"]{
+   grid-row:3;
+}
+img[data-link="piratedistro.html"]{
+  grid-row:7/span 2;
+}
+.hcaption[data-link="piratedistro.html"]{
+  grid-row:9;
+}
+img[data-link="community.html"]{
+  grid-row:8;
+  align-self:end;
+}
+img[data-link="community.html"].not-mobile{
+  grid-row:9;
+}
+.hcaption[data-link="community.html"]{
+  grid-row:10;
+}
+img[data-link="tci.html"].col1{
+  grid-row:11;
+  align-self:end;
+}
+img[data-link="tci.html"].col23{
+   grid-row:10/span 2;
+}
+.hcaption[data-link="tci.html"]{
+  grid-row:12;
+}
+.video-wrapper[data-link="tategames2.html"]{
+  grid-row:12;
+}
+img.col3[data-link="sampler.html"]{
+  grid-row:13;
+  align-self:end;
+}
+img.col3[data-link="sampler.html"].not-mobile{
+  grid-row:14;
+}
+img[data-link="mhns.html"]{
+  grid-row:19;
 }
 
 /*-----------------------medddddddia queriesssssss------------------------------------*/
@@ -354,7 +409,6 @@ video{
   }
 
   .nav-1 h2, .nav-2 h2{
-   /* grid-column: 2;*/
     display:flex;
     flex-direction:column;
   }
@@ -404,6 +458,9 @@ video{
     font-size: 16.5px;
     line-height:20px;
   }
+  .hcaption{
+    margin-left:0;
+  }
   /*------image arrangements------*/
   .polyptych{
     grid-template-columns: auto auto;
@@ -411,6 +468,20 @@ video{
   .triptych{
     grid-template-columns: auto;
     grid-gap: 4px;
+  }
+
+  .cv.col2{
+  margin-right:16px;
+}
+  #homepage-main{
+    display:flex;
+    flex-direction:column;
+  }
+  #homepage-main h3{
+    margin-bottom:12px;
+  }
+  #homepage-main .spaced{
+    padding-top:0;
   }
 }
 
@@ -434,11 +505,6 @@ video{
   #downloadcv h2{
     grid-column:1;
   }
-}
-@media(max-width: 400px) {
-  /*#navcontainer, .new-listing, #projfooter, #about, #downloadcv, #wrapper{
-    
-  }*/
 }
 
 /*--------a div i turn on to find breakpoints-------*/

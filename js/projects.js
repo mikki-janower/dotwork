@@ -17,32 +17,42 @@ observer.observe();
 window.scrollTo(0, 0);
 
 //---------append nav to the #navcontainer section on every page
-$('#navcontainer').append('<div class="name"><h2><a href="https://mikki.studio">Mikki Janower</a></h2></div><div class="nav-1"><h2><a href="about.html">About</a><a href="mailto:info@mikki.studio" target="_blank">Contact</a></h2></div><div class="nav-2"><h2><a href="https://www.instagram.com/_miikki/" target="_blank">Instagram</a><a href="https://www.are.na/mikki-janower" target="_blank">Are.na</a></h2></div>');
+$('#navcontainer').append('<div class="name"><h2><a>Mikki Janower</a></h2></div><div class="nav-1"><h2><a href="about.html">About</a><a href="mailto:info@mikki.studio" target="_blank">Contact</a></h2></div><div class="nav-2"><h2><a href="https://www.instagram.com/_miikki/" target="_blank">Instagram</a><a href="https://www.are.na/mikki-janower" target="_blank">Are.na</a></h2></div>');
 //---------append footer to the #projfooter section on every page
 $('#projfooter').append('<h2><a class="btn-back flip">Back</a></h2><h2><a class="btn-next flip">Next</a></h2>');
 
-//-------When you click a listing on the index, redirect to the corresponding project page.
+//-----------------anytime the user clicks on an element with a 'data-link' redirect to the corresponding link------*/
+$('[data-link]').on('click', function() {
+      var link = $(this).attr('data-link');
+      if (link) {
+        window.location.href = link;
+      }
+ });
+
+   /* $('img, video').css('cursor', 'zoom-in');
+    $('[data-link]').css('cursor', 'pointer');
+    $('.listing img, .listing video').css('cursor', 'pointer');*/
+/*//-------When you click a listing on the index, redirect to the corresponding project page.
     $('.listing, .new-listing').click(function(){
         window.location.replace($(this).data("link"));
-    });
+    });*/
 
 //this array lists all currently active case studies in order. The 'back' and 'next' functions below navigate between its contents.
 //manually update this array every time you'd like to add a new case study or change the order of the existing ones. 
 const pagelinks = [
     "fossora.html",
+    "acuity.html",
+    "nytimes.html",
+    "displays.html",
     "piratedistro.html",
     "tci.html",
-    "nytimes.html",
-    "venndiagramm.html",
-    "acuity.html",
+    "community.html",
     "tategames2.html",
     "tetragrammaton.html",
     "sampler.html",
-    "community.html",
+    "venndiagramm.html",
     "mhns.html",
-    "spaceopera.html",
-    "joshualeifer.html",
-    "archive.html"
+    "legg-dot-io.html"
 ]
 
 //-----when you press the 'back' button, go back one case study 
@@ -247,8 +257,8 @@ $(document).ready(function () {
 
   // Trigger: click any .lightbox-trigger element
 $(document).on('click', 'img, video, iframe', function (e) {
-  // Optional: exclude if inside nav, footer, or already in the lightbox
-  if ($(this).closest('#lightbox, nav, footer, .no-lightbox').length) return;
+  // Optional: exclude if inside nav, footer, main section of homepage, or already in the lightbox
+  if ($(this).closest('#lightbox, nav, footer, #homepage-main, .no-lightbox').length) return;
 
   openLightbox($(this));
 });
