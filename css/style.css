@@ -64,7 +64,7 @@ body{
   display:grid;
   width: 100%;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-gap:4px;
+  grid-gap:6px;
   overflow:hidden;
 }
 #navcontainer, .listing, #gallery, #projfooter, #about, #downloadcv{
@@ -94,8 +94,8 @@ h3, h2, .subhead{
   font-size: 17px;
   line-height:21.5px;
   font-weight:400;
-  margin-top:6px;
-  margin-bottom:9px;
+  margin-top:6.5px;
+  margin-bottom:12px;
   letter-spacing:-.1px;
 }
 p{
@@ -144,7 +144,7 @@ img{
   cursor:pointer;
 }
 .nav-1, .nav-2{
-  padding-bottom:4px;
+  padding-bottom:6px;
 }
 .nav-1, #projfooter h2:first-of-type{
   grid-column:2;
@@ -185,17 +185,17 @@ img{
 .diptych{
   display:grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-column-gap:4px;
+  grid-column-gap:6px;
 }
 .triptych{
   display:grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-column-gap:4px;
+  grid-column-gap:6px;
 }
 .polyptych{
   display:grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  grid-column-gap:4px;
+  grid-column-gap:6px;
 }
 /*------------------------video--------------------*/
 .video-wrapper{
@@ -240,7 +240,7 @@ video{
   color:var(--defaultMedium);
 }
 .hcaption{
-  margin-bottom:4px;
+  margin-bottom:6px;
   margin-left:6px;
 }
 .hcaption.col1, .hcaption.col12, .hcaption .col123{
@@ -370,7 +370,7 @@ img[data-link="mhns.html"]{
   #wrapper{
    width: calc(100% + 6px);
    grid-template-columns: 1fr 1fr 0;
-   grid-gap: 4px;
+   grid-gap: 6cap;
   }
   .nav-2{
     display:none;
@@ -472,7 +472,7 @@ img[data-link="mhns.html"]{
   }
   .triptych{
     grid-template-columns: auto;
-    grid-gap: 4px;
+    grid-gap: 6px;
   }
 
   .cv.col2{
@@ -491,6 +491,11 @@ img[data-link="mhns.html"]{
   #downloadcv h2{
     padding-bottom:24px;
   }
+
+  .homepage .diptych{
+  display:flex;
+  flex-direction: column;
+}
 }
 
 @media (max-width: 566px) {
