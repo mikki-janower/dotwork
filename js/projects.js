@@ -110,7 +110,7 @@ const fadeObserver = new IntersectionObserver((entries, observer) => {
     if (entry.isIntersecting) {
       const el = entry.target;
       el.classList.add("fade-in");
-      el.classList.remove("fade-on-scroll");
+      /*el.classList.remove("fade-on-scroll");*/
       observer.unobserve(el);
     }
   });
