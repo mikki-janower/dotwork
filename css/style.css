@@ -50,7 +50,7 @@ html, body {
 /*------universal grid--------*/
 body{
   padding:12px;
-  padding-top:2px;
+  padding-top:12px;
   padding-bottom:0px;
   font-family: 'Suisse Intl';
 	font-size: 13px;
@@ -94,7 +94,7 @@ h3, h2, .subhead{
   font-size: 17px;
   line-height:21.5px;
   font-weight:400;
-  margin-top:6.5px;
+  margin-top:6px;
   margin-bottom:12px;
   letter-spacing:-.1px;
 }
@@ -109,7 +109,7 @@ a{
   transition: opacity .2s;
   cursor:pointer;
 }
-#navcontainer a, #about a, #downloadcv a, #projfooter a{
+#about a, #downloadcv a, #projfooter a{
   text-decoration:none;
   color:var(--default);
 }
@@ -138,21 +138,41 @@ img{
   padding-top:72px;
 }
 /*---------------nav---------------*/
-.name{
-  display:grid;
+#navcontainer{
   grid-column:1;
-  cursor:pointer;
+  grid-row:1;
+  display:flex;
+  flex-direction:row;
+  margin-bottom:18px;
 }
-.nav-1, .nav-2{
-  padding-bottom:6px;
+.name{
+  grid-column:1;
 }
-.nav-1, #projfooter h2:first-of-type{
+.nav{
   grid-column:2;
 }
-.nav-2, #projfooter h2:nth-of-type(2){
+.name a{
+  padding-right:0px;
+  color:var(--default) !important;
+}
+#navcontainer a{
+  margin-right:12px;
+}
+#navcontainer h2{
+  margin: 0px;
+  display:inline;
+}
+
+/*.nav-1, .nav-2{
+  padding-bottom:6px;
+}*/
+/*.nav-1, #projfooter h2:first-of-type{
+  grid-column:2;
+}*/
+/*.nav-2, #projfooter h2:nth-of-type(2){
   grid-column:3;
   text-align:right;
-}
+}*/
 .nav-1 a, .nav-2 a:first-of-type{
   margin-right:24px;
 }
@@ -164,21 +184,28 @@ img{
 .client{
   color:var(--defaultMedium);
 }
+.endnotes .client{
+  display:block;
+}
 /*******************PROJECT PAGES******************/
 /*----------project case studies----------*/
 #projfooter{
   color:#0a0a0a;
-  align-content:flex-start;
-  margin-top:26px;
+  margin-top:16px;
+  display:flex;
+  flex-direction:row;
   grid-column:2/span 3;
   grid-row:4;
+  bottom:12px;
 }
 #projfooter a{
   cursor:pointer;
+  margin-right:16px;
 }
 .description{
+  margin-top:36px;
   grid-column:1;
-  grid-row:2/span 2;
+  grid-row:1/span 2;
 }
 /*--------------------------------------------------------------galleries & media------------------------------------------------------*/
 /*-----------------------various polyptych setups for multiple images in one row----------------*/
@@ -186,6 +213,10 @@ img{
   display:grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-column-gap:6px;
+}
+.homepage .diptych{
+  grid-column-gap:12px;
+  margin-bottom:6px;
 }
 .triptych{
   display:grid;
@@ -251,6 +282,7 @@ video{
 #about h2{
   padding-right:42px;
   max-width:850px;
+  margin-top:0;
 }
 .item-title{
   color:var(--defaultMedium);
@@ -295,14 +327,6 @@ video{
   align-items: center;
   justify-content: center;
 }
-
-/*#lightbox img,
-#lightbox video,
-#lightbox iframe {
-  max-width: 90%;
-  max-height: 90%;
-  display: block;
-}*/
 
 #lightbox .close {
   position: absolute;
@@ -362,61 +386,88 @@ img[data-link="mhns.html"]{
 }
 
 /*-----------------------medddddddia queriesssssss------------------------------------*/
+/*@media (max-width: 1250px) {
+  #navcontainer{
+    grid-row:1;
+    padding-bottom:12px;
+  }
+  .name{
+    grid-column:1;
+  }
+  .nav{
+    grid-column:2;
+  }
+  .description{
+    margin-top:144px;
+  }
+}*/
 
-@media (max-width: 850px) {
-  body{
-    padding-top:2px;
+
+@media (max-width: 1250px) {
+ #navcontainer{
+    grid-row:1;
+    display:flex;
+    flex-direction:column;
+    padding-bottom:12px;
+  }
+   #navcontainer a, #navcontainer h2{
+    margin-bottom:0;
+    display:block;
+  }
+  .spaced{
+    padding-top:48px;
   }
   #wrapper{
    width: calc(100% + 6px);
    grid-template-columns: 1fr 1fr 0;
    grid-gap: 6px;
   }
-  .nav-2{
+  .col1, .col2, .col3, .col12, .col23{
+    grid-column: 1/end;
+  }
+  .not-mobile{
     display:none;
   }
-  .nav-2, #projfooter h2:nth-of-type(2){
-    text-align:left;
+  .client{
+    display:block;
   }
-  .nav-1, .nav-2{
+   /*.caption{
+    padding-left:6px;
+  }*/
+  /*.nav-2, #projfooter h2:nth-of-type(2){
+    text-align:left;
+  }*/
+ /* .nav-1, .nav-2{
     grid-column:2;
     display:flex;
     flex-direction:row;
     padding-bottom:0px;
-  }
+  }*/
   /*combine the navs into one cohesive stack on mobile screens*/
-  #navcontainer{
-    grid-row:1;
-    display:flex;
-    flex-direction:column;
-  }
-  .name{
+  /*.name{
     display:inline-block;
     height:min-content;
   }
   .name h2{
     margin-bottom:0px;
-  }
+  }*/
 
-  .nav-1 h2{
+  /*.nav-1 h2{
     margin-top:0;
     margin-bottom:3.5px;
-  }
-  .nav-2 h2{
+  }*/
+  /*.nav-2 h2{
     margin-top:-3px;
     margin-bottom:36px;
-  }
-  .caption{
-    padding-left:6px;
+  }*/
+ /* .nav-1 h2, .nav-2 h2{
+    display:flex;
+    flex-direction:column;
   }
   .caption.col1, .caption.col2{
        padding-right:0px;
   }
 
-  .nav-1 h2, .nav-2 h2{
-    display:flex;
-    flex-direction:column;
-  }
   .nav-1, .nav-2, #projfooter h2:first-of-type{
     grid-column:1;
   }
@@ -426,38 +477,36 @@ img[data-link="mhns.html"]{
   .new-listing img, .new-listing .video-wrapper {
     grid-column: 1/end;
   }
-  .not-mobile{
-    display:none;
-  }
-  .client{
-    display:block;
-  }
   .new-listing h2{
     grid-column: 1/end;
     grid-row:1;
   }
-  .col1, .col2, .col3, .col12, .col23{
-    grid-column: 1/end;
-  }
   .new-listing h2{
     padding-bottom:9px;
-  }
+  }*/
 
   /*-----shift the footer over-----*/
-    #projfooter h2:first-of-type {
+   /* #projfooter h2:first-of-type {
     grid-column:1;
   }
   #projfooter h2:nth-of-type(2){
     grid-column:2;
+  }*/
+  .endnotes .client{
+  display:inline;
   }
 
   /*-----type styles-----*/
- .description, .caption, .subhead, #about h2, .cv, #downloadcv{
+ /*.description, .caption, .subhead, #about h2, .cv, #downloadcv{
+    grid-column: 2;
+  }*/
+  .description, #about h2, .cv, #downloadcv{
     grid-column: 2;
   }
   .description{
     /*grid-row:3;*/
     grid-row:1;
+    margin-top:0px;
   }
   h2, .subhead, #about h2{
     font-size: 16.5px;
@@ -466,6 +515,7 @@ img[data-link="mhns.html"]{
   .hcaption{
     margin-left:0;
   }
+
   /*------image arrangements------*/
   .polyptych{
     grid-template-columns: auto auto;
