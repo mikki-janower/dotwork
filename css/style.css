@@ -435,7 +435,7 @@ video{
     display:block;
   }
   .spaced{
-    padding-top:48px;
+    padding-top:72px;
   }
   #wrapper{
    width: calc(100% + 6px);

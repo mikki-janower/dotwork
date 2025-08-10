@@ -27,7 +27,7 @@ $('[data-link]').on('click', function() {
 
  //---------append nav to the #navcontainer section on every page
 //$('#navcontainer').append('<div class="name"><h2><a>Mikki Janower</a></h2></div><div class="nav"><h2><a class="client" href="about.html">About</a></h2><h2><a class="client" href="mailto:info@mikki.studio" target="_blank">Email</a></h2><h2><a class="client" href="https://www.instagram.com/_miikki/" target="_blank">Instagram</a></h2><h2><a href="https://www.are.na/mikki-janower" target="_blank">Are.na</a></h2></div');
-$('#navcontainer').append('<div class="name"><h2><a>Mikki Janower</a></h2></div><div class="nav"><h2><a class="client about-btn" href="about.html">About</a></h2><h2><a class="client" href="mailto:info@mikki.studio" target="_blank">Email</a></h2><h2><a class="client" href="https://www.instagram.com/_miikki/" target="_blank">Instagram</a></h2><h2><a href="https://www.are.na/mikki-janower" target="_blank">Are.na</a></h2></div');
+$('#navcontainer').append('<div class="name"><h2><a>Mikki Janower</a></h2></div><div class="nav"><h2><a class="client about-btn" href="about.html">About</a></h2><h2><a class="client" href="mailto:info@mikki.studio" target="_blank">Email</a></h2><h2><a class="client" href="https://www.instagram.com/_miikki/" target="_blank">Instagram</a></h2><h2><a href="https://www.are.na/mikki-janower" target="_blank">Are.na</a></h2></div>');
 //---------append footer to the #projfooter section on every page
 $('#projfooter').append('<h2><a class="btn-back flip">Back</a></h2><h2><a class="btn-next flip">Next</a></h2>');
 
