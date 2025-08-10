@@ -29,12 +29,20 @@
   src:url('fonts/samplersmall.otf');
 }
 @font-face{
+  font-family: "Haarlem";
+  src:url('fonts/Haarlem Regular.otf');
+}
+@font-face{
+  font-family: "Epicene";
+  src:url('fonts/EpiceneText-Regular.ttf');
+}
+@font-face{
   font-family: "Herbik";
   src:url('fonts/Herbik-Regular.otf');
 }
 :root{
   --default:#0a0a0a;
-  --defaultMedium:#979797;
+  --defaultMedium:#989898;
   --defaultLight: #e5e5e5;
 }
 
@@ -54,9 +62,10 @@ html, body {
 /*------universal grid--------*/
 body{
   max-width:100%;
-  font-family: 'Suisse Intl';
-	font-size: 13px;
-	line-height: 17px;
+  /*font-family: 'Suisse Intl';*/
+  font-family:"Herbik";
+	font-size: 15px;
+	line-height: 20px;
   letter-spacing:.1px;
 	color: var(--default);
 }
@@ -132,8 +141,8 @@ body{
 }
 /*----------------------------type styles---------------------*/
 h3, h2, .subhead{
-  font-size: 15.8px;
-  line-height:21.5px;
+  font-size: 18px;
+  line-height:24px;
   font-weight:400;
   margin-top:6px;
   margin-bottom:12px;
@@ -144,6 +153,7 @@ h3, h2, .subhead{
 p{
   max-width: 360px;
   padding-right: 24px;
+  font-family:"Haarlem";
 }
 
 a{
