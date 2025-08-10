@@ -38,7 +38,13 @@
 }
 @font-face{
   font-family: "Herbik";
+  font-style:normal;
   src:url('fonts/Herbik-Regular.otf');
+}
+@font-face{
+  font-family: "Herbik";
+  font-style:italic;
+  src:url('fonts/Herbik-Italic.ttf');
 }
 :root{
   --default:#0a0a0a;
@@ -63,9 +69,9 @@ html, body {
 body{
   max-width:100%;
   /*font-family: 'Suisse Intl';*/
-  font-family:"Herbik";
-	font-size: 15px;
-	line-height: 20px;
+  font-family:"Suisse Intl";
+	font-size: 13.5px;
+	line-height: 18px;
   letter-spacing:.1px;
 	color: var(--default);
 }
@@ -79,7 +85,7 @@ body{
   grid-gap:6px;
   overflow:hidden;
 }
-#navcontainer, .listing, #gallery, #projfooter, #about, #downloadcv{
+#navcontainer, .listing, #gallery, #projfooter, .about, #downloadcv{
   display:contents;
 }
 /*--------------------grid columns as classes so they can be responsibe-----------------*/
@@ -141,8 +147,8 @@ body{
 }
 /*----------------------------type styles---------------------*/
 h3, h2, .subhead{
-  font-size: 18px;
-  line-height:24px;
+  font-size: 16px;
+  line-height:22px;
   font-weight:400;
   margin-top:6px;
   margin-bottom:12px;
@@ -153,7 +159,6 @@ h3, h2, .subhead{
 p{
   max-width: 360px;
   padding-right: 24px;
-  font-family:"Haarlem";
 }
 
 a{
@@ -162,7 +167,7 @@ a{
   transition: opacity .2s;
   cursor:pointer;
 }
-#about a, #downloadcv a, #projfooter a{
+.about a, #downloadcv a, #projfooter a{
   text-decoration:none;
   color:var(--default);
 }
@@ -226,13 +231,14 @@ img{
   display:block;
 }
 .endnotes{
+  margin-top:48px;
   margin-bottom:0px;
 }
 /*******************PROJECT PAGES******************/
 /*----------project case studies----------*/
 #projfooter{
   color:#0a0a0a;
-  margin:32px 0 10px 12px;
+  margin:72px 0 10px 12px;
   display:flex;
   flex-direction:row;
   grid-column:3/span 3;
@@ -326,10 +332,7 @@ video{
   color:var(--defaultMedium);
 }
 /*------------------about page------------------*/
-#about>*{
-  padding-left:.5px;
-}
-#about h2{
+.about h2{
   padding-right:42px;
   max-width:850px;
   margin-top:0;
@@ -346,17 +349,18 @@ video{
   color:var(--defaultMedium);
   margin-bottom: 4.5px;
 }
-#about .diptych a, #about .diptych span, #about .diptych a, #about .diptych span{
+.about .diptych a, .about .diptych span, .about .diptych a, .about .diptych span{
   display:block;
   padding-bottom: 1.5px;
 }
-#about .item-title:first-of-type, #about .item-title:nth-of-type(6){
+.about .item-title:first-of-type, .about .item-title:nth-of-type(6){
   margin-top:0px;
 }
-#about .diptych div:last-of-type{
+.about .diptych div:last-of-type{
   margin-left:36px;
 }
 .downloadcv{
+  margin-top:16px;
   margin-bottom:24px;
 }
 
@@ -408,14 +412,17 @@ video{
 
 /*-----------------------medddddddia queriesssssss------------------------------------*/
 @media (max-width: 850px) {
-  #about{
+  .about{
     grid-row:1;
   }
   .about-btn{
     display:block;
   }
-  .homepage #about{
+  .homepage .about{
     display:none;
+  }
+  .about h2:first-of-type{
+    padding-top:120px;
   }
   .homepage div[data-link = "acuity.html"]{
     margin-top:auto;
@@ -464,7 +471,7 @@ video{
 
 
 @media (max-width: 600px) {
-  #navcontainer, .nav-1 h2, .nav-2 h2, .description, .caption, .subhead, #projfooter, #about h2, .cv, #downloadcv{
+  #navcontainer, .nav-1 h2, .nav-2 h2, .description, .caption, .subhead, #projfooter, .about h2, .cv, #downloadcv{
     grid-column:1/end;
   }
   .nav-1, .nav-2, #projfooter h2:first-of-type{
@@ -475,10 +482,10 @@ video{
     margin-bottom:16px;
     grid-row:3;
   }
-  #about .diptych div:last-of-type{
+  .about .diptych div:last-of-type{
   margin-left:0px;
   }
-  #about .item-title:first-of-type, #about .item-title:nth-of-type(6){
+  .about .item-title:first-of-type, .about .item-title:nth-of-type(6){
       margin-block-start: 1em;
   }
   #downloadcv h2{

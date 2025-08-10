@@ -1,12 +1,5 @@
 $(document).ready(function () {
 
-//---------append nav to the #navcontainer section on every page
-//$('#navcontainer').append('<div class="name"><h2><a>Mikki Janower</a></h2></div><div class="nav"><h2><a class="client" href="about.html">About</a></h2><h2><a class="client" href="mailto:info@mikki.studio" target="_blank">Email</a></h2><h2><a class="client" href="https://www.instagram.com/_miikki/" target="_blank">Instagram</a></h2><h2><a href="https://www.are.na/mikki-janower" target="_blank">Are.na</a></h2></div');
-$('#navcontainer').append('<div class="name"><h2><a>Mikki Janower</a></h2></div><div class="nav"><h2><a class="client about-btn" href="about.html">About</a></h2><h2><a class="client" href="mailto:info@mikki.studio" target="_blank">Email</a></h2><h2><a class="client" href="https://www.instagram.com/_miikki/" target="_blank">Instagram</a></h2><h2><a href="https://www.are.na/mikki-janower" target="_blank">Are.na</a></h2></div');
-//---------append footer to the #projfooter section on every page
-//---------append footer to the #projfooter section on every page
-$('#projfooter').append('<h2><a class="btn-back flip">Back</a></h2><h2><a class="btn-next flip">Next</a></h2>');
-
 //-----------------anytime the user clicks on an element with a 'data-link' redirect to the corresponding link------*/
 let more = false;
 $('.readmore').click(function(){
@@ -31,6 +24,13 @@ $('[data-link]').on('click', function() {
         window.location.href = link;
       }
  });
+
+ //---------append nav to the #navcontainer section on every page
+//$('#navcontainer').append('<div class="name"><h2><a>Mikki Janower</a></h2></div><div class="nav"><h2><a class="client" href="about.html">About</a></h2><h2><a class="client" href="mailto:info@mikki.studio" target="_blank">Email</a></h2><h2><a class="client" href="https://www.instagram.com/_miikki/" target="_blank">Instagram</a></h2><h2><a href="https://www.are.na/mikki-janower" target="_blank">Are.na</a></h2></div');
+$('#navcontainer').append('<div class="name"><h2><a>Mikki Janower</a></h2></div><div class="nav"><h2><a class="client about-btn" href="about.html">About</a></h2><h2><a class="client" href="mailto:info@mikki.studio" target="_blank">Email</a></h2><h2><a class="client" href="https://www.instagram.com/_miikki/" target="_blank">Instagram</a></h2><h2><a href="https://www.are.na/mikki-janower" target="_blank">Are.na</a></h2></div');
+//---------append footer to the #projfooter section on every page
+$('#projfooter').append('<h2><a class="btn-back flip">Back</a></h2><h2><a class="btn-next flip">Next</a></h2>');
+
 //this array lists all currently active case studies in order. The 'back' and 'next' functions below navigate between its contents.
 //manually update this array every time you'd like to add a new case study or change the order of the existing ones. 
 const pagelinks = [
