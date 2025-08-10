@@ -442,7 +442,7 @@ video{
    grid-gap: 6px;
   }
   .col1, .col2, .col3, .col4, .col5, .col6, .col12, .col23, .col34 .col45, .col56, .col123, .col456, .col1234, .col3456{
-    grid-column: 1/end;
+    grid-column: 1/span 6;
   }
   .client{
     display:block;
