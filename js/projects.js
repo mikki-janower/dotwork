@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-//-----------------anytime the user clicks on an element with a 'data-link' redirect to the corresponding link------*/
+/*--------------------when the user clicks 'read more,' the 'about' section toggles------------------*/
 let more = false;
 $('.readmore').click(function(){
   if(jQuery( window ).width() > 850){
@@ -18,8 +18,9 @@ $('.readmore').click(function(){
   }
 });
 
+//-----------------anytime the user clicks on an element with a 'data-link' redirect to the corresponding link------*/
 $('[data-link]').on('click', function() {
-      var link = $(this).attr('data-link');
+      let link = $(this).attr('data-link'); //formerly var, if this breaks then change it back
       if (link) {
         window.location.href = link;
       }
@@ -45,7 +46,7 @@ const pagelinks = [
     "sampler.html",
     "venndiagramm.html",
     "mhns.html",
-    "legg-dot-io.html"
+    "legg.io.html"
 ]
 //------------------when you press my name, redirect to index page
     $(".name").click(function () {
@@ -83,14 +84,6 @@ $('.btn-next').click(function(){
         window.location.pathname = pagelinks[i+1];
     };
 });
-
-   //-----------activate 'querydown', a temporary div that shows browser width. Useful for setting media queries as precisely as possible.
-    $(window).resize(function () {
-        let width = window.innerWidth;
-        $(".querytown").html("Width: " + width + " px");
-  });
-
-
 /*----------------lazyload function and fade-in---------*/
 const preloadOffset = 200;
 const allMedia = document.querySelectorAll("img, video");
@@ -205,7 +198,7 @@ $(document).ready(function () {
       $video.show();
     } else if (el.data('type') === 'embed' || src.includes('youtube') || src.includes('vimeo')) {
       $iframe.attr('src', src).show();
-    }
+    } 
 
     $lightbox.fadeIn(200);
   }
@@ -233,6 +226,12 @@ $(document).on('click', 'img, video, iframe', function (e) {
     if (e.key === 'Escape') closeLightbox();
   });
 });
+
+//-----------activate 'querydown', a temporary div that shows browser width. Useful for setting media queries as precisely as possible.
+/*    $(window).resize(function () {
+        let width = window.innerWidth;
+        $(".querytown").html("Width: " + width + " px");
+  });*/
 
 //-----------------------------document closing bracket; don't touch
 });

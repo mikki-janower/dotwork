@@ -28,24 +28,6 @@
   font-family: "SamplerSmall";
   src:url('fonts/samplersmall.otf');
 }
-@font-face{
-  font-family: "Haarlem";
-  src:url('fonts/Haarlem Regular.otf');
-}
-@font-face{
-  font-family: "Epicene";
-  src:url('fonts/EpiceneText-Regular.ttf');
-}
-@font-face{
-  font-family: "Herbik";
-  font-style:normal;
-  src:url('fonts/Herbik-Regular.otf');
-}
-@font-face{
-  font-family: "Herbik";
-  font-style:italic;
-  src:url('fonts/Herbik-Italic.ttf');
-}
 :root{
   --default:#0a0a0a;
   --defaultMedium:#989898;
@@ -68,7 +50,6 @@ html, body {
 /*------universal grid--------*/
 body{
   max-width:100%;
-  /*font-family: 'Suisse Intl';*/
   font-family:"Suisse Intl", sans-serif;
 	font-size: 13.5px;
 	line-height: 18px;
@@ -77,7 +58,6 @@ body{
 }
 #wrapper, #homepage-main{
   padding:12px 12px 12px 12px;
-  box-sizing: border-box;
   width:100%;
   max-width:100%;
   display:grid;
@@ -85,9 +65,6 @@ body{
   grid-gap:6px;
   overflow:hidden;
 }
-/*#navcontainer, .listing, #gallery, #projfooter, .about, #downloadcv{
-  display:contents;
-}*/
 /*--------------------grid columns as classes so they can be responsibe-----------------*/
 .col1{
   grid-column:1;
@@ -121,7 +98,7 @@ body{
   grid-column:4/span 2;
 }
 .col56{
-  grid-column:5/span 2
+  grid-column:5/span 2;
 }
 /*-----sets of 3-----*/
 .col123{
@@ -134,9 +111,6 @@ body{
 /*------sets of 4-----*/
 .col1234{
   grid-column:1/span 4;
-}
-.col2345{
-  grid-column: 2/span 4;
 }
 .col3456{
   grid-column:3/span 4;
@@ -160,7 +134,6 @@ p{
   max-width: 360px;
   padding-right: 24px;
 }
-
 a{
   color:var(--defaultMedium);
   text-decoration: none;
@@ -177,7 +150,6 @@ a{
 a:hover, a:active, .readmore:hover{
   opacity:.5;
 }
-
 ::selection{
   background-color: rgba(0,0,0,.1);
 }
@@ -192,12 +164,19 @@ img{
 .homepage .fade-in{
   cursor:pointer;
 }
+[data-link]{
+  cursor:pointer;
+}
 /*----------------------------nav---------------------------*/
 #navcontainer{
+  top:12px;
+  left:12px;
   grid-column:1/span 3;
   display:flex;
   flex-direction:column;
   margin-bottom: 0px;
+  z-index:1000;
+  height:auto;
 }
 .nav{
   display:flex;
@@ -207,12 +186,8 @@ img{
   padding-right:0px;
   color:var(--default) !important;
 }
-#navcontainer a{
-  margin-right:12px;
-}
 #navcontainer h2{
   margin: 0px;
-  display:inline;
 }
 .about-btn{
   display:none;
@@ -231,18 +206,14 @@ img{
   display:block;
 }
 .endnotes{
-  margin-top:48px;
   margin-bottom:0px;
 }
-/*******************PROJECT PAGES******************/
-/*----------project case studies----------*/
+/*-----------------------------project pages-----------------------*/
 #projfooter{
-  color:#0a0a0a;
+  color:var(--default);
   margin:72px 0 10px 12px;
   display:flex;
   flex-direction:row;
-  grid-column:3/span 3;
-  grid-row:4;
 }
 #projfooter a{
   cursor:pointer;
@@ -253,12 +224,11 @@ img{
 }
 .description{
   grid-column:4/span 3;
-  grid-row:1;
 }
 .description h2{
   margin-top:0;
 }
-.description .client{
+.description h2.client{
   margin-left:3px;
 }
 .description p{
@@ -321,19 +291,13 @@ video{
 .caption{
   padding:5px 16px 6px 0px;
 }
-.right{
-  padding: 6px 4px 8px 6px;
-}
-.below{
-  margin-top:-18px;
-}
 .citation{
   padding-left:4.5px;
   color:var(--defaultMedium);
 }
 /*------------------about page------------------*/
 .about h2{
-  padding-right:42px;
+  margin-right:24px;
   max-width:850px;
   margin-top:0;
   padding-bottom:0px;
@@ -353,9 +317,6 @@ video{
   display:block;
   padding-bottom: 1.5px;
 }
-.about .item-title:first-of-type, .about .item-title:nth-of-type(6){
-  margin-top:0px;
-}
 .about .diptych div:last-of-type{
   margin-left:36px;
 }
@@ -372,6 +333,7 @@ video{
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index:9999;
 }
 
 .lightbox-overlay {
@@ -388,16 +350,6 @@ video{
   align-items: center;
   justify-content: center;
 }
-
-#lightbox .close {
-  position: absolute;
-  top: 16px;
-  right: 20px;
-  color: white;
-  font-size: 32px;
-  cursor: pointer;
-  z-index: 11;
-}
 /*-----------fade animation on lazyload--------------*/
 .fade-on-scroll {
   opacity: 0;
@@ -412,43 +364,74 @@ video{
 
 /*-----------------------medddddddia queriesssssss------------------------------------*/
 @media (max-width: 850px) {
-  .about{
-    grid-row:1;
-  }
   .about-btn{
     display:block;
   }
   .homepage .about{
     display:none;
   }
-  .about h2:first-of-type{
-    padding-top:120px;
+  .about h2{
+    max-width:680px;
+  }
+  #navcontainer{
+    margin-bottom:72px;
   }
   .homepage div[data-link = "acuity.html"]{
     margin-top:auto;
   }
  .homepage div[data-link="fossora.html"]{
-    margin-top:72px;
+    margin-top:auto;
   }
    #navcontainer a, #navcontainer h2{
     margin-bottom:0;
     display:block;
   }
-  .spaced{
-    padding-top:72px;
-  }
-  #wrapper{
-   width: calc(100% + 6px);
-   grid-gap: 6px;
-  }
-  .col1, .col2, .col3, .col4, .col5, .col6, .col12, .col23, .col34 .col45, .col56, .col123, .col456, .col1234, .col3456{
-    grid-column: 1/span 6;
+  /*-------updaitng grid------*/
+
+    .col1{
+      grid-column: 1/span 6;
+    } 
+    .col2{
+      grid-column: 1/span 6;
+    }
+    .col3{
+      grid-column: 1/span 6;
+    }
+    .col4{
+      grid-column: 1/span 6;
+    }
+    .col5{
+      grid-column: 1/span 6;
+    }
+    .col6{
+      grid-column: 1/span 6;
+    }
+    .col12{
+      grid-column: 1/span 6;
+    }
+    .col34{
+      grid-column: 1/span 6;
+    }
+    .col56{
+      grid-column: 1/span 6;
+    }
+    .col123{
+      grid-column: 1/span 6;
+    }
+    .col456{
+      grid-column: 1/span 6;
+    }
+    .col1234{
+      grid-column: 1/span 6;
+    }
+  .col3456{
+      grid-column: 1/span 6;
   }
   .client{
-    display:block;
+      grid-column: 1/span 6;
   }
   .readmore{
-    display:inline;
+      grid-column: 1/span 6;
   }
   /*------image arrangements------*/
   .polyptych{
@@ -468,28 +451,26 @@ video{
 
 
 @media (max-width: 600px) {
-  #navcontainer, .nav-1 h2, .nav-2 h2, .description, .caption, .subhead, #projfooter, .about h2, .cv, #downloadcv{
-    grid-column:1/end;
-  }
-  .nav-1, .nav-2, #projfooter h2:first-of-type{
-    grid-column:1;
+  #wrapper, #homepage-main {
+    padding: 12px 12px 12px 12px;
   }
   .description{
-    margin-top:16px;
-    margin-bottom:16px;
-    grid-row:3;
+    margin-bottom:-60px;
+  }
+  #navcontainer, .nav-1 h2, .nav-2 h2, .description, .caption, .subhead, #projfooter, .about h2, .cv, #downloadcv{
+    grid-column:1/end;
   }
   .endnotes .client{
     display:inline;
   }
   .about .diptych div:last-of-type{
-  margin-left:0px;
+    margin-left:0px;
   }
   .about .item-title:first-of-type, .about .item-title:nth-of-type(6){
       margin-block-start: 1em;
   }
-  #downloadcv h2{
-    grid-column:1;
+  .about .diptych div:first-of-type {
+    padding-right:24px;
   }
 }
 
