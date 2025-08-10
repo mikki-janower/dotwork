@@ -85,9 +85,9 @@ body{
   grid-gap:6px;
   overflow:hidden;
 }
-#navcontainer, .listing, #gallery, #projfooter, .about, #downloadcv{
+/*#navcontainer, .listing, #gallery, #projfooter, .about, #downloadcv{
   display:contents;
-}
+}*/
 /*--------------------grid columns as classes so they can be responsibe-----------------*/
 .col1{
   grid-column:1;
