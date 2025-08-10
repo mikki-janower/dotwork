@@ -28,13 +28,9 @@
   font-family: "SamplerSmall";
   src:url('fonts/samplersmall.otf');
 }
-@font-face{
-  font-family: "Herbik";
-  src:url('fonts/Herbik-Regular.otf');
-}
 :root{
   --default:#0a0a0a;
-  --defaultMedium:#979797;
+  --defaultMedium:#848484;
   --defaultLight: #e5e5e5;
 }
 
@@ -53,6 +49,9 @@ html, body {
 
 /*------universal grid--------*/
 body{
+  /*padding: 12 0 12px 12px;*/
+  /*padding-top:12px;
+  padding-bottom:0px;*/
   max-width:100%;
   font-family: 'Suisse Intl';
 	font-size: 13px;
@@ -66,80 +65,40 @@ body{
   width:100%;
   max-width:100%;
   display:grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-gap:6px;
   overflow:hidden;
 }
 #navcontainer, .listing, #gallery, #projfooter, #about, #downloadcv{
   display:contents;
 }
-/*--------------------grid columns as classes so they can be responsibe-----------------*/
 .col1{
   grid-column:1;
 }
 .col2{
   grid-column:2;
+  padding-right:16px;
 }
 .col3{
   grid-column:3;
 }
-.col4{
-  grid-column:4;
-}
-.col5{
-  grid-column:5;
-}
-.col6{
-  grid-column:6;
-}
-/*---sets of 2---*/
 .col12{
   grid-column: 1/span 2;
 }
 .col23{
   grid-column: 2/span 2;
 }
-.col34{
-  grid-column:3/span 2;
-}
-.col45{
-  grid-column:4/span 2;
-}
-.col56{
-  grid-column:5/span 2
-}
-/*-----sets of 3-----*/
 .col123{
   grid-column: 1/span 3;
 }
-.col456{
-  grid-column:4/span 3;
-}
-
-/*------sets of 4-----*/
-.col1234{
-  grid-column:1/span 4;
-}
-.col2345{
-  grid-column: 2/span 4;
-}
-.col3456{
-  grid-column:3/span 4;
-}
-/*--------all---------*/
-.col123456{
-  grid-column:1/span 6;
-}
-/*----------------------------type styles---------------------*/
+/*-----type styles-----*/
 h3, h2, .subhead{
-  font-size: 15.8px;
+  font-size: 17px;
   line-height:21.5px;
   font-weight:400;
   margin-top:6px;
   margin-bottom:12px;
-}
-.subhead{
-  margin-bottom:-2px;
+  letter-spacing:-.1px;
 }
 p{
   max-width: 360px;
@@ -159,7 +118,7 @@ a{
 .link{
   cursor:pointer;
 }
-a:hover, a:active, .readmore:hover{
+a:hover, a:active{
   opacity:.5;
 }
 
@@ -170,23 +129,30 @@ img{
  width: 100%;
 }
 
-/*----------------------cursor events----------------------*/
+/*------------turn cursor to zoom-in icon on any media eligible the lightbox----------------*/
 .fade-in{
   cursor:zoom-in;
 }
-.homepage .fade-in{
+#homepage-main .fade-in{
   cursor:pointer;
 }
-/*----------------------------nav---------------------------*/
+.spaced{
+  padding-top:72px;
+}
+/*---------------nav---------------*/
 #navcontainer{
-  grid-column:1/span 3;
+  grid-column:1;
+  grid-row:1;
   display:flex;
-  flex-direction:column;
-  margin-bottom: 0px;
+  flex-direction:row;
+  /*margin-bottom:18px;*/
+  margin-bottom:26px;
+}
+.name{
+  grid-column:1;
 }
 .nav{
-  display:flex;
-  flex-direction:column;
+  grid-column:2;
 }
 .name a{
   padding-right:0px;
@@ -199,16 +165,25 @@ img{
   margin: 0px;
   display:inline;
 }
-.about-btn{
-  display:none;
+
+/*.nav-1, .nav-2{
+  padding-bottom:6px;
+}*/
+/*.nav-1, #projfooter h2:first-of-type{
+  grid-column:2;
+}*/
+/*.nav-2, #projfooter h2:nth-of-type(2){
+  grid-column:3;
+  text-align:right;
+}*/
+.nav-1 a, .nav-2 a:first-of-type{
+  margin-right:24px;
 }
 /*----------homepage listings----------*/
-.homepage div[data-link = "acuity.html"], .homepage div[data-link="fossora.html"]{
-  margin-top:72px;
-}
-#wrapper.homepage{
-  grid-gap:12px;
-}
+/*.new-listing{
+  cursor:pointer;
+  padding-bottom:4px;
+}*/
 .client{
   color:var(--defaultMedium);
 }
@@ -225,7 +200,7 @@ img{
   margin:32px 0 10px 12px;
   display:flex;
   flex-direction:row;
-  grid-column:3/span 3;
+  grid-column:2/span 3;
   grid-row:4;
 }
 #projfooter a{
@@ -236,8 +211,9 @@ img{
   margin-bottom:-2px;
 }
 .description{
-  grid-column:4/span 3;
-  grid-row:1;
+  /*margin-top:36px;*/
+  grid-column:2/span 3;
+  grid-row:1/span 2;
 }
 .description h2{
   margin-top:0;
@@ -247,9 +223,6 @@ img{
 }
 .description p{
   max-width:850px;
-}
-.spaced{
-  padding-top:72px;
 }
 /*--------------------------------------------------------------galleries & media------------------------------------------------------*/
 /*-----------------------various polyptych setups for multiple images in one row----------------*/
@@ -303,7 +276,7 @@ video{
 }
 /*------------------captions and subheads----------*/
 .caption{
-  padding:5px 16px 6px 0px;
+  padding:4px 12px 8px 0px;
 }
 .right{
   padding: 6px 4px 8px 6px;
@@ -311,45 +284,45 @@ video{
 .below{
   margin-top:-18px;
 }
+/*.nested{
+  padding: 0px 0px 0px 0px;
+}
+.hcaption{
+  margin-bottom:6px;
+  margin-left:6px;
+}
+.hcaption.col1, .hcaption.col12, .hcaption .col123{
+  margin-left:0px;
+}
+
+*/
 .citation{
   padding-left:4.5px;
   color:var(--defaultMedium);
 }
 /*------------------about page------------------*/
-#about>*{
-  padding-left:.5px;
-}
+
 #about h2{
   padding-right:42px;
   max-width:850px;
   margin-top:0;
-  padding-bottom:0px;
-}
-.readmore{
-  cursor:pointer;
-  transition: opacity .2s;
-}
-.homepage .more{
-  display:none;
 }
 .item-title{
   color:var(--defaultMedium);
   margin-bottom: 4.5px;
 }
-#about .diptych a, #about .diptych span, #about .diptych a, #about .diptych span{
+#about .col2 a, #about .col2 span, #about .col3 a, #about .col3 span{
   display:block;
   padding-bottom: 1.5px;
 }
-#about .item-title:first-of-type, #about .item-title:nth-of-type(6){
-  margin-top:0px;
-}
-#about .diptych div:last-of-type{
-  margin-left:36px;
-}
-.downloadcv{
-  margin-bottom:24px;
+#downloadcv h2{
+  grid-column:2;
+  padding-top: 12px;
 }
 
+.cv.col2{
+  margin-right:24px;
+}
 /*------------------------lightbox-------------------*/
 #lightbox {
   position: fixed;
@@ -358,16 +331,19 @@ video{
   display: flex;
   align-items: center;
   justify-content: center;
+  /*z-index: 9999; */
 }
 
 .lightbox-overlay {
   position: absolute;
   inset: 0;
   cursor: pointer;
+  /*z-index: 9999;*/
 }
 
 .lightbox-content {
   position: relative;
+  /*z-index: 10;*/
   max-width: 90vw;
   max-height: 90vh;
   display: flex;
@@ -384,34 +360,78 @@ video{
   cursor: pointer;
   z-index: 11;
 }
-/*-----------fade animation on lazyload--------------*/
-.fade-on-scroll {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+
+/*-----------------------specific img placement for homepage-------------*/
+[data-link]{
+  cursor:pointer;
 }
-.fade-in {
-  opacity: 1;
-  transform: translateY(0);
-  will-change: opacity, transform;
+.hcaption[data-link="acuity.html"]{
+   grid-row:3;
+}
+img[data-link="piratedistro.html"]{
+  grid-row:7/span 2;
+}
+.hcaption[data-link="piratedistro.html"]{
+  grid-row:9;
+}
+img[data-link="community.html"]{
+  grid-row:8;
+  align-self:end;
+}
+img[data-link="community.html"].not-mobile{
+  grid-row:9;
+}
+.hcaption[data-link="community.html"]{
+  grid-row:10;
+}
+img[data-link="tci.html"].col1{
+  grid-row:11;
+  align-self:end;
+}
+img[data-link="tci.html"].col23{
+   grid-row:10/span 2;
+}
+.hcaption[data-link="tci.html"]{
+  grid-row:12;
+}
+.video-wrapper[data-link="tategames2.html"]{
+  grid-row:12;
+}
+img.col3[data-link="sampler.html"]{
+  grid-row:13;
+  align-self:end;
+}
+img.col3[data-link="sampler.html"].not-mobile{
+  grid-row:14;
+}
+img[data-link="mhns.html"]{
+  grid-row:19;
 }
 
 /*-----------------------medddddddia queriesssssss------------------------------------*/
-@media (max-width: 850px) {
-  #about{
+/*@media (max-width: 1250px) {
+  #navcontainer{
     grid-row:1;
+    padding-bottom:12px;
   }
-  .about-btn{
-    display:block;
+  .name{
+    grid-column:1;
   }
-  .homepage #about{
-    display:none;
+  .nav{
+    grid-column:2;
   }
-  .homepage div[data-link = "acuity.html"]{
-    margin-top:auto;
+  .description{
+    margin-top:144px;
   }
- .homepage div[data-link="fossora.html"]{
-    margin-top:72px;
+}*/
+
+
+@media (max-width: 1250px) {
+ #navcontainer{
+    grid-row:1;
+    display:flex;
+    flex-direction:column;
+    padding-bottom:12px;
   }
    #navcontainer a, #navcontainer h2{
     margin-bottom:0;
@@ -422,20 +442,107 @@ video{
   }
   #wrapper{
    width: calc(100% + 6px);
+   grid-template-columns: 1fr 1fr 0;
    grid-gap: 6px;
   }
-  .col1, .col2, .col3, .col4, .col5, .col6, .col12, .col23, .col34 .col45, .col56, .col123, .col456, .col1234, .col3456{
+  .col1, .col2, .col3, .col12, .col23{
     grid-column: 1/end;
   }
+  /*.not-mobile{
+    display:none;
+  }*/
+    /*.homepage .diptych{
+  display:flex;
+  flex-direction: column;
+ }*/
   .client{
     display:block;
   }
-  .readmore{
-    display:inline;
+   /*.caption{
+    padding-left:6px;
+  }*/
+  /*.nav-2, #projfooter h2:nth-of-type(2){
+    text-align:left;
+  }*/
+ /* .nav-1, .nav-2{
+    grid-column:2;
+    display:flex;
+    flex-direction:row;
+    padding-bottom:0px;
+  }*/
+  /*combine the navs into one cohesive stack on mobile screens*/
+  /*.name{
+    display:inline-block;
+    height:min-content;
   }
+  .name h2{
+    margin-bottom:0px;
+  }*/
+
+  /*.nav-1 h2{
+    margin-top:0;
+    margin-bottom:3.5px;
+  }*/
+  /*.nav-2 h2{
+    margin-top:-3px;
+    margin-bottom:36px;
+  }*/
+ /* .nav-1 h2, .nav-2 h2{
+    display:flex;
+    flex-direction:column;
+  }
+  .caption.col1, .caption.col2{
+       padding-right:0px;
+  }
+
+  .nav-1, .nav-2, #projfooter h2:first-of-type{
+    grid-column:1;
+  }
+  .new-listing{
+    padding-bottom:12px;
+  }
+  .new-listing img, .new-listing .video-wrapper {
+    grid-column: 1/end;
+  }
+  .new-listing h2{
+    grid-column: 1/end;
+    grid-row:1;
+  }
+  .new-listing h2{
+    padding-bottom:9px;
+  }*/
+
+  /*-----shift the footer over-----*/
+   /* #projfooter h2:first-of-type {
+    grid-column:1;
+  }
+  #projfooter h2:nth-of-type(2){
+    grid-column:2;
+  }*/
   .endnotes .client{
   display:inline;
   }
+
+  /*-----type styles-----*/
+ /*.description, .caption, .subhead, #about h2, .cv, #downloadcv{
+    grid-column: 2;
+  }*/
+  .description, #about h2, .cv, #downloadcv{
+    grid-column: 2;
+  }
+  .description{
+    /*grid-row:3;*/
+    grid-row:1;
+    margin-top:0px;
+  }
+  h2, .subhead, #about h2{
+    font-size: 16.5px;
+    line-height:20px;
+  }
+  .hcaption{
+    margin-left:0;
+  }
+
   /*------image arrangements------*/
   .polyptych{
     grid-template-columns: auto auto;
@@ -444,16 +551,20 @@ video{
     grid-template-columns: auto;
     grid-gap: 6px;
   }
+
+  .cv.col2{
+  margin-right:16px;
+}
   #downloadcv h2{
     padding-bottom:24px;
   }
  .homepage h3{
-  margin-bottom:24px;
+  margin-bottom:32px;
  }
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 566px) {
   #navcontainer, .nav-1 h2, .nav-2 h2, .description, .caption, .subhead, #projfooter, #about h2, .cv, #downloadcv{
     grid-column:1/end;
   }
@@ -461,15 +572,14 @@ video{
     grid-column:1;
   }
   .description{
-    margin-top:16px;
-    margin-bottom:16px;
     grid-row:3;
   }
-  #about .diptych div:last-of-type{
-  margin-left:0px;
+    .caption{
+  padding-left:0px;
+    max-width:100%;
   }
-  #about .item-title:first-of-type, #about .item-title:nth-of-type(6){
-      margin-block-start: 1em;
+  .caption.col1, .caption.col2{
+       padding-right:12px;
   }
   #downloadcv h2{
     grid-column:1;
@@ -488,3 +598,26 @@ video{
   text-align:center;
   background-color:red;
 }
+
+/*-----------fade animation on lazyload--------------*/
+.fade-on-scroll {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  will-change: opacity, transform;
+}
+/*----- CSS for the blur-in lazy load effect */
+
+/*.lozad {
+  -webkit-transition: opacity .3s linear 0.1s;
+  -moz-transition: opacity .3s linear 0.1s;
+  transition: opacity .3s linear 0.1s;
+}
+
+.lozad.loaded {
+  opacity:1;
+}*/
