@@ -452,13 +452,13 @@ video{
 
 @media (max-width: 600px) {
   #wrapper, #homepage-main {
-    padding: 12px 6px 12px 12px;
+    padding: 12px 12px 12px 12px;
   }
   .description{
     margin-bottom:-60px;
   }
   #navcontainer, .nav-1 h2, .nav-2 h2, .description, .caption, .subhead, #projfooter, .about h2, .cv, #downloadcv{
-    grid-column:1/end;
+    grid-column:1/span 6;
   }
   .endnotes .client{
     display:inline;
