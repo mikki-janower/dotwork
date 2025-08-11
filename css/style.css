@@ -452,7 +452,7 @@ video{
 
 @media (max-width: 600px) {
   #wrapper, #homepage-main {
-    padding: 12px 0px 12px 12px;
+    padding: 12px 6px 12px 12px;
   }
   .description{
     margin-bottom:-60px;
