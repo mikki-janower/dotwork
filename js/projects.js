@@ -20,16 +20,11 @@ $('.readmore').click(function(){
 
 //-----------------anytime the user clicks on an element with a 'data-link' redirect to the corresponding link------*/
 $('[data-link]').on('click', function() {
-      let link = $(this).attr('data-link'); //formerly var, if this breaks then change it back
+      let link = $(this).attr('data-link'); 
       if (link) {
         window.location.href = link;
       }
  });
-
- //---------append nav to the #navcontainer section on every page
-//$('#navcontainer').append('<div class="name"><h2><a>Mikki Janower</a></h2></div><div class="nav"><h2><a class="client about-btn" href="about.html">About</a></h2><h2><a class="client" href="mailto:info@mikki.studio" target="_blank">Email</a></h2><h2><a class="client" href="https://www.instagram.com/_miikki/" target="_blank">Instagram</a></h2><h2><a href="https://www.are.na/mikki-janower" target="_blank">Are.na</a></h2></div>');
-//---------append footer to the #projfooter section on every page
-//$('#projfooter').append('<h2><a class="btn-back flip">Back</a></h2><h2><a class="btn-next flip">Next</a></h2>');
 
 //this array lists all currently active case studies in order. The 'back' and 'next' functions below navigate between its contents.
 //manually update this array every time you'd like to add a new case study or change the order of the existing ones. 
@@ -55,22 +50,32 @@ const pagelinks = [
             next();
         });
     });
-//-----when you press the 'back' button, go back one case study 
-$('.btn-back').click(function(){
+//-----when you press the 'back' button, go back to previous page
+$('.btn-back').on('click', function (e) {
+      e.preventDefault(); // Prevent default link/button behavior
+
+      const referrer = document.referrer;
+      const currentHost = window.location.host;
+
+      if (referrer && new URL(referrer).host === currentHost) {
+        // Redirect directly to the referrer URL to reset scroll
+        window.location.href = referrer.split('#')[0]; // remove any hash
+      } else {
+        // Go to homepage if no referrer or from external site
+        window.location.href = '/'; // change to your homepage URL
+      }
+    });
+/*$('.btn-back').click(function(){
     let currentPage = window.location.pathname.substring(1);
-    //------get position (index, or i for short) of the page you're on in the larger array 
     let i = pagelinks.indexOf(currentPage);
-    //if you're on the first case study, cycle back to the last one
     if(i==0){
         window.location.pathname = pagelinks[pagelinks.length - 1];
-    //if you're on the last case study, cycle back to the first
     } else if(i==pagelinks.length){
         window.location.pathname = pagelinks[0];
-    //if you're on any other case study, go back to the last one
     } else {
         window.location.pathname = pagelinks[i-1];
     };
-});
+});*/
 //-----when you press the 'next' button, go forward one case study 
 $('.btn-next').click(function(){
     let currentPage = window.location.pathname.substring(1);
@@ -171,7 +176,75 @@ window.addEventListener("load", () => {
   fadeInVisibleMedia();
 });
 //--------------------------lightbox neue--------------------------//
-$(document).ready(function () {
+  function openLightbox(el) {
+    const $lightbox = $('#lightbox');
+    const $img = $('#lightbox-img');
+    const $video = $('#lightbox-video');
+    const $videoSource = $('#lightbox-video-source');
+    const $iframe = $('#lightbox-iframe');
+
+    // Reset everything
+    $img.hide().attr('src', '');
+    $video.hide().get(0).pause();
+    $videoSource.attr('src', '');
+    $iframe.hide().attr('src', '');
+
+    let src = el.attr('data-src') || el.attr('src') || '';
+    let poster = el.attr('poster') || '';
+
+    if (!src && !poster) return;
+
+    // Decide media type
+    if (el.is('img')) {
+      $img.attr('src', src).show();
+
+    } else if (el.is('video')) {
+      let videoType = el.attr('type') || '';
+      let videoEl = document.createElement('video');
+
+      // If video unsupported or no src, fallback to poster
+      if (!src || (videoType && videoEl.canPlayType(videoType) === '')) {
+        if (poster) {
+          $img.attr('src', poster).show();
+        }
+      } else {
+        $videoSource.attr('src', src);
+        $video.get(0).load();
+        $video.show();
+      }
+
+    } else if (el.data('type') === 'embed' || src.includes('youtube') || src.includes('vimeo')) {
+      $iframe.attr('src', src).show();
+    } 
+
+    $lightbox.fadeIn(200);
+  }
+
+  function closeLightbox() {
+    $('#lightbox').fadeOut(200, function () {
+      $('#lightbox-video').get(0).pause();
+      $('#lightbox-iframe').attr('src', '');
+    });
+  }
+
+  // Click any media except excluded areas
+  $(document).on('click', 'img, video, iframe', function (e) {
+    if ($(this).closest('#lightbox, nav, footer, #homepage-main, .no-lightbox').length) return;
+    openLightbox($(this));
+  });
+
+  // Click overlay or close button
+  $('#lightbox').on('click', function (e) {
+    if ($(e.target).is('#lightbox, .close, .lightbox-overlay')) {
+      closeLightbox();
+    }
+  });
+
+  // ESC key close
+  $(document).on('keydown', function (e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+/*$(document).ready(function () {
   function openLightbox(el) {
     const $lightbox = $('#lightbox');
     const $img = $('#lightbox-img');
@@ -225,7 +298,7 @@ $(document).on('click', 'img, video, iframe', function (e) {
   $(document).on('keydown', function (e) {
     if (e.key === 'Escape') closeLightbox();
   });
-});
+});*/
 
 //-----------activate 'querydown', a temporary div that shows browser width. Useful for setting media queries as precisely as possible.
 /*    $(window).resize(function () {
