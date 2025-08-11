@@ -31,17 +31,18 @@ $('[data-link]').on('click', function() {
 const pagelinks = [
     "fossora.html",
     "acuity.html",
-    "nytimes.html",
-    "displays.html",
     "piratedistro.html",
     "tci.html",
-    "community.html",
-    "tategames2.html",
     "tetragrammaton.html",
-    "sampler.html",
+    "displays.html",
+    "legg.io.html",
+    "tategames2.html",
+    "nytimes.html",
     "venndiagramm.html",
+    "community.html",
+    "sampler.html",
     "mhns.html",
-    "legg.io.html"
+    "spaceopera.html"
 ]
 //------------------when you press my name, redirect to index page
     $(".name").click(function () {
