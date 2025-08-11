@@ -353,6 +353,16 @@ video{
   align-items: center;
   justify-content: center;
 }
+.lightbox-content img,
+.lightbox-content video,
+.lightbox-content iframe {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain; /* Prevent cropping */
+  display: block;
+}
 /*-----------fade animation on lazyload--------------*/
 .fade-on-scroll {
   opacity: 0;
