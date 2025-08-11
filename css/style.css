@@ -363,7 +363,7 @@ video{
 }
 
 /*-----------------------medddddddia queriesssssss------------------------------------*/
-@media (max-width: 850px) {
+@media (max-width: 900px) {
   .about-btn{
     display:block;
   }
@@ -374,7 +374,7 @@ video{
     max-width:680px;
   }
   #navcontainer{
-    margin-bottom:72px;
+    margin-bottom:136px;
   }
   .homepage div[data-link = "acuity.html"]{
     margin-top:auto;
@@ -452,7 +452,7 @@ video{
 
 @media (max-width: 600px) {
   #wrapper, #homepage-main {
-    padding: 12px 12px 12px 12px;
+    padding: 12px 0px 12px 12px;
   }
   .description{
     margin-bottom:-60px;
@@ -471,6 +471,16 @@ video{
   }
   .about .diptych div:first-of-type {
     padding-right:24px;
+  }
+  .diptych{
+    grid-template-columns:auto;
+  }
+    .polyptych{
+    grid-template-columns: auto;
+  }
+  .triptych{
+    grid-template-columns: auto;
+    grid-gap: 6px;
   }
 }
 
