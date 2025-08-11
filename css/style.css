@@ -473,9 +473,10 @@ video{
     padding-right:24px;
   }
   .diptych{
-    grid-template-columns:auto;
+    grid-template-columns: auto;
+    grid-row-gap:6px;
   }
-    .polyptych{
+  .polyptych{
     grid-template-columns: auto;
   }
   .triptych{
