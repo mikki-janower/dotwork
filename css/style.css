@@ -466,6 +466,13 @@ video{
   .about .diptych div:last-of-type{
     margin-left:0px;
   }
+  .about h2{
+    margin-right:16px;
+  }
+    
+  p{
+    padding-right: 16px;
+  }
   .about .item-title:first-of-type, .about .item-title:nth-of-type(6){
       margin-block-start: 1em;
   }
