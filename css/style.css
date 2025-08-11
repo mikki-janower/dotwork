@@ -324,6 +324,9 @@ video{
   margin-top:16px;
   margin-bottom:24px;
 }
+.about a{
+  color:var(--default) !important;
+}
 
 /*------------------------lightbox-------------------*/
 #lightbox {
