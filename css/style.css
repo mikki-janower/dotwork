@@ -172,13 +172,12 @@ img{
   top:12px;
   left:12px;
   grid-column:1/span 3;
-  display:flex;
-  flex-direction:column;
   margin-bottom: 0px;
   z-index:1000;
   height:auto;
 }
 .nav{
+  grid-column:1/span 3;
   display:flex;
   flex-direction:column;
 }
@@ -387,7 +386,8 @@ video{
     max-width:680px;
   }
   #navcontainer{
-    margin-bottom:136px;
+   /* margin-bottom:50%;*/
+   margin-bottom:24px;
   }
   .homepage div[data-link = "acuity.html"]{
     margin-top:auto;
@@ -470,7 +470,7 @@ video{
   .description{
     margin-bottom:-60px;
   }
-  #navcontainer, .nav-1 h2, .nav-2 h2, .description, .caption, .subhead, #projfooter, .about h2, .cv, #downloadcv{
+  #navcontainer, .description, .caption, .subhead, #projfooter, .about h2, .cv, #downloadcv{
     grid-column:1/span 6;
   }
   .endnotes .client{
