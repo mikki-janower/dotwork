@@ -21,6 +21,18 @@
   src:url('fonts/ReconnaSerif.otf');
 }
 @font-face{
+  font-family: "Haarlem";
+  src:url('fonts/Haarlem-Regular.otf');
+  font-weight:400;
+  font-style:normal;
+}
+@font-face{
+  font-family: "Haarlem";
+  src:url('fonts/Haarlem-Italic.otf');
+  font-weight:400;
+  font-style: italic;
+}
+@font-face{
   font-family: "Sampler";
   src:url('fonts/samplerdisplay.otf');
 }
@@ -30,7 +42,7 @@
 }
 :root{
   --default:#0a0a0a;
-  --defaultMedium:#989898;
+  --defaultMedium:#929292;
   --defaultLight: #e5e5e5;
 }
 
@@ -50,7 +62,7 @@ html, body {
 /*------universal grid--------*/
 body{
   max-width:100%;
-  font-family:"Suisse Intl", sans-serif;
+  font-family:"Herbik", serif;
 	font-size: 13.5px;
 	line-height: 18px;
   letter-spacing:.1px;
@@ -121,10 +133,10 @@ body{
 }
 /*----------------------------type styles---------------------*/
 h3, h2, .subhead{
-  font-size: 16px;
-  line-height:22px;
+  font-size: 17px;
+  line-height:23px;
   font-weight:400;
-  margin-top:6px;
+  margin-top:4px;
 }
 .subhead{
   margin-bottom:0px;
@@ -134,7 +146,7 @@ p{
   padding-right: 24px;
 }
 .caption{
-  padding:5px 16px 6px 0px;
+  padding:5px 16px 6px 4px;
 }
 .citation{
   padding-left:4.5px;
@@ -402,9 +414,6 @@ video{
   /*------image arrangements------*/
   .description p{
   padding-right:24px;
-  }
-  .caption{
-  /*padding:12px 16px 12px 0px;*/
   }
   .polyptych{
     grid-template-columns: auto auto;
