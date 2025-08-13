@@ -228,9 +228,12 @@ img{
 /*-----------------------------project pages-----------------------*/
 #projfooter{
   color:var(--default);
-  margin:72px 0 8px 12px;
+  margin:72px 0 0px 12px;
   display:flex;
   flex-direction:row;
+}
+#projfooter h2{
+  margin-bottom:12px;
 }
 #projfooter a{
   cursor:pointer;
@@ -435,8 +438,8 @@ video{
  .endnotes{
   margin-bottom:12px;
  }
- .projfooter{
-    margin-bottom:20px;
+ #projfooter h2{
+    margin-bottom:28px;
  }
    /*-------updating grid------*/
 
