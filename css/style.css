@@ -21,14 +21,16 @@
   src:url('fonts/ReconnaSerif.otf');
 }
 @font-face{
-  font-family: "Haarlem";
-  src:url('fonts/Haarlem-Regular.otf');
+  font-family: "Herbik";
+  src:url('fonts/Herbik-Regular.woff2') format("woff2"),
+      url('fonts/Herbik-Regular.otf') format("opentype");
   font-weight:400;
   font-style:normal;
 }
 @font-face{
-  font-family: "Haarlem";
-  src:url('fonts/Haarlem-Italic.otf');
+  font-family: "Herbik";
+  src:url('fonts/Herbik-Italic.woff2') format("woff2"),
+      url('fonts/Herbik-Italic.ttf') format('truetype');
   font-weight:400;
   font-style: italic;
 }
@@ -62,7 +64,7 @@ html, body {
 /*------universal grid--------*/
 body{
   max-width:100%;
-  font-family:"Herbik", serif;
+  font-family:"Herbik";
 	font-size: 13.5px;
 	line-height: 18px;
   letter-spacing:.1px;
@@ -133,8 +135,8 @@ body{
 }
 /*----------------------------type styles---------------------*/
 h3, h2, .subhead{
-  font-size: 17px;
-  line-height:23px;
+  font-size: 15.75px;
+  line-height:21px;
   font-weight:400;
   margin-top:4px;
 }
