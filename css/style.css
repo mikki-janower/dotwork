@@ -150,6 +150,9 @@ p{
 .caption{
   padding:5px 16px 6px 4px;
 }
+.caption.col12{
+  padding:5px 16px 6px 0px;
+}
 .citation{
   padding-left:4.5px;
   color:var(--defaultMedium);
@@ -441,7 +444,7 @@ video{
   margin-bottom:12px;
  }
  #projfooter h2{
-    margin-bottom:28px;
+    margin-bottom:18px;
  }
    /*-------updating grid------*/
 
