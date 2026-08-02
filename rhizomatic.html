@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mikki Janower: Rhizomatic</title>
+
+    <meta charset="UTF-8">
+    <meta property="og:image" content="rhizomatic/opening.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A terminal emulator website with live dithering, custom animations, and a hacking simulation.">
+
+    <link rel="shortcut icon" type="image/png" href="assets/bigfavicon.png"/>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <section id="wrapper">
+<section id="navcontainer">
+    <div class="name"><h2><a>Mikki Janower</a></h2></div>
+    <div class="nav">
+        <h2><a class="client about-btn" href="about.html">About</a></h2>
+        <h2><a class="client" href="mailto:info@mikki.studio" target="_blank">info@mikki.studio</a></h2>
+        <h2><a class="client" href="https://www.instagram.com/_miikki/" target="_blank">@_miikki</a></h2>
+    </div>
+</section>
+<!--------------------------insert project information in this section ONLY----------------------->
+
+
+    <div class="description">
+        <h2>Identity & Posters <span class="client">Rhizomatic</span></h2>
+        <p>Visual identity for Rhizomatic, a craft cafe and community space in Hackney, London. Inspired by Art Nouveau — a movement rooted in the belief that art and craft are inextricable from the world around them — Rhizomatic's design system evokes the organic entanglement of its namesake, the rhizome.</p>
+    </div>
+    <img class="spaced lozad col123456" data-src="rhizomatic/week1.jpg">
+    <div class="diptych col123456">
+        <div class="lozad video-wrapper" style="aspect-ratio: 3 / 2; margin-bottom:-4.5px">
+            <video muted playsinline autoplay webkit-playsinline loop class="lozad" data-src="rhizomatic/morph-emblem.mp4" type="video/mp4" poster="rhizomatic/emblem-cover.jpg"></video>
+        </div> 
+        <img class="lozad" data-src="rhizomatic/emblem.jpg"> 
+    </div>
+    <div class="diptych col123456">
+        <img class="lozad" data-src="rhizomatic/wordmark.jpg">  
+         <div class="video-wrapper" style="aspect-ratio: 3 / 2; margin-bottom:-4.5px">
+            <video muted playsinline autoplay webkit-playsinline loop class="lozad" data-src="rhizomatic/morph-wordmark.mp4" type="video/mp4" poster="rhizomatic/wordmark-cover.jpg"></video>
+        </div>
+    </div>
+
+
+    <img class="lozad spaced col3456" data-src="rhizomatic/weaving-night-2x3.jpg">
+
+    <img class="lozad spaced col123456" data-src="rhizomatic/opening.jpg">
+    <div class="triptych col123456">
+        <img class="lozad" data-src="rhizomatic/dropcaps.jpg">  
+        <img class="lozad" data-src="rhizomatic/ornaments.jpg"> 
+            <img class="lozad" data-src="rhizomatic/frames.jpg"> 
+    </div>
+    <div class="triptych col123456">
+        <img class="lozad" data-src="rhizomatic/typography.jpg">  
+         <img class="lozad" data-src="rhizomatic/logo-scaling.jpg"> 
+        <img class="lozad" data-src="rhizomatic/templates.jpg"> 
+    </div>
+
+    <img class="lozad spaced col1234" data-src="rhizomatic/notebooks.jpg">
+
+     <img class="lozad spaced col3456" data-src="rhizomatic/grand-opening.jpg">
+    
+<!-----------------------lightbox---------------------->
+<div id="lightbox" style="display: none;">
+  <div class="lightbox-overlay"></div>
+  <div class="lightbox-content">
+    <img id="lightbox-img" style="display: none;" />
+    <video id="lightbox-video" muted webkit-playsinline playsinline autoplay loop style="display: none;">
+      <source id="lightbox-video-source" src="" />
+    </video>
+    <iframe id="lightbox-iframe" style="display: none;" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<div id="projfooter">
+    <h2><a class="btn-back">Back</a></h2>
+    <h2><a class="btn-next">Next</a></h2>
+</div>
+<!--------------------------UNIFORM—don't change anything BELOW this line------------------------->
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+<script src="js/projects.js"></script>
+</body>
+
+</html>
