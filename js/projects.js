@@ -1,5 +1,9 @@
 $(document).ready(function () {
 
+
+/*--------------------the 'about' homepage module auto-populates from 'about.html'------*/
+
+
 /*--------------------when the user clicks 'read more,' the 'about' section toggles------------------*/
 let more = false;
 $('.readmore').click(function(){
